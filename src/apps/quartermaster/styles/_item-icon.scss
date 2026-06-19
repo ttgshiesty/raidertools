@@ -1,0 +1,131 @@
+@use 'variables' as *;
+@use '../../../shared/styles/item-icon' as item-icon-shared;
+
+.item-icon {
+  &__quantity {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    background: rgba(0, 0, 0, 0.75);
+    color: $text-primary;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 3px;
+    min-width: 22px;
+    text-align: center;
+
+    &--unknown {
+      color: #a6a6a6;
+      font-weight: 500;
+    }
+  }
+
+  &__prioritize {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    z-index: 2;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
+    transition: color 0.2s, filter 0.2s;
+
+    &:hover {
+      color: #ffb347;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9));
+    }
+
+    &--active {
+      color: #ffb347;
+    }
+
+    &--active:hover {
+      color: #ff9f1c;
+    }
+  }
+
+  &__lock {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.7));
+  }
+
+  &__badges {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+
+    &--keep {
+      background: $badge-keep;
+      color: white;
+    }
+
+    &--recycle {
+      background: $badge-recycle;
+      color: white;
+    }
+
+    &--discard {
+      background: $badge-discard;
+      color: white;
+    }
+
+    &--salvage {
+      background: $badge-salvage;
+      color: white;
+    }
+
+    &--bring-home {
+      background: $badge-bring-home;
+      color: white;
+    }
+
+    &--missing {
+      background: $status-missing;
+      color: white;
+    }
+
+    &--uncraftable {
+      background: $status-uncraftable;
+      color: white;
+    }
+
+    &--direct-target {
+      background: $badge-direct-target;
+      color: white;
+    }
+  }
+
+  // In raid view: allow multiline word-wrap for name
+  .in-raid-view &__name {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    min-height: 3.9em;
+  }
+}

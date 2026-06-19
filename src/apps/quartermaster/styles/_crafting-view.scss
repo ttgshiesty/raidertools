@@ -1,0 +1,198 @@
+@use 'variables' as *;
+
+.crafting-view {
+  &__controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__sync-meta {
+    color: $text-secondary;
+    font-size: $font-sm;
+  }
+
+  &__button-meta {
+    color: $text-secondary;
+    font-size: $font-xs;
+    font-weight: 600;
+  }
+
+  &__section {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__bench-group {
+    margin-bottom: $spacing-lg;
+    background: $bg-secondary;
+    border-radius: $radius-md;
+    overflow: hidden;
+  }
+
+  &__bench-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    background: $bg-tertiary;
+    font-size: $font-sm;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__bench-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .qm-table td {
+    vertical-align: top;
+  }
+
+  &__col-item {
+    width: 98px;
+  }
+
+  &__col-name {
+    width: 250px;
+  }
+
+  &__col-qty {
+    width: 122px;
+  }
+
+  &__col-why {
+    width: 340px;
+  }
+
+  &__materials {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__material-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: $radius-sm;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 4px 6px;
+  }
+
+  &__material-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+
+    span {
+      font-size: 12px;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &__material-qty {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-primary;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 2px 7px;
+  }
+
+  &__why-empty {
+    font-size: 12px;
+    color: $text-secondary;
+  }
+
+  &__why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__why-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 6px;
+    border-radius: $radius-sm;
+    border: 1px solid rgba($badge-recycle, 0.35);
+    background: rgba($badge-recycle, 0.1);
+    color: $badge-recycle;
+    padding: 6px;
+    font-size: 11px;
+    line-height: 1.35;
+
+    svg {
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+  }
+
+  &__why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: $radius-sm;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px;
+  }
+
+  &__why-copy {
+    min-width: 0;
+    flex: 1;
+  }
+
+  &__why-main {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 12px;
+    color: $text-primary;
+  }
+
+  &__durability {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__why-sub {
+    margin-top: 2px;
+    font-size: 11px;
+    color: $text-secondary;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  &__why-state {
+    align-self: center;
+    border-radius: 999px;
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    &--complete {
+      background: rgba($status-available, 0.2);
+      color: $status-available;
+    }
+
+    &--needed {
+      background: rgba($status-missing, 0.2);
+      color: $status-missing;
+    }
+  }
+}

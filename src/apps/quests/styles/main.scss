@@ -1,0 +1,13 @@
+// Import our custom styles using @use (must be before CSS @import)
+@use 'variables';
+@use 'base';
+@use 'quest-node';
+@use 'map-node';
+@use 'blueprint-overlay';
+@use 'quest-search-overlay';
+@use 'sidebar';
+@use 'confirm-dialog';
+@use 'react-flow';
+
+// Import React Flow styles
+@import 'reactflow/dist/style.css';

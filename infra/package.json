@@ -1,0 +1,33 @@
+{
+  "name": "raider-tools-infra",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "cdk": "cdk",
+    "deploy": "cdk deploy",
+    "diff": "cdk diff",
+    "synth": "cdk synth",
+    "local:ddb": "docker compose -f local/docker-compose.yml up -d --wait",
+    "local:ddb:down": "docker compose -f local/docker-compose.yml down",
+    "local:api": "tsx local/server.ts",
+    "local:dev": "npm run local:ddb && npm run local:api"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.985.0",
+    "@aws-sdk/client-dynamodb": "^3.985.0",
+    "@aws-sdk/client-kms": "^3.985.0",
+    "@aws-sdk/client-s3": "^3.985.0",
+    "@aws-sdk/client-secrets-manager": "^3.985.0",
+    "@aws-sdk/client-ssm": "^3.985.0",
+    "@aws-sdk/lib-dynamodb": "^3.985.0",
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.160",
+    "aws-cdk": "^2.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.0.0"
+  }
+}

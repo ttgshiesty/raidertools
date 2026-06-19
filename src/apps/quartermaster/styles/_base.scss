@@ -1,0 +1,371 @@
+@use 'sass:color';
+@use 'variables' as *;
+
+.quartermaster-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $bg-primary;
+  color: $text-primary;
+  font-size: $font-base;
+}
+
+.quartermaster-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.quartermaster-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.quartermaster-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: $spacing-lg;
+}
+
+.qm-item-name {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+// Common table styles
+.qm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-base;
+
+  th, td {
+    padding: $spacing-sm $spacing-md;
+    text-align: left;
+    border-bottom: 1px solid $border-default;
+  }
+
+  th {
+    background: $bg-secondary;
+    color: $text-secondary;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: $font-sm;
+    letter-spacing: 0.5px;
+  }
+
+  tr:hover {
+    background: $bg-secondary;
+  }
+}
+
+// Common button styles
+.qm-button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  background: $bg-tertiary;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+  color: $text-primary;
+  font-size: $font-sm;
+  cursor: pointer;
+  transition: $transition-default;
+
+  &:hover {
+    background: $bg-secondary;
+    border-color: $text-accent;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: $text-accent;
+    border-color: $text-accent;
+    color: $bg-primary;
+
+    &:hover {
+      background: color.adjust($text-accent, $lightness: 10%);
+    }
+  }
+
+  &--small {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 10px;
+  }
+
+  &--danger {
+    background: rgba($status-missing, 0.2);
+    border-color: $status-missing;
+    color: $text-primary;
+
+    &:hover {
+      background: rgba($status-missing, 0.3);
+    }
+  }
+
+  &--danger-outline {
+    background: transparent;
+    border-color: rgba($status-missing, 0.5);
+    color: $status-missing;
+
+    &:hover {
+      background: rgba($status-missing, 0.1);
+      border-color: $status-missing;
+    }
+  }
+
+  &--icon {
+    padding: $spacing-xs;
+    min-width: 32px;
+    height: 32px;
+    justify-content: center;
+  }
+}
+
+// Segmented Control
+.qm-segmented-control {
+  display: inline-flex;
+  background: $bg-tertiary;
+  border: 1px solid $border-light;
+  border-radius: $radius-sm;
+  overflow: hidden;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    padding: $spacing-sm $spacing-md;
+    background: transparent;
+    border: none;
+    border-right: 1px solid rgba($border-light, 0.4);
+    color: $text-secondary;
+    font-size: $font-sm;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition-default;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover:not(:disabled):not(.is-active) {
+      background: rgba($text-accent, 0.08);
+      color: $text-primary;
+    }
+
+    &.is-active {
+      background: $text-accent;
+      color: $bg-primary;
+      cursor: default;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Common input styles
+.qm-input {
+  padding: $spacing-sm $spacing-md;
+  background: $bg-secondary;
+  border: 1px solid $border-default;
+  border-radius: $radius-sm;
+  color: $text-primary;
+  font-size: $font-sm;
+  transition: $transition-default;
+
+  &:focus {
+    outline: none;
+    border-color: $text-accent;
+  }
+
+  &::placeholder {
+    color: $text-secondary;
+  }
+}
+
+// Section title
+.qm-section-title {
+  font-size: $font-lg;
+  font-weight: 600;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-sm;
+  border-bottom: 1px solid $border-default;
+}
+
+// Empty state
+.qm-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xl * 2;
+  color: $text-secondary;
+  text-align: center;
+  
+  svg {
+    margin-bottom: $spacing-md;
+    opacity: 0.5;
+  }
+}
+
+// Loading spinner
+.qm-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: $text-secondary;
+}
+
+// Error display
+.qm-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: $status-missing;
+}
+
+// Sync error banner
+.qm-sync-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm $spacing-md;
+  background: color.adjust($status-missing, $alpha: -0.85);
+  border-bottom: 1px solid $status-missing;
+  color: $status-missing;
+  font-size: $font-sm;
+
+  &__dismiss {
+    background: none;
+    border: none;
+    color: $status-missing;
+    font-size: $font-lg;
+    cursor: pointer;
+    padding: 0 $spacing-xs;
+    line-height: 1;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+}
+
+.qm-sync-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background: rgba($text-accent, 0.12);
+  border-bottom: 1px solid rgba($text-accent, 0.4);
+  color: $text-primary;
+  font-size: $font-sm;
+  line-height: 1.4;
+}
+
+.qm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  background: rgba($bg-dark, 0.72);
+}
+
+.qm-modal {
+  width: min(460px, 100%);
+  padding: $spacing-lg;
+  background: $bg-secondary;
+  border: 1px solid $border-light;
+  border-radius: $radius-md;
+  box-shadow: 0 18px 48px rgba($bg-dark, 0.45);
+
+  h3 {
+    margin: 0 0 $spacing-sm;
+    color: $text-primary;
+    font-size: $font-lg;
+  }
+
+  p {
+    margin: 0;
+    color: $text-secondary;
+    line-height: 1.5;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    justify-content: flex-end;
+    margin-top: $spacing-lg;
+  }
+}
+
+// Auth gate
+.qm-auth-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: $spacing-xl;
+
+  &__loading,
+  &__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-md;
+    max-width: 400px;
+
+    svg {
+      color: $text-secondary;
+      opacity: 0.7;
+    }
+
+    h3 {
+      color: $text-primary;
+      font-size: $font-lg;
+      margin: 0;
+    }
+
+    p {
+      color: $text-secondary;
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  &__loading p {
+    color: $text-secondary;
+    font-size: $font-sm;
+  }
+}
+
+// Spin animation for loading indicators
+@keyframes qm-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: qm-spin 1s linear infinite;
+}

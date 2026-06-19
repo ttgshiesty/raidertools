@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+.qm-global-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  padding: $spacing-md $spacing-lg;
+  background: $bg-secondary;
+  border-bottom: 1px solid $border-default;
+  min-height: $qm-header-height;
+
+  &__timestamps {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+    flex: 1;
+  }
+
+  &__last-sync {
+    font-size: $font-xs;
+    font-weight: 600;
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__timestamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: $font-sm;
+    color: $text-secondary;
+
+    span {
+      color: $text-primary;
+    }
+
+    &--warning {
+      color: $badge-recycle;
+
+      span {
+        color: $badge-recycle;
+      }
+    }
+  }
+}

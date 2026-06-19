@@ -1,0 +1,3957 @@
+<!doctype html>
+<html>
+  <head>
+    <title>API pioneer</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#pioneerBattlepassListBattlepassesGet"><code><span class="http-method">get</span> /pioneer/battlepass/list-battlepasses</code></a></li>
+  <li><a href="#pioneerBonusesGet"><code><span class="http-method">get</span> /pioneer/bonuses</code></a></li>
+  <li><a href="#pioneerCodexEntriesListGet"><code><span class="http-method">get</span> /pioneer/codex/entries/list</code></a></li>
+  <li><a href="#pioneerCommunityEventGet"><code><span class="http-method">get</span> /pioneer/community-event</code></a></li>
+  <li><a href="#pioneerCompensationsGet"><code><span class="http-method">get</span> /pioneer/compensations</code></a></li>
+  <li><a href="#pioneerExpeditionsGet"><code><span class="http-method">get</span> /pioneer/expeditions</code></a></li>
+  <li><a href="#pioneerGameDataStorePost"><code><span class="http-method">post</span> /pioneer/game-data/store</code></a></li>
+  <li><a href="#pioneerInventoryGet"><code><span class="http-method">get</span> /pioneer/inventory</code></a></li>
+  <li><a href="#pioneerInventoryV1MutatePost"><code><span class="http-method">post</span> /pioneer/inventory/v1/mutate</code></a></li>
+  <li><a href="#pioneerLeagueGet"><code><span class="http-method">get</span> /pioneer/league</code></a></li>
+  <li><a href="#pioneerLevelsAutoClaimPost"><code><span class="http-method">post</span> /pioneer/levels/auto-claim</code></a></li>
+  <li><a href="#pioneerLevelsListGet"><code><span class="http-method">get</span> /pioneer/levels/list</code></a></li>
+  <li><a href="#pioneerMasteryObjectivesGet"><code><span class="http-method">get</span> /pioneer/mastery/objectives</code></a></li>
+  <li><a href="#pioneerProjectsListPost"><code><span class="http-method">post</span> /pioneer/projects/list</code></a></li>
+  <li><a href="#pioneerQuestsGet"><code><span class="http-method">get</span> /pioneer/quests</code></a></li>
+  <li><a href="#pioneerQuestsReconcilePost"><code><span class="http-method">post</span> /pioneer/quests/reconcile</code></a></li>
+  <li><a href="#pioneerQuestsRerollCostGet"><code><span class="http-method">get</span> /pioneer/quests/reroll-cost</code></a></li>
+  <li><a href="#pioneerRaidersGet"><code><span class="http-method">get</span> /pioneer/raiders</code></a></li>
+  <li><a href="#pioneerRankListPost"><code><span class="http-method">post</span> /pioneer/rank/list</code></a></li>
+  <li><a href="#pioneerSeasonalRewardsGet"><code><span class="http-method">get</span> /pioneer/seasonal-rewards</code></a></li>
+  <li><a href="#pioneerStatsPlayerV2Post"><code><span class="http-method">post</span> /pioneer/stats/player-v2</code></a></li>
+  <li><a href="#pioneerStoreGetMicrosoftStoreAccessTokenGet"><code><span class="http-method">get</span> /pioneer/store/get-microsoft-store-access-token</code></a></li>
+  <li><a href="#pioneerStoreReconcilePost"><code><span class="http-method">post</span> /pioneer/store/reconcile</code></a></li>
+  <li><a href="#pioneerTenancyUserSyncPost"><code><span class="http-method">post</span> /pioneer/tenancy-user/sync</code></a></li>
+  <li><a href="#pioneerTimedOffersTransactionsGet"><code><span class="http-method">get</span> /pioneer/timed-offers/transactions</code></a></li>
+  <li><a href="#sharedAnnouncementsPost"><code><span class="http-method">post</span> /shared/announcements</code></a></li>
+  <li><a href="#sharedAnticheatRestrictionsPost"><code><span class="http-method">post</span> /shared/anticheat/restrictions</code></a></li>
+  <li><a href="#sharedDistributionPlatformAchievementsGetPost"><code><span class="http-method">post</span> /shared/distribution-platform-achievements/get</code></a></li>
+  <li><a href="#sharedGameSettingsGet"><code><span class="http-method">get</span> /shared/game-settings</code></a></li>
+  <li><a href="#sharedGetPersistentPlayerKeysPost"><code><span class="http-method">post</span> /shared/get-persistent-player-keys</code></a></li>
+  <li><a href="#sharedHeartbeatPost"><code><span class="http-method">post</span> /shared/heartbeat</code></a></li>
+  <li><a href="#sharedInboxGetMessagesPost"><code><span class="http-method">post</span> /shared/inbox/get-messages</code></a></li>
+  <li><a href="#sharedLocalizationsPost"><code><span class="http-method">post</span> /shared/localizations</code></a></li>
+  <li><a href="#sharedManifestPost"><code><span class="http-method">post</span> /shared/manifest</code></a></li>
+  <li><a href="#sharedNotificationsPost"><code><span class="http-method">post</span> /shared/notifications</code></a></li>
+  <li><a href="#sharedPlayerActivityPost"><code><span class="http-method">post</span> /shared/player/activity</code></a></li>
+  <li><a href="#sharedProfileByThirdpartyUseridPost"><code><span class="http-method">post</span> /shared/profile/by-thirdparty-userid</code></a></li>
+  <li><a href="#sharedProxyGet"><code><span class="http-method">get</span> /shared/proxy</code></a></li>
+  <li><a href="#sharedQuilkinGet"><code><span class="http-method">get</span> /shared/quilkin</code></a></li>
+  <li><a href="#sharedScenariosPost"><code><span class="http-method">post</span> /shared/scenarios</code></a></li>
+  <li><a href="#sharedSetPersistentPlayerKeysPost"><code><span class="http-method">post</span> /shared/set-persistent-player-keys</code></a></li>
+  <li><a href="#sharedSocialBlockPlayersBlockedPlayersGet"><code><span class="http-method">get</span> /shared/social/block-players/blocked-players</code></a></li>
+  <li><a href="#sharedSocialFriendsGetFriendsGet"><code><span class="http-method">get</span> /shared/social/friends/get-friends</code></a></li>
+  <li><a href="#sharedSocialPartyGetGet"><code><span class="http-method">get</span> /shared/social/party/get</code></a></li>
+  <li><a href="#sharedSocialPartyV2UpdatePartyMemberDataPost"><code><span class="http-method">post</span> /shared/social/party/v2/update-party-member-data</code></a></li>
+  <li><a href="#sharedSocialPresenceGetPost"><code><span class="http-method">post</span> /shared/social/presence/get</code></a></li>
+  <li><a href="#sharedSocialPresenceSetRichPresencePost"><code><span class="http-method">post</span> /shared/social/presence/set-rich-presence</code></a></li>
+  <li><a href="#sharedSocialRecentlyPlayedWithGet"><code><span class="http-method">get</span> /shared/social/recently-played-with</code></a></li>
+  </ul>
+
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="pioneerBattlepassListBattlepassesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/battlepass/list-battlepasses</code></pre></div>
+    <div class="method-summary">GET list-battlepasses (<span class="nickname">pioneerBattlepassListBattlepassesGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_11">inline_response_200_11</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "battlePassStates" : [ {
+    "battlePassId" : 0.8008281904610115,
+    "isOwned" : true,
+    "claimedEntries" : [ 6.027456183070403, 6.027456183070403 ],
+    "claimedPages" : [ 1.4658129805029452, 1.4658129805029452 ]
+  }, {
+    "battlePassId" : 0.8008281904610115,
+    "isOwned" : true,
+    "claimedEntries" : [ 6.027456183070403, 6.027456183070403 ],
+    "claimedPages" : [ 1.4658129805029452, 1.4658129805029452 ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_11">inline_response_200_11</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerBonusesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/bonuses</code></pre></div>
+    <div class="method-summary">GET bonuses (<span class="nickname">pioneerBonusesGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_31">inline_response_200_31</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "effects" : [ "", "" ],
+  "items" : [ "", "" ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_31">inline_response_200_31</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerCodexEntriesListGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/codex/entries/list</code></pre></div>
+    <div class="method-summary">GET list (<span class="nickname">pioneerCodexEntriesListGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_34">inline_response_200_34</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "entries" : [ {
+    "entryAssetId" : 0.8008281904610115,
+    "unlocked" : true
+  }, {
+    "entryAssetId" : 0.8008281904610115,
+    "unlocked" : true
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_34">inline_response_200_34</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerCommunityEventGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/community-event</code></pre></div>
+    <div class="method-summary">GET community-event (<span class="nickname">pioneerCommunityEventGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_3">inline_response_200_3</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "events" : [ {
+    "topContributors" : [ {
+      "tenancyUserExternalId" : 7.061401241503109,
+      "contribution" : 5.637376656633329,
+      "rank" : 2.3021358869347655
+    }, {
+      "tenancyUserExternalId" : 7.061401241503109,
+      "contribution" : 5.637376656633329,
+      "rank" : 2.3021358869347655
+    } ],
+    "totalContribution" : 9.301444243932576,
+    "communityEventId" : 0.8008281904610115,
+    "nearContributors" : [ {
+      "tenancyUserExternalId" : 5.962133916683182,
+      "contribution" : 6.027456183070403,
+      "rank" : 1.4658129805029452
+    }, {
+      "tenancyUserExternalId" : 5.962133916683182,
+      "contribution" : 6.027456183070403,
+      "rank" : 1.4658129805029452
+    } ]
+  }, {
+    "topContributors" : [ {
+      "tenancyUserExternalId" : 7.061401241503109,
+      "contribution" : 5.637376656633329,
+      "rank" : 2.3021358869347655
+    }, {
+      "tenancyUserExternalId" : 7.061401241503109,
+      "contribution" : 5.637376656633329,
+      "rank" : 2.3021358869347655
+    } ],
+    "totalContribution" : 9.301444243932576,
+    "communityEventId" : 0.8008281904610115,
+    "nearContributors" : [ {
+      "tenancyUserExternalId" : 5.962133916683182,
+      "contribution" : 6.027456183070403,
+      "rank" : 1.4658129805029452
+    }, {
+      "tenancyUserExternalId" : 5.962133916683182,
+      "contribution" : 6.027456183070403,
+      "rank" : 1.4658129805029452
+    } ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_3">inline_response_200_3</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerCompensationsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/compensations</code></pre></div>
+    <div class="method-summary">GET compensations (<span class="nickname">pioneerCompensationsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_30">inline_response_200_30</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "compensations" : [ {
+    "createdAt" : 1.4658129805029452,
+    "sourceType" : "sourceType",
+    "claimed" : true,
+    "id" : "id",
+    "source" : "source",
+    "content" : {
+      "items" : [ {
+        "gameAssetId" : 6.027456183070403,
+        "amount" : 0.8008281904610115,
+        "subItems" : [ "", "" ]
+      }, {
+        "gameAssetId" : 6.027456183070403,
+        "amount" : 0.8008281904610115,
+        "subItems" : [ "", "" ]
+      } ]
+    },
+    "updatedAt" : 5.962133916683182
+  }, {
+    "createdAt" : 1.4658129805029452,
+    "sourceType" : "sourceType",
+    "claimed" : true,
+    "id" : "id",
+    "source" : "source",
+    "content" : {
+      "items" : [ {
+        "gameAssetId" : 6.027456183070403,
+        "amount" : 0.8008281904610115,
+        "subItems" : [ "", "" ]
+      }, {
+        "gameAssetId" : 6.027456183070403,
+        "amount" : 0.8008281904610115,
+        "subItems" : [ "", "" ]
+      } ]
+    },
+    "updatedAt" : 5.962133916683182
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_30">inline_response_200_30</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerExpeditionsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/expeditions</code></pre></div>
+    <div class="method-summary">GET expeditions (<span class="nickname">pioneerExpeditionsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_23">inline_response_200_23</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "status" : {
+    "raiderJoinedAt" : 5.962133916683182,
+    "raiderId" : "raiderId",
+    "nextTier" : 1.4658129805029452,
+    "completedExpeditions" : 0.8008281904610115,
+    "state" : "state",
+    "currentTier" : 6.027456183070403
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_23">inline_response_200_23</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerGameDataStorePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/game-data/store</code></pre></div>
+    <div class="method-summary">POST store (<span class="nickname">pioneerGameDataStorePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#gamedata_store_body">gamedata_store_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_13">inline_response_200_13</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "store-views" : {
+    "views" : [ {
+      "viewId" : 7.457744773683766,
+      "sections" : [ {
+        "entries" : [ {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        }, {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        } ],
+        "sectionId" : 6.84685269835264
+      }, {
+        "entries" : [ {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        }, {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        } ],
+        "sectionId" : 6.84685269835264
+      } ]
+    }, {
+      "viewId" : 7.457744773683766,
+      "sections" : [ {
+        "entries" : [ {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        }, {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        } ],
+        "sectionId" : 6.84685269835264
+      }, {
+        "entries" : [ {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        }, {
+          "productId" : 1.0246457001441578,
+          "storeProvider" : "storeProvider",
+          "endDate" : 7.386281948385884,
+          "startDate" : 1.4894159098541704,
+          "entryId" : 1.2315135367772556
+        } ],
+        "sectionId" : 6.84685269835264
+      } ]
+    } ]
+  },
+  "products" : {
+    "products" : [ {
+      "reward" : {
+        "rewardedItems" : [ {
+          "gameAssetId" : 2.027123023002322,
+          "amount" : 9.301444243932576,
+          "slots" : [ "", "" ],
+          "aliasInstanceId" : "aliasInstanceId",
+          "hideInUi" : true,
+          "durability" : 3.616076749251911,
+          "maxAmount" : 4.145608029883936
+        }, {
+          "gameAssetId" : 2.027123023002322,
+          "amount" : 9.301444243932576,
+          "slots" : [ "", "" ],
+          "aliasInstanceId" : "aliasInstanceId",
+          "hideInUi" : true,
+          "durability" : 3.616076749251911,
+          "maxAmount" : 4.145608029883936
+        } ],
+        "randomRewards" : {
+          "pools" : { },
+          "maxAmount" : 7.061401241503109
+        }
+      },
+      "gameAssetId" : 5.637376656633329,
+      "childProductIds" : [ 0.8008281904610115, 0.8008281904610115 ],
+      "cost" : {
+        "costItems" : [ {
+          "gameAssetId" : 5.962133916683182,
+          "amount" : 6.027456183070403,
+          "durability" : 1.4658129805029452
+        }, {
+          "gameAssetId" : 5.962133916683182,
+          "amount" : 6.027456183070403,
+          "durability" : 1.4658129805029452
+        } ]
+      },
+      "productId" : 2.3021358869347655,
+      "discriminator" : "discriminator"
+    }, {
+      "reward" : {
+        "rewardedItems" : [ {
+          "gameAssetId" : 2.027123023002322,
+          "amount" : 9.301444243932576,
+          "slots" : [ "", "" ],
+          "aliasInstanceId" : "aliasInstanceId",
+          "hideInUi" : true,
+          "durability" : 3.616076749251911,
+          "maxAmount" : 4.145608029883936
+        }, {
+          "gameAssetId" : 2.027123023002322,
+          "amount" : 9.301444243932576,
+          "slots" : [ "", "" ],
+          "aliasInstanceId" : "aliasInstanceId",
+          "hideInUi" : true,
+          "durability" : 3.616076749251911,
+          "maxAmount" : 4.145608029883936
+        } ],
+        "randomRewards" : {
+          "pools" : { },
+          "maxAmount" : 7.061401241503109
+        }
+      },
+      "gameAssetId" : 5.637376656633329,
+      "childProductIds" : [ 0.8008281904610115, 0.8008281904610115 ],
+      "cost" : {
+        "costItems" : [ {
+          "gameAssetId" : 5.962133916683182,
+          "amount" : 6.027456183070403,
+          "durability" : 1.4658129805029452
+        }, {
+          "gameAssetId" : 5.962133916683182,
+          "amount" : 6.027456183070403,
+          "durability" : 1.4658129805029452
+        } ]
+      },
+      "productId" : 2.3021358869347655,
+      "discriminator" : "discriminator"
+    } ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_13">inline_response_200_13</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerInventoryGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/inventory</code></pre></div>
+    <div class="method-summary">GET inventory (<span class="nickname">pioneerInventoryGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_5">inline_response_200_5</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "items" : [ {
+    "maxDurability" : 5.962133916683182,
+    "gameAssetId" : 1.4658129805029452,
+    "amount" : 0.8008281904610115,
+    "slots" : { },
+    "instanceId" : "instanceId",
+    "durability" : 6.027456183070403,
+    "etag" : "etag",
+    "updatedAt" : 5.637376656633329
+  }, {
+    "maxDurability" : 5.962133916683182,
+    "gameAssetId" : 1.4658129805029452,
+    "amount" : 0.8008281904610115,
+    "slots" : { },
+    "instanceId" : "instanceId",
+    "durability" : 6.027456183070403,
+    "etag" : "etag",
+    "updatedAt" : 5.637376656633329
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_5">inline_response_200_5</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerInventoryV1MutatePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/inventory/v1/mutate</code></pre></div>
+    <div class="method-summary">POST mutate (<span class="nickname">pioneerInventoryV1MutatePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#v1_mutate_body">v1_mutate_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "changeset" : {
+    "quests" : {
+      "created" : { },
+      "updatedObjectives" : [ "", "" ],
+      "updated" : { },
+      "createdObjectives" : [ "", "" ]
+    },
+    "stats" : {
+      "scopedPlayerStats" : { }
+    },
+    "items" : {
+      "deleted" : { },
+      "created" : [ "", "" ],
+      "updated" : [ {
+        "maxDurability" : 5.962133916683182,
+        "gameAssetId" : 1.4658129805029452,
+        "amount" : 0.8008281904610115,
+        "slots" : [ "slots", "slots" ],
+        "instanceId" : "instanceId",
+        "durability" : 6.027456183070403,
+        "etag" : "etag",
+        "updatedAt" : 5.637376656633329
+      }, {
+        "maxDurability" : 5.962133916683182,
+        "gameAssetId" : 1.4658129805029452,
+        "amount" : 0.8008281904610115,
+        "slots" : [ "slots", "slots" ],
+        "instanceId" : "instanceId",
+        "durability" : 6.027456183070403,
+        "etag" : "etag",
+        "updatedAt" : 5.637376656633329
+      } ]
+    },
+    "notifications" : [ "", "" ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200">inline_response_200</a>
+    <h4 class="field-label">400</h4>
+    Bad Request
+        <a href="#inline_response_400">inline_response_400</a>
+    <h4 class="field-label">404</h4>
+    Not Found
+        <a href="#inline_response_400">inline_response_400</a>
+    <h4 class="field-label">500</h4>
+    Internal Server Error
+        <a href="#inline_response_400">inline_response_400</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerLeagueGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/league</code></pre></div>
+    <div class="method-summary">GET league (<span class="nickname">pioneerLeagueGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_4">inline_response_200_4</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "rankId" : 5.637376656633329,
+  "members" : [ {
+    "tenancyUserExternalId" : 1.4658129805029452,
+    "position" : 6.027456183070403,
+    "transition" : 5.962133916683182,
+    "points" : 0.8008281904610115
+  }, {
+    "tenancyUserExternalId" : 1.4658129805029452,
+    "position" : 6.027456183070403,
+    "transition" : 5.962133916683182,
+    "points" : 0.8008281904610115
+  } ],
+  "rankWindowId" : 2.3021358869347655
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_4">inline_response_200_4</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerLevelsAutoClaimPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/levels/auto-claim</code></pre></div>
+    <div class="method-summary">POST auto-claim (<span class="nickname">pioneerLevelsAutoClaimPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#levels_autoclaim_body">levels_autoclaim_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_22">inline_response_200_22</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "levels" : [ {
+    "currentLevel" : 0.8008281904610115,
+    "currentXp" : 6.027456183070403,
+    "groupId" : 1.4658129805029452,
+    "unclaimedRewards" : [ "", "" ]
+  }, {
+    "currentLevel" : 0.8008281904610115,
+    "currentXp" : 6.027456183070403,
+    "groupId" : 1.4658129805029452,
+    "unclaimedRewards" : [ "", "" ]
+  } ],
+  "changeset" : {
+    "quests" : {
+      "created" : { },
+      "updatedObjectives" : [ "", "" ],
+      "updated" : { },
+      "createdObjectives" : [ "", "" ]
+    },
+    "stats" : {
+      "scopedPlayerStats" : { }
+    },
+    "items" : {
+      "deleted" : { },
+      "created" : [ "", "" ],
+      "updated" : [ "", "" ]
+    },
+    "notifications" : [ "", "" ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_22">inline_response_200_22</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerLevelsListGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/levels/list</code></pre></div>
+    <div class="method-summary">GET list (<span class="nickname">pioneerLevelsListGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_33">inline_response_200_33</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "levels" : [ {
+    "currentLevel" : 0.8008281904610115,
+    "currentXp" : 6.027456183070403,
+    "groupId" : 1.4658129805029452,
+    "unclaimedRewards" : [ "", "" ]
+  }, {
+    "currentLevel" : 0.8008281904610115,
+    "currentXp" : 6.027456183070403,
+    "groupId" : 1.4658129805029452,
+    "unclaimedRewards" : [ "", "" ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_33">inline_response_200_33</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerMasteryObjectivesGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/mastery/objectives</code></pre></div>
+    <div class="method-summary">GET objectives (<span class="nickname">pioneerMasteryObjectivesGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_27">inline_response_200_27</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "objectives" : [ {
+    "amount" : 0.8008281904610115,
+    "milestoneRewardStates" : [ "milestoneRewardStates", "milestoneRewardStates" ],
+    "objectiveId" : 6.027456183070403,
+    "rankWindowId" : 1.4658129805029452
+  }, {
+    "amount" : 0.8008281904610115,
+    "milestoneRewardStates" : [ "milestoneRewardStates", "milestoneRewardStates" ],
+    "objectiveId" : 6.027456183070403,
+    "rankWindowId" : 1.4658129805029452
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_27">inline_response_200_27</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerProjectsListPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/projects/list</code></pre></div>
+    <div class="method-summary">POST list (<span class="nickname">pioneerProjectsListPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#projects_list_body">projects_list_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_25">inline_response_200_25</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "projects" : [ {
+    "projectAssetId" : 0.8008281904610115,
+    "state" : "state",
+    "projectId" : "projectId",
+    "goals" : [ "", "" ]
+  }, {
+    "projectAssetId" : 0.8008281904610115,
+    "state" : "state",
+    "projectId" : "projectId",
+    "goals" : [ "", "" ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_25">inline_response_200_25</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerQuestsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/quests</code></pre></div>
+    <div class="method-summary">GET quests (<span class="nickname">pioneerQuestsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_20">inline_response_200_20</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "quests" : [ {
+    "gameAssetId" : 6.027456183070403,
+    "instanceId" : "instanceId",
+    "edges" : [ {
+      "questInstanceId" : "questInstanceId",
+      "requiredState" : "requiredState"
+    }, {
+      "questInstanceId" : "questInstanceId",
+      "requiredState" : "requiredState"
+    } ],
+    "etag" : "etag",
+    "objectives" : [ "", "" ],
+    "state" : "state",
+    "expiresAt" : 0.8008281904610115,
+    "updatedAt" : 1.4658129805029452
+  }, {
+    "gameAssetId" : 6.027456183070403,
+    "instanceId" : "instanceId",
+    "edges" : [ {
+      "questInstanceId" : "questInstanceId",
+      "requiredState" : "requiredState"
+    }, {
+      "questInstanceId" : "questInstanceId",
+      "requiredState" : "requiredState"
+    } ],
+    "etag" : "etag",
+    "objectives" : [ "", "" ],
+    "state" : "state",
+    "expiresAt" : 0.8008281904610115,
+    "updatedAt" : 1.4658129805029452
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_20">inline_response_200_20</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerQuestsReconcilePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/quests/reconcile</code></pre></div>
+    <div class="method-summary">POST reconcile (<span class="nickname">pioneerQuestsReconcilePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_35">inline_response_200_35</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "changeset" : {
+    "quests" : {
+      "created" : { },
+      "updatedObjectives" : [ "", "" ],
+      "updated" : { },
+      "createdObjectives" : [ "", "" ]
+    },
+    "stats" : {
+      "scopedPlayerStats" : { }
+    },
+    "items" : {
+      "deleted" : { },
+      "created" : [ "", "" ],
+      "updated" : [ "", "" ]
+    },
+    "notifications" : [ "", "" ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_35">inline_response_200_35</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerQuestsRerollCostGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/quests/reroll-cost</code></pre></div>
+    <div class="method-summary">GET reroll-cost (<span class="nickname">pioneerQuestsRerollCostGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_17">inline_response_200_17</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "rerollsRemainingToday" : 1.4658129805029452,
+  "costAmount" : 0.8008281904610115,
+  "costGameAssetId" : 6.027456183070403
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_17">inline_response_200_17</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerRaidersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/raiders</code></pre></div>
+    <div class="method-summary">GET raiders (<span class="nickname">pioneerRaidersGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_26">inline_response_200_26</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "raiders" : [ {
+    "createdAt" : 0.8008281904610115,
+    "raiderId" : "raiderId",
+    "state" : "state"
+  }, {
+    "createdAt" : 0.8008281904610115,
+    "raiderId" : "raiderId",
+    "state" : "state"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_26">inline_response_200_26</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerRankListPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/rank/list</code></pre></div>
+    <div class="method-summary">POST list (<span class="nickname">pioneerRankListPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#rank_list_body">rank_list_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_7">inline_response_200_7</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "userRanks" : [ {
+    "tenancyUserExternalId" : 1.4658129805029452,
+    "rankId" : 6.027456183070403
+  }, {
+    "tenancyUserExternalId" : 1.4658129805029452,
+    "rankId" : 6.027456183070403
+  } ],
+  "rankWindowId" : 0.8008281904610115
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_7">inline_response_200_7</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerSeasonalRewardsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/seasonal-rewards</code></pre></div>
+    <div class="method-summary">GET seasonal-rewards (<span class="nickname">pioneerSeasonalRewardsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_10">inline_response_200_10</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "states" : [ {
+    "rankId" : 0.8008281904610115,
+    "rankSeasonId" : 6.027456183070403,
+    "state" : "state"
+  }, {
+    "rankId" : 0.8008281904610115,
+    "rankSeasonId" : 6.027456183070403,
+    "state" : "state"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_10">inline_response_200_10</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerStatsPlayerV2Post"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/stats/player-v2</code></pre></div>
+    <div class="method-summary">POST player-v2 (<span class="nickname">pioneerStatsPlayerV2Post</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#stats_playerv2_body">stats_playerv2_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_24">inline_response_200_24</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "scopedPlayerStats" : [ {
+    "playerStats" : [ {
+      "eventId" : 6.027456183070403,
+      "amount" : 0.8008281904610115,
+      "targetId" : 1.4658129805029452
+    }, {
+      "eventId" : 6.027456183070403,
+      "amount" : 0.8008281904610115,
+      "targetId" : 1.4658129805029452
+    } ],
+    "scope" : {
+      "discriminant" : "discriminant"
+    }
+  }, {
+    "playerStats" : [ {
+      "eventId" : 6.027456183070403,
+      "amount" : 0.8008281904610115,
+      "targetId" : 1.4658129805029452
+    }, {
+      "eventId" : 6.027456183070403,
+      "amount" : 0.8008281904610115,
+      "targetId" : 1.4658129805029452
+    } ],
+    "scope" : {
+      "discriminant" : "discriminant"
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_24">inline_response_200_24</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerStoreGetMicrosoftStoreAccessTokenGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/store/get-microsoft-store-access-token</code></pre></div>
+    <div class="method-summary">GET get-microsoft-store-access-token (<span class="nickname">pioneerStoreGetMicrosoftStoreAccessTokenGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_21">inline_response_200_21</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "expiresIn" : 0.8008281904610115,
+  "raw" : "raw"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_21">inline_response_200_21</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerStoreReconcilePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/store/reconcile</code></pre></div>
+    <div class="method-summary">POST reconcile (<span class="nickname">pioneerStoreReconcilePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#store_reconcile_body">store_reconcile_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_40">inline_response_200_40</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "productIds" : [ 0.8008281904610115, 0.8008281904610115 ],
+  "changeset" : {
+    "quests" : {
+      "created" : { },
+      "updatedObjectives" : [ "", "" ],
+      "updated" : { },
+      "createdObjectives" : [ "", "" ]
+    },
+    "stats" : {
+      "scopedPlayerStats" : { }
+    },
+    "items" : {
+      "deleted" : { },
+      "created" : [ "", "" ],
+      "updated" : [ "", "" ]
+    },
+    "notifications" : [ "", "" ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_40">inline_response_200_40</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerTenancyUserSyncPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pioneer/tenancy-user/sync</code></pre></div>
+    <div class="method-summary">POST sync (<span class="nickname">pioneerTenancyUserSyncPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{ }</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pioneerTimedOffersTransactionsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pioneer/timed-offers/transactions</code></pre></div>
+    <div class="method-summary">GET transactions (<span class="nickname">pioneerTimedOffersTransactionsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_19">inline_response_200_19</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "timedOfferTransactions" : [ {
+    "amount" : 0.8008281904610115,
+    "durationInSeconds" : 6.027456183070403,
+    "offerId" : 1.4658129805029452,
+    "startTime" : 5.962133916683182,
+    "transactionId" : "transactionId",
+    "ownerInstanceId" : "ownerInstanceId"
+  }, {
+    "amount" : 0.8008281904610115,
+    "durationInSeconds" : 6.027456183070403,
+    "offerId" : 1.4658129805029452,
+    "startTime" : 5.962133916683182,
+    "transactionId" : "transactionId",
+    "ownerInstanceId" : "ownerInstanceId"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_19">inline_response_200_19</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedAnnouncementsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/announcements</code></pre></div>
+    <div class="method-summary">POST announcements (<span class="nickname">sharedAnnouncementsPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_28">inline_response_200_28</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "announcements" : [ {
+    "viewId" : 5.637376656633329,
+    "contents" : [ {
+      "value" : "value",
+      "key" : "key"
+    }, {
+      "value" : "value",
+      "key" : "key"
+    } ],
+    "hookId" : 0.8008281904610115,
+    "active" : true,
+    "id" : 6.027456183070403,
+    "endAt" : "endAt",
+    "templateId" : 5.962133916683182,
+    "startAt" : "startAt",
+    "order" : 1.4658129805029452
+  }, {
+    "viewId" : 5.637376656633329,
+    "contents" : [ {
+      "value" : "value",
+      "key" : "key"
+    }, {
+      "value" : "value",
+      "key" : "key"
+    } ],
+    "hookId" : 0.8008281904610115,
+    "active" : true,
+    "id" : 6.027456183070403,
+    "endAt" : "endAt",
+    "templateId" : 5.962133916683182,
+    "startAt" : "startAt",
+    "order" : 1.4658129805029452
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_28">inline_response_200_28</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedAnticheatRestrictionsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/anticheat/restrictions</code></pre></div>
+    <div class="method-summary">POST restrictions (<span class="nickname">sharedAnticheatRestrictionsPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#anticheat_restrictions_body">anticheat_restrictions_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_2">inline_response_200_2</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "isRestricted" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_2">inline_response_200_2</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedDistributionPlatformAchievementsGetPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/distribution-platform-achievements/get</code></pre></div>
+    <div class="method-summary">POST distribution-platform-achievements get (<span class="nickname">sharedDistributionPlatformAchievementsGetPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#distributionplatformachievements_get_body">distributionplatformachievements_get_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_29">inline_response_200_29</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "achievements" : [ {
+    "completed_time" : "completed_time",
+    "progress" : 0.8008281904610115,
+    "etag" : "etag",
+    "id" : "id",
+    "platform" : "platform"
+  }, {
+    "completed_time" : "completed_time",
+    "progress" : 0.8008281904610115,
+    "etag" : "etag",
+    "id" : "id",
+    "platform" : "platform"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_29">inline_response_200_29</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedGameSettingsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/game-settings</code></pre></div>
+    <div class="method-summary">GET game-settings (<span class="nickname">sharedGameSettingsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_16">inline_response_200_16</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "entries" : [ {
+    "value" : "value",
+    "key" : "key"
+  }, {
+    "value" : "value",
+    "key" : "key"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_16">inline_response_200_16</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedGetPersistentPlayerKeysPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/get-persistent-player-keys</code></pre></div>
+    <div class="method-summary">POST get-persistent-player-keys (<span class="nickname">sharedGetPersistentPlayerKeysPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_6">inline_response_200_6</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "persistentPlayerKeys" : [ {
+    "etag" : "etag",
+    "value" : "value",
+    "key" : "key"
+  }, {
+    "etag" : "etag",
+    "value" : "value",
+    "key" : "key"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_6">inline_response_200_6</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedHeartbeatPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/heartbeat</code></pre></div>
+    <div class="method-summary">POST heartbeat (<span class="nickname">sharedHeartbeatPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedInboxGetMessagesPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/inbox/get-messages</code></pre></div>
+    <div class="method-summary">POST get-messages (<span class="nickname">sharedInboxGetMessagesPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#inbox_getmessages_body">inbox_getmessages_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_32">inline_response_200_32</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "messages" : [ {
+    "messageName" : "messageName",
+    "payload" : {
+      "sourceType" : "sourceType",
+      "compensationId" : "compensationId",
+      "userId" : 6.027456183070403,
+      "discriminator" : "discriminator"
+    },
+    "messageId" : 0.8008281904610115,
+    "sentAt" : "sentAt",
+    "seen" : true,
+    "favorited" : true
+  }, {
+    "messageName" : "messageName",
+    "payload" : {
+      "sourceType" : "sourceType",
+      "compensationId" : "compensationId",
+      "userId" : 6.027456183070403,
+      "discriminator" : "discriminator"
+    },
+    "messageId" : 0.8008281904610115,
+    "sentAt" : "sentAt",
+    "seen" : true,
+    "favorited" : true
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_32">inline_response_200_32</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedLocalizationsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/localizations</code></pre></div>
+    <div class="method-summary">POST localizations (<span class="nickname">sharedLocalizationsPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#shared_localizations_body">shared_localizations_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_15">inline_response_200_15</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "entries" : [ {
+    "namespace" : "namespace",
+    "source" : "source",
+    "value" : "value",
+    "key" : "key"
+  }, {
+    "namespace" : "namespace",
+    "source" : "source",
+    "value" : "value",
+    "key" : "key"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_15">inline_response_200_15</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedManifestPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/manifest</code></pre></div>
+    <div class="method-summary">POST manifest (<span class="nickname">sharedManifestPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#shared_manifest_body">shared_manifest_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_8">inline_response_200_8</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "partitioningHash" : "partitioningHash",
+  "retrievedAt" : 6.027456183070403,
+  "nonPartitioningHash" : "nonPartitioningHash",
+  "validUntil" : 5.962133916683182,
+  "buildId" : "buildId",
+  "partitioningBody" : {
+    "p2CharacterSkillItemsArtifact" : "p2CharacterSkillItemsArtifact",
+    "serverBuildIdentifier" : "serverBuildIdentifier",
+    "p2PlayerStatsEventTargetsArtifact" : "p2PlayerStatsEventTargetsArtifact",
+    "itemRepairsArtifact" : "itemRepairsArtifact",
+    "p2OffersArtifact" : "p2OffersArtifact",
+    "gameflags.live_event_active" : "gameflags.live_event_active",
+    "p2RankSeasonsArtifact" : "p2RankSeasonsArtifact",
+    "gameflags.devmode" : "gameflags.devmode",
+    "gameflags.enable_winter_event_theme_in_frontend" : "gameflags.enable_winter_event_theme_in_frontend",
+    "p2ProjectsArtifact" : "p2ProjectsArtifact",
+    "p2CommunityEventsArtifact" : "p2CommunityEventsArtifact",
+    "p2XpLevelGroupsArtifact" : "p2XpLevelGroupsArtifact",
+    "gameflags.disable_item_modification_RPCs" : "gameflags.disable_item_modification_RPCs",
+    "p2ItemsArtifact" : "p2ItemsArtifact",
+    "gameflags.enable_discord_social_integration" : "gameflags.enable_discord_social_integration",
+    "announcementsArtifact" : "announcementsArtifact",
+    "matchmakingScenariosArtifact" : "matchmakingScenariosArtifact",
+    "p2ItemRecycleArtifact" : "p2ItemRecycleArtifact",
+    "gameflags.anticheat_floating_memory" : "gameflags.anticheat_floating_memory",
+    "gameflags.enable_onboarding" : "gameflags.enable_onboarding",
+    "gameflags.enable_pendulum_ice_movement" : "gameflags.enable_pendulum_ice_movement",
+    "p2ExpeditionRewardTiersArtifact" : "p2ExpeditionRewardTiersArtifact",
+    "p2CodexCategoriesArtifact" : "p2CodexCategoriesArtifact",
+    "p2QuestsV2Artifact" : "p2QuestsV2Artifact",
+    "gameflags.constructable_clamp_destroyed_part_forces" : "gameflags.constructable_clamp_destroyed_part_forces",
+    "p2RankWindowsArtifact" : "p2RankWindowsArtifact",
+    "p2CratesArtifact" : "p2CratesArtifact",
+    "p2BattlePassLayoutArtifact" : "p2BattlePassLayoutArtifact",
+    "p2ItemEconomyArtifact" : "p2ItemEconomyArtifact",
+    "gameSettingsArtifact" : "gameSettingsArtifact",
+    "itemScrapsArtifact" : "itemScrapsArtifact",
+    "gameflags.embark_ctrlrigpbd_validate" : "gameflags.embark_ctrlrigpbd_validate",
+    "p2RandomItemPoolsArtifact" : "p2RandomItemPoolsArtifact",
+    "gameflags.enable_voice_conversion" : "gameflags.enable_voice_conversion",
+    "p2XpLevelsArtifact" : "p2XpLevelsArtifact",
+    "gameflags.enable_raider_den_shelf_overflow" : "gameflags.enable_raider_den_shelf_overflow",
+    "p2StoreViewV2Artifact" : "p2StoreViewV2Artifact",
+    "p2ItemUpgradesArtifact" : "p2ItemUpgradesArtifact",
+    "encryptedVideosArtifact" : "encryptedVideosArtifact",
+    "p2QuestsConfigArtifact" : "p2QuestsConfigArtifact",
+    "tweaksArtifact" : "tweaksArtifact",
+    "gameflags.anticheat" : "gameflags.anticheat",
+    "p2HierarchicalItemConfigArtifactKey" : "p2HierarchicalItemConfigArtifactKey",
+    "gameflags.merge_weapon_parts" : "gameflags.merge_weapon_parts",
+    "enemyGroupsArtifact" : "enemyGroupsArtifact",
+    "gameflags.enable_lone_wolf" : "gameflags.enable_lone_wolf",
+    "p2GeneratedLoadoutArtifact" : "p2GeneratedLoadoutArtifact",
+    "gameflags.enable_static_jit_stack_trace_in_shipping" : "gameflags.enable_static_jit_stack_trace_in_shipping",
+    "gameflags.no_free_ammo_when_starting" : "gameflags.no_free_ammo_when_starting",
+    "p2PlayerStatsEventsArtifact" : "p2PlayerStatsEventsArtifact",
+    "p2ProductArtifact" : "p2ProductArtifact",
+    "gameflags.show_voip_errors" : "gameflags.show_voip_errors",
+    "p2ProductsViewEntryV3Artifact" : "p2ProductsViewEntryV3Artifact",
+    "gameflags.show_voip_errors_windows_mic_privacy" : "gameflags.show_voip_errors_windows_mic_privacy",
+    "gameflags.enable_fe_graduation_logic" : "gameflags.enable_fe_graduation_logic",
+    "p2DefaultInventoryArtifact" : "p2DefaultInventoryArtifact",
+    "p2BattlePassV2Artifact" : "p2BattlePassV2Artifact",
+    "p2SkillTreeNodesArtifact" : "p2SkillTreeNodesArtifact",
+    "p2XpEventRewardsArtifact" : "p2XpEventRewardsArtifact",
+    "eventsArtifact" : "eventsArtifact",
+    "gameflags.microphone_test" : "gameflags.microphone_test",
+    "p2PlaytestProfilesArtifact" : "p2PlaytestProfilesArtifact",
+    "seasonArtifact" : "seasonArtifact",
+    "gameflags.enable_new_spawn_system" : "gameflags.enable_new_spawn_system",
+    "persistentPlayerKeyArtifact" : "persistentPlayerKeyArtifact",
+    "gameflags.enable_ui_texture_new_streaming" : "gameflags.enable_ui_texture_new_streaming",
+    "gameflags.anticheat_file_integrity" : "gameflags.anticheat_file_integrity",
+    "gameflags.show_voip_errors_overlay" : "gameflags.show_voip_errors_overlay",
+    "localizationArtifact" : "localizationArtifact",
+    "p2MasteryObjectivesArtifact" : "p2MasteryObjectivesArtifact",
+    "p2RanksArtifact" : "p2RanksArtifact"
+  },
+  "id" : 0.8008281904610115,
+  "validFrom" : 1.4658129805029452,
+  "nonPartitioningBody" : {
+    "buildMode" : "buildMode"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_8">inline_response_200_8</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedNotificationsPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/notifications</code></pre></div>
+    <div class="method-summary">POST notifications (<span class="nickname">sharedNotificationsPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#shared_notifications_body">shared_notifications_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_1">inline_response_200_1</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "nextFromNotificationId" : "nextFromNotificationId",
+  "notifications" : { }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_1">inline_response_200_1</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedPlayerActivityPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/player/activity</code></pre></div>
+    <div class="method-summary">POST activity (<span class="nickname">sharedPlayerActivityPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_36">inline_response_200_36</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "match_id" : "match_id",
+  "scenarioMetadata" : {
+    "allowReconnects" : true,
+    "scenarioName" : "scenarioName"
+  },
+  "etag" : "etag",
+  "state" : 0.8008281904610115,
+  "currentState" : "currentState",
+  "ticket_id" : "ticket_id",
+  "lobby_id" : "lobby_id",
+  "tournament_id" : "tournament_id"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_36">inline_response_200_36</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedProfileByThirdpartyUseridPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/profile/by-thirdparty-userid</code></pre></div>
+    <div class="method-summary">POST by-thirdparty-userid (<span class="nickname">sharedProfileByThirdpartyUseridPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#profile_bythirdpartyuserid_body">profile_bythirdpartyuserid_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_42">inline_response_200_42</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "profiles" : { }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_42">inline_response_200_42</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedProxyGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/proxy</code></pre></div>
+    <div class="method-summary">GET proxy (<span class="nickname">sharedProxyGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_14">inline_response_200_14</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "endpoints" : [ {
+    "trafficPort" : 6.027456183070403,
+    "host" : "host",
+    "qcmpPort" : 0.8008281904610115,
+    "region" : "region"
+  }, {
+    "trafficPort" : 6.027456183070403,
+    "host" : "host",
+    "qcmpPort" : 0.8008281904610115,
+    "region" : "region"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_14">inline_response_200_14</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedQuilkinGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/quilkin</code></pre></div>
+    <div class="method-summary">GET quilkin (<span class="nickname">sharedQuilkinGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_12">inline_response_200_12</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "packet_loss_threshold_duration_secs" : 5.962133916683182,
+  "packet_loss_threshold_percent" : 5.637376656633329,
+  "packet_jitter_threshold_duration_secs" : 1.4658129805029452,
+  "initial_cooldown_duration_secs" : 6.027456183070403,
+  "failover_cooldown_duration_secs" : 0.8008281904610115,
+  "proxy_failover" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_12">inline_response_200_12</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedScenariosPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/scenarios</code></pre></div>
+    <div class="method-summary">POST scenarios (<span class="nickname">sharedScenariosPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#shared_scenarios_body">shared_scenarios_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_18">inline_response_200_18</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "matchmakingScenarios" : [ {
+    "UISettings" : {
+      "activePeriods" : { },
+      "visible" : true,
+      "active" : true,
+      "visiblePeriods" : { },
+      "disabled" : true
+    },
+    "name" : "name",
+    "pioneerSettings" : {
+      "mapConditions" : {
+        "isOptIn" : true,
+        "conditionSettings" : [ {
+          "condition" : "condition",
+          "durationInSecond" : 5.637376656633329,
+          "conditionAssetId" : 5.962133916683182,
+          "startTime" : 2.3021358869347655
+        }, {
+          "condition" : "condition",
+          "durationInSecond" : 5.637376656633329,
+          "conditionAssetId" : 5.962133916683182,
+          "startTime" : 2.3021358869347655
+        } ]
+      }
+    },
+    "parameters" : {
+      "characterLevelRequiredToPlay" : 0.8008281904610115,
+      "maxSquadSize" : 6.027456183070403,
+      "roundsRequiredToPlay" : 1.4658129805029452,
+      "mapName" : "mapName",
+      "gameMode" : "gameMode",
+      "featureFlags" : { }
+    }
+  }, {
+    "UISettings" : {
+      "activePeriods" : { },
+      "visible" : true,
+      "active" : true,
+      "visiblePeriods" : { },
+      "disabled" : true
+    },
+    "name" : "name",
+    "pioneerSettings" : {
+      "mapConditions" : {
+        "isOptIn" : true,
+        "conditionSettings" : [ {
+          "condition" : "condition",
+          "durationInSecond" : 5.637376656633329,
+          "conditionAssetId" : 5.962133916683182,
+          "startTime" : 2.3021358869347655
+        }, {
+          "condition" : "condition",
+          "durationInSecond" : 5.637376656633329,
+          "conditionAssetId" : 5.962133916683182,
+          "startTime" : 2.3021358869347655
+        } ]
+      }
+    },
+    "parameters" : {
+      "characterLevelRequiredToPlay" : 0.8008281904610115,
+      "maxSquadSize" : 6.027456183070403,
+      "roundsRequiredToPlay" : 1.4658129805029452,
+      "mapName" : "mapName",
+      "gameMode" : "gameMode",
+      "featureFlags" : { }
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_18">inline_response_200_18</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSetPersistentPlayerKeysPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/set-persistent-player-keys</code></pre></div>
+    <div class="method-summary">POST set-persistent-player-keys (<span class="nickname">sharedSetPersistentPlayerKeysPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#shared_setpersistentplayerkeys_body">shared_setpersistentplayerkeys_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_6">inline_response_200_6</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "persistentPlayerKeys" : [ {
+    "etag" : "etag",
+    "value" : "value",
+    "key" : "key"
+  }, {
+    "etag" : "etag",
+    "value" : "value",
+    "key" : "key"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_6">inline_response_200_6</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialBlockPlayersBlockedPlayersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/social/block-players/blocked-players</code></pre></div>
+    <div class="method-summary">GET blocked-players (<span class="nickname">sharedSocialBlockPlayersBlockedPlayersGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_9">inline_response_200_9</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "maxNumBlockedUsers" : 0.8008281904610115,
+  "profiles" : [ {
+    "accountId" : 1.4658129805029452,
+    "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+    "thirdPartyUserId" : "thirdPartyUserId",
+    "displayName" : {
+      "name" : "name",
+      "discriminator" : "discriminator"
+    },
+    "emailIsVerified" : true,
+    "tos_version_seen" : "tos_version_seen",
+    "tenancyUserId" : 5.962133916683182,
+    "email" : "email",
+    "voiceChatModerationConsent" : true
+  }, {
+    "accountId" : 1.4658129805029452,
+    "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+    "thirdPartyUserId" : "thirdPartyUserId",
+    "displayName" : {
+      "name" : "name",
+      "discriminator" : "discriminator"
+    },
+    "emailIsVerified" : true,
+    "tos_version_seen" : "tos_version_seen",
+    "tenancyUserId" : 5.962133916683182,
+    "email" : "email",
+    "voiceChatModerationConsent" : true
+  } ],
+  "playerIds" : [ 6.027456183070403, 6.027456183070403 ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_9">inline_response_200_9</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialFriendsGetFriendsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/social/friends/get-friends</code></pre></div>
+    <div class="method-summary">GET get-friends (<span class="nickname">sharedSocialFriendsGetFriendsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_38">inline_response_200_38</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "friends" : [ {
+    "friendship_type" : "friendship_type",
+    "createdAt" : 0.8008281904610115,
+    "discord_user_id" : "discord_user_id",
+    "profile" : {
+      "accountId" : 6.027456183070403,
+      "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+      "thirdPartyUserId" : "thirdPartyUserId",
+      "displayName" : {
+        "name" : "name",
+        "discriminator" : "discriminator"
+      },
+      "emailIsVerified" : true,
+      "tos_version_seen" : "tos_version_seen",
+      "tenancyUserId" : 1.4658129805029452,
+      "email" : "email",
+      "voiceChatModerationConsent" : true
+    }
+  }, {
+    "friendship_type" : "friendship_type",
+    "createdAt" : 0.8008281904610115,
+    "discord_user_id" : "discord_user_id",
+    "profile" : {
+      "accountId" : 6.027456183070403,
+      "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+      "thirdPartyUserId" : "thirdPartyUserId",
+      "displayName" : {
+        "name" : "name",
+        "discriminator" : "discriminator"
+      },
+      "emailIsVerified" : true,
+      "tos_version_seen" : "tos_version_seen",
+      "tenancyUserId" : 1.4658129805029452,
+      "email" : "email",
+      "voiceChatModerationConsent" : true
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_38">inline_response_200_38</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialPartyGetGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/social/party/get</code></pre></div>
+    <div class="method-summary">GET party get (<span class="nickname">sharedSocialPartyGetGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_39">inline_response_200_39</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "max_party_size" : 0.8008281904610115,
+  "party" : {
+    "party_privacy" : "party_privacy",
+    "party_id" : "party_id",
+    "invite_permission" : "invite_permission",
+    "party_members" : [ {
+      "profile" : {
+        "accountId" : 5.962133916683182,
+        "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+        "thirdPartyUserId" : "thirdPartyUserId",
+        "displayName" : {
+          "name" : "name",
+          "discriminator" : "discriminator"
+        },
+        "emailIsVerified" : true,
+        "tos_version_seen" : "tos_version_seen",
+        "tenancyUserId" : 5.637376656633329,
+        "email" : "email",
+        "voiceChatModerationConsent" : true
+      }
+    }, {
+      "profile" : {
+        "accountId" : 5.962133916683182,
+        "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+        "thirdPartyUserId" : "thirdPartyUserId",
+        "displayName" : {
+          "name" : "name",
+          "discriminator" : "discriminator"
+        },
+        "emailIsVerified" : true,
+        "tos_version_seen" : "tos_version_seen",
+        "tenancyUserId" : 5.637376656633329,
+        "email" : "email",
+        "voiceChatModerationConsent" : true
+      }
+    } ],
+    "members_data" : [ {
+      "crossplay_enabled" : true,
+      "platform_provider" : "platform_provider",
+      "tenancy_user_id" : 1.4658129805029452,
+      "platform_session_id" : "platform_session_id",
+      "ready_for_matchmaking" : true
+    }, {
+      "crossplay_enabled" : true,
+      "platform_provider" : "platform_provider",
+      "tenancy_user_id" : 1.4658129805029452,
+      "platform_session_id" : "platform_session_id",
+      "ready_for_matchmaking" : true
+    } ],
+    "attributes" : {
+      "destination" : "destination"
+    },
+    "leader_tenancy_user_id" : 6.027456183070403,
+    "join_secret" : "join_secret"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_39">inline_response_200_39</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialPartyV2UpdatePartyMemberDataPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/social/party/v2/update-party-member-data</code></pre></div>
+    <div class="method-summary">POST update-party-member-data (<span class="nickname">sharedSocialPartyV2UpdatePartyMemberDataPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#v2_updatepartymemberdata_body">v2_updatepartymemberdata_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{ }</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialPresenceGetPost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/social/presence/get</code></pre></div>
+    <div class="method-summary">POST presence get (<span class="nickname">sharedSocialPresenceGetPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#presence_get_body">presence_get_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_41">inline_response_200_41</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "usersRichPresence" : [ {
+    "embarkUserId" : 0.8008281904610115,
+    "richPresence" : "richPresence",
+    "attributes" : { },
+    "isOnline" : true,
+    "tenancyUserId" : 6.027456183070403,
+    "platform" : "platform",
+    "updatedAt" : 1.4658129805029452
+  }, {
+    "embarkUserId" : 0.8008281904610115,
+    "richPresence" : "richPresence",
+    "attributes" : { },
+    "isOnline" : true,
+    "tenancyUserId" : 6.027456183070403,
+    "platform" : "platform",
+    "updatedAt" : 1.4658129805029452
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_41">inline_response_200_41</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialPresenceSetRichPresencePost"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /shared/social/presence/set-rich-presence</code></pre></div>
+    <div class="method-summary">POST set-rich-presence (<span class="nickname">sharedSocialPresenceSetRichPresencePost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#presence_setrichpresence_body">presence_setrichpresence_body</a> (optional)</div>
+      
+            <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+                </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      Object
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{ }</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Object">Object</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="sharedSocialRecentlyPlayedWithGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /shared/social/recently-played-with</code></pre></div>
+    <div class="method-summary">GET recently-played-with (<span class="nickname">sharedSocialRecentlyPlayedWithGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_37">inline_response_200_37</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "recentlyPlayedWith" : [ {
+    "playedAt" : "playedAt",
+    "profile" : {
+      "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+      "embarkAccountId" : 0.8008281904610115,
+      "thirdPartyUserId" : "thirdPartyUserId",
+      "displayName" : {
+        "name" : "name",
+        "discriminator" : "discriminator"
+      },
+      "tenancyUserId" : 6.027456183070403
+    },
+    "tenancyUserId" : 1.4658129805029452
+  }, {
+    "playedAt" : "playedAt",
+    "profile" : {
+      "thirdPartyLastSeenAccountName" : "thirdPartyLastSeenAccountName",
+      "embarkAccountId" : 0.8008281904610115,
+      "thirdPartyUserId" : "thirdPartyUserId",
+      "displayName" : {
+        "name" : "name",
+        "discriminator" : "discriminator"
+      },
+      "tenancyUserId" : 6.027456183070403
+    },
+    "tenancyUserId" : 1.4658129805029452
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#inline_response_200_37">inline_response_200_37</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#anticheat_restrictions_body"><code>anticheat_restrictions_body</code></a></li>
+    <li><a href="#distributionplatformachievements_get_body"><code>distributionplatformachievements_get_body</code></a></li>
+    <li><a href="#gamedata_store_body"><code>gamedata_store_body</code></a></li>
+    <li><a href="#inbox_getmessages_body"><code>inbox_getmessages_body</code></a></li>
+    <li><a href="#inline_response_200"><code>inline_response_200</code></a></li>
+    <li><a href="#inline_response_200_1"><code>inline_response_200_1</code></a></li>
+    <li><a href="#inline_response_200_10"><code>inline_response_200_10</code></a></li>
+    <li><a href="#inline_response_200_11"><code>inline_response_200_11</code></a></li>
+    <li><a href="#inline_response_200_12"><code>inline_response_200_12</code></a></li>
+    <li><a href="#inline_response_200_13"><code>inline_response_200_13</code></a></li>
+    <li><a href="#inline_response_200_14"><code>inline_response_200_14</code></a></li>
+    <li><a href="#inline_response_200_15"><code>inline_response_200_15</code></a></li>
+    <li><a href="#inline_response_200_16"><code>inline_response_200_16</code></a></li>
+    <li><a href="#inline_response_200_17"><code>inline_response_200_17</code></a></li>
+    <li><a href="#inline_response_200_18"><code>inline_response_200_18</code></a></li>
+    <li><a href="#inline_response_200_19"><code>inline_response_200_19</code></a></li>
+    <li><a href="#inline_response_200_2"><code>inline_response_200_2</code></a></li>
+    <li><a href="#inline_response_200_20"><code>inline_response_200_20</code></a></li>
+    <li><a href="#inline_response_200_21"><code>inline_response_200_21</code></a></li>
+    <li><a href="#inline_response_200_22"><code>inline_response_200_22</code></a></li>
+    <li><a href="#inline_response_200_23"><code>inline_response_200_23</code></a></li>
+    <li><a href="#inline_response_200_24"><code>inline_response_200_24</code></a></li>
+    <li><a href="#inline_response_200_25"><code>inline_response_200_25</code></a></li>
+    <li><a href="#inline_response_200_26"><code>inline_response_200_26</code></a></li>
+    <li><a href="#inline_response_200_27"><code>inline_response_200_27</code></a></li>
+    <li><a href="#inline_response_200_28"><code>inline_response_200_28</code></a></li>
+    <li><a href="#inline_response_200_29"><code>inline_response_200_29</code></a></li>
+    <li><a href="#inline_response_200_3"><code>inline_response_200_3</code></a></li>
+    <li><a href="#inline_response_200_30"><code>inline_response_200_30</code></a></li>
+    <li><a href="#inline_response_200_31"><code>inline_response_200_31</code></a></li>
+    <li><a href="#inline_response_200_32"><code>inline_response_200_32</code></a></li>
+    <li><a href="#inline_response_200_33"><code>inline_response_200_33</code></a></li>
+    <li><a href="#inline_response_200_34"><code>inline_response_200_34</code></a></li>
+    <li><a href="#inline_response_200_35"><code>inline_response_200_35</code></a></li>
+    <li><a href="#inline_response_200_36"><code>inline_response_200_36</code></a></li>
+    <li><a href="#inline_response_200_37"><code>inline_response_200_37</code></a></li>
+    <li><a href="#inline_response_200_38"><code>inline_response_200_38</code></a></li>
+    <li><a href="#inline_response_200_39"><code>inline_response_200_39</code></a></li>
+    <li><a href="#inline_response_200_4"><code>inline_response_200_4</code></a></li>
+    <li><a href="#inline_response_200_40"><code>inline_response_200_40</code></a></li>
+    <li><a href="#inline_response_200_41"><code>inline_response_200_41</code></a></li>
+    <li><a href="#inline_response_200_42"><code>inline_response_200_42</code></a></li>
+    <li><a href="#inline_response_200_5"><code>inline_response_200_5</code></a></li>
+    <li><a href="#inline_response_200_6"><code>inline_response_200_6</code></a></li>
+    <li><a href="#inline_response_200_7"><code>inline_response_200_7</code></a></li>
+    <li><a href="#inline_response_200_8"><code>inline_response_200_8</code></a></li>
+    <li><a href="#inline_response_200_9"><code>inline_response_200_9</code></a></li>
+    <li><a href="#inline_response_400"><code>inline_response_400</code></a></li>
+    <li><a href="#levels_autoclaim_body"><code>levels_autoclaim_body</code></a></li>
+    <li><a href="#pioneerinventoryv1mutate_mutations"><code>pioneerinventoryv1mutate_mutations</code></a></li>
+    <li><a href="#pioneerstorereconcile_purchaseOrigin"><code>pioneerstorereconcile_purchaseOrigin</code></a></li>
+    <li><a href="#presence_get_body"><code>presence_get_body</code></a></li>
+    <li><a href="#presence_setrichpresence_body"><code>presence_setrichpresence_body</code></a></li>
+    <li><a href="#profile_bythirdpartyuserid_body"><code>profile_bythirdpartyuserid_body</code></a></li>
+    <li><a href="#projects_list_body"><code>projects_list_body</code></a></li>
+    <li><a href="#rank_list_body"><code>rank_list_body</code></a></li>
+    <li><a href="#shared_localizations_body"><code>shared_localizations_body</code></a></li>
+    <li><a href="#shared_manifest_body"><code>shared_manifest_body</code></a></li>
+    <li><a href="#shared_notifications_body"><code>shared_notifications_body</code></a></li>
+    <li><a href="#shared_scenarios_body"><code>shared_scenarios_body</code></a></li>
+    <li><a href="#shared_setpersistentplayerkeys_body"><code>shared_setpersistentplayerkeys_body</code></a></li>
+    <li><a href="#sharedanticheatrestrictions_hardware"><code>sharedanticheatrestrictions_hardware</code></a></li>
+    <li><a href="#sharedsetpersistentplayerkeys_persistentPlayerKeys"><code>sharedsetpersistentplayerkeys_persistentPlayerKeys</code></a></li>
+    <li><a href="#sharedsocialpresencesetrichpresence_attributes"><code>sharedsocialpresencesetrichpresence_attributes</code></a></li>
+    <li><a href="#stats_playerv2_body"><code>stats_playerv2_body</code></a></li>
+    <li><a href="#store_reconcile_body"><code>store_reconcile_body</code></a></li>
+    <li><a href="#v1_mutate_body"><code>v1_mutate_body</code></a></li>
+    <li><a href="#v2_updatepartymemberdata_body"><code>v2_updatepartymemberdata_body</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="anticheat_restrictions_body"><code>anticheat_restrictions_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">hardware (optional)</div><div class="param-desc"><span class="param-type"><a href="#sharedanticheatrestrictions_hardware">array[sharedanticheatrestrictions_hardware]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="distributionplatformachievements_get_body"><code>distributionplatformachievements_get_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">platform (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="gamedata_store_body"><code>gamedata_store_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">platform (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inbox_getmessages_body"><code>inbox_getmessages_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">sessionID (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">includeSeenMessages (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200"><code>inline_response_200</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">changeset (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_1"><code>inline_response_200_1</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">nextFromNotificationId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">notifications (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_10"><code>inline_response_200_10</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">states (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_11"><code>inline_response_200_11</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">battlePassStates (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_12"><code>inline_response_200_12</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">failover_cooldown_duration_secs (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">initial_cooldown_duration_secs (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">packet_jitter_threshold_duration_secs (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">packet_loss_threshold_duration_secs (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">packet_loss_threshold_percent (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">proxy_failover (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_13"><code>inline_response_200_13</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">products (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">store-views (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_14"><code>inline_response_200_14</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">endpoints (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_15"><code>inline_response_200_15</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">entries (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_16"><code>inline_response_200_16</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">entries (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_17"><code>inline_response_200_17</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">costAmount (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">costGameAssetId (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">rerollsRemainingToday (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_18"><code>inline_response_200_18</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">matchmakingScenarios (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_19"><code>inline_response_200_19</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">timedOfferTransactions (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_2"><code>inline_response_200_2</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">isRestricted (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_20"><code>inline_response_200_20</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">quests (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_21"><code>inline_response_200_21</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">expiresIn (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">raw (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_22"><code>inline_response_200_22</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">changeset (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">levels (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_23"><code>inline_response_200_23</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_24"><code>inline_response_200_24</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">scopedPlayerStats (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_25"><code>inline_response_200_25</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">projects (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_26"><code>inline_response_200_26</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">raiders (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_27"><code>inline_response_200_27</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">objectives (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_28"><code>inline_response_200_28</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">announcements (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_29"><code>inline_response_200_29</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">achievements (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_3"><code>inline_response_200_3</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">events (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_30"><code>inline_response_200_30</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">compensations (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_31"><code>inline_response_200_31</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">effects (optional)</div><div class="param-desc"><span class="param-type"><a href="#">array[null]</a></span>  </div>
+<div class="param">items (optional)</div><div class="param-desc"><span class="param-type"><a href="#">array[null]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_32"><code>inline_response_200_32</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">messages (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_33"><code>inline_response_200_33</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">levels (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_34"><code>inline_response_200_34</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">entries (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_35"><code>inline_response_200_35</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">changeset (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_36"><code>inline_response_200_36</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">currentState (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">etag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">lobby_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">match_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">scenarioMetadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">ticket_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">tournament_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_37"><code>inline_response_200_37</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">recentlyPlayedWith (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_38"><code>inline_response_200_38</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">friends (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_39"><code>inline_response_200_39</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">max_party_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">party (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_4"><code>inline_response_200_4</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">members (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+<div class="param">rankId (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">rankWindowId (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_40"><code>inline_response_200_40</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">changeset (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">productIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_41"><code>inline_response_200_41</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">usersRichPresence (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_42"><code>inline_response_200_42</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">profiles (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_5"><code>inline_response_200_5</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">items (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_6"><code>inline_response_200_6</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">persistentPlayerKeys (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_7"><code>inline_response_200_7</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">rankWindowId (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">userRanks (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_8"><code>inline_response_200_8</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">buildId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">nonPartitioningBody (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">nonPartitioningHash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">partitioningBody (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span>  </div>
+<div class="param">partitioningHash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">retrievedAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">validFrom (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">validUntil (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_9"><code>inline_response_200_9</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">maxNumBlockedUsers (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">playerIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+<div class="param">profiles (optional)</div><div class="param-desc"><span class="param-type"><a href="#object">array[Object]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_400"><code>inline_response_400</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">message (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="levels_autoclaim_body"><code>levels_autoclaim_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">groupIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="pioneerinventoryv1mutate_mutations"><code>pioneerinventoryv1mutate_mutations</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">discriminator (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">instanceId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">amount (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">slots (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+<div class="param">etag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="pioneerstorereconcile_purchaseOrigin"><code>pioneerstorereconcile_purchaseOrigin</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">productId (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">country (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">currencyCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">localizedPrice (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="presence_get_body"><code>presence_get_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">tenancyUserIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="presence_setrichpresence_body"><code>presence_setrichpresence_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">richPresence (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">platform (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">additionalRecipients (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+<div class="param">attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#sharedsocialpresencesetrichpresence_attributes">sharedsocialpresencesetrichpresence_attributes</a></span>  </div>
+<div class="param">hideEmbarkPresence (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="profile_bythirdpartyuserid_body"><code>profile_bythirdpartyuserid_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">provider (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">ids (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="projects_list_body"><code>projects_list_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">states (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="rank_list_body"><code>rank_list_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">tenancyUserExternalIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">array[BigDecimal]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="shared_localizations_body"><code>shared_localizations_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">locale (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="shared_manifest_body"><code>shared_manifest_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">build_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">playtest_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">artifact_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">store_deployment_target (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">manifest_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">app_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="shared_notifications_body"><code>shared_notifications_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">fromNotificationId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="shared_scenarios_body"><code>shared_scenarios_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">region (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="shared_setpersistentplayerkeys_body"><code>shared_setpersistentplayerkeys_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">persistentPlayerKeys (optional)</div><div class="param-desc"><span class="param-type"><a href="#sharedsetpersistentplayerkeys_persistentPlayerKeys">array[sharedsetpersistentplayerkeys_persistentPlayerKeys]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="sharedanticheatrestrictions_hardware"><code>sharedanticheatrestrictions_hardware</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">hardwareType (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">hardwareId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="sharedsetpersistentplayerkeys_persistentPlayerKeys"><code>sharedsetpersistentplayerkeys_persistentPlayerKeys</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">etag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="sharedsocialpresencesetrichpresence_attributes"><code>sharedsocialpresencesetrichpresence_attributes</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">PartyID (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">PartySize (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">CurrentScreen (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">StartedPlayingAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">PartyIsOpen (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">PartyIsJoinable (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Platform (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="stats_playerv2_body"><code>stats_playerv2_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">scopes (optional)</div><div class="param-desc"><span class="param-type"><a href="#">array[null]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="store_reconcile_body"><code>store_reconcile_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">platform (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">platformData (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">purchaseOrigin (optional)</div><div class="param-desc"><span class="param-type"><a href="#pioneerstorereconcile_purchaseOrigin">pioneerstorereconcile_purchaseOrigin</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="v1_mutate_body"><code>v1_mutate_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">mutations (optional)</div><div class="param-desc"><span class="param-type"><a href="#pioneerinventoryv1mutate_mutations">array[pioneerinventoryv1mutate_mutations]</a></span>  </div>
+<div class="param">requestId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="v2_updatepartymemberdata_body"><code>v2_updatepartymemberdata_body</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">party_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">updated_member_tenancy_user_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span>  </div>
+<div class="param">platform_session_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">crossplay_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
