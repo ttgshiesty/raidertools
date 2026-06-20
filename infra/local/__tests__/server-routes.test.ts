@@ -16,4 +16,10 @@ describe("local server quest routes", () => {
             requiresDevAuth: true,
         });
     });
+
+    it("keeps market browsing public and market writes authenticated", () => {
+        expect(matchLocalRoutePattern("GET", "/market/listings")).toMatchObject({ key: "market", requiresDevAuth: false });
+        expect(matchLocalRoutePattern("POST", "/market/listings")).toMatchObject({ key: "market", requiresDevAuth: true });
+        expect(matchLocalRoutePattern("PATCH", "/market/listings/trade-1/offers/offer-1")).toMatchObject({ key: "market", pathParameters: { id: "trade-1", offerId: "offer-1" }, requiresDevAuth: true });
+    });
 });

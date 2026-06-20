@@ -79,7 +79,8 @@
       "lootHelper": "Looting Helper",
       "quartermaster": "Quartermaster",
       "stats": "Stats",
-      "blueprints": "Blueprints"
+      "blueprints": "Blueprints",
+      "market": "Marketplace"
     }
   },
   "dashboard": {
@@ -99,7 +100,8 @@
       "lootHelper": "Visualize crafting chains to know what to loot during raids.",
       "quartermaster": "Plan your stash, loadout, and hideout requirements in one place.",
       "stats": "Review survival, combat, loot value, raid history, and map performance from your linked account.",
-      "blueprints": "Browse every blueprint and track learned recipes from your linked ARCTracker account."
+      "blueprints": "Browse every blueprint and track learned recipes from your linked ARCTracker account.",
+      "market": "Browse item-for-item trades, submit offers, and manage your listings."
     }
   },
   "stats": {

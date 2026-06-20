@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calendar, Calculator, ListTodo, Package, History, ClipboardList, Activity, BookOpenCheck } from 'lucide-react';
+import { Calendar, Calculator, ListTodo, Package, History, ClipboardList, Activity, BookOpenCheck, ArrowLeftRight } from 'lucide-react';
 import { trackNavigation } from '../shared/utils/analytics';
 import { useLocale } from '../shared/context/LocaleContext';
 
@@ -46,6 +46,7 @@ const TOOL_METADATA = {
     nameKey: 'shared.tools.blueprints',
     descriptionKey: 'dashboard.tools.blueprints',
   },
+  market: { path: '/market', icon: ArrowLeftRight, nameKey: 'shared.tools.market', descriptionKey: 'dashboard.tools.market' },
 } as const;
 
 type ToolId = keyof typeof TOOL_METADATA;
@@ -59,6 +60,7 @@ const TOOLS = [
   TOOL_METADATA.quartermaster,
   TOOL_METADATA.stats,
   TOOL_METADATA.blueprints,
+  TOOL_METADATA.market,
 ];
 
 interface ChangelogEntry {

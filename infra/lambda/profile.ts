@@ -151,6 +151,7 @@ async function handleGet(
             arctracker: arc
                 ? {
                     linked: true,
+                    statsLinked: typeof arc.statsCiphertext === "string",
                     validatedUsername: arc.validatedUsername ?? null,
                     validatedAt: arc.validatedAt ?? null,
                 }

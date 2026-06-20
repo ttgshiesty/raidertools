@@ -24,7 +24,7 @@ export interface MeResponse {
     };
     links: {
         arctracker:
-            | { linked: true; validatedUsername: string | null; validatedAt: string | null }
+            | { linked: true; statsLinked?: boolean; validatedUsername: string | null; validatedAt: string | null }
             | { linked: false };
         embark: EmbarkLinkStatus;
     };
@@ -32,6 +32,7 @@ export interface MeResponse {
 
 export interface ArctrackerLinkStatus {
     linked: boolean;
+    statsLinked?: boolean;
     validatedUsername?: string | null;
     validatedAt?: string | null;
 }
@@ -123,6 +124,13 @@ export async function putArctrackerLink(token: string): Promise<ArctrackerLinkSt
     return readJson<ArctrackerLinkStatus>(await authedFetch('/me/links/arctracker', {
         method: 'PUT',
         body: JSON.stringify({ token }),
+    }));
+}
+
+export async function putArctrackerStatsSession(statsSessionToken: string): Promise<ArctrackerLinkStatus> {
+    return readJson<ArctrackerLinkStatus>(await authedFetch('/me/links/arctracker', {
+        method: 'PUT',
+        body: JSON.stringify({ statsSessionToken }),
     }));
 }
 

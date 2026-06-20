@@ -13,6 +13,7 @@ const TOOLS = [
   { path: '/quartermaster', nameKey: 'shared.tools.quartermaster' },
   { path: '/stats', nameKey: 'shared.tools.stats' },
   { path: '/blueprints', nameKey: 'shared.tools.blueprints' },
+  { path: '/market', nameKey: 'shared.tools.market' },
 ];
 
 const TOOLS_FOR_SWITCHER = TOOLS.filter((tool) => tool.path !== '/');
@@ -88,6 +89,10 @@ return (
 
     <div className="header-actions">
       {/* rest of your header code */}
+
+      <button className="tool-switcher" onClick={() => navigate('/market')}>
+        Marketplace
+      </button>
 
       <div className="header-dropdown" ref={dropdownRef}>
         <button className="tool-switcher" onClick={() => setIsOpen(!isOpen)}>

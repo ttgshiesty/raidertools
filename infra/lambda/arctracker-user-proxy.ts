@@ -52,6 +52,17 @@ export async function handler(
             purpose: "link",
             provider: "arctracker",
         });
+        const statsPath = rawPath.substring(PATH_PREFIX.length).startsWith("/embark/stats/");
+        const statsToken = statsPath && typeof row.Item.statsCiphertext === "string"
+            ? await decryptToken({
+                alg: row.Item.statsAlg,
+                ciphertext: row.Item.statsCiphertext,
+                iv: row.Item.statsIv,
+                tag: row.Item.statsTag,
+                encryptedDataKey: row.Item.statsEncryptedDataKey,
+                createdAt: row.Item.statsLinkedAt,
+            } as EnvelopePayload, { userId: sub, purpose: "stats", provider: "arctracker" })
+            : token;
 
         if (method === "POST" && rawPath.endsWith("/sync-now")) {
             const body = event.body ? JSON.parse(event.body) : {};
@@ -62,7 +73,7 @@ export async function handler(
         const result = await forwardArcTrackerRequest({
             subPath: rawPath.substring(PATH_PREFIX.length),
             rawQueryString: event.rawQueryString,
-            bearerToken: token,
+            bearerToken: statsToken,
             origin,
             requestHeaders: event.headers,
         });

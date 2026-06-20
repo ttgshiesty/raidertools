@@ -637,6 +637,9 @@ export class RaiderToolsStack extends cdk.Stack {
       },
     });
     this.userTable.grantReadWriteData(stateFn);
+    const marketFn = this.makeLambda('MarketFn', 'market.ts', { timeout: cdk.Duration.seconds(10), memorySize: 256, environment: { USER_TABLE_NAME: this.userTable.tableName, ALLOWED_ORIGINS: props.allowedOrigins.join(',') } });
+    this.userTable.grantReadWriteData(marketFn);
+
 
     // -----------------------------------------------------------------
     // HTTP API + custom domain + Route53 alias.
@@ -714,6 +717,14 @@ export class RaiderToolsStack extends cdk.Stack {
       'ScheduleReadIntegration',
       scheduleReadFn,
     );
+    const marketIntegration = new integrations.HttpLambdaIntegration('MarketIntegration', marketFn);
+    this.httpApi.addRoutes({ path: '/market/listings', methods: [apigwv2.HttpMethod.GET], integration: marketIntegration });
+    this.httpApi.addRoutes({ path: '/market/listings', methods: [apigwv2.HttpMethod.POST], integration: marketIntegration, authorizer: jwtAuthorizer });
+    this.httpApi.addRoutes({ path: '/market/listings/mine', methods: [apigwv2.HttpMethod.GET], integration: marketIntegration, authorizer: jwtAuthorizer });
+    this.httpApi.addRoutes({ path: '/market/listings/{id}', methods: [apigwv2.HttpMethod.DELETE], integration: marketIntegration, authorizer: jwtAuthorizer });
+    this.httpApi.addRoutes({ path: '/market/listings/{id}/offers', methods: [apigwv2.HttpMethod.POST], integration: marketIntegration, authorizer: jwtAuthorizer });
+    this.httpApi.addRoutes({ path: '/market/listings/{id}/offers/{offerId}', methods: [apigwv2.HttpMethod.PATCH], integration: marketIntegration, authorizer: jwtAuthorizer });
+    this.httpApi.addRoutes({ path: '/market/listings/{id}/confirm', methods: [apigwv2.HttpMethod.POST], integration: marketIntegration, authorizer: jwtAuthorizer });
     this.httpApi.addRoutes({
       path: '/schedule/map-events.json',
       methods: [apigwv2.HttpMethod.GET],
@@ -724,6 +735,7 @@ export class RaiderToolsStack extends cdk.Stack {
       methods: [apigwv2.HttpMethod.GET],
       integration: scheduleIntegration,
     });
+
 
     const discordIntegration = new integrations.HttpLambdaIntegration(
       'DiscordIntegration',

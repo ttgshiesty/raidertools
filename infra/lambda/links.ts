@@ -21,6 +21,7 @@ import {
     DynamoDBDocumentClient,
     GetCommand,
     PutCommand,
+    UpdateCommand,
     DeleteCommand,
 } from "@aws-sdk/lib-dynamodb";
 import {
@@ -37,6 +38,7 @@ const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
 interface PutArctrackerBody {
     token?: string;
+    statsSessionToken?: string;
 }
 
 interface ArctrackerProfileResponse {
@@ -94,6 +96,7 @@ async function handleArctrackerGet(
     if (!r.Item) return jsonResponse(200, { linked: false }, origin);
     return jsonResponse(200, {
         linked: true,
+        statsLinked: typeof r.Item.statsCiphertext === "string",
         validatedUsername: r.Item.validatedUsername ?? null,
         validatedAt: r.Item.validatedAt ?? null,
     }, origin);
@@ -106,6 +109,23 @@ async function handleArctrackerPut(
     origin: string,
 ): Promise<APIGatewayProxyResultV2> {
     const body = parseJsonBody<PutArctrackerBody>(rawBody);
+    const statsSessionToken = body?.statsSessionToken?.trim();
+    if (statsSessionToken) {
+        const existing = await ddb.send(new GetCommand({ TableName: tableName, Key: { pk: `USER#${sub}`, sk: "LINK#arctracker" } }));
+        if (!existing.Item) return jsonResponse(400, { error: "Link the ArcTracker API token first" }, origin);
+        const statsResp = await forwardArcTrackerRequest({ subPath: "/embark/stats/summary", bearerToken: statsSessionToken, origin });
+        if (typeof statsResp === "string" || !statsResp.statusCode || statsResp.statusCode < 200 || statsResp.statusCode >= 300) {
+            return jsonResponse(400, { error: "ArcTracker rejected the stats session token" }, origin);
+        }
+        const encrypted = await encryptToken(statsSessionToken, { userId: sub, purpose: "stats", provider: "arctracker" });
+        await ddb.send(new UpdateCommand({
+            TableName: tableName,
+            Key: { pk: `USER#${sub}`, sk: "LINK#arctracker" },
+            UpdateExpression: "SET statsAlg=:alg, statsCiphertext=:ciphertext, statsIv=:iv, statsTag=:tag, statsEncryptedDataKey=:key, statsLinkedAt=:now",
+            ExpressionAttributeValues: { ":alg": encrypted.alg, ":ciphertext": encrypted.ciphertext, ":iv": encrypted.iv, ":tag": encrypted.tag, ":key": encrypted.encryptedDataKey, ":now": encrypted.createdAt },
+        }));
+        return jsonResponse(200, { linked: true, statsLinked: true, validatedUsername: existing.Item.validatedUsername ?? null, validatedAt: existing.Item.validatedAt ?? null }, origin);
+    }
     const token = body?.token?.trim();
     if (!token) return jsonResponse(400, { error: "Missing token" }, origin);
     if (!/^arc_u1_[A-Za-z0-9_-]{20,}$/.test(token)) {

@@ -90,11 +90,18 @@ export function MetaForgeStats() {
           <section className="metaforge-metrics">
             {[
               [t('stats.metaforge.metrics.rounds'), formatNumber(rounds)],
+              ['Level', formatNumber(number(totals.level))],
+              ['Credits', formatNumber(number(totals.credits))],
+              ['Raider Tokens', formatNumber(number(totals.raiderTokens))],
+              ['Creds', formatNumber(number(totals.creds))],
+              ['Current XP', formatNumber(number(totals.currentXp))],
+              ['Next Level XP', formatNumber(number(totals.nextLevelXp))],
               [t('stats.metaforge.metrics.extractionRate'), percent(extracted, rounds)],
               [t('stats.metaforge.metrics.netProfit'), formatNumber(number(totals.total_net_profit))],
               [t('stats.metaforge.metrics.arcKills'), formatNumber(number(totals.total_arc_kills))],
               [t('stats.metaforge.metrics.playerKills'), formatNumber(number(totals.total_player_kills))],
               [t('stats.metaforge.metrics.playerDowns'), formatNumber(number(totals.total_player_downs ?? data.totalPlayerDowns))],
+              ['Deaths', formatNumber(number(totals.total_deaths))],
               [t('stats.metaforge.metrics.damageDealt'), formatNumber(number(totals.total_damage_dealt ?? data.totalDamageDealt))],
               [t('stats.metaforge.metrics.damageTaken'), formatNumber(number(totals.total_damage_taken))],
               [t('stats.metaforge.metrics.healing'), formatNumber(number(totals.total_healing))],

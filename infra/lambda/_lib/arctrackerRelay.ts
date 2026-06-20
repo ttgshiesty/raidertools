@@ -19,9 +19,13 @@ export async function forwardArcTrackerRequest(
     req: ForwardArcTrackerRequest,
 ): Promise<APIGatewayProxyResultV2> {
     const qs = req.rawQueryString ? `?${req.rawQueryString}` : "";
+    const cookieOnlyStats = req.subPath.startsWith("/embark/stats/");
     const upstream = await fetch(`${ARC_BASE}${req.subPath}${qs}`, {
         method: "GET",
-        headers: {
+        headers: cookieOnlyStats ? {
+            Cookie: `better-auth.session_token=${req.bearerToken}`,
+            Accept: "application/json",
+        } : {
             "X-App-Key": await getAppKey(),
             Authorization: `Bearer ${req.bearerToken}`,
             Accept: "application/json",

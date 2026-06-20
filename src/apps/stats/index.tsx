@@ -63,7 +63,7 @@ export function StatsApp() {
   const history = useMemo(() => data?.rounds.slice(0, historyLimit).reverse() ?? [], [data, historyLimit]);
   const historyMax = Math.max(1, ...history.map((round) => Math.max(round.valueExtracted, round.valueBroughtIn)));
 
-  if (!auth.user) {
+  if (!auth.user && !data) {
     return (
       <main className="content-container stats-page">
         <section className="stats-gate">
@@ -76,7 +76,7 @@ export function StatsApp() {
     );
   }
 
-  if (arctracker.state !== 'connected') {
+  if (arctracker.state !== 'connected' && !data) {
     return (
       <main className="content-container stats-page">
         <section className="stats-gate">
@@ -135,10 +135,7 @@ export function StatsApp() {
           <h2>{t('stats.title')}</h2>
           <p>{t('stats.subtitle')}</p>
         </div>
-        <button className="stats-button stats-button--secondary" type="button" disabled={loading} onClick={() => void refresh()}>
-          <RefreshCw size={16} className={loading ? 'stats-spin' : ''} />
-          {loading ? t('stats.refreshing') : t('stats.refresh')}
-        </button>
+        {arctracker.state === 'connected' ? <button className="stats-button stats-button--secondary" type="button" disabled={loading} onClick={() => void refresh()}><RefreshCw size={16} className={loading ? 'stats-spin' : ''} />{loading ? t('stats.refreshing') : t('stats.refresh')}</button> : <Link className="stats-button stats-button--secondary" to="/profile/arctracker">{t('stats.connect')}</Link>}
       </header>
 
       {error && <div className="stats-error" role="alert">{error}</div>}

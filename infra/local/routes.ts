@@ -11,7 +11,8 @@ export type LocalRouteKey =
     | "embarkProjects"
     | "embarkProjectsSync"
     | "metaforgeStats"
-    | "arctrackerUserProxy";
+    | "arctrackerUserProxy"
+    | "market";
 
 export interface MatchedRoutePattern {
     key: LocalRouteKey;
@@ -23,6 +24,10 @@ export function matchLocalRoutePattern(
     method: string,
     pathname: string,
 ): MatchedRoutePattern | null {
+    if (pathname === "/market/listings" && (method === "GET" || method === "POST")) return { key: "market", pathParameters: {}, requiresDevAuth: method !== "GET" };
+    if (pathname === "/market/listings/mine" && method === "GET") return { key: "market", pathParameters: {}, requiresDevAuth: true };
+    const marketMatch = /^\/market\/listings\/([^/]+)(?:\/(offers|confirm)(?:\/([^/]+))?)?$/.exec(pathname);
+    if (marketMatch && ["GET","POST","PATCH","DELETE"].includes(method)) return { key: "market", pathParameters: { id: decodeURIComponent(marketMatch[1]), ...(marketMatch[3] ? { offerId: decodeURIComponent(marketMatch[3]) } : {}) }, requiresDevAuth: true };
     if (pathname === "/me" && (method === "GET" || method === "PATCH")) {
         return { key: "profile", pathParameters: {}, requiresDevAuth: true };
     }

@@ -22,6 +22,7 @@ import { useAuth } from '../../shared/context/AuthContext';
 import { useLinkedAccounts } from '../../shared/context/LinkedAccountsContext';
 import { getCacheMeta } from '../../shared/services/cacheService';
 import { useLocale } from '../../shared/context/LocaleContext';
+import { putArctrackerStatsSession } from '../../shared/services/userApi';
 
 export function ArcTrackerSection() {
   const { t } = useLocale();
@@ -32,6 +33,8 @@ export function ArcTrackerSection() {
   const [lastSynced, setLastSynced] = useState<Date | null>(null);
   const [localError, setLocalError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [statsSessionToken, setStatsSessionToken] = useState('');
+  const [savingStatsToken, setSavingStatsToken] = useState(false);
 
   // Last-synced metadata is shown alongside the connected account.
   useEffect(() => {
@@ -145,6 +148,12 @@ export function ArcTrackerSection() {
                   <span>Unlink</span>
                 </button>
               </div>
+              <label htmlFor="stats-session-token" className="settings-label">Stats Session Token</label>
+              <p className="settings-help">ARCTracker stats use its signed-in session token, separately from the API token used for stash and blueprints. Enter the value of the <code>better-auth.session_token</code> cookie from your signed-in arctracker.io session.</p>
+              <div className="token-input-wrapper">
+                <input id="stats-session-token" type={showToken ? 'text' : 'password'} value={statsSessionToken} onChange={(event) => setStatsSessionToken(event.target.value)} placeholder="better-auth session token" className="token-input" disabled={savingStatsToken} />
+              </div>
+              <div className="settings-actions"><button className="settings-button settings-button--primary" disabled={!statsSessionToken.trim() || savingStatsToken} onClick={async () => { setSavingStatsToken(true); setLocalError(null); try { await putArctrackerStatsSession(statsSessionToken.trim()); setStatsSessionToken(''); setSuccessMessage('Stats session validated and saved.'); } catch (cause) { setLocalError(cause instanceof Error ? cause.message : 'Unable to save stats session.'); } finally { setSavingStatsToken(false); } }}>{savingStatsToken ? <><Loader2 size={16} className="spin" /><span>Validating...</span></> : <span>Save Stats Session</span>}</button></div>
             </>
           ) : (
             <>

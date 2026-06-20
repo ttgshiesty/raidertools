@@ -2,7 +2,7 @@ import blueprintDataJson from '../../../data/shiesty-blueprints.json';
 import type { CachedBlueprints } from '../../../shared/types/arctracker';
 import type { RawItem, RawItemsOutput } from '../../../shared/types/item';
 
-export type BlueprintStatusFilter = 'all' | 'learned' | 'unlearned';
+export type BlueprintStatusFilter = 'all' | 'learned' | 'unlearned' | 'owned';
 
 interface BlueprintReferenceRecord {
   id: string;
@@ -26,6 +26,7 @@ export interface BlueprintGridItem {
   rarity: string;
   imageFilename: string | null;
   learned: boolean | null;
+  duplicates?: number;
 }
 
 export interface BlueprintGridFilters {
@@ -75,6 +76,7 @@ export function filterBlueprintGrid(
     if (filters.category !== 'all' && blueprint.category !== filters.category) return false;
     if (filters.status === 'learned' && blueprint.learned !== true) return false;
     if (filters.status === 'unlearned' && blueprint.learned !== false) return false;
+    if (filters.status === 'owned' && (blueprint.duplicates ?? 0) < 1) return false;
     if (!query) return true;
     return [blueprint.name, blueprint.targetName, blueprint.id, blueprint.targetItemId]
       .some((value) => value.toLocaleLowerCase('en-US').includes(query));

@@ -61,6 +61,7 @@ const MetaForgeStats = lazy(() =>
 const BlueprintsApp = lazy(() =>
   import('./apps/blueprints').then((m) => ({ default: m.BlueprintsApp }))
 );
+const MarketApp = lazy(() => import('./apps/market').then((m) => ({ default: m.MarketApp })));
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
                       <Route path="metaforge" element={<MetaForgeStats />} />
                     </Route>
                     <Route path="blueprints" element={<BlueprintsApp />} />
+                    <Route path="market" element={<MarketApp />} />
                     <Route path="profile" element={<Profile />}>
                       <Route index element={<Navigate to="arctracker" replace />} />
                       <Route path="arctracker" element={<ArcTrackerSection />} />

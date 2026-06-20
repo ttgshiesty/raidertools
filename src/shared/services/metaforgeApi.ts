@@ -71,12 +71,14 @@ export interface MetaForgeStatsResponse {
 }
 
 export function normalizeMetaForgeStats(raw: unknown): MetaForgeStatsResponse {
-  const source = isRecord(raw) ? raw : {};
+  const root = isRecord(raw) ? raw : {};
+  const source = isRecord(root.data) ? root.data : root;
+  const nestedStats = isRecord(source.stats) ? source.stats : isRecord(source.totals) ? source.totals : source;
   return {
-    stats: isRecord(source.stats) ? source.stats as MetaForgeTotals : {},
-    mapStats: arrayOfRecords(source.mapStats) as unknown as MetaForgeMapStats[],
-    enemyStats: arrayOfRecords(source.enemyStats) as unknown as MetaForgeEnemyStats[],
-    weaponStats: arrayOfRecords(source.weaponStats) as unknown as MetaForgeWeaponStats[],
+    stats: nestedStats as MetaForgeTotals,
+    mapStats: arrayOfRecords(source.mapStats ?? source.maps) as unknown as MetaForgeMapStats[],
+    enemyStats: arrayOfRecords(source.enemyStats ?? source.enemies) as unknown as MetaForgeEnemyStats[],
+    weaponStats: arrayOfRecords(source.weaponStats ?? source.weapons) as unknown as MetaForgeWeaponStats[],
     ...(finiteNumber(source.totalDamageDealt) !== null
       ? { totalDamageDealt: finiteNumber(source.totalDamageDealt)! }
       : {}),
