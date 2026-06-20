@@ -28,14 +28,16 @@ import {
     questsStore,
     lootStore,
     quartermasterStore,
+    metaforgeStore,
 } from './stores';
 import { RemoteFetchError } from './userStateStore';
 import { cacheClear, setCacheOwner } from '../services/cacheService';
 import { clearLinkedQuestCache } from '../services/linkedQuestApi';
 import { clearAllRaiderBuddyCache, setRaiderBuddyCacheOwner } from '../services/raiderBuddyCache';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-    'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 
 /** Legacy `localStorage` keys from before phase 2 — wiped on sign-out. */
 const LEGACY_KEYS = [
@@ -152,6 +154,7 @@ function anyLocalDataPresent(): boolean {
     const q = questsStore.get();
     const l = lootStore.get();
     const qm = quartermasterStore.get();
+    const metaforge = metaforgeStore.get();
 
     const hasQuests = q.mode !== 'manual' || q.manualCompletedQuestIds.length > 0;
     const hasLoot = (l.goalItems.length + l.disabledItems.length + l.stashItems.length
@@ -168,7 +171,7 @@ function anyLocalDataPresent(): boolean {
         || Object.keys(qm.questToggles.itemEnabled).length > 0
         || qm.prioritizedItemIds.length > 0;
 
-    return hasQuests || hasLoot || hasQm;
+    return hasQuests || hasLoot || hasQm || Boolean(metaforge.profileId);
 }
 
 async function tryMigrateLocalToServer(): Promise<boolean> {
@@ -184,6 +187,10 @@ async function tryMigrateLocalToServer(): Promise<boolean> {
     body.loot = { schemaVersion: lootStore.schemaVersion, data: l };
     const qm = quartermasterStore.get();
     body.quartermaster = { schemaVersion: quartermasterStore.schemaVersion, data: qm };
+    const metaforge = metaforgeStore.get();
+    if (metaforge.profileId) {
+        body.metaforge = { schemaVersion: metaforgeStore.schemaVersion, data: metaforge };
+    }
 
     let resp: Response;
     try {

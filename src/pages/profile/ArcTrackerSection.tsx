@@ -3,7 +3,7 @@
  *
  * Extracted from the legacy `ProfileSettings` page. Lets users link or
  * unlink their arctracker.io account via API token. Tokens are stored
- * server-side for signed-in Raider Tools users.
+ * server-side for signed-in SHiESTY RAiDERS users.
  */
 
 import { useEffect, useState } from 'react';
@@ -77,13 +77,19 @@ export function ArcTrackerSection() {
 
   return (
     <div className="settings-page profile-section">
-      <h2 className="settings-title">{t('pages.profile.sections.arctracker')}</h2>
+      <h2 className="settings-title">
+        {t('pages.profile.sections.arctracker')}
+      </h2>
 
       <div className="settings-section">
         <div className="settings-info">
           <p>
             Connect your{' '}
-            <a href="https://arctracker.io" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://arctracker.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               arctracker.io <ExternalLink size={12} />
             </a>{' '}
             account to sync your in-game inventory and loadout data.
@@ -95,7 +101,11 @@ export function ArcTrackerSection() {
           <ol>
             <li>
               Create an account on{' '}
-              <a href="https://arctracker.io/stash" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://arctracker.io/stash"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 arctracker.io <ExternalLink size={12} />
               </a>{' '}
               and link it to your Embark game account.
@@ -118,7 +128,10 @@ export function ArcTrackerSection() {
         <div className="settings-form">
           {isAuthenticated ? (
             <>
-              <label className="settings-label" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <label
+                className="settings-label"
+                style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+              >
                 <CheckCircle size={16} style={{ color: '#4caf50' }} />
                 API Token Configured
               </label>
@@ -208,30 +221,58 @@ export function ArcTrackerSection() {
               <div className="account-detail">
                 <span className="account-label">Last Synced:</span>
                 <span className="account-value">
-                  {lastSynced.toLocaleDateString()} {lastSynced.toLocaleTimeString()}
+                  {lastSynced.toLocaleDateString()}{' '}
+                  {lastSynced.toLocaleTimeString()}
                 </span>
               </div>
             )}
-            <div className="account-detail" style={{ alignItems: 'flex-start' }}>
+            <div
+              className="account-detail"
+              style={{ alignItems: 'flex-start' }}
+            >
               <span className="account-label">Subscription:</span>
               {isSubscribed ? (
-                <span className="account-value" style={{ color: '#f59e0b', display: 'inline-flex', alignItems: 'center', gap: 4 }}>
+                <span
+                  className="account-value"
+                  style={{
+                    color: '#f59e0b',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                  }}
+                >
                   <Sparkles size={16} />
                   Premium
                 </span>
               ) : (
-                <span className="account-value" style={{ fontWeight: 400, lineHeight: 1.5 }}>
+                <span
+                  className="account-value"
+                  style={{ fontWeight: 400, lineHeight: 1.5 }}
+                >
                   Having a Premium subscription at{' '}
-                  <a href="https://arctracker.io" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://arctracker.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     arctracker.io <ExternalLink size={12} />
                   </a>{' '}
-                  will enable Raider Tools to auto-sync your game data. Without the subscription, you need to
-                  sync your game data on the{' '}
-                  <a href="https://arctracker.io/stash" target="_blank" rel="noopener noreferrer">
+                  will enable SHiESTY RAiDERS to auto-sync your game data.
+                  Without the subscription, you need to sync your game data on
+                  the{' '}
+                  <a
+                    href="https://arctracker.io/stash"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     arctracker.io/stash <ExternalLink size={12} />
                   </a>{' '}
-                  page every time before syncing in Raider Tools.{' '}
-                  <a href="https://arctracker.io/subscribe" target="_blank" rel="noopener noreferrer">
+                  page every time before syncing in SHiESTY RAiDERS.{' '}
+                  <a
+                    href="https://arctracker.io/subscribe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Subscribe here <ExternalLink size={12} />
                   </a>
                   .

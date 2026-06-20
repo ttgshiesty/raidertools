@@ -138,7 +138,7 @@
   overflow: hidden;
 
   &.rarity-common {
-    border-color: #9e9e9e;
+    border-color: #0080ff;
     background-image: url('/images/rarities/common_bg.png');
   }
   &.rarity-uncommon {
@@ -169,7 +169,7 @@
   border-radius: 10px;
   background: #3c3c3c;
   border: 1px solid #555;
-  color: #aaa;
+  color: #ffe600;
   font-size: 11px;
   font-weight: 600;
   flex-shrink: 0;
@@ -178,7 +178,7 @@
 .item-group-toggle {
   display: flex;
   align-items: center;
-  color: #888;
+  color: #00e600;
   flex-shrink: 0;
 }
 
@@ -270,7 +270,7 @@
   background-position: left center;
   
   &.rarity-common {
-    border-color: #9e9e9e;
+    border-color: #0080ff;
     background-image: url('/images/rarities/common_bg.png');
   }
   &.rarity-uncommon {
@@ -392,8 +392,8 @@
     border: 1px solid;
     
     &.rarity-common {
-      background: #9e9e9e;
-      border-color: #9e9e9e;
+      background: #0080ff;
+      border-color: #0080ff;
       color: #1a1a1a;
     }
     
@@ -446,7 +446,7 @@
 }
 
 .filters-toggle {
-  color: #888;
+  color: #00e600;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -470,7 +470,7 @@
   @include section-title;
   font-size: 12px;
   min-width: 60px;
-  color: #888;
+  color: #00e600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   flex-shrink: 0;
@@ -541,10 +541,10 @@
     font-weight: 600;
 
     &.rarity-common {
-      border-color: #9e9e9e;
+      border-color: #0080ff;
 
       &.enabled {
-        background: #9e9e9e;
+        background: #0080ff;
         color: #1a1a1a;
       }
     }
@@ -643,7 +643,7 @@
   // No matches state - gray/transparent for enabled
   .filter-button.enabled.no-matches & {
     background: rgba(255, 255, 255, 0.15);
-    color: #888;
+    color: #00e600;
   }
   
   .filter-button.disabled.no-matches & {
@@ -668,7 +668,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #888;
+  color: #00e600;
   font-size: 16px;
 }
 
@@ -703,7 +703,7 @@
 .accordion-no-results {
   padding: 20px;
   text-align: center;
-  color: #888;
+  color: #00e600;
   font-size: 14px;
 }
 
@@ -795,7 +795,7 @@
   overflow: hidden;
 
   &.rarity-common {
-    border-color: #9e9e9e;
+    border-color: #0080ff;
     background-image: url('/images/rarities/common_bg.png');
   }
 
@@ -841,7 +841,7 @@
   font-size: 11px;
   font-weight: 600;
   background: #3c3c3c;
-  color: #888;
+  color: #00e600;
   border: 1px solid #555;
 
   &.priority-medium {
@@ -870,7 +870,7 @@
 .accordion-item-toggle {
   font-size: 24px;
   font-weight: 300;
-  color: #888;
+  color: #00e600;
   user-select: none;
 }
 
@@ -886,7 +886,7 @@
 }
 
 .hierarchy-leaf {
-  color: #888;
+  color: #00e600;
   font-style: italic;
 }
 
@@ -907,7 +907,7 @@
 }
 
 .hierarchy-relationship {
-  color: #888;
+  color: #00e600;
   font-size: 13px;
   min-width: 100px;
   display: flex;
@@ -950,7 +950,7 @@
   overflow: hidden;
 
   &.rarity-common {
-    border-color: #9e9e9e;
+    border-color: #0080ff;
     background-image: url('/images/rarities/common_bg.png');
   }
 
@@ -1093,7 +1093,7 @@
 .accordion-stash-title {
   @include urbanist-title;
   font-size: 16px;
-  color: #888;
+  color: #00e600;
   margin: 0;
   font-weight: 600;
   text-transform: uppercase;
@@ -1108,7 +1108,7 @@
   height: 20px;
   padding: 0 8px;
   background: #3c3c3c;
-  color: #888;
+  color: #00e600;
   border: 1px solid #555;
   border-radius: 10px;
   font-size: 12px;
@@ -1118,7 +1118,7 @@
 .accordion-stash-toggle {
   font-size: 24px;
   font-weight: 300;
-  color: #888;
+  color: #00e600;
   user-select: none;
 }
 
@@ -1158,7 +1158,7 @@
 .accordion-stash-item-name {
   @include urbanist-title;
   font-size: 14px;
-  color: #888;
+  color: #00e600;
 }
 
 .accordion-stash-item-restore-button {

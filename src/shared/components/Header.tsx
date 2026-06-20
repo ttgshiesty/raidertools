@@ -11,6 +11,8 @@ const TOOLS = [
   { path: '/quests', nameKey: 'shared.tools.quests' },
   { path: '/loot-helper', nameKey: 'shared.tools.lootHelper' },
   { path: '/quartermaster', nameKey: 'shared.tools.quartermaster' },
+  { path: '/stats', nameKey: 'shared.tools.stats' },
+  { path: '/blueprints', nameKey: 'shared.tools.blueprints' },
 ];
 
 const TOOLS_FOR_SWITCHER = TOOLS.filter((tool) => tool.path !== '/');
@@ -29,7 +31,13 @@ export function Header() {
   const languageDropdownRef = useRef<HTMLDivElement>(null);
 
   const currentPathname = normalizePathname(location.pathname);
-  const currentTool = TOOLS.find((tool) => tool.path === currentPathname) || TOOLS[0];
+  const currentTool =
+    TOOLS.find((tool) => tool.path === currentPathname) ??
+    TOOLS.find(
+      (tool) =>
+        tool.path !== '/' && currentPathname.startsWith(`${tool.path}/`),
+    ) ??
+    TOOLS[0];
   const currentLocaleOption =
     localeOptions.find((option) => option.code === locale) ?? localeOptions[0];
 
@@ -59,18 +67,32 @@ export function Header() {
     setLocale(nextLocale);
     setIsLanguageOpen(false);
   };
+return (
+  <div className="app-header">
+    <button
+      className="header-logo-button"
+      onClick={() => navigate('/')}
+      aria-label="Go home"
+    >
+      <img
+        src="/main/header.png"
+        alt="Shiesty Raiders"
+        className="header-logo"
+      />
+    </button>
 
-  return (
-    <div className="app-header">
-      <h1>
-        <span className="brand-name">ARC Raiders</span>
-        <span className="app-name">{t(currentTool.nameKey)}</span>
-      </h1>
-      <div className="header-actions">
-        <div className="header-dropdown" ref={dropdownRef}>
-          <button className="tool-switcher" onClick={() => setIsOpen(!isOpen)}>
-            <span>{t('shared.header.switchTool')}</span> <ChevronDown size={16} />
-          </button>
+    <h1>
+      <span className="brand-name">shiesty raiders</span>
+      <span className="app-name">{t(currentTool.nameKey)}</span>
+    </h1>
+
+    <div className="header-actions">
+      {/* rest of your header code */}
+
+      <div className="header-dropdown" ref={dropdownRef}>
+        <button className="tool-switcher" onClick={() => setIsOpen(!isOpen)}>
+          <span>{t('shared.header.switchTool')}</span> <ChevronDown size={16} />
+        </button>
         {isOpen && (
           <div className="header-menu">
             {TOOLS_FOR_SWITCHER.map((tool) => (
@@ -78,7 +100,9 @@ export function Header() {
                 key={tool.path}
                 onClick={() => handleToolSelect(tool.path)}
                 className={`header-menu-item ${
-                  tool.path === currentPathname ? 'header-menu-item--active' : ''
+                  tool.path === currentTool.path
+                    ? 'header-menu-item--active'
+                    : ''
                 }`}
               >
                 {t(tool.nameKey)}
@@ -86,34 +110,37 @@ export function Header() {
             ))}
           </div>
         )}
-        </div>
-        <div className="header-dropdown" ref={languageDropdownRef}>
-          <button
-            className="tool-switcher"
-            onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            aria-label={t('shared.header.switchLanguage')}
-          >
-            <span className="tool-switcher-flag">{currentLocaleOption.flag}</span> <ChevronDown size={16} />
-          </button>
-          {isLanguageOpen && (
-            <div className="header-menu">
-              {localeOptions.map((option) => (
-                <button
-                  key={option.code}
-                  onClick={() => handleLocaleSelect(option.code)}
-                  className={`header-menu-item ${
-                    option.code === locale ? 'header-menu-item--active' : ''
-                  }`}
-                >
-                  <span className="header-menu-item-flag">{option.flag}</span>
-                  <span className="header-menu-item-language">{option.nativeLabel}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-        <LoginButton />
       </div>
+      <div className="header-dropdown" ref={languageDropdownRef}>
+        <button
+          className="tool-switcher"
+          onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+          aria-label={t('shared.header.switchLanguage')}
+        >
+          <span className="tool-switcher-flag">{currentLocaleOption.flag}</span>{' '}
+          <ChevronDown size={16} />
+        </button>
+        {isLanguageOpen && (
+          <div className="header-menu">
+            {localeOptions.map((option) => (
+              <button
+                key={option.code}
+                onClick={() => handleLocaleSelect(option.code)}
+                className={`header-menu-item ${
+                  option.code === locale ? 'header-menu-item--active' : ''
+                }`}
+              >
+                <span className="header-menu-item-flag">{option.flag}</span>
+                <span className="header-menu-item-language">
+                  {option.nativeLabel}
+                </span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      <LoginButton />
     </div>
-  );
+  </div>
+);
 }

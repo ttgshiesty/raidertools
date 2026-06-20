@@ -77,8 +77,9 @@ interface CognitoAuthContextValue {
 
 const Ctx = createContext<CognitoAuthContextValue | null>(null);
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-    'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 
 interface ProviderProps {
     children: ReactNode;
@@ -143,7 +144,7 @@ export function CognitoAuthProvider({ children }: ProviderProps) {
         runPostSignInSync()
             .then(() => clearSyncError('post-sign-in'))
             .catch(err => {
-                console.error('[raider-tools sync] post-sign-in sync failed', err);
+                console.error('[shiesty sync] post-sign-in sync failed', err);
                 reportSyncError('post-sign-in', classifyError(err, 'read'));
             });
     }, [user]);
@@ -160,7 +161,7 @@ export function CognitoAuthProvider({ children }: ProviderProps) {
                 await runPostSignInSync();
                 clearSyncError('post-sign-in');
             } catch (err) {
-                console.error('[raider-tools sync] post-sign-in retry failed', err);
+                console.error('[shiesty sync] post-sign-in retry failed', err);
                 reportSyncError('post-sign-in', classifyError(err, 'read'));
                 throw err;
             }

@@ -325,7 +325,8 @@ async function createCognitoUserForDiscord(
     // *look* like an email; the actual internal username stored in the
     // pool is an auto-generated UUID that we must read back from the
     // response and use for every subsequent admin call.
-    const email = discordUser.email ?? `discord-${discordUser.id}@no-email.raider-tools.app`;
+    const email =
+      discordUser.email ?? `discord-${discordUser.id}@no-email.shiesty.me`;
     const displayName = discordUser.global_name || discordUser.username;
 
     const created = await cognito.send(new AdminCreateUserCommand({

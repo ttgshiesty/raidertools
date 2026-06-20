@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ARC Raiders Master Schema",
+  "type": "object",
+  "required": ["id", "name", "rarity"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "rarity": {
+      "enum": ["common", "uncommon", "rare", "epic", "legendary", "exotic"]
+    },
+    "category": { "type": "string" },
+    "weight": { "type": "number" },
+    "vendorValue": { "type": "integer" },
+    "iconName": { "type": "string" },
+    "description": { "type": "string" },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "magazineSize": { "type": "integer" },
+        "ammoType": { "type": "string" },
+        "damage": { "type": "number" }
+      }
+    },
+    "traderData": {
+      "type": "object",
+      "properties": {
+        "trader": { "type": "string" },
+        "cost": {
+          "type": "object",
+          "properties": {
+            "itemId": { "type": "string" },
+            "quantity": { "type": "integer" }
+          }
+        },
+        "dailyLimit": { "type": ["integer", "null"] }
+      }
+    },
+    "projectData": {
+      "type": "object",
+      "properties": {
+        "requiredItemIds": { "type": "array", "items": { "type": "string" } },
+        "outputItemId": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "assetIndexCsvSchema": {
+      "schema_version": 2,
+      "format": "csv",
+      "file": "asset_index.csv",
+      "encoding": "utf-8",
+      "dialect": {
+        "header": true,
+        "delimiter": ",",
+        "quotechar": "\"",
+        "lineterminator": "\n"
+      },
+      "primary_key": ["asset_id"],
+      "null_values": [""],
+      "columns": [
+        {
+          "name": "asset_id",
+          "type": "integer",
+          "required": true,
+          "unique": true,
+          "description": "Integer game asset identifier."
+        },
+        {
+          "name": "asset_name",
+          "type": "string",
+          "required": true,
+          "description": "Internal game asset name generated from the game files."
+        },
+        {
+          "name": "display_name_en",
+          "type": "string",
+          "required": false,
+          "description": "English player-facing display name, when found in the game files."
+        },
+        {
+          "name": "description_en",
+          "type": "string",
+          "required": false,
+          "description": "English player-facing description text, when found in the game files."
+        }
+      ]
+    }
+  }
+}

@@ -8,7 +8,6 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: $bg-primary;
   color: $text-primary;
 }
@@ -162,6 +161,20 @@ h1, h2, h3, h4, h5, h6 {
   .header-menu-item-language {
     font-size: $font-md;
     line-height: 1.2;
+  }
+
+  .header-logo-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .header-logo {
+    height: 32px;
+    width: auto;
   }
 }
 

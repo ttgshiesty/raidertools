@@ -1,8 +1,9 @@
 import { getIdToken } from '../auth/cognitoClient';
 import { getCachedProfile } from './cacheService';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-  'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 
 export type SyncNowDomain = 'stash' | 'loadout' | 'blueprints' | 'hideout' | 'projects' | 'quests' | 'rounds' | 'stats';
 

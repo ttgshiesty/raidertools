@@ -6,8 +6,9 @@ import type {
   LinkedQuestSnapshot,
 } from '../types/linkedQuests';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-  'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 const CACHE_KEY = 'rt_linked_quests_snapshot';
 
 interface LinkedQuestCacheRecord {

@@ -44,7 +44,7 @@ export function getEmbarkStatusLabel(
 
 export function detectEmbarkExtensionInstalled(): boolean {
   if (typeof document === 'undefined') return false;
-  return Boolean(document.querySelector('meta[name="raider-tools-extension"]'));
+  return Boolean(document.querySelector('meta[name="shiesty-extension"]'));
 }
 
 export type DetectedBrowser = 'chrome' | 'firefox' | 'other';
@@ -58,6 +58,7 @@ export function detectBrowser(): DetectedBrowser {
 }
 
 export const EXTENSION_DOWNLOAD_URLS = {
-  chrome: 'https://chromewebstore.google.com/detail/raider-tools-embark-auth/ebhdfpellgipnfjobejhiabgnenmidol?authuser=0&hl=en-GB',
-  firefox: 'https://addons.mozilla.org/de/firefox/addon/raider-tools-embark-auth/',
+  chrome:
+    'https://chromewebstore.google.com/detail/shiesty-embark-auth/ebhdfpellgipnfjobejhiabgnenmidol?authuser=0&hl=en-GB',
+  firefox: 'https://addons.mozilla.org/de/firefox/addon/shiesty-embark-auth/',
 } as const;

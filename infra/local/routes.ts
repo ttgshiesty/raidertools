@@ -10,6 +10,7 @@ export type LocalRouteKey =
     | "embarkQuestsSync"
     | "embarkProjects"
     | "embarkProjectsSync"
+    | "metaforgeStats"
     | "arctrackerUserProxy";
 
 export interface MatchedRoutePattern {
@@ -51,6 +52,9 @@ export function matchLocalRoutePattern(
     }
     if (pathname === "/me/embark/projects/sync" && method === "POST") {
         return { key: "embarkProjectsSync", pathParameters: {}, requiresDevAuth: true };
+    }
+    if (pathname === "/me/metaforge/stats" && method === "GET") {
+        return { key: "metaforgeStats", pathParameters: {}, requiresDevAuth: true };
     }
     if (pathname.startsWith("/me/arctracker/") && (method === "GET" || method === "POST")) {
         return { key: "arctrackerUserProxy", pathParameters: {}, requiresDevAuth: true };

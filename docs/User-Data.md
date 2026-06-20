@@ -20,7 +20,7 @@ For the current direct Embark API integration, including source selection, raw s
 ## 1. High-level architecture
 ```
 Browser SPA                                            API Gateway HTTP API
-  │                                                        (api.raider-tools.app)
+  │                                                        (api.shiesty.me)
   │                                                                 │
   │  UserStateStore<T>                              JWT authorizer  │
   │   ├─ LocalBackend   (localStorage rt_state_<domain>)            │
@@ -55,7 +55,7 @@ Browser SPA                                            API Gateway HTTP API
                                             • envelope-encrypts LINK#<provider> tokens
                                             • EncryptionContext binds to {userId, purpose, provider}
 ```
-The server-side Lambdas + DynamoDB table are provisioned by `RaiderToolsStack` (eu-central-1) in `infra/lib/raider-tools-stack.ts`. The SPA-side abstractions live under `src/shared/state/`.
+The server-side Lambdas + DynamoDB table are provisioned by `RaiderToolsStack` (us-east-2) in `infra/lib/raider-tools-stack.ts`. The SPA-side abstractions live under `src/shared/state/`.
 
 ---
 ## 2. Server-side storage model
@@ -384,20 +384,20 @@ cd infra
 AWS_PROFILE=baschny npx cdk diff
 AWS_PROFILE=baschny npx cdk deploy --all --require-approval never
 ```
-All runtime resources live in a single eu-central-1 stack (`RaiderToolsStack`). The only cross-region dependency is the ACM cert for the Cognito custom domain, which has to live in us-east-1 and is therefore kept in its own stack (`RaiderToolsAuthCertStack`). Always use `cdk deploy --all` — deploying a single stack is fine for iteration but can silently miss cross-region changes.
+All runtime resources live in a single us-east-2 stack (`RaiderToolsStack`). The only cross-region dependency is the ACM cert for the Cognito custom domain, which has to live in us-east-1 and is therefore kept in its own stack (`RaiderToolsAuthCertStack`). Always use `cdk deploy --all` — deploying a single stack is fine for iteration but can silently miss cross-region changes.
 
 SPA changes ship via Amplify on push to `main`. SPA env vars that gate the remote backend:
 - `VITE_COGNITO_USER_POOL_ID` — auth concern, but required for the SPA to ever switch to `remote` backend.
 - `VITE_COGNITO_CLIENT_ID` — same.
-- `VITE_API_BASE_URL=https://api.raider-tools.app` — base URL for all `/me*` calls.
+- `VITE_API_BASE_URL=https://api.shiesty.me` — base URL for all `/me*` calls.
 
 Without these the SPA runs in anonymous mode permanently and only the `LocalBackend` is ever used.
 
 ---
 ## 9. File map (user-data cheat sheet)
 Server / infra:
-- `infra/lib/raider-tools-stack.ts` — unified eu-central-1 stack: HTTP API + custom domain, Cognito user pool, DynamoDB table, KMS CMK, schedule + relay + Discord + `/me*` Lambdas, and every API Gateway route.
-- `infra/lib/raider-tools-auth-cert-stack.ts` — us-east-1 ACM cert for `auth.raider-tools.app` (Cognito custom domain requirement).
+- `infra/lib/raider-tools-stack.ts` — unified us-east-2 stack: HTTP API + custom domain, Cognito user pool, DynamoDB table, KMS CMK, schedule + relay + Discord + `/me*` Lambdas, and every API Gateway route.
+- `infra/lib/raider-tools-auth-cert-stack.ts` — us-east-1 ACM cert for `auth.shiesty.me` (Cognito custom domain requirement).
 - `infra/lambda/profile.ts` — `/me` handler (profile + migration flag).
 - `infra/lambda/links.ts` — `/me/links/{provider}` handler (linked-account tokens).
 - `infra/lambda/embark-link.ts` — JWT-protected Embark OAuth start/complete flow.

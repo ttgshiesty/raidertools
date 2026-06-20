@@ -34,12 +34,12 @@
     border-radius: $radius-sm;
     color: $text-primary;
     font-size: $font-sm;
-    font-family: 'Urbanist', sans-serif;
+    font-weight: 900;
     transition: border-color 0.15s;
 
     &::placeholder {
       color: $text-secondary;
-      font-family: 'Urbanist', sans-serif;
+      font-weight: 900;
     }
 
     &:focus {
@@ -87,7 +87,7 @@
     border-radius: $radius-sm;
     color: $text-secondary;
     font-size: 13px;
-    font-family: 'Urbanist', sans-serif;
+    font-weight: 900;
     font-weight: 600;
     cursor: pointer;
     transition: border-color 0.15s, color 0.15s;
@@ -396,7 +396,7 @@
     bottom: 4px;
     left: 4px;
     z-index: 3;
-    font-family: 'Urbanist', sans-serif;
+    font-weight: 900;
     font-size: 22px;
     font-weight: 900;
     color: #eee;

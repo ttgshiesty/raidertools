@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "ARC Raiders Tools"
+    "name": "shiesty raiders Tools"
   },
   "shared": {
     "language": "Language",
@@ -80,17 +80,17 @@
     }
   },
   "dashboard": {
-    "title": "Raider Tools",
-    "intro": "ようこそ！これは ARC Raiders 用の個人的なツール集です。最初はゲーム内で自分を助けるための私的プロジェクトでしたが、とても便利だったので公開しました。役に立ったらぜひ教えてください。下のツールを選んで始めましょう。",
+    "title": "SHiESTY RAiDERS",
+    "intro": "ようこそ！これは shiesty raiders 用の個人的なツール集です。最初はゲーム内で自分を助けるための私的プロジェクトでしたが、とても便利だったので公開しました。役に立ったらぜひ教えてください。下のツールを選んで始めましょう。",
     "changelog": {
       "title": "Latest changes",
-      "intro": "Recent updates and additions across Raider Tools.",
+      "intro": "Recent updates and additions across SHiESTY RAiDERS.",
       "affectedApps": "Affected tools",
       "affectedAppLink": "Open affected tool",
       "allTools": "All tools"
     },
     "tools": {
-      "schedule": "ARC Raiders のマップイベントスケジュールを見やすく表示し、レイド計画を立てやすくします。",
+      "schedule": "shiesty raiders のマップイベントスケジュールを見やすく表示し、レイド計画を立てやすくします。",
       "craftCalculator": "スタッシュの空き容量を最大化するために、何個クラフトすべきかを計算します。",
       "quests": "インタラクティブなクエストツリーでクエスト進行を追跡します。",
       "lootHelper": "クラフトチェーンを可視化し、レイド中に何を拾うべきか判断できます。",
@@ -107,9 +107,9 @@
         "embark": "Embark Authentication"
       },
       "embark": {
-        "description": "Link your Embark account to let Raider Tools read live ARC Raiders data directly from the game APIs.",
+        "description": "Link your Embark account to let SHiESTY RAiDERS read live shiesty raiders data directly from the game APIs.",
         "checklistTitle": "Linking checklist",
-        "checklistSubtitle": "Check the two things Raider Tools needs before using live Embark data.",
+        "checklistSubtitle": "Check the two things SHiESTY RAiDERS needs before using live Embark data.",
         "extensionInstalledTitle": "Browser extension installed",
         "extensionInstalledSummary": "Guided linking is ready in this browser.",
         "extensionInstalledDetails": "The extension can complete the Embark redirect flow for you after you choose a provider.",
@@ -138,8 +138,8 @@
         "unknownProvider": "Unknown provider",
         "unknownUsername": "Unknown username",
         "accessGateTitle": "Embark access is not enabled for this account",
-        "accessGateBody": "Embark linking connects your Raider Tools account to live ARC Raiders game data. This account cannot use Embark yet.",
-        "accessFeatureInventory": "Use in-game inventory, loadout, hideout status, quest status, and blueprint unlocks in Raider Tools.",
+        "accessGateBody": "Embark linking connects your SHiESTY RAiDERS account to live shiesty raiders game data. This account cannot use Embark yet.",
+        "accessFeatureInventory": "Use in-game inventory, loadout, hideout status, quest status, and blueprint unlocks in SHiESTY RAiDERS.",
         "accessFeatureProgress": "Avoid the two-step ArcTracker sync flow when live Embark data is available.",
         "accessFeatureQuartermaster": "Power Quartermaster planning from game data directly after linking.",
         "contactSupport": "Contact support",
@@ -148,7 +148,7 @@
         "howItWorksTitle": "How it works",
         "stepInstall": "Install the Embark login extension in your browser.",
         "stepChooseProvider": "Choose the identity provider you use to sign in to Embark.",
-        "stepConfirm": "Complete the Embark login flow and return to Raider Tools.",
+        "stepConfirm": "Complete the Embark login flow and return to SHiESTY RAiDERS.",
         "authenticateWith": "Authenticate with {provider}",
         "reauthenticateWith": "Re-authenticate with {provider}",
         "redirecting": "Redirecting...",
@@ -179,7 +179,7 @@
         "supportIdLabel": "Support ID",
         "callbackTitle": "Embark Authentication",
         "callbackFailed": "Embark authentication could not be completed.",
-        "callbackSignedOut": "You need to be signed in to Raider Tools before completing Embark authentication.",
+        "callbackSignedOut": "You need to be signed in to SHiESTY RAiDERS before completing Embark authentication.",
         "callbackMissingParams": "The Embark callback is missing the required code or state parameters.",
         "callbackStatusTimeout": "Embark authentication finished on the server, but the browser could not confirm the linked status. Open the Embark section in your profile to verify it.",
         "backToProfile": "Back to profile",
@@ -233,7 +233,7 @@
     "statusAvailable": "利用可能",
     "statusLocked": "ロック中",
     "statusUnknown": "Unknown",
-    "wikiTitle": "ARC Raiders Wiki で開く（新しいタブ）",
+    "wikiTitle": "shiesty raiders Wiki で開く（新しいタブ）",
     "wikiLabel": "Wiki",
     "arcTrackerTitle": "Open on arctracker.io (new tab)",
     "arcTrackerLabel": "ARCTracker",
@@ -454,10 +454,10 @@
     "auth": {
       "verifying": "Verifying authentication...",
       "requiredTitle": "Authentication Required",
-      "requiredBody": "Sign in to Raider Tools before using account-backed Quartermaster views.",
-      "signInRequiredBody": "Sign in to Raider Tools before using account-backed Quartermaster views.",
+      "requiredBody": "Sign in to SHiESTY RAiDERS before using account-backed Quartermaster views.",
+      "signInRequiredBody": "Sign in to SHiESTY RAiDERS before using account-backed Quartermaster views.",
       "linkRequiredTitle": "Link Account",
-      "linkRequiredBody": "Your Raider Tools account is signed in, but Quartermaster needs a linked account before it can sync this view.",
+      "linkRequiredBody": "Your SHiESTY RAiDERS account is signed in, but Quartermaster needs a linked account before it can sync this view.",
       "signIn": "Sign In",
       "linkAccount": "Link Account",
       "linkArcTracker": "Link ArcTracker"
@@ -491,8 +491,8 @@
       "arcTrackerTitle": "arctracker.io",
       "embarkTitle": "Embark",
       "statusSignedOut": "You are browsing anonymously. Tracking items requires you to sign in and link your account to either ArcTracker or Embark.",
-      "statusNeedsArcTracker": "Start by linking your arctracker.io account to Raider Tools.",
-      "statusNeedsLinkedAccount": "Start by linking an account Raider Tools can use for item tracking.",
+      "statusNeedsArcTracker": "Start by linking your arctracker.io account to SHiESTY RAiDERS.",
+      "statusNeedsLinkedAccount": "Start by linking an account SHiESTY RAiDERS can use for item tracking.",
       "statusReady": "ArcTracker is linked. Sync fresh data whenever you update your stash.",
       "statusReadyWithName": "ArcTracker is linked as {username}. Sync data whenever you update your stash.",
       "statusReadyWithEmbark": "Embark is linked. Quartermaster can use live game data when Embark is selected as the source.",
@@ -501,7 +501,7 @@
       "openLists": "Open Lists",
       "signIn": "Sign In",
       "linkArcTracker": "Link ArcTracker",
-      "linkArcTrackerBenefit": "Works today, but requires syncing on arctracker.io first and then syncing Raider Tools.",
+      "linkArcTrackerBenefit": "Works today, but requires syncing on arctracker.io first and then syncing SHiESTY RAiDERS.",
       "linkEmbark": "Link Embark",
       "linkEmbarkBenefit": "Preview access. Uses game data directly for inventory, loadout, hideout, quests, and blueprints.",
       "inRaidTitle": "In Raid",

@@ -1,33 +1,33 @@
-// Colors - Background
-$bg-primary: #1a1a1a;
-$bg-secondary: #2c2c2c;
-$bg-tertiary: #3c3c3c;
-$bg-quaternary: #4c4c4c;
-$bg-dark: #1f1f1f;
+// Colors - Background (ARC Raiders Official)
+$bg-primary: #000000;
+$bg-secondary: #111111;
+$bg-tertiary: #1a1a1a;
+$bg-quaternary: #222222;
+$bg-dark: #0a0a0a;
 
-// Colors - Borders
-$border-default: #444;
-$border-light: #555;
-$border-lighter: #777;
+// Colors - Borders (ARC Raiders Official)
+$border-default: #ffe600;
+$border-light: #ff2d2d;
+$border-lighter: #00e600;
 
-// Colors - Text
-$text-primary: #e0e0e0;
-$text-secondary: #888;
-$text-tertiary: #666;
-$text-accent: #4fc3f7;
-$text-light: #b0bec5;
+// Colors - Text (ARC Raiders Official)
+$text-primary: #ffe600;
+$text-secondary: #00e600;
+$text-tertiary: #0080ff;
+$text-accent: #ff007f;
+$text-light: #ff2d2d;
 
-// Colors - Rarity
-$rarity-common: #888888;
-$rarity-uncommon: #4caf50;
-$rarity-rare: #2196f3;
-$rarity-epic: #9c27b0;
-$rarity-legendary: #ffd700;
+// Colors - Rarity (ARC Raiders Official)
+$rarity-common: #6c6c6c;
+$rarity-uncommon: #26bf57;
+$rarity-rare: #00a8f2;
+$rarity-epic: #cc3099;
+$rarity-legendary: #ffc600;
 
-// Colors - Status
-$status-available: #ffd700;
-$status-completed: #4caf50;
-$status-highlight: #4fc3f7;
+// Colors - Status (ARC Raiders Official)
+$status-available: #ffc600;
+$status-completed: #00e600;
+$status-highlight: #0080ff;
 
 // Colors - Special Actions
 $action-gold: oklch(85% .22 85); // Gold/yellow for salvage, recycle, and goal badges

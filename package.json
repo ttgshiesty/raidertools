@@ -1,8 +1,8 @@
 {
-  "name": "raider-tools",
+  "name": "shiesty",
   "private": true,
   "version": "1.0.0",
-  "description": "Unified ARC Raiders tools collection",
+  "description": "Unified shiesty raiders tools collection",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,0 +1,3480 @@
+{
+  "version": "1781629966428",
+  "generatedAt": "2026-06-16T17:12:46.428Z",
+  "itemCount": 576,
+  "blueprintCount": 83,
+  "categoryOrder": [
+    "Weapons",
+    "Weapon Mods",
+    "Explosives",
+    "Medical",
+    "Utilities",
+    "Augments",
+    "Materials",
+    "Other"
+  ],
+  "items": {
+    "acoustic_guitar": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "adrenaline_shot": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "advanced_arc_powercell": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "advanced_electrical_components": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "advanced_mechanical_components": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "agave": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "agave_juice": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "air_freshener": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "alarm_clock": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "alien_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ancient_fort_security_code": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "angled_grip_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "angled_grip_ii": {
+      "relatedBlueprintId": "angled_grip_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "angled_grip_ii_blueprint": {
+      "relatedBlueprintId": "angled_grip_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "angled_grip_ii"
+    },
+    "angled_grip_iii": {
+      "relatedBlueprintId": "angled_grip_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "angled_grip_iii_blueprint": {
+      "relatedBlueprintId": "angled_grip_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "angled_grip_iii"
+    },
+    "antiseptic": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "anvil_blueprint": {
+      "relatedBlueprintId": "anvil_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "anvil"
+    },
+    "anvil_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "anvil_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "anvil_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "anvil_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "anvil_splitter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "aphelion": {
+      "relatedBlueprintId": "aphelion_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "aphelion_blueprint": {
+      "relatedBlueprintId": "aphelion_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "aphelion"
+    },
+    "apricot": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_alloy": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_circuitry": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_coolant": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_flex_rubber": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_motion_core": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_performance_steel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_powercell": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_synthetic_resin": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arc_thermo_lining": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arpeggio_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arpeggio_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arpeggio_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "arpeggio_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "assessor_matrix": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "assorted_seeds": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bandage": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "barricade_kit": {
+      "relatedBlueprintId": "barricade_kit_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "barricade_kit_blueprint": {
+      "relatedBlueprintId": "barricade_kit_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "barricade_kit"
+    },
+    "bastion_cell": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "battery": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bettina_blueprint": {
+      "relatedBlueprintId": "bettina_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "bettina"
+    },
+    "bettina_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bettina_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bettina_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bettina_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bicycle_pump": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "binoculars": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blaze_grenade": {
+      "relatedBlueprintId": "blaze_grenade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blaze_grenade_blueprint": {
+      "relatedBlueprintId": "blaze_grenade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "blaze_grenade"
+    },
+    "blaze_grenade_trap": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bloated_tuna_can": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_gate_cellar_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_gate_communication_tower_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_gate_confiscation_room_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_gate_village_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_light_stick": {
+      "relatedBlueprintId": "blue_light_stick_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "blue_light_stick_blueprint": {
+      "relatedBlueprintId": "blue_light_stick_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "blue_light_stick"
+    },
+    "bobcat_blueprint": {
+      "relatedBlueprintId": "bobcat_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "bobcat"
+    },
+    "bobcat_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bobcat_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bobcat_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bobcat_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "bombardier_cell": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "breathtaking_snow_globe": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "broken_flashlight": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "broken_guidance_system": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "broken_handheld_radio": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "broken_taser": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "buried_city_hospital_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "buried_city_jkv_employee_access_card": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "buried_city_residential_master_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "buried_city_town_hall_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burletta_blueprint": {
+      "relatedBlueprintId": "burletta_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "burletta"
+    },
+    "burletta_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burletta_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burletta_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burletta_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burned_arc_circuitry": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "burnt_out_candles": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "camera_lens": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "candle_holder": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "candleberries": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "canister": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "canto_blueprint": {
+      "relatedBlueprintId": "canto_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "canto"
+    },
+    "canto_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "canto_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "canto_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "canto_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "cat_bed": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "celeste_journal": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "chemicals": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "coffee_pot": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "combat_mk1": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "combat_mk2": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "combat_mk3_aggressive": {
+      "relatedBlueprintId": "combat_mk3_aggressive_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "combat_mk3_aggressive_blueprint": {
+      "relatedBlueprintId": "combat_mk3_aggressive_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "combat_mk3_aggressive"
+    },
+    "combat_mk3_flanking": {
+      "relatedBlueprintId": "combat_mk3_flanking_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "combat_mk3_flanking_blueprint": {
+      "relatedBlueprintId": "combat_mk3_flanking_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "combat_mk3_flanking"
+    },
+    "comet_igniter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "compensator_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "compensator_ii": {
+      "relatedBlueprintId": "compensator_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "compensator_ii_blueprint": {
+      "relatedBlueprintId": "compensator_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "compensator_ii"
+    },
+    "compensator_iii": {
+      "relatedBlueprintId": "compensator_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "compensator_iii_blueprint": {
+      "relatedBlueprintId": "compensator_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "compensator_iii"
+    },
+    "complex_gun_parts": {
+      "relatedBlueprintId": "complex_gun_parts_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "complex_gun_parts_blueprint": {
+      "relatedBlueprintId": "complex_gun_parts_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "complex_gun_parts"
+    },
+    "coolant": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "cooling_coil": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "cooling_fan": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "cracked_bioscanner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "crash_mat": {
+      "relatedBlueprintId": "crash_mat_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "crash_mat_blueprint": {
+      "relatedBlueprintId": "crash_mat_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "crash_mat"
+    },
+    "crude_explosives": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "crumpled_plastic_bottle": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dam_control_tower_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dam_controlled_access_zone_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dam_staff_room_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dam_surveillance_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dam_testing_annex_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_arc_motion_core": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_arc_powercell": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_fireball_burner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_heat_sink": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_hornet_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_rocketeer_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_snitch_scanner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_tick_pod": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "damaged_wasp_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dart_board": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "deadline": {
+      "relatedBlueprintId": "deadline_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "deadline_blueprint": {
+      "relatedBlueprintId": "deadline_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "deadline"
+    },
+    "defibrillator": {
+      "relatedBlueprintId": "defibrillator_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "defibrillator_blueprint": {
+      "relatedBlueprintId": "defibrillator_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "defibrillator"
+    },
+    "deflated_football": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "degraded_arc_rubber": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "diving_goggles": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dockmasters_detector": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dodgers_note": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dog_collar": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dolabra": {
+      "relatedBlueprintId": "dolabra_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dolabra_blueprint": {
+      "relatedBlueprintId": "dolabra_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "dolabra"
+    },
+    "doodly_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "door_blocker": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dried_out_arc_resin": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "duct_tape": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "durable_cloth": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "dusty_film_reel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "electrical_components": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "elephant_obelisk": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "empty_wine_bottle": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "energy_clip": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "equalizer": {
+      "relatedBlueprintId": "equalizer_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "equalizer_blueprint": {
+      "relatedBlueprintId": "equalizer_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "equalizer"
+    },
+    "equatorial_sundial": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "espresso_machine_parts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "esr_analyzer": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "exodus_modules": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "experimental_seed_sample": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "expired_pasta": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "expired_respirator": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "expired_security_code": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "explosive_compound": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "explosive_mine": {
+      "relatedBlueprintId": "explosive_mine_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "explosive_mine_blueprint": {
+      "relatedBlueprintId": "explosive_mine_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "explosive_mine"
+    },
+    "extended_barrel_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_barrel_ii": {
+      "relatedBlueprintId": "extended_barrel_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_barrel_ii_blueprint": {
+      "relatedBlueprintId": "extended_barrel_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_barrel_ii"
+    },
+    "extended_barrel_iii": {
+      "relatedBlueprintId": "extended_barrel_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_barrel_iii_blueprint": {
+      "relatedBlueprintId": "extended_barrel_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_barrel_iii"
+    },
+    "extended_light_mag_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_light_mag_ii": {
+      "relatedBlueprintId": "extended_light_mag_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_light_mag_ii_blueprint": {
+      "relatedBlueprintId": "extended_light_mag_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_light_mag_ii"
+    },
+    "extended_light_mag_iii": {
+      "relatedBlueprintId": "extended_light_mag_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_light_mag_iii_blueprint": {
+      "relatedBlueprintId": "extended_light_mag_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_light_mag_iii"
+    },
+    "extended_medium_mag_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_medium_mag_ii": {
+      "relatedBlueprintId": "extended_medium_mag_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_medium_mag_ii_blueprint": {
+      "relatedBlueprintId": "extended_medium_mag_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_medium_mag_ii"
+    },
+    "extended_medium_mag_iii": {
+      "relatedBlueprintId": "extended_medium_mag_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_medium_mag_iii_blueprint": {
+      "relatedBlueprintId": "extended_medium_mag_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_medium_mag_iii"
+    },
+    "extended_shotgun_mag_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_shotgun_mag_ii": {
+      "relatedBlueprintId": "extended_shotgun_mag_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_shotgun_mag_ii_blueprint": {
+      "relatedBlueprintId": "extended_shotgun_mag_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_shotgun_mag_ii"
+    },
+    "extended_shotgun_mag_iii": {
+      "relatedBlueprintId": "extended_shotgun_mag_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "extended_shotgun_mag_iii_blueprint": {
+      "relatedBlueprintId": "extended_shotgun_mag_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "extended_shotgun_mag_iii"
+    },
+    "fabric": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "faded_photograph": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "familiar_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ferro_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ferro_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ferro_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ferro_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fertilizer": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "film_reel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fine_wristwatch": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fireball_burner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "firecracker": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "firefly_burner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fireworks_box": {
+      "relatedBlueprintId": "fireworks_box_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fireworks_box_blueprint": {
+      "relatedBlueprintId": "fireworks_box_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "fireworks_box"
+    },
+    "first_wave_compass": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "first_wave_rations": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "first_wave_tape": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "flame_spray": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "flashy_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "flow_controller": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "flushing_terminal_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "football_shoes_green": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "football_shoes_red": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "football_shoes_silver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fossilized_lightning": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "free_loadout_augment": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "frequency_modulation_box": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fried_motherboard": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "fruit_mix": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "frying_pan": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "garlic_press": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "gas_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "gas_grenade_trap": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "gas_mine": {
+      "relatedBlueprintId": "gas_mine_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "gas_mine_blueprint": {
+      "relatedBlueprintId": "gas_mine_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "gas_mine"
+    },
+    "geiger_counter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "gentle_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "great_mullein": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "green_light_stick": {
+      "relatedBlueprintId": "green_light_stick_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "green_light_stick_blueprint": {
+      "relatedBlueprintId": "green_light_stick_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "green_light_stick"
+    },
+    "hairpin_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hairpin_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hairpin_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hairpin_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "headphones": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "heavy_ammo": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "heavy_fuze_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "heavy_gun_parts": {
+      "relatedBlueprintId": "heavy_gun_parts_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "heavy_gun_parts_blueprint": {
+      "relatedBlueprintId": "heavy_gun_parts_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "heavy_gun_parts"
+    },
+    "heavy_shield": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "herbal_bandage": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hidden_bunker_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "horizontal_grip": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hornet_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "household_cleaner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hullcracker_blueprint": {
+      "relatedBlueprintId": "hullcracker_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "hullcracker"
+    },
+    "hullcracker_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hullcracker_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hullcracker_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "hullcracker_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "humidifier": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ice_cream_scooper": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "il_toro_blueprint": {
+      "relatedBlueprintId": "il_toro_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "il_toro"
+    },
+    "il_toro_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "il_toro_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "il_toro_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "il_toro_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "impure_arc_coolant": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "industrial_battery": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "industrial_charger": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "industrial_magnet": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ion_sputter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "jolt_mine": {
+      "relatedBlueprintId": "jolt_mine_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "jolt_mine_blueprint": {
+      "relatedBlueprintId": "jolt_mine_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "jolt_mine"
+    },
+    "jupiter": {
+      "relatedBlueprintId": "jupiter_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "jupiter_blueprint": {
+      "relatedBlueprintId": "jupiter_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "jupiter"
+    },
+    "kettle_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "kettle_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "kettle_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "kettle_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "kinetic_converter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "laboratory_reagents": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lances_mixtape_5th_edition": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "launcher_ammo": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "leaper_pulse_unit": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lemon": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "leviathans_crown_ship_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "library_book": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lidar_scanner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "light_ammo": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "light_bulb": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "light_gun_parts": {
+      "relatedBlueprintId": "light_gun_parts_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "light_gun_parts_blueprint": {
+      "relatedBlueprintId": "light_gun_parts_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "light_gun_parts"
+    },
+    "light_impact_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "light_shield": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lightweight_stock": {
+      "relatedBlueprintId": "lightweight_stock_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lightweight_stock_blueprint": {
+      "relatedBlueprintId": "lightweight_stock_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "lightweight_stock"
+    },
+    "lil_smoke_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk1": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk2": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk3_cautious": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk3_safekeeper": {
+      "relatedBlueprintId": "looting_mk3_safekeeper_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk3_safekeeper_blueprint": {
+      "relatedBlueprintId": "looting_mk3_safekeeper_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "looting_mk3_safekeeper"
+    },
+    "looting_mk3_survivor": {
+      "relatedBlueprintId": "looting_mk3_survivor_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "looting_mk3_survivor_blueprint": {
+      "relatedBlueprintId": "looting_mk3_survivor_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "looting_mk3_survivor"
+    },
+    "lure_grenade": {
+      "relatedBlueprintId": "lure_grenade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "lure_grenade_blueprint": {
+      "relatedBlueprintId": "lure_grenade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "lure_grenade"
+    },
+    "lure_grenade_trap": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "magnet": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "magnetic_accelerator": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "magnetron": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "major_aivas_mementos": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "major_aivas_patch": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "marano_market_business_card": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "matriarch_reactor": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "mechanical_components": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "medium_ammo": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "medium_gun_parts": {
+      "relatedBlueprintId": "medium_gun_parts_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "medium_gun_parts_blueprint": {
+      "relatedBlueprintId": "medium_gun_parts_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "medium_gun_parts"
+    },
+    "medium_shield": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "metal_brackets": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "metal_parts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "microscope": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "mini_centrifuge": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "mod_components": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "moisture_meter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "moss": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "motor": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "mushroom": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "music_album": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "music_box": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "muzzle_brake_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "muzzle_brake_ii": {
+      "relatedBlueprintId": "muzzle_brake_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "muzzle_brake_ii_blueprint": {
+      "relatedBlueprintId": "muzzle_brake_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "muzzle_brake_ii"
+    },
+    "muzzle_brake_iii": {
+      "relatedBlueprintId": "muzzle_brake_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "muzzle_brake_iii_blueprint": {
+      "relatedBlueprintId": "muzzle_brake_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "muzzle_brake_iii"
+    },
+    "noisemaker": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "number_plate": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "nutrient_meter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "official_shutdown_documentation": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "oil": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "old_world_books": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "olives": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "osprey_blueprint": {
+      "relatedBlueprintId": "osprey_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "osprey"
+    },
+    "osprey_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "osprey_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "osprey_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "osprey_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "padded_stock": {
+      "relatedBlueprintId": "padded_stock_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "padded_stock_blueprint": {
+      "relatedBlueprintId": "padded_stock_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "padded_stock"
+    },
+    "painted_box": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "patrol_car_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "photoelectric_cloak": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "pilgrims_peak_security_code": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "plastic_parts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "playing_cards": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "polluted_air_filter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "pop_trigger": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "portable_tv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "possibly_toxic_plant": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "poster_of_natural_wonders": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "pottery": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "power_bank": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "power_cable": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "power_rod": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "powered_descender": {
+      "relatedBlueprintId": "powered_descender_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "powered_descender_blueprint": {
+      "relatedBlueprintId": "powered_descender_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "powered_descender"
+    },
+    "precision_gimbal": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "prickly_pear": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "processor": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "project_heartwood_blueprints": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "projector": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "pulse_mine": {
+      "relatedBlueprintId": "pulse_mine_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "pulse_mine_blueprint": {
+      "relatedBlueprintId": "pulse_mine_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "pulse_mine"
+    },
+    "queen_reactor": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "radio": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "radio_relay": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "raider_flag": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "raider_hatch_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "raiders_refuge_security_code": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rascal_blueprint": {
+      "relatedBlueprintId": "rascal_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "rascal"
+    },
+    "rascal_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rascal_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rascal_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rascal_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rattler_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rattler_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rattler_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rattler_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "recorder": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "red_coral_jewelry": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "red_light_stick": {
+      "relatedBlueprintId": "red_light_stick_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "red_light_stick_blueprint": {
+      "relatedBlueprintId": "red_light_stick_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "red_light_stick"
+    },
+    "reinforced_reception_security_code": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "remote_control": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "remote_raider_flare": {
+      "relatedBlueprintId": "remote_raider_flare_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "remote_raider_flare_blueprint": {
+      "relatedBlueprintId": "remote_raider_flare_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "remote_raider_flare"
+    },
+    "renegade_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "renegade_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "renegade_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "renegade_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "resin": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ripped_safety_vest": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_classified_records_keycard": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_crane_house_keycard": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_102": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_107": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_113": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_205": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_208": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_311": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_hotel_keycard_no_404": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "riven_tides_secure_storage_keycard": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rocket_thruster": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rocketeer_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "roots": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rope": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rosary": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rotary_encoder": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rubber_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rubber_pad": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rubber_parts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_accordion": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_augment": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_baton": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_handcuffs": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_parachute": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_riot_shield": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "ruined_tactical_vest": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rusted_bolts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rusted_gear": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rusted_shut_medical_kit": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rusted_tools": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "rusty_arc_steel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "sample_cleaner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "scout_patrol_note": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "secret_meeting_info": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "seed_vault_box_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "seeker_grenade": {
+      "relatedBlueprintId": "seeker_grenade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "seeker_grenade_blueprint": {
+      "relatedBlueprintId": "seeker_grenade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "seeker_grenade"
+    },
+    "sensors": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "sentinel_firing_core": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "sextant": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shaker": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shield_recharger": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_ammo": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_choke_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_choke_ii": {
+      "relatedBlueprintId": "shotgun_choke_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_choke_ii_blueprint": {
+      "relatedBlueprintId": "shotgun_choke_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "shotgun_choke_ii"
+    },
+    "shotgun_choke_iii": {
+      "relatedBlueprintId": "shotgun_choke_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_choke_iii_blueprint": {
+      "relatedBlueprintId": "shotgun_choke_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "shotgun_choke_iii"
+    },
+    "shotgun_silencer": {
+      "relatedBlueprintId": "shotgun_silencer_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shotgun_silencer_blueprint": {
+      "relatedBlueprintId": "shotgun_silencer_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "shotgun_silencer"
+    },
+    "showstopper": {
+      "relatedBlueprintId": "showstopper_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "showstopper_blueprint": {
+      "relatedBlueprintId": "showstopper_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "showstopper"
+    },
+    "shrapnel_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "shredder_gyro": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "signal_amplifier": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "silencer_i": {
+      "relatedBlueprintId": "silencer_i_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "silencer_i_blueprint": {
+      "relatedBlueprintId": "silencer_i_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "silencer_i"
+    },
+    "silencer_ii": {
+      "relatedBlueprintId": "silencer_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "silencer_ii_blueprint": {
+      "relatedBlueprintId": "silencer_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "silencer_ii"
+    },
+    "silencer_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "silver_teaspoon_set": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "simple_gun_parts": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "sirena_dorata_ship_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "smoke_grenade": {
+      "relatedBlueprintId": "smoke_grenade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "smoke_grenade_blueprint": {
+      "relatedBlueprintId": "smoke_grenade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "smoke_grenade"
+    },
+    "smoke_grenade_trap": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "snap_blast_grenade": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "snap_hook": {
+      "relatedBlueprintId": "snap_hook_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "snap_hook_blueprint": {
+      "relatedBlueprintId": "snap_hook_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "snap_hook"
+    },
+    "snitch_scanner": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "snowball": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spaceport_container_storage_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spaceport_control_tower_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spaceport_trench_tower_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spaceport_warehouse_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "speaker_component": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spectrometer": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spectrum_analyzer": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spotter_relay": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "spring_cushion": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stable_stock_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stable_stock_ii": {
+      "relatedBlueprintId": "stable_stock_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stable_stock_ii_blueprint": {
+      "relatedBlueprintId": "stable_stock_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "stable_stock_ii"
+    },
+    "stable_stock_iii": {
+      "relatedBlueprintId": "stable_stock_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stable_stock_iii_blueprint": {
+      "relatedBlueprintId": "stable_stock_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "stable_stock_iii"
+    },
+    "stack_of_movie_tapes": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "statuette": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "steel_spring": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stella_montis_archives_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stella_montis_assembly_admin_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stella_montis_medical_storage_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stella_montis_security_checkpoint_key": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "sterilized_bandage": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stitcher_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stitcher_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stitcher_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "stitcher_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "surge_coil": {
+      "relatedBlueprintId": "surge_coil_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "surge_coil_blueprint": {
+      "relatedBlueprintId": "surge_coil_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "surge_coil"
+    },
+    "surge_shield_recharger": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "surveyor_vault": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "synthesized_fuel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "syringe": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk1": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk2": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk3_defensive": {
+      "relatedBlueprintId": "tactical_mk3_defensive_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk3_defensive_blueprint": {
+      "relatedBlueprintId": "tactical_mk3_defensive_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tactical_mk3_defensive"
+    },
+    "tactical_mk3_healing": {
+      "relatedBlueprintId": "tactical_mk3_healing_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk3_healing_blueprint": {
+      "relatedBlueprintId": "tactical_mk3_healing_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tactical_mk3_healing"
+    },
+    "tactical_mk3_revival": {
+      "relatedBlueprintId": "tactical_mk3_revival_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk3_revival_blueprint": {
+      "relatedBlueprintId": "tactical_mk3_revival_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tactical_mk3_revival"
+    },
+    "tactical_mk3_smoke": {
+      "relatedBlueprintId": "tactical_mk3_smoke_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tactical_mk3_smoke_blueprint": {
+      "relatedBlueprintId": "tactical_mk3_smoke_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tactical_mk3_smoke"
+    },
+    "tagging_grenade": {
+      "relatedBlueprintId": "tagging_grenade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tagging_grenade_blueprint": {
+      "relatedBlueprintId": "tagging_grenade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tagging_grenade"
+    },
+    "tattered_arc_lining": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tattered_clothes": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "telemetry_transceiver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tellurion": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tempest_blueprint": {
+      "relatedBlueprintId": "tempest_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "tempest"
+    },
+    "tempest_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tempest_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tempest_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tempest_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "thermostat": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "tick_pod": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "toaster": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torn_blanket": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torn_book": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torrente_blueprint": {
+      "relatedBlueprintId": "torrente_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "torrente"
+    },
+    "torrente_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torrente_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torrente_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "torrente_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "trailblazer": {
+      "relatedBlueprintId": "trailblazer_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "trailblazer_blueprint": {
+      "relatedBlueprintId": "trailblazer_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "trailblazer"
+    },
+    "train_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "trigger_nade": {
+      "relatedBlueprintId": "trigger_nade_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "trigger_nade_blueprint": {
+      "relatedBlueprintId": "trigger_nade_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "trigger_nade"
+    },
+    "tropical_duck": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "turbine_compressor": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "turbo_pump": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "twilight_compass_ship_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "unusable_weapon": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vaporizer_regulator": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vase": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "velocity_ship_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "venator_blueprint": {
+      "relatedBlueprintId": "venator_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "venator"
+    },
+    "venator_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "venator_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "venator_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "venator_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vertical_grip_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vertical_grip_ii": {
+      "relatedBlueprintId": "vertical_grip_ii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vertical_grip_ii_blueprint": {
+      "relatedBlueprintId": "vertical_grip_ii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "vertical_grip_ii"
+    },
+    "vertical_grip_iii": {
+      "relatedBlueprintId": "vertical_grip_iii_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vertical_grip_iii_blueprint": {
+      "relatedBlueprintId": "vertical_grip_iii_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "vertical_grip_iii"
+    },
+    "very_comfortable_pillow": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vintage_steering_wheel": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vita_shot": {
+      "relatedBlueprintId": "vita_shot_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vita_shot_blueprint": {
+      "relatedBlueprintId": "vita_shot_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "vita_shot"
+    },
+    "vita_spray": {
+      "relatedBlueprintId": "vita_spray_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vita_spray_blueprint": {
+      "relatedBlueprintId": "vita_spray_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "vita_spray"
+    },
+    "volcanic_rock": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "voltage_converter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vulcano_blueprint": {
+      "relatedBlueprintId": "vulcano_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "vulcano"
+    },
+    "vulcano_i": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vulcano_ii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vulcano_iii": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "vulcano_iv": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "wasp_driver": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "water_filter": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "water_pump": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "white_flag": {
+      "relatedBlueprintId": "white_flag_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "white_flag_blueprint": {
+      "relatedBlueprintId": "white_flag_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "white_flag"
+    },
+    "wind_sprite_ship_model": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "wires": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "wolfpack": {
+      "relatedBlueprintId": "wolfpack_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "wolfpack_blueprint": {
+      "relatedBlueprintId": "wolfpack_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "wolfpack"
+    },
+    "yellow_light_stick": {
+      "relatedBlueprintId": "yellow_light_stick_blueprint",
+      "isBlueprint": false,
+      "targetItemId": null
+    },
+    "yellow_light_stick_blueprint": {
+      "relatedBlueprintId": "yellow_light_stick_blueprint",
+      "isBlueprint": true,
+      "targetItemId": "yellow_light_stick"
+    },
+    "zipline": {
+      "relatedBlueprintId": null,
+      "isBlueprint": false,
+      "targetItemId": null
+    }
+  },
+  "blueprints": [
+    {
+      "id": "anvil_blueprint",
+      "targetItemId": "anvil_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/anvil_blueprint.png"
+    },
+    {
+      "id": "aphelion_blueprint",
+      "targetItemId": "aphelion",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/aphelion_blueprint.png"
+    },
+    {
+      "id": "bettina_blueprint",
+      "targetItemId": "bettina_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/bettina_blueprint.png"
+    },
+    {
+      "id": "bobcat_blueprint",
+      "targetItemId": "bobcat_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/bobcat_blueprint.png"
+    },
+    {
+      "id": "burletta_blueprint",
+      "targetItemId": "burletta_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/burletta_blueprint.png"
+    },
+    {
+      "id": "canto_blueprint",
+      "targetItemId": "canto_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/canto_blueprint.png"
+    },
+    {
+      "id": "dolabra_blueprint",
+      "targetItemId": "dolabra",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/dolabra_blueprint.png"
+    },
+    {
+      "id": "equalizer_blueprint",
+      "targetItemId": "equalizer",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/equalizer_blueprint.png"
+    },
+    {
+      "id": "hullcracker_blueprint",
+      "targetItemId": "hullcracker_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/hullcracker_blueprint.png"
+    },
+    {
+      "id": "il_toro_blueprint",
+      "targetItemId": "il_toro_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/il_toro_blueprint.png"
+    },
+    {
+      "id": "jupiter_blueprint",
+      "targetItemId": "jupiter",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/jupiter_blueprint.png"
+    },
+    {
+      "id": "osprey_blueprint",
+      "targetItemId": "osprey_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/osprey_blueprint.png"
+    },
+    {
+      "id": "rascal_blueprint",
+      "targetItemId": "rascal_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/rascal.png"
+    },
+    {
+      "id": "tempest_blueprint",
+      "targetItemId": "tempest_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tempest_blueprint.png"
+    },
+    {
+      "id": "torrente_blueprint",
+      "targetItemId": "torrente_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/torrente_blueprint.png"
+    },
+    {
+      "id": "venator_blueprint",
+      "targetItemId": "venator_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/venator_blueprint.png"
+    },
+    {
+      "id": "vulcano_blueprint",
+      "targetItemId": "vulcano_i",
+      "category": "Weapons",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/vulcano_blueprint.png"
+    },
+    {
+      "id": "angled_grip_ii_blueprint",
+      "targetItemId": "angled_grip_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_ii_blueprint.png"
+    },
+    {
+      "id": "angled_grip_iii_blueprint",
+      "targetItemId": "angled_grip_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_iii_blueprint.png"
+    },
+    {
+      "id": "compensator_ii_blueprint",
+      "targetItemId": "compensator_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_ii_blueprint.png"
+    },
+    {
+      "id": "compensator_iii_blueprint",
+      "targetItemId": "compensator_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_iii_blueprint.png"
+    },
+    {
+      "id": "extended_barrel_ii_blueprint",
+      "targetItemId": "extended_barrel_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common"
+    },
+    {
+      "id": "extended_barrel_iii_blueprint",
+      "targetItemId": "extended_barrel_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_barrel_blueprint.png"
+    },
+    {
+      "id": "extended_light_mag_ii_blueprint",
+      "targetItemId": "extended_light_mag_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_ii_blueprint.png"
+    },
+    {
+      "id": "extended_light_mag_iii_blueprint",
+      "targetItemId": "extended_light_mag_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_iii_blueprint.png"
+    },
+    {
+      "id": "extended_medium_mag_ii_blueprint",
+      "targetItemId": "extended_medium_mag_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_ii_blueprint.png"
+    },
+    {
+      "id": "extended_medium_mag_iii_blueprint",
+      "targetItemId": "extended_medium_mag_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_iii_blueprint.png"
+    },
+    {
+      "id": "extended_shotgun_mag_ii_blueprint",
+      "targetItemId": "extended_shotgun_mag_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_ii_blueprint.png"
+    },
+    {
+      "id": "extended_shotgun_mag_iii_blueprint",
+      "targetItemId": "extended_shotgun_mag_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_iii_blueprint.png"
+    },
+    {
+      "id": "lightweight_stock_blueprint",
+      "targetItemId": "lightweight_stock",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/lightweight_stock_blueprint.png"
+    },
+    {
+      "id": "muzzle_brake_ii_blueprint",
+      "targetItemId": "muzzle_brake_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_ii_blueprint.png"
+    },
+    {
+      "id": "muzzle_brake_iii_blueprint",
+      "targetItemId": "muzzle_brake_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_iii_blueprint.png"
+    },
+    {
+      "id": "padded_stock_blueprint",
+      "targetItemId": "padded_stock",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/padded_stock_blueprint.png"
+    },
+    {
+      "id": "shotgun_choke_ii_blueprint",
+      "targetItemId": "shotgun_choke_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_ii_blueprint.png"
+    },
+    {
+      "id": "shotgun_choke_iii_blueprint",
+      "targetItemId": "shotgun_choke_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_iii_blueprint.png"
+    },
+    {
+      "id": "shotgun_silencer_blueprint",
+      "targetItemId": "shotgun_silencer",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_silencer_blueprint.png"
+    },
+    {
+      "id": "silencer_i_blueprint",
+      "targetItemId": "silencer_i",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_i_blueprint.png"
+    },
+    {
+      "id": "silencer_ii_blueprint",
+      "targetItemId": "silencer_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_ii_blueprint.png"
+    },
+    {
+      "id": "stable_stock_ii_blueprint",
+      "targetItemId": "stable_stock_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_ii_blueprint.png"
+    },
+    {
+      "id": "stable_stock_iii_blueprint",
+      "targetItemId": "stable_stock_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_iii_blueprint.png"
+    },
+    {
+      "id": "vertical_grip_ii_blueprint",
+      "targetItemId": "vertical_grip_ii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_ii_blueprint.png"
+    },
+    {
+      "id": "vertical_grip_iii_blueprint",
+      "targetItemId": "vertical_grip_iii",
+      "category": "Weapon Mods",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_iii_blueprint.png"
+    },
+    {
+      "id": "blaze_grenade_blueprint",
+      "targetItemId": "blaze_grenade",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/blaze_grenade_blueprint.png"
+    },
+    {
+      "id": "deadline_blueprint",
+      "targetItemId": "deadline",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/deadline_blueprint.png"
+    },
+    {
+      "id": "explosive_mine_blueprint",
+      "targetItemId": "explosive_mine",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/explosive_mine_blueprint.png"
+    },
+    {
+      "id": "fireworks_box_blueprint",
+      "targetItemId": "fireworks_box",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/fireworks_box_blueprint.png"
+    },
+    {
+      "id": "gas_mine_blueprint",
+      "targetItemId": "gas_mine",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/gas_mine_blueprint.png"
+    },
+    {
+      "id": "jolt_mine_blueprint",
+      "targetItemId": "jolt_mine",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/jolt_mine_blueprint.png"
+    },
+    {
+      "id": "pulse_mine_blueprint",
+      "targetItemId": "pulse_mine",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/pulse_mine_blueprint.png"
+    },
+    {
+      "id": "seeker_grenade_blueprint",
+      "targetItemId": "seeker_grenade",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/seeker_grenade_blueprint.png"
+    },
+    {
+      "id": "showstopper_blueprint",
+      "targetItemId": "showstopper",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/showstopper_blueprint.png"
+    },
+    {
+      "id": "surge_coil_blueprint",
+      "targetItemId": "surge_coil",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/surge_coil_blueprint.png"
+    },
+    {
+      "id": "trailblazer_blueprint",
+      "targetItemId": "trailblazer",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/trailblazer_blueprint.png"
+    },
+    {
+      "id": "trigger_nade_blueprint",
+      "targetItemId": "trigger_nade",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/trigger_nade_blueprint.png"
+    },
+    {
+      "id": "wolfpack_blueprint",
+      "targetItemId": "wolfpack",
+      "category": "Explosives",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/wolfpack_blueprint.png"
+    },
+    {
+      "id": "defibrillator_blueprint",
+      "targetItemId": "defibrillator",
+      "category": "Medical",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/defibrillator_blueprint.png"
+    },
+    {
+      "id": "vita_shot_blueprint",
+      "targetItemId": "vita_shot",
+      "category": "Medical",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/vita_shot_blueprint.png"
+    },
+    {
+      "id": "vita_spray_blueprint",
+      "targetItemId": "vita_spray",
+      "category": "Medical",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/vita_spray_blueprint.png"
+    },
+    {
+      "id": "barricade_kit_blueprint",
+      "targetItemId": "barricade_kit",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/barricade_kit_blueprint.png"
+    },
+    {
+      "id": "blue_light_stick_blueprint",
+      "targetItemId": "blue_light_stick",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/blue_light_stick_blueprint.png"
+    },
+    {
+      "id": "crash_mat_blueprint",
+      "targetItemId": "crash_mat",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/crash_mat_blueprint.png"
+    },
+    {
+      "id": "green_light_stick_blueprint",
+      "targetItemId": "green_light_stick",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/green_light_stick_blueprint.png"
+    },
+    {
+      "id": "lure_grenade_blueprint",
+      "targetItemId": "lure_grenade",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/lure_grenade_blueprint.png"
+    },
+    {
+      "id": "powered_descender_blueprint",
+      "targetItemId": "powered_descender",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/powered_descender_blueprint.png"
+    },
+    {
+      "id": "red_light_stick_blueprint",
+      "targetItemId": "red_light_stick",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/red_light_stick_blueprint.png"
+    },
+    {
+      "id": "remote_raider_flare_blueprint",
+      "targetItemId": "remote_raider_flare",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/remote_raider_flare_blueprint.png"
+    },
+    {
+      "id": "smoke_grenade_blueprint",
+      "targetItemId": "smoke_grenade",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_blueprint.png"
+    },
+    {
+      "id": "snap_hook_blueprint",
+      "targetItemId": "snap_hook",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/snap_hook_blueprint.png"
+    },
+    {
+      "id": "tagging_grenade_blueprint",
+      "targetItemId": "tagging_grenade",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tagging_grenade_blueprint.png"
+    },
+    {
+      "id": "white_flag_blueprint",
+      "targetItemId": "white_flag",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/white_flag_blueprint.png"
+    },
+    {
+      "id": "yellow_light_stick_blueprint",
+      "targetItemId": "yellow_light_stick",
+      "category": "Utilities",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/yellow_light_stick_blueprint.png"
+    },
+    {
+      "id": "combat_mk3_aggressive_blueprint",
+      "targetItemId": "combat_mk3_aggressive",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_aggressive_blueprint.png"
+    },
+    {
+      "id": "combat_mk3_flanking_blueprint",
+      "targetItemId": "combat_mk3_flanking",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_flanking_blueprint.png"
+    },
+    {
+      "id": "looting_mk3_safekeeper_blueprint",
+      "targetItemId": "looting_mk3_safekeeper",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_safekeeper_blueprint.png"
+    },
+    {
+      "id": "looting_mk3_survivor_blueprint",
+      "targetItemId": "looting_mk3_survivor",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_survivor_blueprint.png"
+    },
+    {
+      "id": "tactical_mk3_defensive_blueprint",
+      "targetItemId": "tactical_mk3_defensive",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_defensive_blueprint.png"
+    },
+    {
+      "id": "tactical_mk3_healing_blueprint",
+      "targetItemId": "tactical_mk3_healing",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_healing_blueprint.png"
+    },
+    {
+      "id": "tactical_mk3_revival_blueprint",
+      "targetItemId": "tactical_mk3_revival",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_revival_blueprint.png"
+    },
+    {
+      "id": "tactical_mk3_smoke_blueprint",
+      "targetItemId": "tactical_mk3_smoke",
+      "category": "Augments",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_smoke_blueprint.png"
+    },
+    {
+      "id": "complex_gun_parts_blueprint",
+      "targetItemId": "complex_gun_parts",
+      "category": "Other",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/complex_gun_parts_blueprint.png"
+    },
+    {
+      "id": "heavy_gun_parts_blueprint",
+      "targetItemId": "heavy_gun_parts",
+      "category": "Other",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/heavy_gun_parts_blueprint.png"
+    },
+    {
+      "id": "light_gun_parts_blueprint",
+      "targetItemId": "light_gun_parts",
+      "category": "Other",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/light_gun_parts_blueprint.png"
+    },
+    {
+      "id": "medium_gun_parts_blueprint",
+      "targetItemId": "medium_gun_parts",
+      "category": "Other",
+      "rarity": "Common",
+      "imageFilename": "https://cdn.arctracker.io/items/v2/medium_gun_parts_blueprint.png"
+    }
+  ]
+}

@@ -46,8 +46,8 @@ import {
 } from '../utils/questHelpers';
 
 const BLUEPRINT_OVERLAY_COLLAPSED_STORAGE_KEY =
-  'raider-tools:quest-tracker-blueprints-collapsed';
-const VIEWPORT_STORAGE_KEY = 'raider-tools:quest-tracker-viewport';
+  'shiesty:quest-tracker-blueprints-collapsed';
+const VIEWPORT_STORAGE_KEY = 'shiesty:quest-tracker-viewport';
 // Node width used by the ELK layout; kept in sync with the `width: 300`
 // passed to ELK when building the graph.
 const NODE_WIDTH = 300;

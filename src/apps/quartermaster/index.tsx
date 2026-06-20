@@ -1,6 +1,6 @@
 /**
  * Quartermaster App
- * Loadout, Loot & Craft Planner for ARC Raiders
+ * Loadout, Loot & Craft Planner for shiesty raiders
  * See specification document for full details
  */
 

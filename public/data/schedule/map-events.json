@@ -1,6 +1,6 @@
 {
   "_readme": {
-    "description": "Map events schedule for ARC Raiders generated from arcraiders.com map-conditions",
+    "description": "Map events schedule for shiesty raiders generated from arcraiders.com map-conditions",
     "format": "Schedule keys are UNIX timestamps (seconds, UTC) at event start; values are event type ids."
   },
   "metadata": {

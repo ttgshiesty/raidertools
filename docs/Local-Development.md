@@ -47,20 +47,20 @@ npm run local:ddb:down
 cd infra
 npm run local:api        # starts http://localhost:4000
 ```
-On first boot the server creates the `raider-tools-users` table (pk/sk only, on-demand billing). It reuses `infra/lambda/profile.ts`, `state.ts`, `links.ts`, and `embark-link.ts` by constructing synthetic API Gateway events, so any fix made to those files is picked up on restart.
+On first boot the server creates the local `shiesty-users` table (pk/sk only, on-demand billing). It reuses `infra/lambda/profile.ts`, `state.ts`, `links.ts`, and `embark-link.ts` by constructing synthetic API Gateway events, so any fix made to those files is picked up on restart.
 
 The local API server automatically reads:
 - `infra/.env`
 - `infra/.env.local`
 
-with `.env.local` overriding `.env`. Use [infra/.env.example](/Users/ernst/Develop/Games/ArcRaiders/raider-tools/infra/.env.example) as the template for local server-side settings such as Embark OAuth/config values.
+with `.env.local` overriding `.env`. Use `infra/.env.example` as the template for local server-side settings such as Embark OAuth/config values.
 
 Environment overrides (all optional):
 The local API server loads `infra/.env` before applying defaults. Values already exported in your shell take precedence over `infra/.env`.
 
 - `LOCAL_API_PORT` — default `4000`.
 - `AWS_ENDPOINT_URL_DYNAMODB` — default `http://localhost:8000`.
-- `USER_TABLE_NAME` — default `raider-tools-users`.
+- `USER_TABLE_NAME` — default `shiesty-users` locally.
 - `ALLOWED_ORIGINS` — default `http://localhost:5173`.
 - `LOCAL_COGNITO_GROUPS` — when unset, local dev bypasses Cognito group gates. Set to a comma-separated list such as `embark-auth` to test exact group membership, or set it to an empty value to test a signed-in user with no groups.
 - `ARC_APP_KEY` — required when linking or syncing ArcTracker data locally. This is the ArcTracker app key injected by the relay, not the user's `arc_u1_*` token.
@@ -82,7 +82,7 @@ Open http://localhost:5173, navigate to `/auth/sign-in`, enter a dev sub (defaul
 Peek at DynamoDB Local directly:
 ```bash
 aws dynamodb --endpoint-url http://localhost:8000 \
-    scan --table-name raider-tools-users --no-cli-pager
+    scan --table-name shiesty-users --no-cli-pager
 ```
 Health check:
 ```bash

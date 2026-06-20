@@ -2,35 +2,51 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLocale } from '../context/LocaleContext';
 import { useCognitoAuth } from '../context/CognitoAuthContext';
-import {
-  Home,
-  Calendar,
-  Calculator,
-  ListTodo,
-  Package,
-  ClipboardList,
-  UserCircle,
-  ChevronLeft,
-  ChevronRight,
-} from 'lucide-react';
+import { assetUrl } from '../../data/assetUrl';
 import { trackNavigation } from '../utils/analytics';
 
 const NAV_ITEMS = [
-  { path: '/', icon: Home, labelKey: 'shared.tools.home' },
-  { path: '/schedule', icon: Calendar, labelKey: 'shared.tools.schedule' },
-  { path: '/craft-calculator', icon: Calculator, labelKey: 'shared.tools.craftCalculator' },
-  { path: '/quests', icon: ListTodo, labelKey: 'shared.tools.quests' },
-  { path: '/loot-helper', icon: Package, labelKey: 'shared.tools.lootHelper' },
-  { path: '/quartermaster', icon: ClipboardList, labelKey: 'shared.tools.quartermaster' },
+  { path: '/', icon: 'trends.webp', labelKey: 'shared.tools.home' },
+  {
+    path: '/schedule',
+    icon: 'bombardier.png',
+    labelKey: 'shared.tools.schedule',
+  },
+  {
+    path: '/craft-calculator',
+    icon: 'matriarch256.png',
+    labelKey: 'shared.tools.craftCalculator',
+  },
+  { path: '/quests', icon: 'bison_mf.png', labelKey: 'shared.tools.quests' },
+  {
+    path: '/loot-helper',
+    icon: 'tick_mf.png',
+    labelKey: 'shared.tools.lootHelper',
+  },
+  {
+    path: '/quartermaster',
+    icon: 'wasp_mf.png',
+    labelKey: 'shared.tools.quartermaster',
+  },
+  {
+    path: '/stats',
+    icon: 'rocketeer_mf.png',
+    labelKey: 'shared.tools.stats',
+  },
+  {
+    path: '/blueprints',
+    icon: 'firefly_mf.png',
+    labelKey: 'shared.tools.blueprints',
+  },
 ];
 
 const BOTTOM_NAV_ITEM = {
   path: '/profile',
-  icon: UserCircle,
+  icon: 'hornet_mf.png',
   labelKey: 'shared.sidebar.profile',
 };
 
-const SIDEBAR_STORAGE_KEY = 'raider-tools:sidebar-collapsed';
+const SIDEBAR_STORAGE_KEY = 'shiesty:sidebar-collapsed';
 
 export function Sidebar() {
   const { t } = useLocale();
@@ -56,14 +72,32 @@ export function Sidebar() {
   return (
     <div className={`app-sidebar ${collapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
-        {!collapsed && <h2 className="sidebar-title">{t('shared.sidebar.title')}</h2>}
+        {!collapsed && (
+          <h2 className="sidebar-title">{t('shared.sidebar.title')}</h2>
+        )}
         <button
           className="sidebar-toggle"
           onClick={() => setCollapsed(!collapsed)}
-          title={collapsed ? t('shared.sidebar.expand') : t('shared.sidebar.collapseTitle')}
+          title={
+            collapsed
+              ? t('shared.sidebar.expand')
+              : t('shared.sidebar.collapseTitle')
+          }
         >
-          {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
-          {!collapsed && <span className="sidebar-toggle-text">{t('shared.sidebar.collapse')}</span>}
+          <img
+            src={assetUrl(
+              `/arcicon/${collapsed ? 'rocketeer_mf.png' : 'bastion_mf.png'}`,
+            )}
+            alt={collapsed ? 'Expand' : 'Collapse'}
+            className="sidebar-toggle-icon"
+            width="16"
+            height="16"
+          />
+          {!collapsed && (
+            <span className="sidebar-toggle-text">
+              {t('shared.sidebar.collapse')}
+            </span>
+          )}
         </button>
       </div>
       <nav className="sidebar-nav">
@@ -78,8 +112,16 @@ export function Sidebar() {
                   title={collapsed ? label : undefined}
                   onClick={() => trackNavigation(label, 'sidebar')}
                 >
-                  <item.icon size={20} />
-                  {!collapsed && <span className="sidebar-nav-text">{label}</span>}
+                  <img
+                    src={assetUrl(`/arcicon/${item.icon}`)}
+                    alt={label}
+                    className="sidebar-nav-icon"
+                    width="18"
+                    height="18"
+                  />
+                  {!collapsed && (
+                    <span className="sidebar-nav-text">{label}</span>
+                  )}
                 </NavLink>
               </li>
             );
@@ -97,8 +139,16 @@ export function Sidebar() {
                     title={collapsed ? label : undefined}
                     onClick={() => trackNavigation(label, 'sidebar')}
                   >
-                    <BOTTOM_NAV_ITEM.icon size={20} />
-                    {!collapsed && <span className="sidebar-nav-text">{label}</span>}
+                    <img
+                      src={assetUrl(`/arcicon/${BOTTOM_NAV_ITEM.icon}`)}
+                      alt={label}
+                      className="sidebar-nav-icon"
+                      width="18"
+                      height="18"
+                    />
+                    {!collapsed && (
+                      <span className="sidebar-nav-text">{label}</span>
+                    )}
                   </NavLink>
                 </li>
               );

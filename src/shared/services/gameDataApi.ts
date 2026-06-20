@@ -19,8 +19,9 @@ import {
   updateCacheMeta,
 } from './cacheService';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-  'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 
 export type GameDataSource = 'arctracker' | 'embark';
 

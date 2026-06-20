@@ -22,7 +22,7 @@ import {
   setRaiderBuddyCachedData,
 } from './raiderBuddyCache';
 
-const DB_NAME = 'raiderToolsCache';
+const DB_NAME = 'shiestyCache';
 const DB_VERSION = 1;
 const STORE_NAME = 'arctracker';
 
@@ -40,7 +40,7 @@ let activeCacheOwnerSub: string | null = null;
 let activeCacheSource: 'arctracker' | 'embark' | null = null;
 
 /**
- * Set the signed-in Raider Tools user that owns ArcTracker cache reads/writes.
+ * Set the signed-in SHiESTY RAiDERS user that owns ArcTracker cache reads/writes.
  * Passing null disables reads and writes until a new owner is known.
  */
 export async function setCacheOwner(userSub: string | null): Promise<void> {

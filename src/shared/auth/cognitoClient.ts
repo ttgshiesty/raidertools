@@ -1,5 +1,5 @@
 /**
- * Thin wrapper around `amazon-cognito-identity-js` for the raider-tools SPA.
+ * Thin wrapper around `amazon-cognito-identity-js` for the shiesty SPA.
  *
  * Goals:
  *  - Keep call sites tiny and Promise-based.

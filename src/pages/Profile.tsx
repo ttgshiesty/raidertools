@@ -44,7 +44,7 @@ export function Profile() {
     );
   }
 
-  // ArcTracker linking requires a Raider Tools account because the user's
+  // ArcTracker linking requires a SHiESTY RAiDERS account because the user's
   // ArcTracker token is stored encrypted server-side.
   if (!cognito.user) {
     return (
@@ -54,7 +54,10 @@ export function Profile() {
           <h2>{t('pages.profile.title')}</h2>
           <p>{t('shared.userMenu.confirmSignOutBody')}</p>
           {cognito.available && (
-            <NavLink to="/auth/sign-in" className="settings-button settings-button--primary">
+            <NavLink
+              to="/auth/sign-in"
+              className="settings-button settings-button--primary"
+            >
               <LogIn size={16} />
               <span>{t('shared.userMenu.login')}</span>
             </NavLink>
@@ -64,8 +67,7 @@ export function Profile() {
     );
   }
 
-  const identityLabel =
-    cognito.user?.email ?? cognito.user?.sub ?? null;
+  const identityLabel = cognito.user?.email ?? cognito.user?.sub ?? null;
 
   return (
     <div className="profile-page">
@@ -73,9 +75,13 @@ export function Profile() {
         <div className="profile-sidebar__header">
           <UserCircle size={20} />
           <div className="profile-sidebar__identity">
-            <span className="profile-sidebar__title">{t('pages.profile.title')}</span>
+            <span className="profile-sidebar__title">
+              {t('pages.profile.title')}
+            </span>
             {identityLabel && (
-              <span className="profile-sidebar__identity-value">{identityLabel}</span>
+              <span className="profile-sidebar__identity-value">
+                {identityLabel}
+              </span>
             )}
           </div>
         </div>

@@ -9,10 +9,13 @@ const PAGE_TITLE_KEYS: Record<string, string> = {
   '/quests': 'shared.tools.quests',
   '/loot-helper': 'shared.tools.lootHelper',
   '/quartermaster': 'shared.tools.quartermaster',
+  '/stats': 'shared.tools.stats',
+  '/blueprints': 'shared.tools.blueprints',
 };
 
 // Prefix-based title keys for nested routes that share a common title.
 const PAGE_TITLE_PREFIXES: Array<{ prefix: string; key: string }> = [
+  { prefix: '/stats', key: 'shared.tools.stats' },
   { prefix: '/profile', key: 'pages.profile.title' },
   { prefix: '/auth/sign-in', key: 'pages.profileSettings' },
   { prefix: '/auth/sign-up', key: 'pages.profileSettings' },

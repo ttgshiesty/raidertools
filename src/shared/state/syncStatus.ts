@@ -103,10 +103,11 @@ function maybeFireDevHint(snap: SyncStatusSnapshot): void {
     if (!import.meta.env.DEV) return;
     if (!snap.errors.some(e => e.kind === 'network')) return;
     devHintFired = true;
-    const apiBase = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-        'https://api.raider-tools.app';
+    const apiBase =
+      (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+      'https://api.shiesty.me';
     console.error(
-        `[raider-tools sync] Backend is unreachable (VITE_API_BASE_URL=${apiBase}). ` +
+      `[shiesty sync] Backend is unreachable (VITE_API_BASE_URL=${apiBase}). ` +
         `If you're developing locally, make sure the local API server is running — see docs/Local-Development.md.`,
     );
 }
@@ -157,7 +158,7 @@ export async function retrySync(): Promise<void> {
         } catch (err) {
             // The handler is expected to report its own error via
             // reportSyncError, but defend against ones that don't.
-            console.error('[raider-tools sync] retry handler threw', err);
+            console.error('[shiesty sync] retry handler threw', err);
         }
     }
     // Flush any dirty store so write failures get a second chance.

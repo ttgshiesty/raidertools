@@ -49,6 +49,18 @@ const LootHelperApp = lazy(() =>
 const QuartermasterApp = lazy(() =>
   import('./apps/quartermaster').then((m) => ({ default: m.QuartermasterApp }))
 );
+const StatsApp = lazy(() =>
+  import('./apps/stats').then((m) => ({ default: m.StatsApp }))
+);
+const StatsLayout = lazy(() =>
+  import('./apps/stats/StatsLayout').then((m) => ({ default: m.StatsLayout }))
+);
+const MetaForgeStats = lazy(() =>
+  import('./apps/stats/MetaForgeStats').then((m) => ({ default: m.MetaForgeStats }))
+);
+const BlueprintsApp = lazy(() =>
+  import('./apps/blueprints').then((m) => ({ default: m.BlueprintsApp }))
+);
 
 function App() {
   return (
@@ -66,6 +78,12 @@ function App() {
                     <Route path="quests" element={<QuestsApp />} />
                     <Route path="loot-helper" element={<LootHelperApp />} />
                     <Route path="quartermaster" element={<QuartermasterApp />} />
+                    <Route path="stats" element={<StatsLayout />}>
+                      <Route index element={<Navigate to="arctracker" replace />} />
+                      <Route path="arctracker" element={<StatsApp />} />
+                      <Route path="metaforge" element={<MetaForgeStats />} />
+                    </Route>
+                    <Route path="blueprints" element={<BlueprintsApp />} />
                     <Route path="profile" element={<Profile />}>
                       <Route index element={<Navigate to="arctracker" replace />} />
                       <Route path="arctracker" element={<ArcTrackerSection />} />

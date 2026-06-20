@@ -1,5 +1,5 @@
 {
-  "name": "raider-tools-infra",
+  "name": "shiesty-infra",
   "private": true,
   "scripts": {
     "build": "tsc -p tsconfig.json",

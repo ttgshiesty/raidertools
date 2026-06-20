@@ -1,22 +1,22 @@
 // Calculator-specific variables
 // (Uses shared variables from ../../../shared/styles/variables for fonts, spacing, colors)
 
-// Colors - Graph Bars (specific to craft calculator)
-$bar-saves: rgba(76, 175, 80, 0.4);
-$bar-saves-optimal: #4caf50;
-$bar-uses-more: rgba(229, 57, 53, 0.4);
-$bar-uses-more-optimal: rgba(229, 57, 53, 0.6);
-$bar-same: rgba(79, 195, 247, 0.3);
-$bar-same-optimal: rgba(79, 195, 247, 0.5);
+// Colors - Graph Bars (ARC Raiders Official)
+$bar-saves: rgba(38, 191, 87, 0.4);
+$bar-saves-optimal: #26bf57;
+$bar-uses-more: rgba(255, 45, 45, 0.4);
+$bar-uses-more-optimal: rgba(255, 45, 45, 0.6);
+$bar-same: rgba(0, 128, 255, 0.3);
+$bar-same-optimal: rgba(0, 128, 255, 0.5);
 
-// Calculator-specific colors
-$bg-card: #2a2a2a;
-$bg-input: #222;
-$border-focus: #4fc3f7;
-$text-muted: #666;
-$text-success: #4caf50;
-$text-warning: #ff9800;
-$text-error: #e53935;
+// Calculator-specific colors (ARC Raiders Official)
+$bg-card: #111111;
+$bg-input: #0a0a0a;
+$border-focus: #ff007f;
+$text-muted: #6c6c6c;
+$text-success: #00e600;
+$text-warning: #ffc600;
+$text-error: #ff2d2d;
 
 // Layout dimensions specific to calculator
 $calculator-min-width: 450px;

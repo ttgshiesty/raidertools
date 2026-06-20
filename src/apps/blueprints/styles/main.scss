@@ -1,0 +1,23 @@
+@use '../../../shared/styles/variables' as *;
+@use 'sass:color';
+
+.blueprints-page { display: flex; flex-direction: column; gap: $spacing-xl; overflow-y: auto; }
+.blueprints-header { display: flex; align-items: flex-start; justify-content: space-between; gap: $spacing-lg; h2 { @include urbanist-title; font-size: 28px; margin-bottom: $spacing-sm; } p { max-width: 720px; color: $text-secondary; line-height: 1.5; } }
+.blueprints-sync { display: inline-flex; align-items: center; justify-content: center; gap: $spacing-sm; min-height: 38px; padding: $spacing-sm $spacing-lg; border: 2px solid $border-default; border-radius: $radius-md; background: $bg-secondary; color: $text-primary; font-weight: 700; text-decoration: none; cursor: pointer; &:disabled { opacity: .55; cursor: wait; } }
+.blueprints-progress { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(160px, 320px); align-items: center; gap: $spacing-lg; padding: $spacing-lg $spacing-xl; border: 1px solid $border-default; border-radius: $radius-md; background: $bg-secondary; > svg { color: $text-accent; } div { display: flex; flex-direction: column; gap: $spacing-xs; } strong { color: $text-primary; font-size: $font-xl; } span { color: $text-secondary; font-size: $font-md; } progress { width: 100%; height: 10px; accent-color: $text-secondary; } }
+.blueprints-error { padding: $spacing-md $spacing-lg; border: 1px solid $border-light; border-radius: $radius-md; background: color.adjust($border-light, $alpha: -0.88); color: $text-light; }
+.blueprints-controls { display: flex; align-items: center; justify-content: space-between; gap: $spacing-lg; }
+.blueprints-search { display: flex; align-items: center; gap: $spacing-sm; width: min(420px, 100%); padding: $spacing-sm $spacing-md; border: 1px solid $border-default; border-radius: $radius-md; background: $bg-secondary; color: $text-accent; input { width: 100%; border: 0; outline: 0; background: transparent; color: $text-primary; } }
+.blueprints-status-filter, .blueprints-categories { display: flex; flex-wrap: wrap; gap: $spacing-xs; button { padding: $spacing-sm $spacing-md; border: 1px solid $border-default; border-radius: $radius-sm; background: $bg-secondary; color: $text-secondary; cursor: pointer; &.active { background: $text-primary; color: $bg-primary; } &:disabled { opacity: .4; cursor: not-allowed; } } }
+.blueprints-results { color: $text-secondary; font-size: $font-md; }
+.blueprints-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: $spacing-md; }
+.blueprint-card { display: flex; flex-direction: column; align-items: center; gap: $spacing-md; min-width: 0; padding: $spacing-md; border: 1px solid $border-default; border-radius: $radius-md; background: $bg-secondary; text-align: center; transition: $transition-default; --item-icon-size: 88px; .item-icon { width: 100%; } .item-icon__container { max-width: 100%; } &--learned { border-color: $border-lighter; box-shadow: inset 0 0 0 1px color.adjust($border-lighter, $alpha: -0.55); } &--unlearned { opacity: .62; filter: saturate(.45); } &:hover { transform: translateY(-2px); background: $bg-tertiary; } }
+.blueprint-card__check { position: absolute; top: $spacing-xs; right: $spacing-xs; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: $border-lighter; color: $bg-primary; }
+.blueprint-card__body { min-width: 0; width: 100%; h3 { overflow: hidden; color: $text-primary; font-size: $font-md; text-overflow: ellipsis; white-space: nowrap; } span { display: block; margin-top: $spacing-xs; color: $text-secondary; font-size: $font-sm; } small { display: block; margin-top: $spacing-sm; color: $text-light; font-size: $font-xs; text-transform: uppercase; } }
+.blueprint-card--learned .blueprint-card__body small { color: $text-secondary; }
+.blueprints-empty { min-height: 240px; display: grid; place-items: center; color: $text-secondary; }
+.blueprints-spin { animation: blueprints-spin .8s linear infinite; } @keyframes blueprints-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1280px) { .blueprints-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 920px) { .blueprints-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .blueprints-progress { grid-template-columns: auto 1fr; progress { grid-column: 1 / -1; } } }
+@media (max-width: 680px) { .blueprints-header, .blueprints-controls { align-items: stretch; flex-direction: column; } .blueprints-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

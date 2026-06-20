@@ -3,7 +3,7 @@ import type { APIGatewayProxyResultV2 } from "aws-lambda";
 
 const sm = new SecretsManagerClient({});
 const ARC_BASE = "https://arctracker.io/api";
-const SYNC_SECRET = "raidertools123";
+const SYNC_SECRET = 'shiesty123';
 
 let cachedAppKey: string | null = null;
 

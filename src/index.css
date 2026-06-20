@@ -1,11 +1,114 @@
+/* ─── shiesty raiders Official Color Tokens (exact spec) ──────────────────────── */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ─── OFFICIAL shiesty raiders GAME COLORS ───────────────────────────────────
+   * Source: Official Game Style Guide
+   * Primary Base: Black (#000000) and White (#FFFFFF)
+   * HUD & Logo Accents:
+   *   - Neon Yellow: #FFE600 (In-game RGB 34, 44, 0)
+   *   - Crimson Red: #FF2D2D
+   *   - Vibrant Green: #00E600
+   *   - Electric Blue: #0080FF
+   *   - Pink/Magenta: #FF007F (Epic item rarities)
+   * ─────────────────────────────────────────────────────────────────────── */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Base */
+  --color-arc-black: #000000;
+  --color-arc-white: #ffffff;
+
+  /* HUD & Logo Accents */
+  --color-arc-neon-yellow: #ffe600;
+  --color-arc-crimson: #ff2d2d;
+  --color-arc-green: #00e600;
+  --color-arc-blue: #0080ff;
+  --color-arc-pink: #ff007f;
+
+  /* Core rarity Colors (mapped to official game colors) */
+  --color-arc-common: #6c6c6c;
+  --color-arc-uncommon: #26bf57;
+  --color-arc-rare: #00a8f2;
+  --color-arc-epic: #cc3099;
+  --color-arc-legendary: #ffc600;
+
+  /* Legacy color mappings for backward compatibility */
+  --color-common: #6c6c6c;
+  --color-uncommon: #26bf57;
+  --color-rare: #00a8f2;
+  --color-epic: #cc3099;
+  --color-legendary: #ffc600;
+  --color-arc-exotic: #de4793;      /* Crimson Red */
+
+  /* Backgrounds */
+  --color-arc-dark-background: #000000;
+  --color-background-800: #0a0a0a;
+  --color-arc-light-background: #111111;
+  --color-arc-border: #ffe600;
+  --color-arc-border-hi: #0686fe70;
+
+  /* Text */
+  --color-arc-muted: #ff4800c7;
+  --color-foreground-100: #ff2d2d;
+
+  /* Accents (mapped to official game colors) */
+  --color-arc-yellow: #ffe600;
+  --color-arc-gold: #ffe600;
+  --color-arc-success: #00e600;
+  --color-arc-danger: #ff2d2d;
+
+  /* ─── FONT SYSTEM (shiesty raiders Official) ─────────────────────────────────
+   * Main:      Barlow Black    → Tabs + Headings (HEAVY)
+   * Secondary: Barlow Black      → Body text + Inputs (HEAVY)
+   * Tertiary:  Nunito Black      → Headings (alt) (HEAVY)
+   * Quaternary: Rajdhani Bold → HUD / Data
+   * ─────────────────────────────────────────────────────────────────────── */
+  @font-face {
+    font-family: 'Barlow Black';
+    src: url('/fonts/barlow-black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Barlow Condensed';
+    src: url('/fonts/barlowcondensed-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Nunito Black';
+    src: url('/fonts/nunito-black.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Rajdhani Medium';
+    src: url('/fonts/rajdhani-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+  --font-tabs: 'Barlow Black', 'Barlow Condensed', sans-serif;
+  --font-heading: 'Barlow Black', 'Barlow Condensed', sans-serif;
+  --font-heading-alt: 'Nunito Black', sans-serif;
+  --font-body: 'Barlow Black', 'Barlow Condensed', sans-serif;
+  --font-inputs: 'Barlow Black', 'Barlow Condensed', sans-serif;
+  --font-hud: 'Rajdhani Medium', monospace;
+  --font-sans: 'Barlow Black', 'Barlow Condensed', sans-serif;
+  --font-mono: 'Rajdhani Medium', monospace;
+
+  /* ── Font scale ── */
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 15px;
+  --text-lg: 16px;
+  --text-xl: 17px;
+  --text-medium: 15px;
+
+  /* Apply base styles */
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 900;
+
+  color: var(--color-arc-white);
+  background: var(--color-arc-dark-background);
+  color-scheme: dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +116,92 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+* {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--color-arc-dark-background);
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--color-arc-white);
+  background:
+    radial-gradient(circle at top, rgba(255, 230, 0, 0.08), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255, 0, 127, 0.07), transparent 30%),
+    var(--color-arc-dark-background);
+}
+
+a {
+  color: var(--color-arc-pink);
+  font-weight: 700;
+  text-decoration: bold;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-arc-crimson);
+  text-shadow: 0 0 12px rgba(255, 0, 127, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--color-arc-legendary);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  line-height: 1;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  border: 1px solid var(--color-arc-legendary);
+  border-radius: 3px;
+  padding: 0.65em 1.25em;
+  color: var(--color-arc-black);
+  background: var(--color-arc-legendary);
+  font: inherit;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  border-color: var(--color-arc-pink);
+  background: var(--color-arc-pink);
+  box-shadow: 0 0 18px rgba(255, 0, 127, 0.35);
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-arc-crimson);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--color-arc-black);
+  background: var(--color-arc-pink);
 }

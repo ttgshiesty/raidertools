@@ -169,11 +169,21 @@ export const quartermasterStore = new UserStateStore<QuartermasterState>({
     },
 });
 
+export interface MetaForgeState {
+    profileId: string | null;
+}
+
+export const metaforgeStore = new UserStateStore<MetaForgeState>({
+    domain: 'metaforge',
+    schemaVersion: 1,
+    defaultValue: { profileId: null },
+});
+
 // ---------------------------------------------------------------------------
 // Registry + global flush hooks
 // ---------------------------------------------------------------------------
 
-export const allStores = [questsStore, lootStore, quartermasterStore] as const;
+export const allStores = [questsStore, lootStore, quartermasterStore, metaforgeStore] as const;
 
 let globalHooksInstalled = false;
 

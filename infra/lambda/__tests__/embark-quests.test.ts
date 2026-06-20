@@ -78,13 +78,23 @@ vi.mock("../_lib/embarkQuestDecode", () => ({
     decodeEmbarkQuests: mocks.decodeEmbarkQuests,
 }));
 
-import { handler } from "../embark-quests";
+// @ts-expect-error Vitest must select the TypeScript source over stale tsc output.
+import { handler } from "../embark-quests.ts";
 
 function makeEvent(method: "GET" | "POST"): APIGatewayProxyEventV2WithJWTAuthorizer {
     return {
         headers: { origin: "http://localhost:5173" },
         requestContext: {
             http: { method },
+            authorizer: {
+                jwt: {
+                    claims: {
+                        sub: "user-sub-1",
+                        "cognito:groups": "embark-auth",
+                    },
+                    scopes: [],
+                },
+            },
         },
     } as unknown as APIGatewayProxyEventV2WithJWTAuthorizer;
 }
@@ -100,8 +110,10 @@ function parseBody(result: APIGatewayProxyStructuredResultV2) {
 
 describe("embark-quests handler", () => {
     beforeEach(() => {
-        vi.clearAllMocks();
-        process.env.USER_TABLE_NAME = "raider-tools-users";
+        vi.resetAllMocks();
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date("2026-05-26T12:00:00.000Z"));
+        process.env.USER_TABLE_NAME = 'shiesty-users';
         mocks.hasJwtGroup.mockReturnValue(true);
         mocks.jwtSub.mockReturnValue("user-sub-1");
         mocks.pickAllowedOrigin.mockReturnValue("http://localhost:5173");
@@ -110,7 +122,8 @@ describe("embark-quests handler", () => {
     });
 
     afterEach(() => {
-        vi.clearAllMocks();
+        vi.useRealTimers();
+        vi.resetAllMocks();
     });
 
     it("returns 401 when the user is not linked", async () => {
@@ -213,16 +226,16 @@ describe("embark-quests handler", () => {
 
         const putInput = (mocks.ddbSend.mock.calls[1]?.[0] as { input: Record<string, unknown> }).input;
         expect(putInput).toMatchObject({
-            TableName: "raider-tools-users",
-            Item: expect.objectContaining({
-                pk: "USER#user-sub-1",
-                sk: "EMBARK#QUESTS#LATEST",
-                source: "embark",
-                schemaVersion: 1,
-                rawSnapshotId: "raw-snapshot-id",
-                rawSnapshotKey: "embark/quests/raw.json",
-                normalizedSnapshotKey: "embark/quests/normalized.json",
-            }),
+          TableName: 'shiesty-users',
+          Item: expect.objectContaining({
+            pk: 'USER#user-sub-1',
+            sk: 'EMBARK#QUESTS#LATEST',
+            source: 'embark',
+            schemaVersion: 1,
+            rawSnapshotId: 'raw-snapshot-id',
+            rawSnapshotKey: 'embark/quests/raw.json',
+            normalizedSnapshotKey: 'embark/quests/normalized.json',
+          }),
         });
         expect(parseBody(result)).toEqual(snapshot);
     });

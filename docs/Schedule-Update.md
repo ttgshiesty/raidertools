@@ -56,7 +56,7 @@ Components:
 ## Runtime dependencies
 External data/services:
 - `https://arcraiders.com/map-conditions` (overview + per-condition pages)
-- `https://raider-tools.app/data/schedule/event-types.json`
+- `https://shiesty.me/data/schedule/event-types.json`
 
 AWS resources:
 - S3 schedule bucket (`ScheduleDataBucket`) with read/write from updater lambda
@@ -116,7 +116,7 @@ AWS_PROFILE=baschny aws logs tail "/aws/lambda/$FN_NAME" --since 10m --no-cli-pa
 ```
 
 Public endpoints:
-- `https://api.raider-tools.app/schedule/map-events.json`
-- `https://api.raider-tools.app/schedule/health.json`
+- `https://api.shiesty.me/schedule/map-events.json`
+- `https://api.shiesty.me/schedule/health.json`
 
 If MFA is required for the AWS profile, authenticate in a separate session before running deploy/invoke commands.

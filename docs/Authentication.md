@@ -7,7 +7,7 @@ For running sign-in locally against the dev-auth bypass (no Cognito, no Discord)
 
 This document covers:
 - The Cognito setup and how email/password + Discord sign-in work.
-- The custom domain (`auth.raider-tools.app`) and its cross-region cert.
+- The custom domain (`auth.shiesty.me`) and its cross-region cert.
 - The client-side auth API (`CognitoAuthContext`, `cognitoClient.ts`) and the sign-in / sign-up / callback pages.
 - How to add a new JWT-protected endpoint.
 - How to add a new identity provider (Discord-style bridge).
@@ -17,7 +17,7 @@ This document covers:
 ---
 ## 1. High-level architecture
 ```
-Browser SPA (raider-tools.app)
+Browser SPA (shiesty.me)
   │
   ├─ amazon-cognito-identity-js              (identity)
   │      ├─ email + password sign-in/up         → Cognito native API
@@ -26,16 +26,16 @@ Browser SPA (raider-tools.app)
   └─ Authenticated HTTPS (Bearer Cognito ID token)
          │
          ▼
-   API Gateway HTTP API  (api.raider-tools.app)
+   API Gateway HTTP API  (api.shiesty.me)
          │   HttpJwtAuthorizer bound to User Pool
          │
          ├─ /auth/discord/start          →  DiscordAuthFn   (no JWT)
          ├─ /auth/discord/callback       →  DiscordAuthFn   (no JWT)
          └─ every authenticated /me* route (see docs/User-Data.md)
-Cognito User Pool                       (eu-central-1)
+Cognito User Pool                       (us-east-2)
   • signInAliases: { email: true }      → Cognito Username is an email
   • lambdaTriggers: DefineAuth/CreateAuth/VerifyAuth (custom-auth flow)
-  • custom domain auth.raider-tools.app (served by CloudFront)
+  • custom domain auth.shiesty.me (served by CloudFront)
 ACM certificate                         (us-east-1, cross-region reference)
 Secrets Manager                         raider-tools/discord/oauth
   { clientId, clientSecret, stateSigningKey }      (populated post-deploy)
@@ -46,7 +46,7 @@ DynamoDB raider-tools-users
 ```
 Two stacks in `infra/` own everything auth-related:
 - `RaiderToolsAuthCertStack` (us-east-1) — ACM cert for the Cognito custom domain (Cognito requires the cert in us-east-1 because it serves the domain via CloudFront).
-- `RaiderToolsStack` (eu-central-1) — HTTP API + User Pool + User Pool Client + custom domain + custom-auth Lambdas + Discord bridge + `/me*` Lambdas + all API Gateway routes (data-layer pieces are covered in `User-Data.md`).
+- `RaiderToolsStack` (us-east-2) — HTTP API + User Pool + User Pool Client + custom domain + custom-auth Lambdas + Discord bridge + `/me*` Lambdas + all API Gateway routes (data-layer pieces are covered in `User-Data.md`).
 
 ---
 ## 2. Authentication flows
@@ -105,7 +105,7 @@ Browser                   DiscordAuthFn                Discord                Co
 Key properties:
 - **`prompt=none`** on the outgoing Discord redirect makes it a silent re-auth for returning users. If Discord replies with `?error=consent_required` (or similar interaction errors), `DiscordAuthFn` catches it and bounces to `/auth/discord/start?consent=1`, which retries without `prompt=none` so the consent screen is shown **exactly once**.
 - **HMAC-signed `state`** contains the return URL + a nonce + a timestamp. Signed with `stateSigningKey` from Secrets Manager, validated on the way back. 10-minute max age.
-- **Cognito user creation**: `signInAliases: { email: true }` forces `Username` to be an email. We therefore call `AdminCreateUser` with `Username = email` (synthetic `discord-<id>@no-email.raider-tools.app` if Discord didn't grant the `email` scope). We read `created.User.Username` — that's the **internal UUID Cognito assigns** — and persist it as `cognitoUsername` in `IDP#discord#<id>`. All subsequent admin calls for that user use this UUID.
+- **Cognito user creation**: `signInAliases: { email: true }` forces `Username` to be an email. We therefore call `AdminCreateUser` with `Username = email` (synthetic `discord-<id>@no-email.shiesty.me` if Discord didn't grant the `email` scope). We read `created.User.Username` — that's the **internal UUID Cognito assigns** — and persist it as `cognitoUsername` in `IDP#discord#<id>`. All subsequent admin calls for that user use this UUID.
 - **Nonce bridge**: `DiscordAuthFn` mints `nonce + hmac(nonce, stateSigningKey)` and puts a TTL row `NONCE#<nonce>` in DynamoDB pointing at `cognitoUsername`. The answer `"<nonce>.<hmac>"` is passed to `AdminRespondToAuthChallenge`. The `VerifyAuthChallengeResponse` Lambda trigger (`cognito-verify-auth.ts`) validates the HMAC, single-use deletes the nonce, and matches `event.userName` against the stored mapping.
 - **Tokens in the fragment**: `DiscordAuthFn` redirects to `<spa>/auth/callback#id_token=...&refresh_token=...&expires_in=...`. The SPA consumes them in `CognitoAuthContext.useEffect` via `acceptTokensFromHash(...)`, then `history.replaceState` strips the fragment so tokens never appear in logs or history.
 
@@ -115,13 +115,13 @@ Key properties:
 - **Sign-out is user-data aware**: `signOut()` fire-and-forget calls `runSignOutWipe()` (in `src/shared/state/hydration.ts`) **before** clearing Cognito tokens, so any pending authenticated writes can still fire. See `docs/User-Data.md` §5 for what the wipe does.
 - **`initializing` is true only while Cognito itself is being resolved** (hash-token ingest, cached-session rehydrate). `available === false` means the build has no Cognito env vars, and the SPA runs fully in anonymous mode.
 
-### 2.4 Custom domain (`auth.raider-tools.app`)
+### 2.4 Custom domain (`auth.shiesty.me`)
 Cognito serves the custom domain via CloudFront, which means the ACM certificate **must live in us-east-1**. That is why we have a two-region setup:
 - `RaiderToolsAuthCertStack` in us-east-1 provisions the cert against Route53 DNS validation.
-- `RaiderToolsStack` in eu-central-1 consumes it via CDK's `crossRegionReferences: true`.
-- A Route53 `A`-alias record points `auth.raider-tools.app` at Cognito's CloudFront distribution.
+- `RaiderToolsStack` in us-east-2 consumes it via CDK's `crossRegionReferences: true`.
+- A Route53 `A`-alias record points `auth.shiesty.me` at Cognito's CloudFront distribution.
 
-**Pre-deploy requirement**: the apex `raider-tools.app` must resolve (`dig +short raider-tools.app A`). Cognito refuses to create a subdomain if the parent zone has no apex record. The Amplify hosting record is sufficient.
+**Pre-deploy requirement**: the apex `shiesty.me` must resolve (`dig +short shiesty.me A`). Cognito refuses to create a subdomain if the parent zone has no apex record. The Amplify hosting record is sufficient.
 
 First-time deploy takes **20–40 minutes** because Cognito is provisioning a new CloudFront distribution. Subsequent deploys are fast.
 
@@ -195,7 +195,7 @@ Important: not every OAuth flow belongs here. Embark is intentionally **not** a 
    - `GET /auth/<provider>/callback` → exchange code, fetch profile, look up `IDP#<provider>#<external_id>` in DynamoDB, `AdminCreateUser` (Username = email) on first sight, mint nonce, run `AdminInitiateAuth(CUSTOM_AUTH)` + `AdminRespondToAuthChallenge`, 302 back to the SPA with tokens in the URL fragment.
 3. **Cognito custom-auth triggers** — the existing `cognito-define-auth.ts` / `cognito-create-auth.ts` / `cognito-verify-auth.ts` are **generic** (they verify `<nonce>.<hmac>` against `stateSigningKey`). Reuse them. If your provider needs a different signing key, either share `stateSigningKey` across providers (easiest) or extend the verify trigger to try multiple keys.
 4. **CDK** — wire the new Lambda in `RaiderToolsStack`, grant Secrets Manager read, DynamoDB R/W, and the same `cognito-idp:AdminCreate/Get/InitiateAuth/RespondToAuthChallenge/SetUserPassword/UpdateUserAttributes` actions that `discordAuthFn` has. Add two routes (`/auth/<provider>/start`, `/auth/<provider>/callback`) on `this.httpApi` — **no JWT authorizer**; these are pre-auth routes.
-5. **Dev portal setup** — register the OAuth redirect URI `https://api.raider-tools.app/auth/<provider>/callback` in the provider's developer console.
+5. **Dev portal setup** — register the OAuth redirect URI `https://api.shiesty.me/auth/<provider>/callback` in the provider's developer console.
 6. **SPA** — add a `startSignInWith<Provider>()` helper in `CognitoAuthContext` that navigates to `/auth/<provider>/start?return=<origin>`, and a button in `SignIn.tsx`.
 7. **AuthCallback** — the existing `/auth/callback` page consumes any `id_token + refresh_token + access_token` fragment regardless of provider. No changes needed.
 
@@ -208,13 +208,13 @@ Important: not every OAuth flow belongs here. Embark is intentionally **not** a 
 ## 6. Restrictions and caveats (non-negotiable)
 - **Always use `getIdToken()`** before an authenticated call. Tokens live 1 h; hand-rolled caches break silently.
 - **Never validate JWTs in application code.** API Gateway's `HttpJwtAuthorizer` is the only validator.
-- **Never add OAuth callback URLs to a different domain than `api.raider-tools.app`.** The `DISCORD_REDIRECT_URI` env var is keyed on it, the provider's allowlist is keyed on it, and cross-domain redirects break the state-signing guarantee.
+- **Never add OAuth callback URLs to a different domain than `api.shiesty.me`.** The `DISCORD_REDIRECT_URI` env var is keyed on it, the provider's allowlist is keyed on it, and cross-domain redirects break the state-signing guarantee.
 - **Signed state only.** Every OAuth bridge must sign the `state` param with a key in Secrets Manager. Reject any callback where the signature does not match.
 - **Single-use nonces only.** Every custom-auth bridge must use a `NONCE#<hex>` row with a TTL. Never re-use a nonce, never accept one past the TTL.
 - **Do not sign users in without consent.** `prompt=none` is acceptable for silent re-auth, but on error we must fall back to the full consent screen.
 - **Do not alter the User Pool removal policy.** It is `RETAIN`. Accidentally deleting the pool wipes every user.
 - **Do not change `signInAliases`** without also re-testing every admin call site. Going from `email` to `username` (or vice versa) changes what `AdminCreateUser` expects and what `event.userName` looks like in triggers.
-- **Apex DNS record is required.** Without an `A`/`ALIAS` on `raider-tools.app`, the Cognito custom domain deploy fails with `InvalidParameterException`.
+- **Apex DNS record is required.** Without an `A`/`ALIAS` on `shiesty.me`, the Cognito custom domain deploy fails with `InvalidParameterException`.
 - **Tokens in the fragment, not the query string.** `DiscordAuthFn` redirects with `#id_token=...`, never `?id_token=...`. Anything that leaks into API Gateway logs is a breach risk.
 - **`signOut()` must wipe user data first.** If you add new auth-related client caches, extend the wipe in `src/shared/state/hydration.ts` rather than piggybacking into `CognitoAuthContext.signOut`.
 - **`amazon-cognito-identity-js` uses `localStorage` by default.** If you move tokens to cookies, update every fetch call in the codebase; do not mix storage strategies.
@@ -226,10 +226,10 @@ cd infra
 AWS_PROFILE=baschny npx cdk diff
 AWS_PROFILE=baschny npx cdk deploy --all --require-approval never
 ```
-Everything auth-related lives in `RaiderToolsStack` (eu-central-1). Cross-region cert changes (very rare) go via `RaiderToolsAuthCertStack` (us-east-1) — `--all` handles both. Both regions must be bootstrapped:
+Everything auth-related lives in `RaiderToolsStack` (us-east-2). Cross-region cert changes (very rare) go via `RaiderToolsAuthCertStack` (us-east-1) — `--all` handles both. Both regions must be bootstrapped:
 ```bash
-AWS_PROFILE=baschny cdk bootstrap aws://935743309611/eu-central-1
-AWS_PROFILE=baschny cdk bootstrap aws://935743309611/us-east-1
+AWS_PROFILE=baschny cdk bootstrap aws://845242190959/us-east-2
+AWS_PROFILE=baschny cdk bootstrap aws://845242190959/us-east-1
 ```
 Secrets that must be populated post-deploy:
 ```bash
@@ -240,15 +240,15 @@ AWS_PROFILE=baschny aws secretsmanager put-secret-value \
 SPA env vars (required for anything beyond anonymous mode):
 - `VITE_COGNITO_USER_POOL_ID`
 - `VITE_COGNITO_CLIENT_ID`
-- `VITE_API_BASE_URL=https://api.raider-tools.app`
+- `VITE_API_BASE_URL=https://api.shiesty.me`
 
 Set these in the Amplify console for production and in `.env` for local dev. The SPA degrades to anonymous mode when any of them is missing.
 
 ---
 ## 8. File map (auth-specific cheat sheet)
 Server / infra:
-- `infra/lib/raider-tools-stack.ts` — unified eu-central-1 stack: HTTP API + custom domain, User Pool + custom domain, Cognito triggers, Discord bridge, all `/me*` routes (data endpoints detailed in User-Data.md).
-- `infra/lib/raider-tools-auth-cert-stack.ts` — us-east-1 ACM cert for `auth.raider-tools.app`.
+- `infra/lib/raider-tools-stack.ts` — unified us-east-2 stack: HTTP API + custom domain, User Pool + custom domain, Cognito triggers, Discord bridge, all `/me*` routes (data endpoints detailed in User-Data.md).
+- `infra/lib/raider-tools-auth-cert-stack.ts` — us-east-1 ACM cert for `auth.shiesty.me`.
 - `infra/lambda/discord-auth.ts` — Discord OAuth bridge (`/auth/discord/start`, `/auth/discord/callback`).
 - `infra/lambda/cognito-define-auth.ts` — Cognito `DefineAuthChallenge` trigger.
 - `infra/lambda/cognito-create-auth.ts` — Cognito `CreateAuthChallenge` trigger.

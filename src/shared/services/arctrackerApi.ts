@@ -1,7 +1,7 @@
 /**
  * ArcTracker API Service
- * Handles communication with arctracker.io via Raider Tools proxies.
- * Data sync requires a signed-in Raider Tools user with a server-side linked
+ * Handles communication with arctracker.io via SHiESTY RAiDERS proxies.
+ * Data sync requires a signed-in SHiESTY RAiDERS user with a server-side linked
  * ArcTracker token.
  * Includes retry logic, timeout handling, and IndexedDB caching.
  */
@@ -41,8 +41,9 @@ import { notifyArctrackerLinkInvalid } from '../auth/arctrackerLinkEvents';
 import { DEFAULT_LOCALE, LOCALE_STORAGE_KEY, type AppLocale } from '../i18n/config';
 import type { CachedProjects } from '../../apps/quartermaster/types/project';
 
-const API_ORIGIN = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-  'https://api.raider-tools.app';
+const API_ORIGIN =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 const USER_RELAY_BASE = `${API_ORIGIN}/me/arctracker`;
 const TIMEOUT_MS = 10000;
 const MAX_RETRIES = 1;

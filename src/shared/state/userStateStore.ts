@@ -19,12 +19,13 @@
 
 import { getIdToken } from '../auth/cognitoClient';
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
-    'https://api.raider-tools.app';
+const API_BASE =
+  (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+  'https://api.shiesty.me';
 
 const DEFAULT_DEBOUNCE_MS = 1500;
 
-export type DomainName = 'quests' | 'loot' | 'quartermaster';
+export type DomainName = 'quests' | 'loot' | 'quartermaster' | 'metaforge';
 
 export interface DomainEnvelope<T> {
     schemaVersion: number;
@@ -601,4 +602,3 @@ class RemoteBackend<T> implements Backend<T> {
         }
     }
 }
-

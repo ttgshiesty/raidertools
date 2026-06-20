@@ -1,5 +1,5 @@
 /**
- * Local API server for raider-tools development.
+ * Local API server for shiesty development.
  *
  * Mirrors the production API Gateway + Lambda stack on a single Node
  * process by dispatching HTTP requests to the same handlers used in
@@ -12,7 +12,7 @@
  * This is a *dev-only* server. It deliberately:
  *   - Uses a permissive CORS policy for the local Vite dev server.
  *   - Does not validate JWTs (the dev token is not signed).
- *   - Creates the `raider-tools-users` table with a minimal schema
+ *   - Creates the `shiesty-users` table with a minimal schema
  *     (pk/sk + ttl). If the real CDK stack diverges, update
  *     `ensureTable()` below to match.
  *
@@ -53,9 +53,9 @@ loadLocalEnvFiles();
 
 const LOCAL_API_PORT = Number(process.env.LOCAL_API_PORT ?? 4000);
 const DDB_ENDPOINT = process.env.AWS_ENDPOINT_URL_DYNAMODB ?? "http://localhost:8000";
-const TABLE_NAME = process.env.USER_TABLE_NAME ?? "raider-tools-users";
+const TABLE_NAME = process.env.USER_TABLE_NAME ?? "shiesty-users";
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS ?? "http://localhost:5173";
-const AWS_REGION = process.env.AWS_REGION ?? "eu-central-1";
+const AWS_REGION = process.env.AWS_REGION ?? "us-east-2";
 
 process.env.AWS_REGION = AWS_REGION;
 process.env.AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID ?? "local";
@@ -64,7 +64,7 @@ process.env.AWS_ENDPOINT_URL_DYNAMODB = DDB_ENDPOINT;
 process.env.USER_TABLE_NAME = TABLE_NAME;
 process.env.ALLOWED_ORIGINS = ALLOWED_ORIGINS;
 process.env.RAIDER_TOOLS_LOCAL_DEV = "true";
-process.env.LOCAL_TOKEN_ENCRYPTION_KEY = process.env.LOCAL_TOKEN_ENCRYPTION_KEY ?? "raider-tools-local-dev-token-key";
+process.env.LOCAL_TOKEN_ENCRYPTION_KEY = process.env.LOCAL_TOKEN_ENCRYPTION_KEY ?? "shiesty-local-dev-token-key";
 process.env.EMBARK_LOOPBACK_REDIRECT_URI =
     process.env.EMBARK_LOOPBACK_REDIRECT_URI ?? "http://127.0.0.1:49176";
 process.env.EMBARK_OAUTH_CLIENT_SECRET =
@@ -72,7 +72,7 @@ process.env.EMBARK_OAUTH_CLIENT_SECRET =
 process.env.EMBARK_MANIFEST_ID =
     process.env.EMBARK_MANIFEST_ID ?? "local-dev-manifest";
 process.env.EMBARK_USER_AGENT =
-    process.env.EMBARK_USER_AGENT ?? "RaiderToolsLocalDev/0.1";
+    process.env.EMBARK_USER_AGENT ?? "shiestyLocalDev/0.1";
 
 /* eslint-disable @typescript-eslint/no-require-imports */
 // Imports are intentionally deferred until after env setup so that each
@@ -84,6 +84,7 @@ const embarkLink = require("../lambda/embark-link");
 const embarkInventory = require("../lambda/embark-inventory");
 const embarkQuests = require("../lambda/embark-quests");
 const embarkProjects = require("../lambda/embark-projects");
+const metaforgeStats = require("../lambda/metaforge-stats");
 const arctrackerUserProxy = require("../lambda/arctracker-user-proxy");
 /* eslint-enable @typescript-eslint/no-require-imports */
 
@@ -124,7 +125,7 @@ async function ensureTable(): Promise<void> {
     }
 
     // Minimal schema: pk/sk only. Keep in sync with the CDK table
-    // definition in infra/lib/raider-tools-stack.ts — this local
+    // definition in infra/lib/shiesty-stack.ts — this local
     // version intentionally omits PITR + KMS + TTL attribute (TTL is
     // only enforced on NONCE#* rows which are an auth-layer concern
     // not exercised locally).
@@ -210,6 +211,7 @@ export function matchRoute(method: string, pathname: string): MatchedRoute | nul
         embarkQuestsSync: embarkQuests.handler,
         embarkProjects: embarkProjects.handler,
         embarkProjectsSync: embarkProjects.handler,
+        metaforgeStats: metaforgeStats.handler,
         arctrackerUserProxy: arctrackerUserProxy.handler,
     };
 

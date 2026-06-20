@@ -37,7 +37,7 @@ import {
 const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}));
 
 /** The set of state domains the frontend may read/write. */
-const ALLOWED_DOMAINS = new Set(["quests", "loot", "quartermaster"]);
+const ALLOWED_DOMAINS = new Set(["quests", "loot", "quartermaster", "metaforge"]);
 
 /** Hard cap per-domain payload to keep DynamoDB rows small. */
 const MAX_DATA_BYTES = 64 * 1024;
@@ -58,6 +58,7 @@ interface MigrateBody {
     quests?: StateBody;
     loot?: StateBody;
     quartermaster?: StateBody;
+    metaforge?: StateBody;
 }
 
 export async function handler(

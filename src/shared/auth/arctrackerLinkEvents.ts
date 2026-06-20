@@ -1,4 +1,4 @@
-export const ARCTRACKER_LINK_INVALID_EVENT = 'raider-tools:arctracker-link-invalid';
+export const ARCTRACKER_LINK_INVALID_EVENT = 'shiesty:arctracker-link-invalid';
 
 export function notifyArctrackerLinkInvalid(): void {
   if (typeof window === 'undefined') return;

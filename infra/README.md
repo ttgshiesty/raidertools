@@ -1,15 +1,15 @@
-# Raider Tools – Infrastructure
+# SHiESTY RAiDERS – Infrastructure
 
-This `infra/` project provisions the AWS resources for `raider-tools.app`. Two stacks in two regions, always deployed together:
+This `infra/` project provisions the AWS resources for `shiesty.me`. Two stacks in two regions, always deployed together:
 
-- `RaiderToolsAuthCertStack` (**us-east-1**) – ACM certificate for the Cognito custom domain `auth.raider-tools.app`. Cognito requires this certificate to live in us-east-1 because it serves the domain via CloudFront.
-- `RaiderToolsStack` (eu-central-1) – everything else: HTTP API at `api.raider-tools.app`, authenticated ArcTracker proxying, schedule services, Cognito user pool (using the custom domain), DynamoDB user table, KMS CMK, Discord OAuth bridge, and all `/me*`, `/me/state/*`, `/me/migrate` Lambdas + routes.
+- `RaiderToolsAuthCertStack` (**us-east-1**) – ACM certificate for the Cognito custom domain `auth.shiesty.me`. Cognito requires this certificate to live in us-east-1 because it serves the domain via CloudFront.
+- `RaiderToolsStack` (us-east-2) – everything else: HTTP API at `api.shiesty.me`, authenticated ArcTracker proxying, schedule services, Cognito user pool (using the custom domain), DynamoDB user table, KMS CMK, Discord OAuth bridge, and all `/me*`, `/me/state/*`, `/me/migrate` Lambdas + routes.
 
-ArcTracker profile data requires a signed-in Raider Tools user. The SPA links a user's ArcTracker token through `/me/links/arctracker`, and ArcTracker-backed data sync runs through `/me/arctracker/{proxy+}` using the encrypted linked token server-side. The ArcTracker **app key** is never exposed in the browser.
+ArcTracker profile data requires a signed-in SHiESTY RAiDERS user. The SPA links a user's ArcTracker token through `/me/links/arctracker`, and ArcTracker-backed data sync runs through `/me/arctracker/{proxy+}` using the encrypted linked token server-side. The ArcTracker **app key** is never exposed in the browser.
 
 Cross-stack references between the two stacks are wired via CDK's `crossRegionReferences: true` (no manual ARN copy/paste).
 
-History: `RaiderToolsStack` merges two older stacks, `RaiderToolsArcRelayStack` and `RaiderToolsAuthStack`. The split was purely thematic and caused a silent foot-gun — routes added via `httpApi.addRoutes(...)` from the auth stack physically landed in the relay stack, so `cdk deploy` of only the auth stack quietly skipped new routes. The merged layout makes `cdk deploy --all` always sufficient.
+History: `RaiderToolsStack` merges two older stacks, `shiestyArcRelayStack` and `shiestyAuthStack`. The split was purely thematic and caused a silent foot-gun — routes added via `httpApi.addRoutes(...)` from the auth stack physically landed in the relay stack, so `cdk deploy` of only the auth stack quietly skipped new routes. The merged layout makes `cdk deploy --all` always sufficient.
 
 See https://arctracker.io/developers/docs for complete documentation.
 
@@ -17,9 +17,9 @@ See https://arctracker.io/developers/docs for complete documentation.
 
 ## a) AWS resources created by this infrastructure
 
-The CDK stack (CloudFormation) creates the following resources in **eu-central-1**:
+The CDK stack (CloudFormation) creates the following resources in **us-east-2**:
 
-- ACM Certificate for `api.raider-tools.app` (DNS validated via Route53)
+- ACM Certificate for `api.shiesty.me` (DNS validated via Route53)
 - API Gateway (HTTP API) for authenticated user endpoints and schedule endpoints
 - Lambda functions (Node.js) that:
     - reads the ArcTracker app key from Secrets Manager
@@ -27,14 +27,14 @@ The CDK stack (CloudFormation) creates the following resources in **eu-central-1
     - forward authorized requests to ArcTracker
     - passes through rate-limit headers
     - enforces an allowlist of routes
-- API Gateway custom domain name `api.raider-tools.app`
+- API Gateway custom domain name `api.shiesty.me`
 - API mapping (custom domain → API stage)
-- Route53 A record (alias) for `api.raider-tools.app` pointing to the API Gateway domain
+- Route53 A record (alias) for `api.shiesty.me` pointing to the API Gateway domain
 - IAM permissions allowing the Lambda to read the Secrets Manager secret
 
 External dependency (must already exist):
 
-- Route53 hosted zone for `raider-tools.app`
+- Route53 hosted zone for `shiesty.me`
 
 ---
 
@@ -44,7 +44,7 @@ External dependency (must already exist):
 
 ```bash
 AWS_PROFILE=baschny aws route53 list-hosted-zones \
-  --query "HostedZones[?Name=='raider-tools.app.'].{Id:Id,Name:Name}" \
+  --query "HostedZones[?Name=='shiesty.me.'].{Id:Id,Name:Name}" \
   --output table
 ```
 
@@ -59,7 +59,7 @@ Create once:
 ```bash
 AWS_PROFILE=baschny aws secretsmanager create-secret \
   --name "arctracker/appKey" \
-  --description "ArcTracker application API key for raider-tools.app" \
+  --description "ArcTracker application API key for shiesty.me" \
   --secret-string "arc_k1_XXXXX"
 ```
 
@@ -71,7 +71,7 @@ Edit `infra/bin/app.ts` and set:
 
 - `hostedZoneId` → value from step 1
 - `arcAppKeySecretName` → `arctracker/appKey`
-- `allowedOrigin` → `https://raider-tools.app`
+- `allowedOrigin` → `https://shiesty.me`
 
 ---
 
@@ -80,8 +80,8 @@ Edit `infra/bin/app.ts` and set:
 If not done yet, bootstrap **both** regions used by this project:
 
 ```bash
-AWS_PROFILE=baschny cdk bootstrap aws://935743309611/eu-central-1
-AWS_PROFILE=baschny cdk bootstrap aws://935743309611/us-east-1
+AWS_PROFILE=baschny cdk bootstrap aws://845242190959/us-east-2
+AWS_PROFILE=baschny cdk bootstrap aws://845242190959/us-east-1
 ```
 
 The us-east-1 bootstrap is required for `RaiderToolsAuthCertStack` (the Cognito custom-domain certificate).
@@ -149,7 +149,7 @@ After deployment, test ArcTracker sync through the signed-in user proxy with a C
 ```bash
 curl -i \
   -H "Authorization: Bearer COGNITO_ID_TOKEN_HERE" \
-  https://api.raider-tools.app/me/arctracker/v2/user/profile
+  https://api.shiesty.me/me/arctracker/v2/user/profile
 ```
 
 Expected result:
@@ -165,7 +165,7 @@ Expected result:
 
 ## Notes
 
-- Signed-in Raider Tools users access stored ArcTracker tokens through `/me/arctracker/{proxy+}`; that route decrypts the linked token server-side and uses the shared relay forwarding helper.
+- Signed-in SHiESTY RAiDERS users access stored ArcTracker tokens through `/me/arctracker/{proxy+}`; that route decrypts the linked token server-side and uses the shared relay forwarding helper.
 - Anonymous ArcTracker profile usage is intentionally unsupported.
 
 ---
@@ -175,9 +175,9 @@ Expected result:
 These resources all live in the unified `RaiderToolsStack`:
 
 - A **Cognito User Pool** (email + password, plus a Discord-bridged passwordless flow via custom-auth Lambda triggers).
-- A **Cognito custom domain** at `auth.raider-tools.app`, backed by a us-east-1 ACM certificate provisioned by `RaiderToolsAuthCertStack` and wired in via cross-region references. A Route53 A-record alias is created automatically.
+- A **Cognito custom domain** at `auth.shiesty.me`, backed by a us-east-1 ACM certificate provisioned by `RaiderToolsAuthCertStack` and wired in via cross-region references. A Route53 A-record alias is created automatically.
 - A **DynamoDB single-table** `raider-tools-users` for profiles, IdP mappings, envelope-encrypted linked-account tokens, and per-user synced state (`STATE#*` rows).
-- A **KMS CMK** (`alias/raider-tools/user-secrets`) used to envelope-encrypt linked-account tokens (currently ArcTracker; Embark in phase 2).
+- A **KMS CMK** (`alias/raider-tools/user-secrets`) used to envelope-encrypt ArcTracker and Embark linked-account tokens.
 - A **Secrets Manager** secret `raider-tools/discord/oauth` with the Discord OAuth client id/secret + a HMAC state-signing key.
 - Lambdas behind new routes on the shared HTTP API:
   - `GET /auth/discord/start`, `GET /auth/discord/callback` – Discord OAuth bridge (no JWT auth).
@@ -188,10 +188,10 @@ These resources all live in the unified `RaiderToolsStack`:
 
 ### Pre-deploy: apex-record requirement (Cognito custom domain)
 
-Cognito refuses to create a custom domain if the **apex** of the parent zone (`raider-tools.app`) does not already resolve. Verify before `cdk deploy`:
+Cognito refuses to create a custom domain if the **apex** of the parent zone (`shiesty.me`) does not already resolve. Verify before `cdk deploy`:
 
 ```bash
-dig +short raider-tools.app A
+dig +short shiesty.me A
 ```
 
 If empty, add an A or alias record at the apex (the Amplify hosting record is sufficient) before deploying. Otherwise the auth-stack deploy will fail with `InvalidParameterException: Custom domain is not a valid subdomain`.
@@ -201,7 +201,7 @@ If empty, add an A or alias record at the apex (the Amplify hosting record is su
 ### Post-deploy: populate the Discord OAuth secret
 
 1. Create an application at https://discord.com/developers/applications.
-2. In **OAuth2 → Redirects**, add: `https://api.raider-tools.app/auth/discord/callback`.
+2. In **OAuth2 → Redirects**, add: `https://api.shiesty.me/auth/discord/callback`.
 3. In **OAuth2 → Scopes**, no static config needed (we request `identify email` from the SPA flow).
 4. Generate a 32-byte random key for HMAC-signing the `state` parameter:
 
@@ -242,7 +242,7 @@ AWS_PROFILE=baschny aws secretsmanager put-secret-value \
 AWS_PROFILE=baschny aws ssm put-parameter \
   --name /raider-tools/embark/manifest-id \
   --type String \
-  --value "1668862126276720848" \
+  --value "2262541541858150590" \
   --overwrite
 
 AWS_PROFILE=baschny aws ssm put-parameter \
@@ -279,7 +279,7 @@ Add these to the Vite `.env` (and to AWS Amplify environment variables for produ
 
 - `VITE_COGNITO_USER_POOL_ID` – from CDK output `RaiderToolsStack.UserPoolId`
 - `VITE_COGNITO_CLIENT_ID` – from CDK output `RaiderToolsStack.UserPoolClientId`
-- `VITE_API_BASE_URL=https://api.raider-tools.app`
+- `VITE_API_BASE_URL=https://api.shiesty.me`
 
 Whenever the Cognito pool is recreated (e.g. stack rebuild), both values change and the Amplify build needs the new values before the next SPA deploy — otherwise sign-in fails silently against the old pool.
 
@@ -287,8 +287,8 @@ Whenever the Cognito pool is recreated (e.g. stack rebuild), both values change 
 
 ```bash
 # Start the Discord flow (will 302 to discord.com/oauth2/authorize)
-curl -i "https://api.raider-tools.app/auth/discord/start?return=https://raider-tools.app"
+curl -i "https://api.shiesty.me/auth/discord/start?return=https://shiesty.me"
 
 # Read your own profile (replace <ID_TOKEN> with a Cognito ID token from sign-in)
-curl -i -H "Authorization: Bearer <ID_TOKEN>" https://api.raider-tools.app/me
+curl -i -H "Authorization: Bearer <ID_TOKEN>" https://api.shiesty.me/me
 ```

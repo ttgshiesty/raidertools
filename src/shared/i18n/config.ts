@@ -17,7 +17,7 @@ export const SUPPORTED_LOCALES = [
 export type AppLocale = (typeof SUPPORTED_LOCALES)[number];
 
 export const DEFAULT_LOCALE: AppLocale = 'en';
-export const LOCALE_STORAGE_KEY = 'raider-tools-locale';
+export const LOCALE_STORAGE_KEY = 'shiesty-locale';
 
 export interface LocaleOption {
   code: AppLocale;

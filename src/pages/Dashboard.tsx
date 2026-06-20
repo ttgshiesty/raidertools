@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calendar, Calculator, ListTodo, Package, History, ClipboardList } from 'lucide-react';
+import { Calendar, Calculator, ListTodo, Package, History, ClipboardList, Activity, BookOpenCheck } from 'lucide-react';
 import { trackNavigation } from '../shared/utils/analytics';
 import { useLocale } from '../shared/context/LocaleContext';
 
@@ -34,6 +34,18 @@ const TOOL_METADATA = {
     nameKey: 'shared.tools.quartermaster',
     descriptionKey: 'dashboard.tools.quartermaster',
   },
+  stats: {
+    path: '/stats',
+    icon: Activity,
+    nameKey: 'shared.tools.stats',
+    descriptionKey: 'dashboard.tools.stats',
+  },
+  blueprints: {
+    path: '/blueprints',
+    icon: BookOpenCheck,
+    nameKey: 'shared.tools.blueprints',
+    descriptionKey: 'dashboard.tools.blueprints',
+  },
 } as const;
 
 type ToolId = keyof typeof TOOL_METADATA;
@@ -45,6 +57,8 @@ const TOOLS = [
   TOOL_METADATA.quests,
   TOOL_METADATA['loot-helper'],
   TOOL_METADATA.quartermaster,
+  TOOL_METADATA.stats,
+  TOOL_METADATA.blueprints,
 ];
 
 interface ChangelogEntry {

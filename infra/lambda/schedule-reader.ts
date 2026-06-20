@@ -19,7 +19,8 @@ const KEY_BY_PATH: Record<string, string> = {
 };
 
 export async function handler(event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResultV2> {
-    const allowedOriginsStr = process.env.ALLOWED_ORIGINS ?? "https://raider-tools.app";
+    const allowedOriginsStr =
+      process.env.ALLOWED_ORIGINS ?? 'https://shiesty.me';
     const allowedOrigins = allowedOriginsStr.split(",").map((origin) => origin.trim());
     const requestOrigin = event.headers?.origin || event.headers?.Origin || "";
     const allowedOrigin = allowedOrigins.includes(requestOrigin) ? requestOrigin : allowedOrigins[0];

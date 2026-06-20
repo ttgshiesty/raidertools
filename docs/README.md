@@ -8,6 +8,8 @@ A unified collection of ARC Raiders tools and utilities built with React, TypeSc
 - **Craft Calculator**: Calculate crafting requirements and material needs
 - **Quest Tracker**: Track your quest progress with an interactive quest tree
 - **Looting Helper**: Visualize crafting chains to know what to loot during raids
+- **Stats**: View ARCTracker and MetaForge player statistics
+- **Blueprints**: Track learned blueprints against the canonical item data
 
 ## Tech Stack
 
@@ -82,7 +84,7 @@ scripts/                  # Data generation scripts
 
 ## Deployment
 
-This application is configured for deployment on AWS Amplify and will be hosted at https://raider-tools.app/
+This application is configured for deployment on AWS Amplify and is hosted at https://shiesty.me/
 
 ## Contributing
 

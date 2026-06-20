@@ -493,7 +493,7 @@ export function normalizeStatsTotals(source: Record<string, unknown>): Normalize
     damage: firstNumber(source, ['damage', 'damageDealt', 'totalDamage', 'totalDamageDealt']),
     playerKills: firstNumber(source, ['playerKills', 'kills', 'totalPlayerKills']),
     arcKills: firstNumber(source, ['arcKills', 'arcEnemyKills', 'enemiesKilled', 'totalArcKills']),
-    lootValue: firstNumber(source, ['lootValue', 'valueExtracted', 'totalLootValue']),
+    lootValue: firstNumber(source, ['lootValue', 'valueExtracted', 'totalLootValue', 'totalValueExtracted']),
     loadoutValue: firstNumber(source, ['loadoutValue', 'valueBroughtIn', 'totalLoadoutValue']),
     durationMs,
     extracted: firstBoolean(source, ['extracted', 'outcome', 'extractionOutcome', 'survived']),

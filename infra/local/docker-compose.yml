@@ -10,7 +10,7 @@
 services:
   dynamodb:
     image: amazon/dynamodb-local:latest
-    container_name: raider-tools-dynamodb-local
+    container_name: shiesty-dynamodb-local
     # -sharedDb: single shared DB file regardless of credentials (matches
     #   the AWS SDK default region/credentials we pass from server.ts).
     # -dbPath:  where to persist the on-disk store.
