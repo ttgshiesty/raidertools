@@ -199,7 +199,9 @@ export function CognitoAuthProvider({ children }: ProviderProps) {
         // Fire-and-forget the wipe; Cognito sign-out itself is sync and
         // should not wait on HTTP calls that will imminently fail once
         // tokens are gone.
-        void runSignOutWipe();
+        runSignOutWipe().catch((err) => {
+            console.warn('[shiesty auth] sign-out wipe failed', err);
+        });
         cognitoSignOut();
         syncedForSubRef.current = null;
         setUser(null);
@@ -240,6 +242,6 @@ function parseHashTokens(hash: string): HashTokens | null {
     const idToken = params.get('id_token');
     const accessToken = params.get('access_token');
     const refreshToken = params.get('refresh_token');
-    if (!idToken || !refreshToken) return null;
-    return { idToken, accessToken: accessToken ?? '', refreshToken };
+    if (!idToken || !accessToken || !refreshToken) return null;
+    return { idToken, accessToken, refreshToken };
 }

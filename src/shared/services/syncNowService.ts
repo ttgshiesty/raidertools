@@ -19,8 +19,23 @@ const DOMAIN_TO_TARGET: Record<string, string | null> = {
 };
 
 const COOLDOWN_MS = 30_000;
+const MAX_TRACKED_KEYS = 50;
 
 const lastSyncTime = new Map<string, number>();
+
+function noteSyncTime(domain: string): void {
+  lastSyncTime.set(domain, Date.now());
+  if (lastSyncTime.size > MAX_TRACKED_KEYS) {
+    // Drop the oldest entries to keep memory bounded.
+    const overflow = lastSyncTime.size - MAX_TRACKED_KEYS;
+    let removed = 0;
+    for (const key of lastSyncTime.keys()) {
+      if (removed >= overflow) break;
+      lastSyncTime.delete(key);
+      removed += 1;
+    }
+  }
+}
 
 async function triggerSyncNow(target: string): Promise<void> {
   try {
@@ -60,7 +75,7 @@ export async function withSyncNow<T>(
     const now = Date.now();
 
     if (last + COOLDOWN_MS <= now) {
-      lastSyncTime.set(domain, now);
+      noteSyncTime(domain);
       await triggerSyncNow(target);
     }
   }

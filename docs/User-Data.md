@@ -67,11 +67,12 @@ Row families (all others are reserved — do not invent new `pk` prefixes withou
 | pk | sk | purpose | owner Lambda |
 |----|----|---------|---------------|
 | `USER#<sub>` | `PROFILE` | display name, locale, signupProvider, `dataMigrationCompleted` flag | `ProfileFn` |
-| `USER#<sub>` | `LINK#arctracker` | envelope-encrypted ArcTracker token | `LinksFn` |
+| `USER#<sub>` | `LINK#arctracker` | envelope-encrypted ArcTracker API token and optional separately encrypted stats session token | `LinksFn` |
 | `USER#<sub>` | `LINK#embark` | envelope-encrypted Embark token payload + derived metadata (`provider`, `supportId`, `expiresAt`, cached profile snapshot) | `EmbarkLinkFn` / `LinksFn` / `ProfileFn` |
 | `USER#<sub>` | `EMBARK#INVENTORY#LATEST` | latest normalized Embark inventory snapshot metadata/cache for shared game-data consumers | `EmbarkInventoryFn` |
 | `USER#<sub>` | `THROTTLE#embark#inventory` | per-user persisted token bucket for Embark inventory sync | `EmbarkInventoryFn` |
 | `GLOBAL#embark` | `THROTTLE#inventory` | optional global persisted token bucket for Embark inventory sync | `EmbarkInventoryFn` |
+| `MARKET#TRADES` | `LISTING#<id>` | public item-for-item listing with JWT-derived owner and embedded offers | `MarketFn` |
 | `USER#<sub>` | `STATE#quests` | sync'd quest progress | `StateFn` |
 | `USER#<sub>` | `STATE#loot` | sync'd loot-helper selections | `StateFn` |
 | `USER#<sub>` | `STATE#quartermaster` | sync'd quartermaster lists + hideout toggles | `StateFn` |

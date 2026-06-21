@@ -1,0 +1,126 @@
+// ============================================================
+// neon.scss
+// Spinning conic-gradient neon border — rarity-tinted variant.
+// The component injects --neon-rarity-color per card so each
+// blueprint glows in its own rarity colour.
+// ============================================================
+
+.neon-border-wrapper {
+  --neon-border-radius: 0.5rem;
+  --neon-border-width: 2px;
+  --neon-bg-color: #1a1a1a;
+  --neon-rarity-color: #6b7280; // default: Common grey
+
+  position: relative;
+  display: flex;
+  border-radius: var(--neon-border-radius);
+  clip-path: inset(
+    calc(var(--neon-border-width) * -1) round
+      calc(var(--neon-border-radius) + var(--neon-border-width))
+  );
+  contain: layout style;
+  padding: var(--neon-border-width);
+  background: transparent;
+  transition: padding 0.3s ease;
+
+  // ── spinning conic gradient ──────────────────────────────
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300vmax;
+    height: 300vmax;
+    // Two opposing arcs; the rarity colour replaces the cyan/purple
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      #ffffff 20deg,
+      var(--neon-rarity-color) 42deg,
+      var(--neon-rarity-color) 58deg,
+      #ffffff 80deg,
+      transparent 100deg,
+      transparent 180deg,
+      #ffffff 200deg,
+      var(--neon-rarity-color) 222deg,
+      var(--neon-rarity-color) 238deg,
+      #ffffff 260deg,
+      transparent 280deg,
+      transparent 360deg
+    );
+    transform: translate(-50%, -50%) translateZ(0);
+    z-index: -2;
+    will-change: transform;
+    pointer-events: none;
+  }
+
+  // ── inner background fill ────────────────────────────────
+  &::after {
+    content: '';
+    position: absolute;
+    inset: var(--neon-border-width);
+    border-radius: calc(var(--neon-border-radius) - var(--neon-border-width));
+    background: var(--neon-bg-color);
+    z-index: -1;
+    transition: background 0.3s ease, inset 0.3s ease;
+  }
+}
+
+// ── content layer ────────────────────────────────────────────
+.neon-border-content {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(var(--neon-border-radius) - var(--neon-border-width));
+  display: flex;
+  width: var(--neon-content-width, 100%);
+  height: var(--neon-content-height, 100%);
+  transition: border-radius 0.3s ease;
+
+  > * {
+    border-radius: calc(
+      var(--neon-border-radius) - var(--neon-border-width)
+    ) !important;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ── animation modes ──────────────────────────────────────────
+.neon-border-hover::before {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: neon-spin 6s linear infinite;
+}
+
+.neon-border-hover:hover::before {
+  opacity: 1;
+}
+
+.neon-border-always::before {
+  opacity: 1;
+  animation: neon-spin 6s linear infinite;
+}
+
+@keyframes neon-spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+// ── tight variant (no padding gap) ───────────────────────────
+.neon-border-tight {
+  padding: 0;
+  background: transparent;
+
+  &::after {
+    background: transparent;
+  }
+
+  .neon-border-content {
+    outline: none;
+    border-radius: var(--neon-border-radius);
+
+    > * {
+      border-radius: var(--neon-border-radius) !important;
+    }
+  }
+}

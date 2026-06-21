@@ -2898,583 +2898,1460 @@
   "blueprints": [
     {
       "id": "anvil_blueprint",
-      "targetItemId": "anvil_i",
+      "name": "Anvil Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "anvil_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "anvil_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "anvil_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/anvil_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/anvil_blueprint.png"
     },
     {
       "id": "aphelion_blueprint",
-      "targetItemId": "aphelion",
+      "name": "Aphelion Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "aphelion",
+      "blueprintInfo": {
+        "relatedBlueprintId": "aphelion_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "aphelion",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/aphelion_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/aphelion_blueprint.png"
     },
     {
       "id": "bettina_blueprint",
-      "targetItemId": "bettina_i",
+      "name": "Bettina Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "bettina_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "bettina_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "bettina_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/bettina_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/bettina_blueprint.png"
     },
     {
       "id": "bobcat_blueprint",
-      "targetItemId": "bobcat_i",
+      "name": "Bobcat Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "bobcat_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "bobcat_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "bobcat_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/bobcat_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/bobcat_blueprint.png"
     },
     {
       "id": "burletta_blueprint",
-      "targetItemId": "burletta_i",
+      "name": "Burletta Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "burletta_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "burletta_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "burletta_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/burletta_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/burletta_blueprint.png"
     },
     {
       "id": "canto_blueprint",
-      "targetItemId": "canto_i",
+      "name": "Canto Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "canto_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "canto_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "canto_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/canto_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/canto_blueprint.png"
     },
     {
       "id": "dolabra_blueprint",
-      "targetItemId": "dolabra",
+      "name": "Dolabra Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "dolabra",
+      "blueprintInfo": {
+        "relatedBlueprintId": "dolabra_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "dolabra",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/dolabra_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/dolabra_blueprint.png"
     },
     {
       "id": "equalizer_blueprint",
-      "targetItemId": "equalizer",
+      "name": "Equalizer Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "equalizer",
+      "blueprintInfo": {
+        "relatedBlueprintId": "equalizer_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "equalizer",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/equalizer_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/equalizer_blueprint.png"
     },
     {
       "id": "hullcracker_blueprint",
-      "targetItemId": "hullcracker_i",
+      "name": "Hullcracker Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "hullcracker_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "hullcracker_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "hullcracker_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/hullcracker_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/hullcracker_blueprint.png"
     },
     {
       "id": "il_toro_blueprint",
-      "targetItemId": "il_toro_i",
+      "name": "Il Toro Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "il_toro_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "il_toro_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "il_toro_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/il_toro_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/il_toro_blueprint.png"
     },
     {
       "id": "jupiter_blueprint",
-      "targetItemId": "jupiter",
+      "name": "Jupiter Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "jupiter",
+      "blueprintInfo": {
+        "relatedBlueprintId": "jupiter_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "jupiter",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/jupiter_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/jupiter_blueprint.png"
     },
     {
       "id": "osprey_blueprint",
-      "targetItemId": "osprey_i",
+      "name": "Osprey Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "osprey_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "osprey_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "osprey_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/osprey_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/osprey_blueprint.png"
     },
     {
       "id": "rascal_blueprint",
-      "targetItemId": "rascal_i",
+      "name": "Rascal Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "rascal_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "rascal_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "rascal_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/rascal.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/rascal.png"
     },
     {
       "id": "tempest_blueprint",
-      "targetItemId": "tempest_i",
+      "name": "Tempest Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": false,
+      "targetItemId": "tempest_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tempest_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tempest_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tempest_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tempest_blueprint.png"
     },
     {
       "id": "torrente_blueprint",
-      "targetItemId": "torrente_i",
+      "name": "Torrente Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "torrente_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "torrente_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "torrente_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/torrente_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/torrente_blueprint.png"
     },
     {
       "id": "venator_blueprint",
-      "targetItemId": "venator_i",
+      "name": "Venator Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "venator_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "venator_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "venator_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/venator_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/venator_blueprint.png"
     },
     {
       "id": "vulcano_blueprint",
-      "targetItemId": "vulcano_i",
+      "name": "Vulcano Blueprint",
       "category": "Weapons",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": true,
+      "learned": true,
+      "targetItemId": "vulcano_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "vulcano_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "vulcano_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/vulcano_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/vulcano_blueprint.png"
     },
     {
       "id": "angled_grip_ii_blueprint",
-      "targetItemId": "angled_grip_ii",
+      "name": "Angled Grip II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "angled_grip_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "angled_grip_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "angled_grip_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_ii_blueprint.png"
     },
     {
       "id": "angled_grip_iii_blueprint",
-      "targetItemId": "angled_grip_iii",
+      "name": "Angled Grip III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "angled_grip_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "angled_grip_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "angled_grip_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/angled_grip_iii_blueprint.png"
     },
     {
       "id": "compensator_ii_blueprint",
-      "targetItemId": "compensator_ii",
+      "name": "Compensator II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "compensator_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "compensator_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "compensator_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_ii_blueprint.png"
     },
     {
       "id": "compensator_iii_blueprint",
-      "targetItemId": "compensator_iii",
+      "name": "Compensator III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "compensator_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "compensator_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "compensator_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/compensator_iii_blueprint.png"
     },
     {
       "id": "extended_barrel_ii_blueprint",
-      "targetItemId": "extended_barrel_ii",
+      "name": "Extended Barrel II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common"
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "extended_barrel_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_barrel_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_barrel_ii",
+        "rarity": "Legendary",
+        "imageFilename": null
+      }
     },
     {
       "id": "extended_barrel_iii_blueprint",
-      "targetItemId": "extended_barrel_iii",
+      "name": "Extended Barrel III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "extended_barrel_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_barrel_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_barrel_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_barrel_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_barrel_blueprint.png"
     },
     {
       "id": "extended_light_mag_ii_blueprint",
-      "targetItemId": "extended_light_mag_ii",
+      "name": "Extended Light Mag II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "extended_light_mag_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_light_mag_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_light_mag_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_ii_blueprint.png"
     },
     {
       "id": "extended_light_mag_iii_blueprint",
-      "targetItemId": "extended_light_mag_iii",
+      "name": "Extended Light Mag III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "extended_light_mag_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_light_mag_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_light_mag_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_light_mag_iii_blueprint.png"
     },
     {
       "id": "extended_medium_mag_ii_blueprint",
-      "targetItemId": "extended_medium_mag_ii",
+      "name": "Extended Medium Mag II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "extended_medium_mag_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_medium_mag_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_medium_mag_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_ii_blueprint.png"
     },
     {
       "id": "extended_medium_mag_iii_blueprint",
-      "targetItemId": "extended_medium_mag_iii",
+      "name": "Extended Medium Mag III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "extended_medium_mag_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_medium_mag_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_medium_mag_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_medium_mag_iii_blueprint.png"
     },
     {
       "id": "extended_shotgun_mag_ii_blueprint",
-      "targetItemId": "extended_shotgun_mag_ii",
+      "name": "Extended Shotgun Mag II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "extended_shotgun_mag_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_shotgun_mag_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_shotgun_mag_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_ii_blueprint.png"
     },
     {
       "id": "extended_shotgun_mag_iii_blueprint",
-      "targetItemId": "extended_shotgun_mag_iii",
+      "name": "Extended Shotgun Mag III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "extended_shotgun_mag_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "extended_shotgun_mag_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "extended_shotgun_mag_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/extended_shotgun_mag_iii_blueprint.png"
     },
     {
       "id": "lightweight_stock_blueprint",
-      "targetItemId": "lightweight_stock",
+      "name": "Lightweight Stock Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "lightweight_stock",
+      "blueprintInfo": {
+        "relatedBlueprintId": "lightweight_stock_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "lightweight_stock",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/lightweight_stock_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/lightweight_stock_blueprint.png"
     },
     {
       "id": "muzzle_brake_ii_blueprint",
-      "targetItemId": "muzzle_brake_ii",
+      "name": "Muzzle Brake II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "muzzle_brake_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "muzzle_brake_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "muzzle_brake_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_ii_blueprint.png"
     },
     {
       "id": "muzzle_brake_iii_blueprint",
-      "targetItemId": "muzzle_brake_iii",
+      "name": "Muzzle Brake III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "muzzle_brake_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "muzzle_brake_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "muzzle_brake_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/muzzle_brake_iii_blueprint.png"
     },
     {
       "id": "padded_stock_blueprint",
-      "targetItemId": "padded_stock",
+      "name": "Padded Stock Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "padded_stock",
+      "blueprintInfo": {
+        "relatedBlueprintId": "padded_stock_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "padded_stock",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/padded_stock_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/padded_stock_blueprint.png"
     },
     {
       "id": "shotgun_choke_ii_blueprint",
-      "targetItemId": "shotgun_choke_ii",
+      "name": "Shotgun Choke II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "shotgun_choke_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "shotgun_choke_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "shotgun_choke_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_ii_blueprint.png"
     },
     {
       "id": "shotgun_choke_iii_blueprint",
-      "targetItemId": "shotgun_choke_iii",
+      "name": "Shotgun Choke III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "shotgun_choke_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "shotgun_choke_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "shotgun_choke_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_choke_iii_blueprint.png"
     },
     {
       "id": "shotgun_silencer_blueprint",
-      "targetItemId": "shotgun_silencer",
+      "name": "Shotgun Silencer Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "shotgun_silencer",
+      "blueprintInfo": {
+        "relatedBlueprintId": "shotgun_silencer_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "shotgun_silencer",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_silencer_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/shotgun_silencer_blueprint.png"
     },
     {
       "id": "silencer_i_blueprint",
-      "targetItemId": "silencer_i",
+      "name": "Silencer I Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "silencer_i",
+      "blueprintInfo": {
+        "relatedBlueprintId": "silencer_i_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "silencer_i",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_i_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_i_blueprint.png"
     },
     {
       "id": "silencer_ii_blueprint",
-      "targetItemId": "silencer_ii",
+      "name": "Silencer II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "silencer_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "silencer_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "silencer_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/silencer_ii_blueprint.png"
     },
     {
       "id": "stable_stock_ii_blueprint",
-      "targetItemId": "stable_stock_ii",
+      "name": "Stable Stock II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "stable_stock_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "stable_stock_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "stable_stock_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_ii_blueprint.png"
     },
     {
       "id": "stable_stock_iii_blueprint",
-      "targetItemId": "stable_stock_iii",
+      "name": "Stable Stock III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "stable_stock_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "stable_stock_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "stable_stock_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/stable_stock_iii_blueprint.png"
     },
     {
       "id": "vertical_grip_ii_blueprint",
-      "targetItemId": "vertical_grip_ii",
+      "name": "Vertical Grip II Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "vertical_grip_ii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "vertical_grip_ii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "vertical_grip_ii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_ii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_ii_blueprint.png"
     },
     {
       "id": "vertical_grip_iii_blueprint",
-      "targetItemId": "vertical_grip_iii",
+      "name": "Vertical Grip III Blueprint",
       "category": "Weapon Mods",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "vertical_grip_iii",
+      "blueprintInfo": {
+        "relatedBlueprintId": "vertical_grip_iii_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "vertical_grip_iii",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_iii_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/vertical_grip_iii_blueprint.png"
     },
     {
       "id": "blaze_grenade_blueprint",
-      "targetItemId": "blaze_grenade",
+      "name": "Blaze Grenade Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "blaze_grenade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "blaze_grenade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "blaze_grenade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/blaze_grenade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/blaze_grenade_blueprint.png"
     },
     {
       "id": "deadline_blueprint",
-      "targetItemId": "deadline",
+      "name": "Deadline Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "deadline",
+      "blueprintInfo": {
+        "relatedBlueprintId": "deadline_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "deadline",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/deadline_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/deadline_blueprint.png"
     },
     {
       "id": "explosive_mine_blueprint",
-      "targetItemId": "explosive_mine",
+      "name": "Explosive Mine Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "explosive_mine",
+      "blueprintInfo": {
+        "relatedBlueprintId": "explosive_mine_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "explosive_mine",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/explosive_mine_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/explosive_mine_blueprint.png"
     },
     {
       "id": "fireworks_box_blueprint",
-      "targetItemId": "fireworks_box",
+      "name": "Fireworks Box Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "fireworks_box",
+      "blueprintInfo": {
+        "relatedBlueprintId": "fireworks_box_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "fireworks_box",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/fireworks_box_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/fireworks_box_blueprint.png"
     },
     {
       "id": "gas_mine_blueprint",
-      "targetItemId": "gas_mine",
+      "name": "Gas Mine Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "gas_mine",
+      "blueprintInfo": {
+        "relatedBlueprintId": "gas_mine_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "gas_mine",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/gas_mine_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/gas_mine_blueprint.png"
     },
     {
       "id": "jolt_mine_blueprint",
-      "targetItemId": "jolt_mine",
+      "name": "Jolt Mine Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "jolt_mine",
+      "blueprintInfo": {
+        "relatedBlueprintId": "jolt_mine_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "jolt_mine",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/jolt_mine_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/jolt_mine_blueprint.png"
     },
     {
       "id": "pulse_mine_blueprint",
-      "targetItemId": "pulse_mine",
+      "name": "Pulse Mine Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "pulse_mine",
+      "blueprintInfo": {
+        "relatedBlueprintId": "pulse_mine_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "pulse_mine",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/pulse_mine_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/pulse_mine_blueprint.png"
     },
     {
       "id": "seeker_grenade_blueprint",
-      "targetItemId": "seeker_grenade",
+      "name": "Seeker Grenade Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "seeker_grenade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "seeker_grenade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "seeker_grenade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/seeker_grenade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/seeker_grenade_blueprint.png"
     },
     {
       "id": "showstopper_blueprint",
-      "targetItemId": "showstopper",
+      "name": "Showstopper Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "showstopper",
+      "blueprintInfo": {
+        "relatedBlueprintId": "showstopper_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "showstopper",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/showstopper_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/showstopper_blueprint.png"
     },
     {
       "id": "surge_coil_blueprint",
-      "targetItemId": "surge_coil",
+      "name": "Surge Coil Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "surge_coil",
+      "blueprintInfo": {
+        "relatedBlueprintId": "surge_coil_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "surge_coil",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/surge_coil_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/surge_coil_blueprint.png"
     },
     {
       "id": "trailblazer_blueprint",
-      "targetItemId": "trailblazer",
+      "name": "Trailblazer Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "trailblazer",
+      "blueprintInfo": {
+        "relatedBlueprintId": "trailblazer_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "trailblazer",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/trailblazer_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/trailblazer_blueprint.png"
     },
     {
       "id": "trigger_nade_blueprint",
-      "targetItemId": "trigger_nade",
+      "name": "Trigger Nade Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "trigger_nade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "trigger_nade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "trigger_nade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/trigger_nade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/trigger_nade_blueprint.png"
     },
     {
       "id": "wolfpack_blueprint",
-      "targetItemId": "wolfpack",
+      "name": "Wolfpack Blueprint",
       "category": "Explosives",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "wolfpack",
+      "blueprintInfo": {
+        "relatedBlueprintId": "wolfpack_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "wolfpack",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/wolfpack_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/wolfpack_blueprint.png"
     },
     {
       "id": "defibrillator_blueprint",
-      "targetItemId": "defibrillator",
+      "name": "Defibrillator Blueprint",
       "category": "Medical",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "defibrillator",
+      "blueprintInfo": {
+        "relatedBlueprintId": "defibrillator_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "defibrillator",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/defibrillator_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/defibrillator_blueprint.png"
     },
     {
       "id": "vita_shot_blueprint",
-      "targetItemId": "vita_shot",
+      "name": "Vita Shot Blueprint",
       "category": "Medical",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "vita_shot",
+      "blueprintInfo": {
+        "relatedBlueprintId": "vita_shot_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "vita_shot",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/vita_shot_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/vita_shot_blueprint.png"
     },
     {
       "id": "vita_spray_blueprint",
-      "targetItemId": "vita_spray",
+      "name": "Vita Spray Blueprint",
       "category": "Medical",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "vita_spray",
+      "blueprintInfo": {
+        "relatedBlueprintId": "vita_spray_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "vita_spray",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/vita_spray_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/vita_spray_blueprint.png"
     },
     {
       "id": "barricade_kit_blueprint",
-      "targetItemId": "barricade_kit",
+      "name": "Barricade Kit Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "barricade_kit",
+      "blueprintInfo": {
+        "relatedBlueprintId": "barricade_kit_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "barricade_kit",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/barricade_kit_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/barricade_kit_blueprint.png"
     },
     {
       "id": "blue_light_stick_blueprint",
-      "targetItemId": "blue_light_stick",
+      "name": "Blue Light Stick Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "blue_light_stick",
+      "blueprintInfo": {
+        "relatedBlueprintId": "blue_light_stick_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "blue_light_stick",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/blue_light_stick_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/blue_light_stick_blueprint.png"
     },
     {
       "id": "crash_mat_blueprint",
-      "targetItemId": "crash_mat",
+      "name": "Crash Mat Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "crash_mat",
+      "blueprintInfo": {
+        "relatedBlueprintId": "crash_mat_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "crash_mat",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/crash_mat_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/crash_mat_blueprint.png"
     },
     {
       "id": "green_light_stick_blueprint",
-      "targetItemId": "green_light_stick",
+      "name": "Green Light Stick Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "green_light_stick",
+      "blueprintInfo": {
+        "relatedBlueprintId": "green_light_stick_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "green_light_stick",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/green_light_stick_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/green_light_stick_blueprint.png"
     },
     {
       "id": "lure_grenade_blueprint",
-      "targetItemId": "lure_grenade",
+      "name": "Lure Grenade Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "lure_grenade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "lure_grenade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "lure_grenade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/lure_grenade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/lure_grenade_blueprint.png"
     },
     {
       "id": "powered_descender_blueprint",
-      "targetItemId": "powered_descender",
+      "name": "Powered Descender Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "powered_descender",
+      "blueprintInfo": {
+        "relatedBlueprintId": "powered_descender_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "powered_descender",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/powered_descender_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/powered_descender_blueprint.png"
     },
     {
       "id": "red_light_stick_blueprint",
-      "targetItemId": "red_light_stick",
+      "name": "Red Light Stick Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "red_light_stick",
+      "blueprintInfo": {
+        "relatedBlueprintId": "red_light_stick_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "red_light_stick",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/red_light_stick_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/red_light_stick_blueprint.png"
     },
     {
       "id": "remote_raider_flare_blueprint",
-      "targetItemId": "remote_raider_flare",
+      "name": "Remote Raider Flare Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "remote_raider_flare",
+      "blueprintInfo": {
+        "relatedBlueprintId": "remote_raider_flare_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "remote_raider_flare",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/remote_raider_flare_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/remote_raider_flare_blueprint.png"
     },
     {
       "id": "smoke_grenade_blueprint",
-      "targetItemId": "smoke_grenade",
+      "name": "Smoke Grenade Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "smoke_grenade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "smoke_grenade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "smoke_grenade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/smoke_grenade_blueprint.png"
     },
     {
       "id": "snap_hook_blueprint",
-      "targetItemId": "snap_hook",
+      "name": "Snap Hook Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "snap_hook",
+      "blueprintInfo": {
+        "relatedBlueprintId": "snap_hook_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "snap_hook",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/snap_hook_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/snap_hook_blueprint.png"
     },
     {
       "id": "tagging_grenade_blueprint",
-      "targetItemId": "tagging_grenade",
+      "name": "Tagging Grenade Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "tagging_grenade",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tagging_grenade_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tagging_grenade",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tagging_grenade_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tagging_grenade_blueprint.png"
     },
     {
       "id": "white_flag_blueprint",
-      "targetItemId": "white_flag",
+      "name": "White Flag Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "white_flag",
+      "blueprintInfo": {
+        "relatedBlueprintId": "white_flag_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "white_flag",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/white_flag_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/white_flag_blueprint.png"
     },
     {
       "id": "yellow_light_stick_blueprint",
-      "targetItemId": "yellow_light_stick",
+      "name": "Yellow Light Stick Blueprint",
       "category": "Utilities",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "yellow_light_stick",
+      "blueprintInfo": {
+        "relatedBlueprintId": "yellow_light_stick_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "yellow_light_stick",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/yellow_light_stick_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/yellow_light_stick_blueprint.png"
     },
     {
       "id": "combat_mk3_aggressive_blueprint",
-      "targetItemId": "combat_mk3_aggressive",
+      "name": "Combat Mk. 3 (Aggressive) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "combat_mk3_aggressive",
+      "blueprintInfo": {
+        "relatedBlueprintId": "combat_mk3_aggressive_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "combat_mk3_aggressive",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_aggressive_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_aggressive_blueprint.png"
     },
     {
       "id": "combat_mk3_flanking_blueprint",
-      "targetItemId": "combat_mk3_flanking",
+      "name": "Combat Mk. 3 (Flanking) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "combat_mk3_flanking",
+      "blueprintInfo": {
+        "relatedBlueprintId": "combat_mk3_flanking_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "combat_mk3_flanking",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_flanking_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/combat_mk3_flanking_blueprint.png"
     },
     {
       "id": "looting_mk3_safekeeper_blueprint",
-      "targetItemId": "looting_mk3_safekeeper",
+      "name": "Looting Mk. 3 (Safekeeper) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "looting_mk3_safekeeper",
+      "blueprintInfo": {
+        "relatedBlueprintId": "looting_mk3_safekeeper_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "looting_mk3_safekeeper",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_safekeeper_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_safekeeper_blueprint.png"
     },
     {
       "id": "looting_mk3_survivor_blueprint",
-      "targetItemId": "looting_mk3_survivor",
+      "name": "Looting Mk. 3 (Survivor) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "looting_mk3_survivor",
+      "blueprintInfo": {
+        "relatedBlueprintId": "looting_mk3_survivor_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "looting_mk3_survivor",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_survivor_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/looting_mk3_survivor_blueprint.png"
     },
     {
       "id": "tactical_mk3_defensive_blueprint",
-      "targetItemId": "tactical_mk3_defensive",
+      "name": "Tactical Mk. 3 (Defensive) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "tactical_mk3_defensive",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tactical_mk3_defensive_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tactical_mk3_defensive",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_defensive_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_defensive_blueprint.png"
     },
     {
       "id": "tactical_mk3_healing_blueprint",
-      "targetItemId": "tactical_mk3_healing",
+      "name": "Tactical Mk. 3 (Healing) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "tactical_mk3_healing",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tactical_mk3_healing_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tactical_mk3_healing",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_healing_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_healing_blueprint.png"
     },
     {
       "id": "tactical_mk3_revival_blueprint",
-      "targetItemId": "tactical_mk3_revival",
+      "name": "Tactical Mk. 3 (Revival) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "tactical_mk3_revival",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tactical_mk3_revival_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tactical_mk3_revival",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_revival_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_revival_blueprint.png"
     },
     {
       "id": "tactical_mk3_smoke_blueprint",
-      "targetItemId": "tactical_mk3_smoke",
+      "name": "Tactical Mk. 3 (Smoke) Blueprint",
       "category": "Augments",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "tactical_mk3_smoke",
+      "blueprintInfo": {
+        "relatedBlueprintId": "tactical_mk3_smoke_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "tactical_mk3_smoke",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_smoke_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/tactical_mk3_smoke_blueprint.png"
     },
     {
       "id": "complex_gun_parts_blueprint",
-      "targetItemId": "complex_gun_parts",
+      "name": "Complex Gun Parts Blueprint",
       "category": "Other",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "complex_gun_parts",
+      "blueprintInfo": {
+        "relatedBlueprintId": "complex_gun_parts_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "complex_gun_parts",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/complex_gun_parts_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/complex_gun_parts_blueprint.png"
     },
     {
       "id": "heavy_gun_parts_blueprint",
-      "targetItemId": "heavy_gun_parts",
+      "name": "Heavy Gun Parts Blueprint",
       "category": "Other",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "heavy_gun_parts",
+      "blueprintInfo": {
+        "relatedBlueprintId": "heavy_gun_parts_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "heavy_gun_parts",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/heavy_gun_parts_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/heavy_gun_parts_blueprint.png"
     },
     {
       "id": "light_gun_parts_blueprint",
-      "targetItemId": "light_gun_parts",
+      "name": "Light Gun Parts Blueprint",
       "category": "Other",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": false,
+      "targetItemId": "light_gun_parts",
+      "blueprintInfo": {
+        "relatedBlueprintId": "light_gun_parts_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "light_gun_parts",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/light_gun_parts_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/light_gun_parts_blueprint.png"
     },
     {
       "id": "medium_gun_parts_blueprint",
-      "targetItemId": "medium_gun_parts",
+      "name": "Medium Gun Parts Blueprint",
       "category": "Other",
-      "rarity": "Common",
+      "rarity": "Legendary",
+      "isWeapon": false,
+      "learned": true,
+      "targetItemId": "medium_gun_parts",
+      "blueprintInfo": {
+        "relatedBlueprintId": "medium_gun_parts_blueprint",
+        "isBlueprint": true,
+        "targetItemId": "medium_gun_parts",
+        "rarity": "Legendary",
+        "imageFilename": "https://cdn.arctracker.io/items/v2/medium_gun_parts_blueprint.png"
+      },
       "imageFilename": "https://cdn.arctracker.io/items/v2/medium_gun_parts_blueprint.png"
     }
-  ]
+  ],
+  "summary": {
+    "total": 83,
+    "learned": 55,
+    "missing": 28,
+    "byCategory": {
+      "Weapons": {
+        "total": 17,
+        "learned": 10,
+        "missing": 7
+      },
+      "Weapon Mods": {
+        "total": 25,
+        "learned": 17,
+        "missing": 8
+      },
+      "Explosives": {
+        "total": 13,
+        "learned": 11,
+        "missing": 2
+      },
+      "Medical": {
+        "total": 3,
+        "learned": 2,
+        "missing": 1
+      },
+      "Utilities": {
+        "total": 13,
+        "learned": 10,
+        "missing": 3
+      },
+      "Augments": {
+        "total": 8,
+        "learned": 2,
+        "missing": 6
+      },
+      "Materials": {
+        "total": 0,
+        "learned": 0,
+        "missing": 0
+      },
+      "Other": {
+        "total": 4,
+        "learned": 3,
+        "missing": 1
+      }
+    }
+  }
 }

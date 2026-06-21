@@ -62,6 +62,9 @@ const BlueprintsApp = lazy(() =>
   import('./apps/blueprints').then((m) => ({ default: m.BlueprintsApp }))
 );
 const MarketApp = lazy(() => import('./apps/market').then((m) => ({ default: m.MarketApp })));
+const SkillTreeApp = lazy(() =>
+  import('./apps/skill-tree').then((m) => ({ default: m.SkillTreeApp })),
+);
 
 function App() {
   return (
@@ -75,26 +78,45 @@ function App() {
                   <Route path="/" element={<Layout />}>
                     <Route index element={<Dashboard />} />
                     <Route path="schedule" element={<ScheduleApp />} />
-                    <Route path="craft-calculator" element={<CraftCalculatorApp />} />
+                    <Route
+                      path="craft-calculator"
+                      element={<CraftCalculatorApp />}
+                    />
                     <Route path="quests" element={<QuestsApp />} />
                     <Route path="loot-helper" element={<LootHelperApp />} />
-                    <Route path="quartermaster" element={<QuartermasterApp />} />
+                    <Route
+                      path="quartermaster"
+                      element={<QuartermasterApp />}
+                    />
                     <Route path="stats" element={<StatsLayout />}>
-                      <Route index element={<Navigate to="arctracker" replace />} />
+                      <Route
+                        index
+                        element={<Navigate to="arctracker" replace />}
+                      />
                       <Route path="arctracker" element={<StatsApp />} />
                       <Route path="metaforge" element={<MetaForgeStats />} />
                     </Route>
                     <Route path="blueprints" element={<BlueprintsApp />} />
                     <Route path="market" element={<MarketApp />} />
+                    <Route path="skill-tree" element={<SkillTreeApp />} />
                     <Route path="profile" element={<Profile />}>
-                      <Route index element={<Navigate to="arctracker" replace />} />
-                      <Route path="arctracker" element={<ArcTrackerSection />} />
+                      <Route
+                        index
+                        element={<Navigate to="arctracker" replace />}
+                      />
+                      <Route
+                        path="arctracker"
+                        element={<ArcTrackerSection />}
+                      />
                       <Route path="embark" element={<EmbarkSection />} />
                     </Route>
                     <Route path="auth/sign-in" element={<SignIn />} />
                     <Route path="auth/sign-up" element={<SignUp />} />
                     <Route path="auth/callback" element={<AuthCallback />} />
-                    <Route path="embark-callback" element={<EmbarkCallback />} />
+                    <Route
+                      path="embark-callback"
+                      element={<EmbarkCallback />}
+                    />
                     <Route path="*" element={<NotFound />} />
                   </Route>
                 </Routes>

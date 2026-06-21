@@ -207,6 +207,7 @@
     "signIn": "Sign in to track",
     "progress": "Blueprint progress",
     "progressCount": "{learned} / {total} learned",
+    "trackerStats": "Found {found} · Needed {needed} · Duplicates {duplicates} · Total {total}",
     "notSynced": "Blueprint progress not synced",
     "lastSynced": "Last synced {date}",
     "syncHint": "Connect ARCTracker and sync to mark learned blueprints.",

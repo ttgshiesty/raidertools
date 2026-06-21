@@ -215,15 +215,13 @@ export async function syncStashAllPages(): Promise<CachedStash> {
 
   // Collect all items
   let allItems: ArctrackerStashItem[] = [...firstPage.data.items];
+  let lastPageData: ArctrackerStashResponse = firstPage;
 
   // Fetch remaining pages if any
   for (let page = 2; page <= totalPages; page++) {
-    const pageData = await fetchStashPage(page);
-    allItems = allItems.concat(pageData.data.items);
+    lastPageData = await fetchStashPage(page);
+    allItems = allItems.concat(lastPageData.data.items);
   }
-
-  // Use metadata from the last page (or first if only one page)
-  const lastPageData = totalPages > 1 ? await fetchStashPage(totalPages) : firstPage;
 
   const cachedStash: CachedStash = {
     items: allItems,

@@ -100,8 +100,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
     } catch (err) {
       console.warn('Failed to unlink ArcTracker token', err);
     }
-    await cacheClear();
-    await setCacheSource(null);
+    try {
+      await cacheClear();
+      await setCacheSource(null);
+    } catch (err) {
+      console.warn('Failed to clear local cache during logout', err);
+    }
     setIsAuthenticated(false);
     setUsername(null);
     setError(null);

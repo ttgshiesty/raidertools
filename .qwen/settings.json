@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep *)",
+      "Bash(npm test)",
+      "Bash(npm run *)",
+      "Bash(tee *)",
+      "Bash(npx *)",
+      "Bash(npm audit *)",
+      "Bash(npm audit)",
+      "Bash(ls *)",
+      "Bash(timeout *)",
+      "Bash(gtimeout *)",
+      "Bash(sleep *)",
+      "Bash(kill *)",
+      "Bash(tail *)",
+      "Bash(rm *)"
+    ]
+  },
+  "$version": 4
+}

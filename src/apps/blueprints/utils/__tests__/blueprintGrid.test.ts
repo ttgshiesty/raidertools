@@ -34,8 +34,36 @@ describe('blueprint grid', () => {
 
   it('filters by category, status, and localized name', () => {
     const grid = [
-      { id: 'a', targetItemId: 'a_item', name: 'Alpha Blueprint', targetName: 'Alpha', category: 'Weapons', rarity: 'Common', imageFilename: null, learned: true },
-      { id: 'b', targetItemId: 'b_item', name: 'Bravo Blueprint', targetName: 'Bravo', category: 'Medical', rarity: 'Rare', imageFilename: null, learned: false },
+      {
+        slot: 1,
+        id: 'a',
+        targetItemId: 'a_item',
+        name: 'Alpha Blueprint',
+        targetName: 'Alpha',
+        targetItemName: 'Alpha',
+        category: 'Weapons',
+        rarity: 'Common',
+        targetRarity: 'Common',
+        blueprintRarity: 'Common',
+        isWeapon: false,
+        imageFilename: null,
+        learned: true,
+      },
+      {
+        slot: 2,
+        id: 'b',
+        targetItemId: 'b_item',
+        name: 'Bravo Blueprint',
+        targetName: 'Bravo',
+        targetItemName: 'Bravo',
+        category: 'Medical',
+        rarity: 'Rare',
+        targetRarity: 'Rare',
+        blueprintRarity: 'Rare',
+        isWeapon: false,
+        imageFilename: null,
+        learned: false,
+      },
     ];
     expect(filterBlueprintGrid(grid, { query: 'alpha', category: 'Weapons', status: 'learned' })).toEqual([grid[0]]);
     expect(filterBlueprintGrid(grid, { query: '', category: 'Medical', status: 'unlearned' })).toEqual([grid[1]]);

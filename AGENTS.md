@@ -272,7 +272,7 @@ For displaying **future/remaining time** (countdowns — token expiry, link vali
 ```ts
 formatExpirationShort(expiresAt: string | null | undefined, nowMs?: number): string | null
 ```
-
+s
 | Input | Output |
 |---|---|
 | `null` / invalid | `null` |

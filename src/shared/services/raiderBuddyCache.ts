@@ -65,13 +65,20 @@ export function setRaiderBuddyCachedData<T>(
 ): boolean {
   const target = resolveStorage(storage);
   if (!target || !activeUserId) return false;
+  const entry: RaiderBuddyCacheEntry<T> = { data, timestamp: Date.now(), userId: activeUserId };
+  const serialized = JSON.stringify(entry);
   try {
-    const entry: RaiderBuddyCacheEntry<T> = { data, timestamp: Date.now(), userId: activeUserId };
-    target.setItem(key, JSON.stringify(entry));
+    target.setItem(key, serialized);
     return true;
   } catch (error) {
     if (error instanceof DOMException && error.name === 'QuotaExceededError') {
       clearAllRaiderBuddyCache(target);
+      try {
+        target.setItem(key, serialized);
+        return true;
+      } catch {
+        return false;
+      }
     }
     return false;
   }

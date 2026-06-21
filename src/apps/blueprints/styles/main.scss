@@ -1,69 +1,834 @@
-@use '../../../shared/styles/variables' as *;
-@use 'sass:color';
+// ============================================================
+// main.scss  –  Blueprints module
+// Dark theme · neon glow cards · detail panel · responsive
+// ============================================================
 
-.blueprints-page { display: flex; flex-direction: column; gap: $spacing-xl; overflow-y: auto; }
-.blueprints-header { display: flex; align-items: flex-start; justify-content: space-between; gap: $spacing-lg; h2 { @include urbanist-title; font-size: 28px; margin-bottom: $spacing-sm; } p { max-width: 720px; color: $text-secondary; line-height: 1.5; } }
-.blueprints-sync { display: inline-flex; align-items: center; justify-content: center; gap: $spacing-sm; min-height: 38px; padding: $spacing-sm $spacing-lg; border: 2px solid $border-default; border-radius: $radius-md; background: $bg-secondary; color: $text-primary; font-weight: 700; text-decoration: none; cursor: pointer; &:disabled { opacity: .55; cursor: wait; } }
-.blueprints-progress { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(160px, 320px); align-items: center; gap: $spacing-lg; padding: $spacing-lg $spacing-xl; border: 1px solid $border-default; border-radius: $radius-md; background: $bg-secondary; > svg { color: $text-accent; } div { display: flex; flex-direction: column; gap: $spacing-xs; } strong { color: $text-primary; font-size: $font-xl; } span { color: $text-secondary; font-size: $font-md; } progress { width: 100%; height: 10px; accent-color: $text-secondary; } }
-.blueprints-error { padding: $spacing-md $spacing-lg; border: 1px solid $border-light; border-radius: $radius-md; background: color.adjust($border-light, $alpha: -0.88); color: $text-light; }
-.blueprints-controls { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: $spacing-md; }
-.blueprints-search { display: flex; align-items: center; gap: $spacing-sm; padding: $spacing-sm $spacing-md; border: 1px solid #343434; border-radius: $radius-md; background: $bg-secondary; color: $text-accent; input { width: 100%; border: 0; outline: 0; background: transparent; color: white; } }
-.blueprints-controls select, .blueprints-export { min-height: 38px; padding: 0 $spacing-md; border: 1px solid #343434; border-radius: $radius-md; background: $bg-secondary; color: white; cursor: pointer; }
-.blueprints-export { display: flex; align-items: center; justify-content: center; gap: $spacing-sm; }
-.blueprints-status-filter, .blueprints-categories { display: flex; flex-wrap: wrap; gap: $spacing-xs; button { padding: $spacing-sm $spacing-md; border: 1px solid $border-default; border-radius: $radius-sm; background: $bg-secondary; color: $text-secondary; cursor: pointer; &.active { background: $text-primary; color: $bg-primary; } &:disabled { opacity: .4; cursor: not-allowed; } } }
-.blueprints-results { color: $text-secondary; font-size: $font-md; }
-.blueprints-grid { display: grid; grid-template-columns: repeat(10, minmax(80px, 1fr)); gap: 8px; padding: 14px; border-radius: $radius-lg; background: rgba(17,17,17,.92); }
-.blueprint-card { position: relative; display: flex; justify-content: center; min-width: 80px; aspect-ratio: 1; overflow: hidden; border: 0; border-radius: 8px; background: #1a1a1a url('/images/blueprints/blueprint-bg.webp') center/cover; cursor: pointer; transition: $transition-default; --item-icon-size: 100%; .item-icon { position: absolute; inset: 0; width: 100%; } .item-icon__container { width: 100%; height: 100%; border-width: 1px; border-radius: 8px; background-image: none; } .item-icon__image { height: 73%; padding: 4px 10px; } &--unlearned .item-icon__image { filter: saturate(.88); } &:hover { z-index: 2; transform: scale(1.04); box-shadow: $shadow-hover; } }
-.blueprint-card__check { position: absolute; top: 5px; right: 5px; z-index: 3; display: grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; background: $status-completed; color: #050505; }
-.blueprint-card__duplicate { position: absolute; top: 1px; left: 1px; z-index: 3; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 6px 0; background: $status-available; color: #050505; font-size: 10px; font-weight: 800; }
-.blueprint-card__body { position: absolute; z-index: 2; right: 1px; bottom: 1px; left: 1px; display: flex; align-items: center; height: 24%; padding: 0 4px 0 22px; border-radius: 0 0 7px 7px; background: #0b0e1b; pointer-events: none; h3 { overflow: hidden; color: white; font-size: 9px; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; } &::before { content: ''; position: absolute; left: 5px; width: 13px; height: 13px; background: url('/images/blueprints/Icon_Blueprint.png') center/contain no-repeat; } }
-.blueprint-card--learned .blueprint-card__body small { color: $text-secondary; }
-.blueprints-empty { min-height: 240px; display: grid; place-items: center; color: $text-secondary; }
-.blueprints-spin { animation: blueprints-spin .8s linear infinite; } @keyframes blueprints-spin { to { transform: rotate(360deg); } }
-.blueprints-sections { display: flex; width: fit-content; padding: 3px; border: 1px solid #2a2a2a; border-radius: 8px; background: #0d0d0d; button { display: flex; align-items: center; gap: 8px; padding: 8px 16px; border: 0; border-radius: 6px; background: transparent; color: #aaa; cursor: pointer; &.active { background: #ffe600; color: #050505; } } }
-.atlas-panel { display: flex; flex-direction: column; gap: 14px; }
-.atlas-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; padding: 16px; border: 1px solid #1e1e2e; background: #0d0d14; > div { display: flex; min-width: 110px; flex-direction: column; small { color: #777789; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; } strong { color: white; font-size: 24px; } } > p { display: flex; gap: 7px; max-width: 390px; margin-left: auto; color: #777789; font-size: 10px; line-height: 1.5; svg, b { color: #ffe600; } span { display: flex; flex-direction: column; } } }
-.atlas-filters { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(140px, 220px)); gap: 12px; label { display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid #1e1e2e; background: #0d0d14; color: #aaa; input { width: 100%; min-height: 40px; border: 0; outline: 0; background: transparent; color: white; } } select { min-height: 40px; padding: 0 12px; border: 1px solid #1e1e2e; background: #0d0d14; color: #bbb; } }
-.atlas-list { display: flex; flex-direction: column; gap: 8px; }
-.atlas-entry { border: 1px solid #1e1e2e; border-left: 3px solid #6c6c6c; background: #0d0d14; &--uncommon { border-left-color: #26bf57; } &--rare { border-left-color: #00a8f2; } &--very-rare, &--epic { border-left-color: #cc3099; } &--legendary { border-left-color: #ffc600; } }
-.atlas-entry__heading { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 13px 16px; border: 0; background: transparent; color: white; cursor: pointer; > div { display: flex; align-items: center; gap: 14px; } span { display: flex; align-items: center; gap: 5px; color: #888898; font-size: 11px; text-transform: capitalize; } }
-.atlas-entry__rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border-top: 1px solid #1e1e2e; background: #1e1e2e; }
-.atlas-row { padding: 14px; background: #11111a; color: #9898a7; font-size: 11px; line-height: 1.5; header { display: flex; align-items: center; gap: 7px; margin-bottom: 8px; color: white; span { color: #ffe600; } } p + p { margin-top: 4px; } b { color: #ddd; } }
+@use 'neon';   // spinning conic-gradient border
+@use 'atlas';  // AtlasBlueprintPanel styles
 
-@media (max-width: 1280px) { .blueprints-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-@media (max-width: 1280px) { .blueprints-grid { grid-template-columns: repeat(8, minmax(80px, 1fr)); } }
-@media (max-width: 920px) { .blueprints-controls, .atlas-filters { grid-template-columns: repeat(2, 1fr); } .blueprints-grid { grid-template-columns: repeat(6, minmax(80px, 1fr)); } .blueprints-progress { grid-template-columns: auto 1fr; progress { grid-column: 1 / -1; } } }
-@media (max-width: 680px) { .blueprints-header { align-items: stretch; flex-direction: column; } .blueprints-controls { grid-template-columns: 1fr; } .blueprints-grid { grid-template-columns: repeat(10, 80px); width: max-content; } }
-@media (max-width: 680px) { .atlas-filters, .atlas-entry__rows { grid-template-columns: 1fr; } .atlas-entry__heading > div:last-child span { display: none; } }
+// ── Page shell ───────────────────────────────────────────────
+.blueprints-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+  overflow: hidden;
 
-.blueprint-dialog { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: $spacing-lg; &__backdrop { position: absolute; inset: 0; border: 0; background: #000b; } > section { position: relative; width: min(440px, 100%); overflow: hidden; border-radius: 12px; background: #e8e2d5; color: #111827; box-shadow: 0 20px 70px #000; > header { display: flex; align-items: center; gap: $spacing-lg; padding: $spacing-lg; border-bottom: 1px solid #1112; --item-icon-size: 80px; > div { flex: 1; } h3 { font-size: 20px; text-transform: uppercase; } span, small { display: inline-block; margin: 6px 6px 0 0; padding: 3px 8px; border-radius: 3px; color: white; font-size: 11px; text-transform: uppercase; } small { background: #1112; color: #111827; } > button { align-self: flex-start; border: 0; background: transparent; cursor: pointer; } } } }
-.blueprint-dialog__row { display: flex; align-items: center; justify-content: space-between; padding: $spacing-lg; border-bottom: 1px solid #1112; font-size: 13px; font-weight: 700; text-transform: uppercase; > button { position: relative; width: 48px; height: 28px; border: 0; border-radius: 20px; background: #1113; cursor: pointer; i { position: absolute; top: 4px; left: 4px; width: 20px; height: 20px; border-radius: 50%; background: white; transition: .2s; } &.active { background: #ffc600; i { transform: translateX(20px); } } } > div { display: flex; align-items: center; gap: $spacing-md; button { display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 8px; background: #1112; cursor: pointer; &:last-child { background: #ffc600; } &:disabled { opacity: .3; } } strong { min-width: 2ch; text-align: center; font-size: 20px; } } }
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    gap: 0.75rem;
+  }
+}
 
-.registry-blueprint-detail { position: fixed; z-index: 1100; inset: 0; display: grid; place-items: center; padding: 18px; &__backdrop { position: absolute; inset: 0; border: 0; background: #000d; backdrop-filter: blur(7px); } > section { position: relative; width: min(1080px, 100%); max-height: 94vh; overflow: auto; border: 1px solid #ffffff1b; border-radius: 14px; background: #0c0c0f; box-shadow: 0 28px 100px #000; } }
-.registry-blueprint-detail__close { position: absolute; z-index: 4; top: 10px; right: 10px; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #ffffff1a; border-radius: 9px; background: #09090bcc; color: #ddd; cursor: pointer; }
-.registry-blueprint-detail__item { min-width: 0; .registry-rarity-frame { position: relative; aspect-ratio: 1; overflow: hidden; border: 2px solid var(--registry-rarity); border-radius: 16px; background: radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--registry-rarity) 25%, transparent), transparent 65%), #151518; box-shadow: 0 0 18px color-mix(in srgb, var(--registry-rarity) 45%, transparent); --item-icon-size: 100%; .item-icon, .item-icon__container { width: 100%; height: 100%; } .item-icon__container { border: 0; background-image: none; } .item-icon__image { padding: 18px; } } h3 { margin-top: 10px; color: #f4f4f5; font-size: 14px; line-height: 1.2; text-align: center; } }
-.registry-collected { position: absolute; right: 10px; bottom: 10px; z-index: 2; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #22c55e77; border-radius: 50%; background: #22c55e; color: #052e16; svg { width: 20px; } }
-.registry-spares { position: absolute; z-index: 2; top: 10px; right: 10px; padding: 5px 9px; border: 1px solid #0ea5e955; border-radius: 999px; background: #0ea5e933; color: #38bdf8; font-size: 10px; backdrop-filter: blur(6px); }
-.registry-details-overlay { padding: 14px; border: 1px solid #ffffff16; border-radius: 12px; background: #151518e8; box-shadow: 0 6px 24px #0008, inset 0 1px #ffffff0a; }
-.registry-detail-row { display: grid; grid-template-columns: 42% 58%; gap: 8px; padding: 8px 0; border-bottom: 1px solid #ffffff0d; font-size: 11px; &:first-child { padding-top: 0; } > div:first-child { color: #71717a; font-weight: 700; text-transform: uppercase; } > div:last-child { color: #e4e4e7; text-align: right; } em { color: #d4d4d8; line-height: 1.45; } }
-.registry-confidence { display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; i { width: 7px; height: 7px; border-radius: 50%; background: var(--registry-rarity); box-shadow: 0 0 8px var(--registry-rarity); } &--confirmed i { background: #10b981; box-shadow: 0 0 8px #10b981; } }
-.registry-likely-spawn { margin: 12px 0; padding: 11px; border: 1px solid #ffffff1a; border-radius: 8px; background: #0003; h4 { margin-bottom: 5px; color: #71717a; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; } .registry-detail-row { grid-template-columns: 35% 65%; } }
-.registry-yes { display: inline-flex; align-items: center; gap: 5px; color: #34d399; svg { width: 14px; } }
-.registry-detailed-data { display: flex; max-height: 180px; flex-direction: column; gap: 8px; overflow: auto; margin: 10px 0; padding: 8px; border: 1px solid #ffffff12; border-radius: 8px; background: #09090b; color: #a1a1aa; font-size: 10px; line-height: 1.4; > div { padding-bottom: 7px; border-bottom: 1px solid #ffffff0d; } strong { color: #f4f4f5; } }
-.registry-action { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 8px; padding: 10px 14px; border: 1px solid #ffffff1a; border-radius: 8px; background: #0003; color: #d4d4d8; font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; cursor: pointer; &:hover { border-color: #34d399; color: white; } svg { width: 16px; } &--heatmap { border-color: #fbbf24; color: white; svg { color: #fbbf24; } &:hover { background: #fbbf2422; border-color: #fbbf24; } } }
-.registry-collection-controls { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 10px; > button { padding: 8px 10px; border: 1px solid #ffffff1a; border-radius: 8px; background: #0003; color: #aaa; font-size: 10px; text-transform: uppercase; &.active { border-color: #22c55e66; background: #22c55e22; color: #4ade80; } } > div { display: flex; align-items: center; gap: 8px; button { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #ffffff1a; border-radius: 7px; background: #0003; color: white; } b { min-width: 2ch; color: white; text-align: center; } } }
-.registry-detail-hero { display: grid; grid-template-columns: 210px 1fr; gap: 24px; align-items: center; padding: 24px; border-bottom: 1px solid #ffffff12; background: radial-gradient(circle at 12% 20%, color-mix(in srgb, var(--registry-rarity) 18%, transparent), transparent 34%), #111114; .registry-rarity-frame { position: relative; aspect-ratio: 1; overflow: hidden; border: 2px solid var(--registry-rarity); border-radius: 14px; background: #151518 url('/images/blueprints/blueprint-bg.webp') center/cover; box-shadow: 0 0 28px color-mix(in srgb, var(--registry-rarity) 45%, transparent); --item-icon-size: 100%; .item-icon, .item-icon__container { width: 100%; height: 100%; } .item-icon__container { border: 0; background-image: none; } .item-icon__image { padding: 18px; } } small { color: var(--registry-rarity); font-weight: 800; text-transform: uppercase; } h2 { margin: 5px 0 10px; color: white; font-size: clamp(26px, 4vw, 42px); text-transform: uppercase; } p { max-width: 680px; color: #aaaab3; line-height: 1.55; } }
-.registry-wtb { display: inline-flex; flex-direction: column; margin-top: 12px; padding: 9px 13px; border: 1px solid #fdd208; border-radius: 6px; background: #fdd20814; color: #fdd208; font-size: 12px; font-weight: 900; text-decoration: none; text-transform: uppercase; span { color: #999; font-size: 9px; font-weight: 500; text-transform: none; } }
-.registry-detail-columns { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 16px; padding: 16px; }
-.registry-detail-main { display: flex; min-width: 0; flex-direction: column; gap: 16px; }
-.registry-article, .registry-location-votes, .registry-detail-side { border: 1px solid #ffffff14; border-radius: 9px; background: #121216; }
-.registry-article { padding: 18px; h3 { margin-bottom: 10px; color: white; } p { color: #b5b5bd; line-height: 1.6; } }
-.registry-location-votes { overflow: hidden; > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px solid #ffffff12; > div { display: flex; align-items: center; gap: 9px; } svg { width: 19px; color: #fdd208; } h3 { color: white; font-size: 15px; } span { color: #8d8d96; font-size: 12px; white-space: nowrap; } } > nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 14px; padding: 4px; border: 1px solid #2d2d32; border-radius: 7px; background: #070708; button { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 8px; border: 0; border-radius: 5px; background: transparent; color: #8d8d96; cursor: pointer; &.active { background: #1b1b20; color: white; } svg { width: 16px; } } } }
-.registry-bars { display: flex; max-height: 236px; flex-direction: column; gap: 5px; overflow-y: auto; padding: 0 14px 14px; > p { padding: 30px; color: #888; text-align: center; } }
-.registry-bar { position: relative; display: flex; align-items: center; justify-content: space-between; min-height: 32px; overflow: hidden; padding: 0 10px 0 28px; border: 1px solid #fdd208; border-radius: 4px; color: white; i { position: absolute; inset: 0 auto 0 0; background: #fdd20855; } span, b { position: relative; font-size: 12px; } &--map { border-color: #66ffff; } }
-.registry-bars--map .registry-bar { border-color: #66ffff; i { background: #66ffff4d; } }
-.registry-bars--event .registry-bar { border-color: #c868ff; i { background: #c868ff4d; } }
-.registry-location-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 14px 14px; button { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px; border: 1px solid #fdd208; border-radius: 6px; background: #fdd20818; color: white; font-weight: 700; cursor: pointer; svg { width: 16px; color: #fdd208; } } }
-.registry-find-form { margin: 0 14px 14px; padding: 14px; border: 1px solid #ffffff18; border-radius: 7px; background: #09090b; h4 { margin-bottom: 12px; color: white; } > div { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } label { display: flex; flex-direction: column; gap: 5px; color: #999; font-size: 11px; font-weight: 700; text-transform: uppercase; } input, select { min-height: 38px; padding: 0 10px; border: 1px solid #34343a; border-radius: 5px; background: #151519; color: white; } > button { width: 100%; margin-top: 10px; padding: 10px; border: 0; border-radius: 5px; background: #fdd208; color: #111; font-weight: 900; cursor: pointer; } }
-.registry-detail-side { align-self: start; padding: 14px; dl > div { display: grid; grid-template-columns: 42% 58%; gap: 8px; padding: 9px 0; border-bottom: 1px solid #ffffff0d; } dt { color: #777780; font-size: 10px; font-weight: 800; text-transform: uppercase; } dd { color: #e4e4e7; font-size: 11px; text-align: right; &.confirmed { color: #34d399; text-transform: uppercase; } } }
-@media (max-width: 760px) { .registry-detail-hero, .registry-detail-columns { grid-template-columns: 1fr; } .registry-detail-hero .registry-rarity-frame { width: min(230px, 75vw); margin: auto; } .registry-find-form > div { grid-template-columns: 1fr; } }
+// ── Blurred background ───────────────────────────────────────
+.blueprints-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background-image: url(/backgrounds/raider.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+  }
+}
+
+// ── Container ────────────────────────────────────────────────
+.blueprints-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+// ── Hero / title ─────────────────────────────────────────────
+.blueprints-hero {
+  text-align: left;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-family: ArcBold, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+// ── Guide button ─────────────────────────────────────────────
+.blueprints-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #888;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fff;
+    background: #2a2a2a;
+  }
+}
+
+// ── Guide dialog ─────────────────────────────────────────────
+.blueprints-guide-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+
+  .blueprints-guide-body {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 1rem;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+.blueprints-guide-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.6;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+}
+
+.blueprints-guide-close {
+  align-self: flex-end;
+  background: #ffe600;
+  color: #050505;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover { opacity: 0.9; }
+}
+
+// ── Filters ──────────────────────────────────────────────────
+.blueprints-filters {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.blueprints-filter-search { grid-column: 1; }
+.blueprints-filter-row    { display: contents; }
+
+// ── Progress bar ─────────────────────────────────────────────
+.blueprints-progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.75rem;
+
+  &-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    label {
+      color: #666;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    strong {
+      color: #fff;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// ── Grid container ───────────────────────────────────────────
+.blueprints-grid-container {
+  padding: 0.875rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #1e1e1e;
+  border-radius: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.blueprints-grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+
+// ── Blueprint card ───────────────────────────────────────────
+.blueprint-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #ffe600;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+// Learned checkmark badge
+.blueprint-checkmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 0 50% 0 3.5px;
+  background: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  color: #fff;
+}
+
+// Duplicate count badge
+.blueprint-duplicate {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 20px;
+  height: 20px;
+  background: #ffe600;
+  color: #050505;
+  border-radius: 5.5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  z-index: 10;
+  pointer-events: none;
+}
+
+// Unknown slot label
+.blueprint-unknown-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+// Item name label at bottom of card
+.blueprint-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 4px 3px;
+  font-size: 9px;
+  color: #fff;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  z-index: 5;
+}
+
+// ============================================================
+// DETAIL PANEL
+// ============================================================
+
+.bp-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.bp-detail-panel {
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-top: 2px solid var(--rarity-color, #6b7280);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 20px var(--rarity-color, #6b7280, 0.2);
+  animation: panel-slide-in 0.25s ease;
+}
+
+@keyframes panel-slide-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+// ── Detail header ────────────────────────────────────────────
+.bp-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 0.75rem;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.bp-detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bp-detail-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 0.75rem;
+  border: 2px solid;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #1a1a1a;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.bp-detail-title {
+  h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+  }
+}
+
+.bp-detail-subtitle {
+  color: #888;
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+}
+
+.bp-detail-close {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+
+  &:hover {
+    background: #1a1a1a;
+    color: #fff;
+  }
+}
+
+// ── Rarity badge ─────────────────────────────────────────────
+.rarity-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid;
+  border-radius: 999px;
+}
+
+// ── Tabs ─────────────────────────────────────────────────────
+.bp-detail-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem 1.25rem 0;
+  border-bottom: 1px solid #1e1e1e;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #888;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+
+    &:hover { color: #fff; }
+
+    &.active {
+      color: #fff;
+      border-bottom-color: var(--rarity-color, #ffe600);
+    }
+  }
+}
+
+// ── Body / sections ──────────────────────────────────────────
+.bp-detail-body {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bp-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bp-section-title {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.bp-empty {
+  color: #555;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+// ── Quick stats row ──────────────────────────────────────────
+.bp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.bp-stat {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.bp-stat-label {
+  color: #555;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bp-stat-value {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+// ── Action buttons ───────────────────────────────────────────
+.bp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.bp-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #ccc;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #2a2a2a;
+    color: #fff;
+  }
+
+  &.active-green {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: #22c55e;
+    color: #22c55e;
+  }
+
+  &.active-yellow {
+    background: rgba(255, 230, 0, 0.1);
+    border-color: #ffe600;
+    color: #ffe600;
+  }
+
+  &.active-red {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #ef4444;
+  }
+}
+
+// ── Location cards ───────────────────────────────────────────
+.bp-location-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bp-location-card {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-left: 3px solid;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.bp-location-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  strong {
+    color: #fff;
+    font-size: 0.875rem;
+  }
+}
+
+.bp-location-condition {
+  font-size: 0.75rem;
+  color: #888;
+  background: #1e1e1e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.bp-location-detail {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.bp-detail-key {
+  color: #666;
+}
+
+// ── Tags ─────────────────────────────────────────────────────
+.bp-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.bp-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  color: #888;
+
+  &.green {
+    border-color: #22c55e;
+    color: #22c55e;
+  }
+
+  &.blue {
+    border-color: #3b82f6;
+    color: #3b82f6;
+  }
+}
+
+// ── Distribution bars ────────────────────────────────────────
+.bp-dist-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dist-bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr 36px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dist-bar-label {
+  color: #aaa;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dist-bar-track {
+  height: 6px;
+  background: #1e1e1e;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dist-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.dist-bar-value {
+  color: #666;
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+// ── "I Found It" form ────────────────────────────────────────
+.bp-find-form {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.75rem;
+  padding: 1rem;
+
+  h4 {
+    color: #fff;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+  }
+}
+
+.bp-find-fields {
+  display: grid;
+  gap: 0.6rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: #888;
+    font-size: 0.8rem;
+
+    input,
+    select {
+      background: #0d0d0d;
+      border: 1px solid #2a2a2a;
+      border-radius: 0.375rem;
+      padding: 0.45rem 0.6rem;
+      color: #fff;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+
+      &:focus {
+        border-color: #ffe600;
+      }
+    }
+
+    select option {
+      background: #111;
+    }
+  }
+}
+
+.bp-find-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.bp-submit-btn {
+  background: #ffe600;
+  color: #050505;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.9; }
+}
+
+// ============================================================
+// RESPONSIVE
+// ============================================================
+
+@media (max-width: 768px) {
+  .blueprints-page {
+    overflow: hidden;
+
+    .page-container {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
+
+  .blueprints-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .blueprints-filter-search { width: 100%; }
+
+  .blueprints-filter-row {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+
+    > * {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .blueprints-grid-container {
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .blueprints-grid {
+    grid-template-columns: repeat(10, 80px);
+    width: max-content;
+  }
+
+  .bp-detail-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .bp-detail-panel {
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    max-height: 90vh;
+  }
+
+  .bp-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .blueprints-page {
+    padding: 0.75rem 0.5rem;
+    min-height: 0;
+    overflow: hidden;
+
+    .page-container {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
+
+  .blueprints-filters,
+  .blueprints-filter-row {
+    gap: 0.375rem;
+  }
+
+  .blueprints-grid-container { max-width: 100%; }
+
+  .blueprints-grid {
+    grid-template-columns: repeat(10, 80px);
+    gap: 0.5rem;
+  }
+
+  .blueprints-progress {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .bp-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dist-bar-row {
+    grid-template-columns: 90px 1fr 30px;
+  }
+}
