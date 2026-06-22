@@ -67,6 +67,7 @@
 }
 
 // ── content layer ────────────────────────────────────────────
+/* The background texture inside the card */
 .neon-border-content {
   position: relative;
   z-index: 1;
@@ -86,10 +87,18 @@
 }
 
 // ── animation modes ──────────────────────────────────────────
-.neon-border-hover::before {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  animation: neon-spin 6s linear infinite;
+
+.neon-border-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* They use a very subtle transparent grid or diagonal line pattern */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 10px 10px; /* Small technical grid */
+  pointer-events: none;
+  z-index: -1;
 }
 
 .neon-border-hover:hover::before {

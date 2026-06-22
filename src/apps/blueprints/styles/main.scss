@@ -6,6 +6,25 @@
 @use 'neon';   // spinning conic-gradient border
 @use 'atlas';  // AtlasBlueprintPanel styles
 
+// ── Lightweight design-token utilities used in JSX ──────────────
+// These mirror the project's existing Tailwind-style palette so the
+// Blueprint JSX can compose with the rest of the app.
+.bg-blue-dark {
+  background-color: #0c1a36;
+}
+
+.bg-blue-light {
+  background-color: #1c2c52;
+}
+
+.text-beige {
+  color: #d6c8a0;
+}
+
+.border-ui-border {
+  border: 1px solid #2a3a64;
+}
+
 // ── Page shell ───────────────────────────────────────────────
 .blueprints-page {
   position: relative;
@@ -41,17 +60,25 @@
     content: '';
     position: absolute;
     inset: -20px;
-    background-image: url(/backgrounds/raider.webp);
+    // background-image: url(/backgrounds/raider.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(4px);
   }
 }
+.neon-border-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #0f172a; /* Deep Blueprint Blue */
+  
+  /* The "Technical Grid" Look */
 
 // ── Container ────────────────────────────────────────────────
 .blueprints-container {
-  max-width: 80rem;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -125,6 +152,19 @@
     flex-direction: column;
     gap: 1.5rem;
     padding: 1.5rem;
+  }
+
+  .blueprints-guide-header {
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 0.75rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.02em;
+    }
   }
 }
 
@@ -203,23 +243,34 @@
 
 // ── Grid container ───────────────────────────────────────────
 .blueprints-grid-container {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 0.875rem;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #1e1e1e;
+  background: rgba(4, 12, 30, 0.9);
+  border: 1px solid rgba(35, 79, 170, 0.55);
   border-radius: 0.75rem;
   position: relative;
   z-index: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .blueprints-grid {
   display: grid;
-  grid-template-columns: repeat(10, minmax(80px, 1fr));
-  gap: 0.5rem;
+  /* This exact pixel value (81.3px) ensures they align perfectly with the page layout */
+  grid-template-columns: repeat(auto-fill, minmax(81.3px, 81.3px));
+  gap: 8px;
+  padding: 10px;
+  justify-content: center; /* Centers the whole "bunched" group */
+  background: #000; /* True black background makes the neon 'pop' much harder */
 }
 
 // ── Blueprint card ───────────────────────────────────────────
 .blueprint-card {
-  width: 100%;
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -229,6 +280,33 @@
     outline-offset: 2px;
     border-radius: 0.5rem;
   }
+}
+
+// Inner shell that holds the item icon inside the NeonBorder
+.blueprint-card-inner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 22, 48, 0.92);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.blueprint-card-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.blueprint-card-fallback {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
 }
 
 // Learned checkmark badge
@@ -274,7 +352,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
+  color: #d7def8;
   font-size: 1rem;
   font-weight: 700;
 }
@@ -831,4 +909,475 @@
   .dist-bar-row {
     grid-template-columns: 90px 1fr 30px;
   }
+}
+
+
+.blueprints-sections {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0.25rem 0;
+
+  button {
+    background: #111827;
+    border: 1px solid #26395f;
+    color: #b9c5e6;
+    border-radius: 0.5rem;
+    padding: 0.45rem 0.8rem;
+    cursor: pointer;
+  }
+
+  button.active {
+    background: #16376f;
+    color: #fff;
+    border-color: #3b82f6;
+  }
+}
+
+// ── Empty / no-results state ───────────────────────────────────
+.blueprints-no-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+// ── Status colour tokens ───────────────────────────────────────
+// Used by rarity-tinted badges and indicators elsewhere in the app.
+:root {
+  --status-available: #3b82f6;
+  --gold-accent: #ffe600;
+}
+
+// ============================================================
+// DETAIL MODAL — re-skin (example match)
+// Centered modal, rarity-tinted header, learned toggle, dup stepper
+// ============================================================
+
+.bp-detail-modal {
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+
+  .bp-detail-panel {
+    --rarity-color: #6b7280;
+    background: #ffffff;
+    color: var(--blue-dark, #0c1a36);
+    border: 1px solid var(--rarity-color);
+    border-top: 3px solid var(--rarity-color);
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 560px;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.45),
+      0 0 0 4px rgba(255, 255, 255, 0.04);
+    animation: bp-modal-pop-in 0.2s ease;
+  }
+}
+
+@keyframes bp-modal-pop-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+// ── Header (icon · name · chips · close) ───────────────────────
+.bp-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+}
+
+.bp-modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.75rem;
+  border: 2px solid var(--rarity-color);
+  background: rgba(12, 26, 54, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.bp-modal-icon-fallback {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(12, 26, 54, 0.4);
+  text-transform: uppercase;
+}
+
+.bp-modal-identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.bp-modal-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blue-dark, #0c1a36);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bp-modal-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.bp-modal-chip {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+
+  &--rarity {
+    color: #fff;
+  }
+
+  &--category {
+    background: rgba(12, 26, 54, 0.08);
+    color: rgba(12, 26, 54, 0.65);
+  }
+}
+
+// ── Crafted-at + recipe block ─────────────────────────────────
+.bp-modal-craft {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bp-modal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+  font-size: 0.875rem;
+}
+
+.bp-modal-label {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(12, 26, 54, 0.5);
+}
+
+.bp-modal-value {
+  font-weight: 600;
+  color: var(--blue-dark, #0c1a36);
+}
+
+.bp-modal-recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.bp-modal-recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  li {
+    background: rgba(12, 26, 54, 0.04);
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    color: var(--blue-dark, #0c1a36);
+  }
+}
+
+// ── Learned toggle (gold when on) ─────────────────────────────
+.bp-modal-toggle-row {
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+}
+
+.bp-modal-toggle-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: rgba(12, 26, 54, 0.65);
+}
+
+.bp-modal-toggle {
+  position: relative;
+  width: 3rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: rgba(12, 26, 54, 0.18);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  padding: 0;
+
+  &.is-on {
+    background: var(--gold-accent, #ffe600);
+  }
+}
+
+.bp-modal-toggle-knob {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.bp-modal-toggle.is-on .bp-modal-toggle-knob {
+  transform: translateX(1.25rem);
+}
+
+// ── Duplicates stepper (+ / −) ────────────────────────────────
+.bp-modal-dup-row {
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+}
+
+.bp-modal-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bp-modal-stepper-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background: rgba(12, 26, 54, 0.08);
+  color: var(--blue-dark, #0c1a36);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(12, 26, 54, 0.16);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &--gold {
+    background: var(--gold-accent, #ffe600);
+
+    &:hover:not(:disabled) {
+      filter: brightness(1.08);
+    }
+  }
+}
+
+.bp-modal-stepper-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-dark, #0c1a36);
+  min-width: 2ch;
+  text-align: center;
+}
+
+// ── More-details expand ────────────────────────────────────────
+.bp-modal-more-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: rgba(12, 26, 54, 0.04);
+  border: none;
+  border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(12, 26, 54, 0.7);
+  cursor: pointer;
+}
+
+.bp-modal-more-chevron {
+  transition: transform 0.2s ease;
+
+  &.is-open {
+    transform: rotate(180deg);
+  }
+}
+
+.bp-modal-more {
+  display: flex;
+  flex-direction: column;
+
+  .bp-detail-tabs {
+    border-bottom: 1px solid rgba(12, 26, 54, 0.08);
+    padding: 0.5rem 1rem 0;
+    background: rgba(12, 26, 54, 0.02);
+  }
+
+  .bp-detail-body {
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .bp-section-title {
+    color: var(--blue-dark, #0c1a36);
+  }
+
+  .bp-stat-label {
+    color: rgba(12, 26, 54, 0.5);
+  }
+
+  .bp-stat-value {
+    color: var(--blue-dark, #0c1a36);
+  }
+
+  .bp-empty {
+    color: rgba(12, 26, 54, 0.5);
+  }
+
+  .bp-location-card {
+    background: rgba(12, 26, 54, 0.04);
+    border-color: rgba(12, 26, 54, 0.08);
+    color: var(--blue-dark, #0c1a36);
+  }
+
+  .bp-location-header strong {
+    color: var(--blue-dark, #0c1a36);
+  }
+
+  .bp-location-condition {
+    background: rgba(12, 26, 54, 0.08);
+    color: rgba(12, 26, 54, 0.7);
+  }
+
+  .bp-location-detail {
+    color: rgba(12, 26, 54, 0.7);
+
+    .bp-detail-key {
+      color: rgba(12, 26, 54, 0.5);
+    }
+  }
+
+  .bp-tag {
+    border-color: rgba(12, 26, 54, 0.2);
+    color: rgba(12, 26, 54, 0.65);
+
+    &.green {
+      border-color: #16a34a;
+      color: #16a34a;
+    }
+
+    &.blue {
+      border-color: var(--rarity-color, #3b82f6);
+      color: var(--rarity-color, #3b82f6);
+    }
+  }
+
+  .bp-find-form {
+    background: rgba(12, 26, 54, 0.04);
+    border-color: rgba(12, 26, 54, 0.08);
+
+    h4 { color: var(--blue-dark, #0c1a36); }
+
+    label {
+      color: rgba(12, 26, 54, 0.6);
+
+      input,
+      select {
+        background: #fff;
+        border-color: rgba(12, 26, 54, 0.15);
+        color: var(--blue-dark, #0c1a36);
+
+        &:focus {
+          border-color: var(--rarity-color, #ffe600);
+        }
+      }
+    }
+  }
+}
+
+// ── Footer actions (light variant) ─────────────────────────────
+.bp-actions--footer {
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid rgba(12, 26, 54, 0.08);
+
+  .bp-action-btn {
+    background: rgba(12, 26, 54, 0.06);
+    border-color: rgba(12, 26, 54, 0.1);
+    color: var(--blue-dark, #0c1a36);
+
+    &:hover {
+      background: rgba(12, 26, 54, 0.12);
+    }
+  }
+}
+
+// ============================================================
+// CARD re-skin (example match)
+// Background tile, rarity-tinted duplicate badge, larger icon
+// ============================================================
+
+.blueprints-grid-container {
+  // Container stays the same — bluish rounded box
+  background: #0c1a36;
+  border-color: #1c2c52;
+}
+
+.blueprint-card-inner {
+  background: #0c1a36;
+}
+
+.blueprint-card-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.blueprint-duplicate {
+  background-color: var(--status-available, #3b82f6);
+  color: #fff;
+  border-radius: 5.5px 0;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.55);
+}
+
+.blueprint-checkmark {
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
 }

@@ -128,7 +128,7 @@ export function getLocationIcon(location: string): string | null {
     'Mechanical': 'mechanical.webp',
     'Medical': 'medical.webp',
     'Old World': 'old_world.webp',
-    'Raider': 'raider.webp',
+    // 'Raider': 'raider.webp',
     'Residential': 'residential.webp',
     'Security': 'security.webp',
     'Technological': 'technological.webp',

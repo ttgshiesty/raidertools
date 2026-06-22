@@ -19,6 +19,12 @@ interface NeonBorderProps {
   rarityColor?: string;
   /** When true the animation plays continuously; when false only on hover */
   alwaysOn?: boolean;
+  /** Background colour of the inner card */
+  backgroundColor?: string;
+  /** Border radius (rem) */
+  borderRadius?: number;
+  /** When true the inner content shrinks to fit its child */
+  fitContent?: boolean;
   /** Extra class names forwarded to the wrapper */
   className?: string;
   children: React.ReactNode;
@@ -32,6 +38,9 @@ const NeonBorder = React.forwardRef<HTMLDivElement, NeonBorderProps>(
     {
       rarityColor = '#6b7280',
       alwaysOn = false,
+      backgroundColor = '#1a1a1a',
+      borderRadius = 0.5,
+      fitContent = false,
       className = '',
       children,
       style,
@@ -55,10 +64,10 @@ const NeonBorder = React.forwardRef<HTMLDivElement, NeonBorderProps>(
         className={wrapperClass}
         style={
           {
-            '--neon-border-radius': '0.5rem',
-            '--neon-bg-color': '#1a1a1a',
+            '--neon-border-radius': `${borderRadius}rem`,
+            '--neon-bg-color': backgroundColor,
             '--neon-rarity-color': rarityColor,
-            '--neon-content-width': 'auto',
+            '--neon-content-width': fitContent ? 'auto' : '100%',
             ...style,
           } as React.CSSProperties
         }

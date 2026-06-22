@@ -199,7 +199,17 @@
   "blueprints": {
     "title": "Blueprints",
     "subtitle": "Browse the complete blueprint catalog and track learned recipes through ARCTracker.",
+    "loading": "Loading blueprints…",
     "loadError": "Unable to load the blueprint catalog.",
+    "guide": {
+      "title": "How blueprints work",
+      "trackingTitle": "Tracking Your Collection",
+      "trackingDesc": "Click any blueprint card to open the detail panel. Mark blueprints as Learned, add duplicates, or record where you found them.",
+      "statusTitle": "Card Status",
+      "statusDesc": "A spinning neon border means the blueprint is learned. A yellow badge shows how many duplicates you own.",
+      "filtersTitle": "Filters",
+      "filtersDesc": "Use the search box and dropdowns to filter by name, category, or collection status."
+    },
     "syncError": "Unable to sync blueprints.",
     "sync": "Sync Blueprints",
     "syncing": "Syncing...",
@@ -219,12 +229,26 @@
     "grid": "Blueprint grid",
     "learned": "Learned",
     "unlearned": "Not learned",
+    "owned": "Owned (Dupes)",
     "unknown": "Not synced",
     "noResults": "No blueprints match these filters.",
+    "sort": {
+      "sortBy": "Sort by",
+      "ingame": "In-game order",
+      "name": "Name",
+      "rarity": "Rarity"
+    },
     "status": {
       "all": "All",
       "learned": "Learned",
-      "unlearned": "Not Learned"
+      "unlearned": "Not Learned",
+      "owned": "Owned (Dupes)"
+    },
+    "detail": {
+      "craftedAt": "Crafted at",
+      "recipe": "Recipe",
+      "learned": "Learned",
+      "duplicates": "Duplicates"
     }
   },
   "pages": {

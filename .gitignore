@@ -147,3 +147,9 @@ vite.config.ts.timestamp-*
 docs/REFERANCE
 docs/INPORTANT
 
+
+# local/private files
+.env
+.env.*
+deploy.sh
+docs/

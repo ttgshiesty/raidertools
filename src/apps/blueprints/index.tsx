@@ -2,36 +2,35 @@
  * blueprints/index.tsx
  *
  * Main blueprints page.  Renders the 83-slot grid with neon-glow rarity
- * borders (matching arcraiderscentral.app), filter controls, progress stats,
- * and the BlueprintRegistryDetail slide-in panel.
+ * borders (matching arcraiderscentral.app), filter controls (search +
+ * category + status + sort), progress stats, the blueprint grid and the
+ * BlueprintRegistryDetail slide-in panel.
  *
- * Key changes vs. original:
- *  • NeonBorder now receives `rarityColor` so each card glows in its rarity
- *    colour (Legendary = gold, Epic = purple, Rare = blue, etc.)
- *  • Blueprint cards use the SVG-based rarity gradient from the reference site
- *  • BlueprintRegistryDetail has been replaced with the new version that
- *    includes loot-location containers, distribution graphs, sell/duplicate/
- *    owned actions, and an Atlas tab
+ * Skeleton mirrors the example build: hero / progress / filters grid /
+ * grid-container with ref / no-results Card / guide Dialog.
  */
 
-import React, { useEffect, useMemo, useState } from 'react';
-import { Check, HelpCircle } from 'lucide-react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { NeonBorder } from './NeonBorder';
 import { BlueprintRegistryDetail } from './BlueprintRegistryDetail';
 import { AtlasBlueprintPanel, parseAtlasCsv } from './AtlasBlueprintPanel';
-import type { AtlasRow } from './AtlasBlueprintPanel'; // canonical source
+import type { AtlasRow } from './AtlasBlueprintPanel';
 import {
-  buildFixedBlueprintSlots,
-  buildBlueprintGrid,
+  buildBlueprintGridFromItems,
   filterBlueprintGrid,
   getRarityColor,
+  sortBlueprints,
 } from './utils/blueprintGrid';
 import type {
   BlueprintGridItem,
   BlueprintGridFilters,
+  BlueprintSort,
 } from './utils/blueprintGrid';
+import type { RawItemsOutput } from '../../shared/types/item';
+import { useLocale } from '../../shared/context/LocaleContext';
 
 import './styles/main.scss';
 
@@ -46,14 +45,6 @@ type ProgressMap = Record<string, BlueprintProgress>;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-const RARITY_ORDER: Record<string, number> = {
-  Legendary: 0,
-  Epic: 1,
-  Rare: 2,
-  Uncommon: 3,
-  Common: 4,
-};
-
 function normalizeBlueprintName(value: string): string {
   return value
     .toLowerCase()
@@ -62,94 +53,30 @@ function normalizeBlueprintName(value: string): string {
     .trim();
 }
 
-/**
- * Renders the rarity-tinted SVG gradient that sits behind the item icon,
- * matching the arcraiderscentral.app card style exactly.
- */
-function BlueprintCardSvg({
-  id,
-  rarity,
-  targetName,
-}: {
-  id: string;
-  rarity: string;
-  targetName: string;
-}) {
-  const color = getRarityColor(rarity);
-  const bgId = `bg-gradient-${id}`;
-  const borderId = `border-gradient-${id}`;
-  const label =
-    targetName.length > 10 ? `${targetName.slice(0, 9)}\u2026` : targetName;
+function getBlueprintImageSrc(blueprint: BlueprintGridItem): string | null {
+  if (blueprint.imageUrl) return blueprint.imageUrl;
+  if (!blueprint.imageFilename) return null;
+  if (/^https?:\/\//i.test(blueprint.imageFilename)) return blueprint.imageFilename;
+  if (blueprint.imageFilename.startsWith('/')) return blueprint.imageFilename;
+  return `/icons/blueprints/${blueprint.imageFilename}`;
+}
 
-  return (
-    <svg
-      width="80"
-      height="80"
-      viewBox="0 0 96 96"
-      xmlns="http://www.w3.org/2000/svg"
-      className="relative"
-    >
-      <defs>
-        <linearGradient
-          id={bgId}
-          gradientUnits="userSpaceOnUse"
-          x1="0"
-          y1="96"
-          x2="95.375"
-          y2="0.625"
-        >
-          <stop offset="0" style={{ stopColor: color, stopOpacity: 0.5 }} />
-          <stop offset="1" style={{ stopColor: color, stopOpacity: 0 }} />
-        </linearGradient>
-        <linearGradient
-          id={borderId}
-          gradientUnits="userSpaceOnUse"
-          x1="0"
-          y1="96"
-          x2="95.375"
-          y2="0.625"
-        >
-          <stop offset="0" style={{ stopColor: color, stopOpacity: 1 }} />
-          <stop offset="1" style={{ stopColor: color, stopOpacity: 0.5 }} />
-        </linearGradient>
-      </defs>
-      {/* bottom name-label background fill */}
-      <path
-        d="M 0.625,71.980469 V 87.4628906 C 0.625,91.846083 4.1539194,95.375 8.5371094,95.375 H 87.462891 c 4.383192,0 7.912109,-3.528917 7.912109,-7.9121094 V 71.980469 Z"
-        fill="#0b0e1b"
-      />
-      {/* rarity-tinted border */}
-      <rect
-        x="0.625"
-        y="0.625"
-        width="94.75"
-        height="94.75"
-        rx="7.91"
-        ry="7.91"
-        fill="none"
-        stroke={`url(#${borderId})`}
-        strokeWidth="1.25"
-      />
-      {/* name label */}
-      <text
-        x="26"
-        y="86"
-        textAnchor="start"
-        fill="#fff"
-        fontFamily="system-ui, sans-serif"
-        fontWeight="400"
-        fontSize="9"
-      >
-        {label}
-      </text>
-    </svg>
-  );
+function handleBlueprintImageError(
+  event: React.SyntheticEvent<HTMLImageElement>,
+  fallbackImageUrl?: string | null,
+) {
+  if (!fallbackImageUrl) return;
+  const img = event.currentTarget;
+  if (img.dataset.fallbackApplied === 'true') return;
+  img.dataset.fallbackApplied = 'true';
+  img.src = fallbackImageUrl;
 }
 
 // ─── Main Page Component ──────────────────────────────────────────────────────
 
 export default function BlueprintsPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { locale } = useLocale();
 
   // ── State ──────────────────────────────────────────────────
   const [progress, setProgress] = useState<ProgressMap>({});
@@ -159,6 +86,16 @@ export default function BlueprintsPage() {
   const [atlasSearch, setAtlasSearch] = useState('');
   const [section, setSection] = useState<'grid' | 'atlas'>('grid');
   const [atlasRows, setAtlasRows] = useState<AtlasRow[]>([]);
+  const [itemsDb, setItemsDb] = useState<Record<string, RawItemsOutput['items'][string]> | null>(null);
+
+  const [filters, setFilters] = useState<BlueprintGridFilters>({
+    query: '',
+    category: 'all',
+    status: 'all',
+  });
+  const [sort, setSort] = useState<BlueprintSort>('rarity');
+
+  const gridContainerRef = useRef<HTMLDivElement | null>(null);
 
   // Fetch atlas CSV on mount — same pattern as the real project
   useEffect(() => {
@@ -168,11 +105,28 @@ export default function BlueprintsPage() {
       .catch(() => setAtlasRows([]));
   }, []);
 
-  const [filters, setFilters] = useState<BlueprintGridFilters>({
-    query: '',
-    category: 'all',
-    status: 'all',
-  });
+  // Fetch blueprint item catalog from the localized items data file
+  useEffect(() => {
+    let cancelled = false;
+    const localeCandidates = [locale, 'en'];
+    (async () => {
+      for (const candidate of localeCandidates) {
+        try {
+          const res = await fetch(`/data/items/items.${candidate}.json`);
+          if (!res.ok) continue;
+          const payload = (await res.json()) as RawItemsOutput;
+          if (!cancelled) setItemsDb(payload.items ?? {});
+          return;
+        } catch {
+          // try next candidate
+        }
+      }
+      if (!cancelled) setItemsDb({});
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [locale]);
 
   // ── Load progress from localStorage ───────────────────────
   useEffect(() => {
@@ -198,11 +152,19 @@ export default function BlueprintsPage() {
   }
 
   // ── Build grid ─────────────────────────────────────────────
-  const allBlueprints = useMemo(() => buildBlueprintGrid(null, null), []);
+  const allBlueprints = useMemo(
+    () => buildBlueprintGridFromItems(itemsDb ?? {}, progress),
+    [itemsDb, progress],
+  );
 
   const filteredBlueprints = useMemo(
     () => filterBlueprintGrid(allBlueprints, filters),
     [allBlueprints, filters],
+  );
+
+  const visibleBlueprints = useMemo(
+    () => sortBlueprints(filteredBlueprints, sort, i18n.language),
+    [filteredBlueprints, sort, i18n.language],
   );
 
   // ── Stats ──────────────────────────────────────────────────
@@ -218,7 +180,9 @@ export default function BlueprintsPage() {
       learned,
       notLearned: allBlueprints.length - learned,
       owned,
-      percent: Math.round((learned / allBlueprints.length) * 100),
+      percent: allBlueprints.length
+        ? Math.round((learned / allBlueprints.length) * 100)
+        : 0,
     };
   }, [allBlueprints, progress]);
 
@@ -244,13 +208,17 @@ export default function BlueprintsPage() {
     return ['all', ...cats.sort()];
   }, [allBlueprints]);
 
+  // localized category labels — fall back to the raw slug
+  const categoryLabel = (cat: string): string =>
+    cat === 'all' ? t('blueprints.allCategories', 'All Categories') : cat;
+
   if (loading) {
     return (
       <div className="page-main blueprints-page">
         <div className="blueprints-background" />
         <div className="page-container gap-3">
           <div className="flex items-center justify-center min-h-[60vh]">
-            <p style={{ color: '#888' }}>{t('blueprints.loading', 'Loading blueprints…')}</p>
+            <p className="text-beige">{t('blueprints.loading', 'Loading blueprints…')}</p>
           </div>
         </div>
       </div>
@@ -261,7 +229,7 @@ export default function BlueprintsPage() {
     <div className="page-main blueprints-page">
       <div className="blueprints-background" />
 
-      <div className="page-container">
+      <div className="page-container gap-3">
         {/* ── Hero ── */}
         <div className="blueprints-hero">
           <div className="blueprints-hero-title">
@@ -276,67 +244,50 @@ export default function BlueprintsPage() {
           </div>
         </div>
 
-        {/* ── Progress stats ── */}
-        <div className="blueprints-progress">
-          <div className="blueprints-progress-stat">
-            <label>Learned</label>
-            <strong style={{ color: '#22c55e' }}>{stats.learned}</strong>
-          </div>
-          <div className="blueprints-progress-stat">
-            <label>Not Learned</label>
-            <strong style={{ color: '#ef4444' }}>{stats.notLearned}</strong>
-          </div>
-          <div className="blueprints-progress-stat">
-            <label>Owned (Dupes)</label>
-            <strong style={{ color: '#ffe600' }}>{stats.owned}</strong>
-          </div>
-          <div className="blueprints-progress-stat">
-            <label>Completion</label>
-            <strong>{stats.percent}%</strong>
-          </div>
-        </div>
-
         {/* ── Filters ── */}
         <div className="blueprints-filters">
-          <div className="blueprints-filter-search">
-            <input
-              type="search"
-              placeholder={t('blueprints.search', 'Search blueprints…')}
-              value={filters.query}
-              onChange={(e) => setFilters({ ...filters, query: e.target.value })}
-              style={{
-                width: '100%',
-                background: '#111',
-                border: '1px solid #2a2a2a',
-                borderRadius: '0.5rem',
-                padding: '0.5rem 0.75rem',
-                color: '#fff',
-                outline: 'none',
-              }}
-            />
-          </div>
+          <input
+            type="text"
+            className="blueprints-filter-search bg-blue-dark border-ui-border"
+            placeholder={t('blueprints.search', 'Search blueprints…')}
+            value={filters.query}
+            onChange={(e) => setFilters({ ...filters, query: e.target.value })}
+          />
+
           <div className="blueprints-filter-row">
             <select
+              className="bg-blue-dark border-ui-border hover:bg-blue-light"
               value={filters.category}
               onChange={(e) =>
                 setFilters({ ...filters, category: e.target.value })
               }
-              style={{
-                background: '#111',
-                border: '1px solid #2a2a2a',
-                borderRadius: '0.5rem',
-                padding: '0.5rem 0.75rem',
-                color: '#fff',
-                outline: 'none',
-              }}
+              aria-label={t('blueprints.filters.allCategories', 'All Categories')}
             >
-              {categories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat === 'all' ? 'All Categories' : cat}
-                </option>
-              ))}
+              <option value="all">{t('blueprints.allCategories', 'All Categories')}</option>
+              {categories
+                .filter((c) => c !== 'all')
+                .map((cat) => (
+                  <option key={cat} value={cat}>
+                    {categoryLabel(cat)}
+                  </option>
+                ))}
             </select>
+
             <select
+              className="bg-blue-dark border-ui-border hover:bg-blue-light"
+              value={sort}
+              onChange={(e) => setSort(e.target.value as BlueprintSort)}
+              aria-label={t('blueprints.sort.sortBy', 'Sort by')}
+            >
+              <option value="ingame">{t('blueprints.sort.ingame', 'In-game order')}</option>
+              <option value="name">{t('blueprints.sort.name', 'Name')}</option>
+              <option value="rarity">{t('blueprints.sort.rarity', 'Rarity')}</option>
+            </select>
+          </div>
+
+          <div className="blueprints-filter-row">
+            <select
+              className="bg-blue-dark border-ui-border hover:bg-blue-light"
               value={filters.status}
               onChange={(e) =>
                 setFilters({
@@ -344,20 +295,41 @@ export default function BlueprintsPage() {
                   status: e.target.value as BlueprintGridFilters['status'],
                 })
               }
-              style={{
-                background: '#111',
-                border: '1px solid #2a2a2a',
-                borderRadius: '0.5rem',
-                padding: '0.5rem 0.75rem',
-                color: '#fff',
-                outline: 'none',
-              }}
+              aria-label={t('blueprints.filters.all', 'All')}
             >
-              <option value="all">All Status</option>
-              <option value="learned">Learned</option>
-              <option value="unlearned">Not Learned</option>
-              <option value="owned">Owned (Dupes)</option>
+              <option value="all">
+                {t('blueprints.filters.all', 'All')} ({stats.total})
+              </option>
+              <option value="learned">
+                {t('blueprints.learned', 'Learned')} ({stats.learned})
+              </option>
+              <option value="unlearned">
+                {t('blueprints.unlearned', 'Not Learned')} ({stats.notLearned})
+              </option>
+              <option value="owned">
+                {t('blueprints.filters.owned', 'Owned (Dupes)')} ({stats.owned})
+              </option>
             </select>
+          </div>
+        </div>
+
+        {/* ── Progress stats ── */}
+        <div className="blueprints-progress">
+          <div className="blueprints-progress-stat">
+            <label>{t('blueprints.learned', 'Learned')}</label>
+            <strong style={{ color: '#22c55e' }}>{stats.learned}</strong>
+          </div>
+          <div className="blueprints-progress-stat">
+            <label>{t('blueprints.unlearned', 'Not Learned')}</label>
+            <strong style={{ color: '#ef4444' }}>{stats.notLearned}</strong>
+          </div>
+          <div className="blueprints-progress-stat">
+            <label>{t('blueprints.filters.owned', 'Owned (Dupes)')}</label>
+            <strong style={{ color: '#ffe600' }}>{stats.owned}</strong>
+          </div>
+          <div className="blueprints-progress-stat">
+            <label>Completion</label>
+            <strong>{stats.percent}%</strong>
           </div>
         </div>
 
@@ -367,7 +339,7 @@ export default function BlueprintsPage() {
             className={section === 'grid' ? 'active' : ''}
             onClick={() => setSection('grid')}
           >
-            Collection
+            {t('blueprints.title', 'Collection')}
           </button>
           <button
             className={section === 'atlas' ? 'active' : ''}
@@ -390,117 +362,94 @@ export default function BlueprintsPage() {
 
         {/* ── Blueprint grid ── */}
         {section === 'grid' && (
-        <div className="blueprints-grid-container">
-          <div className="blueprints-grid">
-            {filteredBlueprints.map((blueprint) => {
-              const bp = blueprint as BlueprintGridItem;
-              const bpProgress = progress[bp.id];
-              const isLearned = bpProgress?.learned ?? false;
-              const duplicates = bpProgress?.duplicates ?? 0;
-              const rarityColor = getRarityColor(bp.rarity);
+          <div
+            ref={gridContainerRef}
+            className="blueprints-grid-container rounded-xl bg-blue-dark/90"
+          >
+            <div className="blueprints-grid">
+              {visibleBlueprints.map((bp) => {
+                const bpProgress = progress[bp.id];
+                const isLearned = bpProgress?.learned ?? false;
+                const duplicates = bpProgress?.duplicates ?? 0;
+                const rarityColor = getRarityColor(bp.rarity);
+                const imageSrc = getBlueprintImageSrc(bp);
 
-              return (
-                <div
-                  key={bp.id}
-                  className="blueprint-card group select-none"
-                  title={bp.unknown ? 'Unknown Blueprint' : bp.name}
-                  onClick={() => !bp.unknown && setSelectedId(bp.id)}
-                  role="button"
-                  tabIndex={bp.unknown ? -1 : 0}
-                  onKeyDown={(e) => {
-                    if (!bp.unknown && (e.key === 'Enter' || e.key === ' ')) {
-                      setSelectedId(bp.id);
-                    }
-                  }}
-                >
-                  <NeonBorder
-                    rarityColor={rarityColor}
-                    alwaysOn={isLearned}
-                    backgroundColor="#1a1a1a"
+                return (
+                  <div
+                    key={bp.id}
+                    className="blueprint-card cursor-pointer group select-none"
+                    title={bp.name}
+                    onClick={() => setSelectedId(bp.id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        setSelectedId(bp.id);
+                      }
+                    }}
                   >
-                    <div
-                      className="relative block leading-none"
-                      style={{ width: '80px', height: '80px' }}
+                    <NeonBorder
+                      backgroundColor="#1a1a1a"
+                      borderRadius={0.5}
+                      fitContent
+                      rarityColor={rarityColor}
+                      alwaysOn={isLearned}
                     >
-                      {/* Blueprint background image */}
-                      <div
-                        className="absolute inset-0 rounded-lg overflow-hidden"
-                        style={{
-                          backgroundImage:
-                            'url("/icons/blueprints/blueprint-bg.webp")',
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center center',
-                          borderRadius: '6px',
-                        }}
-                      />
-
-                      {bp.unknown ? (
-                        <div className="blueprint-unknown-label">???</div>
-                      ) : (
-                        <>
-                          {/* Rarity SVG gradient + name label */}
-                          <BlueprintCardSvg
-                            id={bp.id}
-                            rarity={bp.rarity}
-                            targetName={bp.targetName}
-                          />
-
-                          {/* Item icon */}
-                          {bp.imageFilename && (
-                            <img
-                              src={`/icons/blueprints/${bp.imageFilename}`}
-                              alt={bp.name}
-                              className="absolute pointer-events-none"
-                              loading="lazy"
-                              style={{
-                                width: '58.08px',
-                                height: '58.08px',
-                                left: '10.96px',
-                                top: '0.8px',
-                                objectFit: 'contain',
-                              }}
-                            />
-                          )}
-
-                          {/* Blueprint icon overlay */}
+                      <div className="blueprint-card-inner">
+                        {imageSrc ? (
                           <img
-                            src="/icons/items/category/Icon_Blueprint.png"
-                            alt="blueprint"
-                            className="absolute pointer-events-none"
+                            src={imageSrc}
+                            alt={bp.name}
+                            onError={(event) =>
+                              handleBlueprintImageError(event, bp.fallbackImageUrl)
+                            }
+                            className="blueprint-card-icon"
                             loading="lazy"
-                            style={{
-                              width: '12.48px',
-                              height: '12.48px',
-                              left: '4.72px',
-                              bottom: '4.08px',
-                              objectFit: 'contain',
-                              filter: 'brightness(1.3)',
-                              opacity: 0.95,
-                            }}
                           />
-                        </>
-                      )}
+                        ) : (
+                          <div className="blueprint-card-fallback">
+                            {bp.name.charAt(0)}
+                          </div>
+                        )}
+                        {isLearned && (
+                          <div className="blueprint-checkmark pointer-events-none">
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="#fff"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={4}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          </div>
+                        )}
+                        {duplicates > 0 && (
+                          <div className="blueprint-duplicate pointer-events-none">
+                            <span className="text-[10px] font-bold text-white">
+                              {duplicates}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </NeonBorder>
+                  </div>
+                );
+              })}
+            </div>
 
-                      {/* Learned checkmark */}
-                      {isLearned && (
-                        <div className="blueprint-checkmark pointer-events-none">
-                          <Check size={10} />
-                        </div>
-                      )}
-
-                      {/* Duplicate count */}
-                      {duplicates > 0 && !bp.unknown && (
-                        <div className="blueprint-duplicate pointer-events-none">
-                          {duplicates}
-                        </div>
-                      )}
-                    </div>
-                  </NeonBorder>
-                </div>
-              );
-            })}
+            {visibleBlueprints.length === 0 && (
+              <div className="blueprints-no-results">
+                <p className="text-lg text-beige">
+                  {t('blueprints.noResults', 'No blueprints match these filters.')}
+                </p>
+              </div>
+            )}
           </div>
-        </div>
         )}
 
         {/* ── Detail panel ── */}
@@ -532,35 +481,42 @@ export default function BlueprintsPage() {
           onClick={() => setShowGuide(false)}
         >
           <div
-            className="blueprints-guide-body"
+            className="blueprints-guide-body page-guide-dialog"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="blueprints-guide-section">
-              <h2>{t('blueprints.guide.trackingTitle', 'Tracking Your Collection')}</h2>
-              <p>
-                {t(
-                  'blueprints.guide.trackingDesc',
-                  'Click any blueprint card to open the detail panel. Mark blueprints as Learned, add duplicates, or record where you found them.',
-                )}
-              </p>
-            </div>
-            <div className="blueprints-guide-section">
-              <h2>{t('blueprints.guide.statusTitle', 'Card Status')}</h2>
-              <p>
-                {t(
-                  'blueprints.guide.statusDesc',
-                  'A spinning neon border means the blueprint is learned. A yellow badge shows how many duplicates you own.',
-                )}
-              </p>
-            </div>
-            <div className="blueprints-guide-section">
-              <h2>{t('blueprints.guide.filtersTitle', 'Filters')}</h2>
-              <p>
-                {t(
-                  'blueprints.guide.filtersDesc',
-                  'Use the search box and dropdowns to filter by name, category, or collection status.',
-                )}
-              </p>
+            <header className="blueprints-guide-header">
+              <h2>{t('blueprints.guide.title', 'How blueprints work')}</h2>
+            </header>
+            <div className="blueprints-guide-body page-guide-body">
+              <div className="blueprints-guide-section page-guide-section">
+                <h2>
+                  {t('blueprints.guide.trackingTitle', 'Tracking Your Collection')}
+                </h2>
+                <p>
+                  {t(
+                    'blueprints.guide.trackingDesc',
+                    'Click any blueprint card to open the detail panel. Mark blueprints as Learned, add duplicates, or record where you found them.',
+                  )}
+                </p>
+              </div>
+              <div className="blueprints-guide-section page-guide-section">
+                <h2>{t('blueprints.guide.statusTitle', 'Card Status')}</h2>
+                <p>
+                  {t(
+                    'blueprints.guide.statusDesc',
+                    'A spinning neon border means the blueprint is learned. A yellow badge shows how many duplicates you own.',
+                  )}
+                </p>
+              </div>
+              <div className="blueprints-guide-section page-guide-section">
+                <h2>{t('blueprints.guide.filtersTitle', 'Filters')}</h2>
+                <p>
+                  {t(
+                    'blueprints.guide.filtersDesc',
+                    'Use the search box and dropdowns to filter by name, category, or collection status.',
+                  )}
+                </p>
+              </div>
             </div>
             <button
               type="button"
@@ -575,3 +531,6 @@ export default function BlueprintsPage() {
     </div>
   );
 }
+
+// Named export for App.tsx lazy import
+export const BlueprintsApp = BlueprintsPage;
