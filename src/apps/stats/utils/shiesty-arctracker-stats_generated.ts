@@ -906,7 +906,7 @@ export function normalizeStatsPlayerV2(raw: JsonObject, resolver?: StatsTargetRe
   result.totalKills = result.arcKills + result.playerKills;
   result.netValue = result.valueExtracted - result.valueBroughtIn;
   result.survivalRate = ratio(result.roundsExtracted, result.roundsPlayed);
-  result.mapPerformance = [...maps.values()].map((map) => ({
+  result.mapPerformance = Array.from(maps.values()).map((map) => ({
     ...map,
     survivalRate: ratio(map.roundsExtracted, map.roundsPlayed),
     netValue: map.valueExtracted - map.valueBroughtIn,
@@ -985,6 +985,7 @@ function parseDedicatedBreakdown(value: unknown, key: 'enemies' | 'weapons', res
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function parseRounds(value: unknown, resolver?: StatsTargetResolver): StatsRoundRow[] {
   return list(value, 'rounds').map((entry, index) => {
     const row = isRecord(entry) ? entry : {};

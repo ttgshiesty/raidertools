@@ -1,4 +1,4 @@
-const e = "/items";
+const e = "images/items";
 const i = [
   {
     id: "bettina",

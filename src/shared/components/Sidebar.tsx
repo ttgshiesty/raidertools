@@ -38,6 +38,11 @@ const NAV_ITEMS = [
     icon: 'firefly_mf.png',
     labelKey: 'shared.tools.blueprints',
   },
+  {
+    path: '/skill-tree',
+    icon: 'trends.webp',
+    labelKey: 'shared.tools.skillTree',
+  },
 ];
 
 const BOTTOM_NAV_ITEM = {

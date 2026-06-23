@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "shiesty raiders Tools"
+    "name": "SHiESTY RAiDERS"
   },
   "shared": {
     "language": "Language",
@@ -46,7 +46,7 @@
     "userMenu": {
       "login": "Login",
       "profile": "Profile",
-      "arctracker": "ArcTracker",
+      "arctracker": "ARCTracker",
       "embark": "Embark",
       "embarkStatusPrefix": "Embark:",
       "logout": "Logout",
@@ -67,7 +67,7 @@
       "thanksMiddle": " and ",
       "thanksSuffix": ". Thank you for making this data available!",
       "contactDiscord": "Contact baschny on Discord (opens external app)",
-      "joinDiscord": "Join ARCTracker.io Discord server (opens external app)",
+      "joinDiscord": "Join ARCTracker Discord server (opens external app)",
       "contact": "Contact",
       "arcTrackerDiscord": "ARCTracker Discord"
     },
@@ -80,12 +80,13 @@
       "quartermaster": "Quartermaster",
       "stats": "Stats",
       "blueprints": "Blueprints",
-      "market": "Marketplace"
+      "market": "Marketplace",
+      "skillTree": "Skill Tree"
     }
   },
   "dashboard": {
     "title": "SHiESTY RAiDERS",
-    "intro": "Welcome! This is my personal collection of shiesty raiders tools. These started as private projects to help me out in-game, but I figured they were too useful not to share. If they help you out, let me know! Pick a tool below and dive in.",
+    "intro": "ARC Raiders companion tools for raid planning, stats, blueprints, marketplace trades, quests, crafting, stash planning, and loadout prep.",
     "changelog": {
       "title": "Latest changes",
       "intro": "Recent updates and additions across SHiESTY RAiDERS.",
@@ -94,19 +95,19 @@
       "allTools": "All tools"
     },
     "tools": {
-      "schedule": "Visualize the shiesty raiders map events schedule in a better overview to plan your raids.",
-      "craftCalculator": "Calculate how many items to craft to squeeze the most space out of your stash.",
-      "quests": "Track your quest progress with an interactive quest tree.",
-      "lootHelper": "Visualize crafting chains to know what to loot during raids.",
-      "quartermaster": "Plan your stash, loadout, and hideout requirements in one place.",
-      "stats": "Review survival, combat, loot value, raid history, and map performance from your linked account.",
-      "blueprints": "Browse every blueprint and track learned recipes from your linked ARCTracker account.",
-      "market": "Browse item-for-item trades, submit offers, and manage your listings."
+      "schedule": "Track ARC Raiders map event rotations and plan raids around active conditions.",
+      "craftCalculator": "Calculate craft amounts, material costs, and stash-space impact before building gear.",
+      "quests": "Track quest progress, prerequisites, objectives, and blueprint rewards.",
+      "lootHelper": "Turn craft goals into a raid loot list so you know what to keep, recycle, or salvage.",
+      "quartermaster": "Plan inventory, loadout, hideout, projects, quests, and crafting from synced account data.",
+      "stats": "Review ARCTracker and MetaForge raid stats: survival, combat, loot value, maps, enemies, and weapons.",
+      "blueprints": "Browse the blueprint catalog and track learned recipes from linked account sync.",
+      "market": "Browse marketplace listings, submit offers, and manage item-for-item trades."
     }
   },
   "stats": {
     "title": "Raid Stats",
-    "subtitle": "Combat, survival, and economy performance from your linked ARCTracker account.",
+    "subtitle": "Combat, survival, and economy performance from your linked account stats.",
     "overview": "Stats overview",
     "loading": "Loading raid stats...",
     "loadError": "Unable to load raid stats.",
@@ -116,8 +117,8 @@
     "signInTitle": "Sign in to view your stats",
     "signInBody": "Raid stats are private account data. Sign in to load your linked account history.",
     "signIn": "Sign in",
-    "connectTitle": "Connect ARCTracker to view stats",
-    "connectBody": "Link your ARCTracker account so SHiESTY RAiDERS can securely load your raid history without exposing your token in the browser.",
+    "connectTitle": "Connect ARCTracker to load stats",
+    "connectBody": "Link ARCTracker so SHiESTY RAiDERS can securely load raid history without exposing tokens in the browser.",
     "connect": "Connect ARCTracker",
     "emptyTitle": "No raid stats yet",
     "emptyBody": "Play a raid, sync ARCTracker, then refresh this page.",
@@ -198,7 +199,7 @@
   },
   "blueprints": {
     "title": "Blueprints",
-    "subtitle": "Browse the complete blueprint catalog and track learned recipes through ARCTracker.",
+    "subtitle": "Browse the complete blueprint catalog and track learned recipes from linked account sync.",
     "loading": "Loading blueprints…",
     "loadError": "Unable to load the blueprint catalog.",
     "guide": {
@@ -257,11 +258,11 @@
     "profile": {
       "title": "Profile",
       "sections": {
-        "arctracker": "ArcTracker Integration",
+        "arctracker": "ARCTracker Integration",
         "embark": "Embark Authentication"
       },
       "embark": {
-        "description": "Link your Embark account to let SHiESTY RAiDERS read live shiesty raiders data directly from the game APIs.",
+        "description": "Link your Embark account to let SHiESTY RAiDERS read live ARC Raiders data directly from the game APIs.",
         "checklistTitle": "Linking checklist",
         "checklistSubtitle": "Check the two things SHiESTY RAiDERS needs before using live Embark data.",
         "extensionInstalledTitle": "Browser extension installed",
@@ -292,9 +293,9 @@
         "unknownProvider": "Unknown provider",
         "unknownUsername": "Unknown username",
         "accessGateTitle": "Embark access is not enabled for this account",
-        "accessGateBody": "Embark linking connects your SHiESTY RAiDERS account to live shiesty raiders game data. This account cannot use Embark yet.",
+        "accessGateBody": "Embark linking connects your SHiESTY RAiDERS account to live ARC Raiders game data. This account cannot use Embark yet.",
         "accessFeatureInventory": "Use in-game inventory, loadout, hideout status, quest status, and blueprint unlocks in SHiESTY RAiDERS.",
-        "accessFeatureProgress": "Avoid the two-step ArcTracker sync flow when live Embark data is available.",
+        "accessFeatureProgress": "Avoid the two-step ARCTracker sync flow when live Embark data is available.",
         "accessFeatureQuartermaster": "Power Quartermaster planning from game data directly after linking.",
         "contactSupport": "Contact support",
         "extensionDetected": "Embark login extension detected. The redirect flow should complete normally.",
@@ -387,7 +388,7 @@
     "statusAvailable": "Available",
     "statusLocked": "Locked",
     "statusUnknown": "Unknown",
-    "wikiTitle": "Open in shiesty raiders Wiki (new tab)",
+    "wikiTitle": "Open in ARC Raiders Wiki (new tab)",
     "wikiLabel": "Wiki",
     "arcTrackerTitle": "Open on arctracker.io (new tab)",
     "arcTrackerLabel": "ARCTracker",
@@ -422,7 +423,7 @@
     "linkedModeLink": "Link Game Data",
     "linkedModeSignedOutBody": "Sign in to use linked quest progress.",
     "linkedModeEmbarkBody": "Link your Embark account to use linked quest progress.",
-    "linkedModeArcTrackerBody": "Link your ArcTracker account to use linked quest progress.",
+    "linkedModeArcTrackerBody": "Link your ARCTracker account to use linked quest progress.",
     "objectiveSummary": "{completed}/{total} done",
     "objectiveDone": "Done"
   },
@@ -614,7 +615,8 @@
       "linkRequiredBody": "Your SHiESTY RAiDERS account is signed in, but Quartermaster needs a linked account before it can sync this view.",
       "signIn": "Sign In",
       "linkAccount": "Link Account",
-      "linkArcTracker": "Link ArcTracker"
+      "linkArcTracker": "Link ARCTracker",
+      "linkMetaForge": "Link Metaforge"
     },
     "common": {
       "syncInventory": "Sync Inventory",
@@ -631,32 +633,35 @@
       "embarkNotEnabled": "Embark API access is not enabled for this account.",
       "rateLimited": "Rate limited. Please wait a moment and try again.",
       "failed": "{operation} failed: {message}",
-      "staleTitle": "ArcTracker data has not updated yet",
+      "staleTitle": "ARCTracker data has not updated yet",
       "staleBody": "Quartermaster received the same synced timestamp for {sources}. Open arctracker.io, press \"Sync stash\" there, then come back and sync again.",
       "openArcTrackerStash": "Open arctracker.io Stash",
       "close": "Close",
       "myItemsRequired": "Quartermaster needs {sources} data for this view. Go to My Items and hit \"Sync My Items\" first."
     },
     "welcome": {
-      "title": "Quartermaster Tool",
+      "title": "My RaiderHub",
       "subtitle": "Plan your topside raids and minimize crafting time",
-      "body": "Quartermaster allows you to keep your stash always full with the stuff you need for your next runs. Never again miss certain materials for your loadout, be it guns, attachments, ammo, or any craftable quick use item.",
+      "body": "RaiderHub helps you keep your stash always full with the stuff you need for your next runs. Never again miss certain materials for your loadout, be it guns, attachments, ammo, or any craftable quick use item.",
       "signInLinkTitle": "Sign in and link your account",
       "linkTitle": "Link your account",
-      "arcTrackerTitle": "arctracker.io",
+      "arcTrackerTitle": "SHiESTY.me ::Speranzas Other Side",
       "embarkTitle": "Embark",
-      "statusSignedOut": "You are browsing anonymously. Tracking items requires you to sign in and link your account to either ArcTracker or Embark.",
+      "statusSignedOut": "You are browsing anonymously. Tracking items requires you to sign in and link your account to either ARCTracker or Embark.",
       "statusNeedsArcTracker": "Start by linking your arctracker.io account to SHiESTY RAiDERS.",
       "statusNeedsLinkedAccount": "Start by linking an account SHiESTY RAiDERS can use for item tracking.",
-      "statusReady": "ArcTracker is linked. Sync fresh data whenever you update your stash.",
-      "statusReadyWithName": "ArcTracker is linked as {username}. Sync data whenever you update your stash.",
+      "statusNeedsMetaforge": "Start by linking your  Metaforge ID account to SHiESTY RAiDERS.",
+      "statusReady": "ARCTracker is linked. Sync fresh data whenever you update your stash.",
+      "statusReadyWithName": "ARCTracker & Metaforge is linked as {username}. Sync data whenever you update your stash.",
       "statusReadyWithEmbark": "Embark is linked. Quartermaster can use live game data when Embark is selected as the source.",
       "planTitle": "Start with Lists",
       "planBody": "Create lists of items you always want to have in your stash or need to hunt for. Make lists per type, i.e. Gear, Guns, Ammo, Explosives, Medical, Projects.",
       "openLists": "Open Lists",
       "signIn": "Sign In",
-      "linkArcTracker": "Link ArcTracker",
+      "linkArcTracker": "Link ARCTracker",
+       "linkMetaforge": "Link Metaforge",
       "linkArcTrackerBenefit": "Works today, but requires syncing on arctracker.io first and then syncing SHiESTY RAiDERS.",
+      "linkMetaforgeBenefit": "Works today, but requires syncing on Metaforge first and then syncing SHiESTY RAiDERS.",
       "linkEmbark": "Link Embark",
       "linkEmbarkBenefit": "Preview access. Uses game data directly for inventory, loadout, hideout, quests, and blueprints.",
       "inRaidTitle": "In Raid",
@@ -683,7 +688,7 @@
       "loadoutSource": "loadout",
       "unknownEmbarkItems": "{count} inventory entries could not be identified yet",
       "incompleteWarning": "Owned inventory is incomplete. Sync missing source: {sources}.",
-      "syncSetupHint": "Quartermaster needs {sources} data before it can calculate owned items. Hit \"Sync My Items\" to load your inventory and current loadout.",
+      "syncSetupHint": "RaiderHub needs {sources} data before it can calculate owned items. Hit \"Sync My Items\" to load your inventory and current loadout.",
       "attachmentsCounted": "Attachments counted separately",
       "activeRequirements": "active requirements",
       "acrossLists": "{count} lists",
@@ -812,7 +817,7 @@
       "hideBench": "Hide",
       "unhideBench": "Unhide",
       "maxTierTooltip": "This bench is already at maximum tier",
-      "syncTooltip": "Refresh your current hideout bench tiers from ArcTracker.",
+      "syncTooltip": "Refresh your current hideout bench tiers from ARCTracker.",
       "collapseAll": "Collapse all",
       "collapseAllTooltip": "Collapse every hideout bench section.",
       "expandAll": "Expand all",
@@ -879,7 +884,7 @@
       "title": "Quests",
       "enableAllPending": "Enable All Pending",
       "disableAll": "Disable All",
-      "noLinkedData": "Link your ArcTracker or Embark account to track quest items.",
+      "noLinkedData": "Link your ARCTracker or Embark account to track quest items.",
       "allComplete": "All incomplete quests have no required items to track.",
       "syncQuests": "Sync Quests",
       "syncTooltip": "Refresh your quest completion data.",
@@ -952,7 +957,10 @@
         "qtyToUpgrade": "Qty to Upgrade",
         "durability": "Durability"
       },
-      "blueprintUnlockCount": "{unlocked}/{total} unlocked"
+      "blueprintUnlockCount": "{unlocked}/{total} unlocked",
+      "blueprintLockedCount": "{locked}/{total} locked",
+      "blueprintsSync": "Blueprints sync"
+
     },
     "itemTooltip": {
       "complete": "Complete",
@@ -1121,6 +1129,7 @@
       "lastSync": "Last Sync",
       "stash": "Stash",
       "loadout": "Loadout",
+            "blueprints": "Blueprints",
       "gameDataLastSync": "Game Data Last Sync",
       "never": "Never"
     }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Calendar, Calculator, ListTodo, Package, History, ClipboardList, Activity, BookOpenCheck, ArrowLeftRight } from 'lucide-react';
+import { Calendar, Calculator, ListTodo, Package, History, ClipboardList, Activity, BookOpenCheck, ArrowLeftRight, Network } from 'lucide-react';
 import { trackNavigation } from '../shared/utils/analytics';
 import { useLocale } from '../shared/context/LocaleContext';
 
@@ -46,6 +46,12 @@ const TOOL_METADATA = {
     nameKey: 'shared.tools.blueprints',
     descriptionKey: 'dashboard.tools.blueprints',
   },
+  'skill-tree': {
+    path: '/skill-tree',
+    icon: Network,
+    nameKey: 'shared.tools.skillTree',
+    descriptionKey: 'dashboard.tools.skillTree',
+  },
   market: { path: '/market', icon: ArrowLeftRight, nameKey: 'shared.tools.market', descriptionKey: 'dashboard.tools.market' },
 } as const;
 
@@ -60,6 +66,7 @@ const TOOLS = [
   TOOL_METADATA.quartermaster,
   TOOL_METADATA.stats,
   TOOL_METADATA.blueprints,
+  TOOL_METADATA['skill-tree'],
   TOOL_METADATA.market,
 ];
 

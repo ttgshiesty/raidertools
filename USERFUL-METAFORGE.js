@@ -1,6 +1,28 @@
 /* global Chart */
-'use strict';
-
+use strict';
+// // api routes// 
+// /api/arc-raiders/player-stats/sync
+// /api/arc-raiders/player-stats
+// /api/arc-raiders/rounds/sync
+// /api/arc-raiders/rounds
+// /api/arc-raiders/rounds/stats
+// /api/arc-raiders/workshop/sync
+// /api/arc-raiders/workshop/live
+// /api/arc-raiders/workshop/actions
+// /api/arc-raiders/projects/sync
+// /api/arc-raiders/quests/sync
+// /api/arc-raiders/blueprints
+// /api/arc-raiders/inventory/live
+// /api/arc-raiders/inventory/actions
+// /api/arc-raiders/inventory/snapshot
+// /api/arc-raiders/inventory/admin-list
+// /api/arc-raiders/inventory/visibility
+// /api/arc-raiders/embark/oauth/start
+// /api/arc-raiders/embark/oauth/status
+// /api/arc-raiders/embark/oauth/pending/verify
+// /api/arc-raiders/items
+// /api/arc-raiders/items/search
+// ```
 import { ACTIONS, LOCAL_METAFORGE_ITEMS_URL, METAFORGE_URL, STORAGE_KEYS } from './constants.js';
 import { readJson, readNumber, writeJson } from './storage.js';
 

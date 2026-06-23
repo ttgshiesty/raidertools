@@ -1,0 +1,406 @@
+--- /mnt/data/metaforgeApi.ts	2026-06-21 10:54:48.677730787 +0000
++++ /mnt/data/metaforgeApi.updated.ts	2026-06-21 11:09:55.245168794 +0000
+@@ -4,6 +4,15 @@
+   (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
+   'https://api.shiesty.me';
+ 
++export const METAFORGE_ENDPOINTS = {
++  proxyStats: '/me/metaforge/stats',
++  directPlayerStats: 'https://metaforge.app/api/arc-raiders/player-stats',
++  statsProfile: 'https://metaforge.app/api/arc-raiders/stats/profile',
++  inventorySnapshot: 'https://metaforge.app/api/arc-raiders/inventory/snapshot',
++  weeklyTrials: 'https://metaforge.app/api/arc-raiders/weekly-trials',
++  sync: 'https://metaforge.app/api/sync',
++} as const;
++
+ export interface MetaForgeTotals {
+   user_id?: string;
+   total_rounds?: number;
+@@ -21,11 +30,18 @@
+   last_updated?: string;
+   level?: number;
+   currentXp?: number;
++  current_xp?: number;
+   nextLevelXp?: number;
++  next_level_xp?: number;
+   credits?: number;
+   raiderTokens?: number;
++  raider_tokens?: number;
+   creds?: number;
+   updatedAt?: string;
++  totalContainersLooted?: number;
++  total_containers_looted?: number;
++  containers_looted?: number;
++  [key: string]: unknown;
+ }
+ 
+ export interface MetaForgeMapStats {
+@@ -44,6 +60,7 @@
+   total_damage_taken: number;
+   total_healing: number;
+   last_updated?: string;
++  [key: string]: unknown;
+ }
+ 
+ export interface MetaForgeEnemyStats {
+@@ -52,39 +69,311 @@
+   kills: number;
+   damage: number;
+   last_updated?: string;
++  [key: string]: unknown;
+ }
+ 
+ export interface MetaForgeWeaponStats {
+   user_id?: string;
+   weapon_name: string;
+   damage: number;
++  kills?: number;
++  count?: number;
+   last_updated?: string;
++  [key: string]: unknown;
+ }
+ 
+ export interface MetaForgeStatsResponse {
+   stats: MetaForgeTotals;
+-  mapStats?: MetaForgeMapStats[];
+-  enemyStats?: MetaForgeEnemyStats[];
+-  weaponStats?: MetaForgeWeaponStats[];
++  mapStats: MetaForgeMapStats[];
++  enemyStats: MetaForgeEnemyStats[];
++  weaponStats: MetaForgeWeaponStats[];
+   totalDamageDealt?: number;
+   totalPlayerDowns?: number;
++  raw: unknown;
++}
++
++export interface MetaForgeSummary {
++  totalRounds: number;
++  totalExtracted: number;
++  totalDied: number;
++  survivalRate: number;
++  totalDurationMs: number;
++  totalNetValue: number;
++  totalXp: number;
++  totalArcKills: number;
++  totalPlayerKills: number;
++  totalKills: number;
++  totalPlayerDowns: number;
++  totalDamageDealt: number;
++  totalDamageTaken: number;
++  totalHealing: number;
++  totalContainersLooted: number;
++}
++
++export interface MetaForgeProgression {
++  level: number;
++  currentXp: number;
++  nextLevelXp: number;
++}
++
++export interface MetaForgeCurrencies {
++  credits: number;
++  raiderTokens: number;
++  creds: number;
++}
++
++export interface MetaForgeMapRow {
++  key: string;
++  mapName: string;
++  raids: number;
++  extracted: number;
++  died: number;
++  survivalRate: number;
++  totalDurationMs: number;
++  totalNetValue: number;
++  totalXp: number;
++  totalArcKills: number;
++  totalPlayerKills: number;
++  totalDamageTaken: number;
++  totalHealing: number;
++  maxNetProfit: number;
++  maxXp: number;
++}
++
++export interface MetaForgeBreakdownRow {
++  name: string;
++  kills: number;
++  count: number;
++  damage: number;
++  lastUpdated?: string;
++}
++
++export interface MetaForgeDashboardData {
++  source: 'metaforge';
++  summary: MetaForgeSummary;
++  progression: MetaForgeProgression;
++  currencies: MetaForgeCurrencies;
++  maps: MetaForgeMapRow[];
++  enemies: MetaForgeBreakdownRow[];
++  weapons: MetaForgeBreakdownRow[];
++  fetchedAt: string;
++  raw: MetaForgeStatsResponse;
++}
++
++type JsonObject = Record<string, unknown>;
++
++function isRecord(value: unknown): value is JsonObject {
++  return value !== null && typeof value === 'object' && !Array.isArray(value);
++}
++
++function body(value: unknown): JsonObject {
++  const root = isRecord(value) ? value : {};
++  return isRecord(root.data) ? root.data : root;
++}
++
++function finiteNumber(value: unknown): number | null {
++  if (typeof value === 'number') return Number.isFinite(value) ? value : null;
++  if (typeof value === 'string' && value.trim() !== '') {
++    const parsed = Number(value);
++    return Number.isFinite(parsed) ? parsed : null;
++  }
++  return null;
++}
++
++function numberOrZero(value: unknown): number {
++  return finiteNumber(value) ?? 0;
++}
++
++function firstNumber(source: JsonObject, keys: readonly string[]): number {
++  for (const key of keys) {
++    const parsed = finiteNumber(source[key]);
++    if (parsed !== null) return parsed;
++  }
++  return 0;
++}
++
++function firstString(source: JsonObject, keys: readonly string[], fallback: string): string {
++  for (const key of keys) {
++    const value = source[key];
++    if (typeof value === 'string' && value.trim()) return value.trim();
++    if (typeof value === 'number' && Number.isFinite(value)) return String(value);
++  }
++  return fallback;
++}
++
++function arrayOfRecords(value: unknown): JsonObject[] {
++  return Array.isArray(value) ? value.filter(isRecord) : [];
++}
++
++function cleanStatName(value: unknown, fallback: string): string {
++  const text = typeof value === 'string' && value.trim() ? value.trim() : fallback;
++  return text
++    .replace(/_kills$/i, '')
++    .replace(/^kills_/i, '')
++    .replace(/_/g, ' ')
++    .replace(/\b\w/g, (letter) => letter.toUpperCase())
++    .trim();
++}
++
++function normalizeEnemyStats(value: unknown): MetaForgeEnemyStats[] {
++  if (Array.isArray(value)) {
++    return value.filter(isRecord).map((enemy, index) => ({
++      user_id: typeof enemy.user_id === 'string' ? enemy.user_id : undefined,
++      enemy_name: firstString(enemy, ['enemy_name', 'enemyName', 'name', 'targetName', 'target_name'], `Unknown Enemy ${index + 1}`),
++      kills: firstNumber(enemy, ['kills', 'count', 'totalKills', 'total_kills']),
++      damage: firstNumber(enemy, ['damage', 'totalDamage', 'total_damage', 'damageDealt', 'damage_dealt']),
++      ...(typeof enemy.last_updated === 'string' ? { last_updated: enemy.last_updated } : {}),
++    }));
++  }
++
++  const source = isRecord(value) ? value : {};
++  return Object.entries(source)
++    .filter(([, amount]) => finiteNumber(amount) !== null && numberOrZero(amount) > 0)
++    .map(([key, amount]) => ({
++      enemy_name: cleanStatName(key, key),
++      kills: numberOrZero(amount),
++      damage: 0,
++    }));
++}
++
++function normalizeWeaponStats(value: unknown): MetaForgeWeaponStats[] {
++  if (Array.isArray(value)) {
++    return value.filter(isRecord).map((weapon, index) => ({
++      user_id: typeof weapon.user_id === 'string' ? weapon.user_id : undefined,
++      weapon_name: firstString(weapon, ['weapon_name', 'weaponName', 'name', 'title'], `Unknown Weapon ${index + 1}`),
++      kills: firstNumber(weapon, ['kills', 'count', 'totalKills', 'total_kills']),
++      count: firstNumber(weapon, ['count', 'kills', 'totalKills', 'total_kills']),
++      damage: firstNumber(weapon, ['damage', 'totalDamage', 'total_damage', 'damageDealt', 'damage_dealt']),
++      ...(typeof weapon.last_updated === 'string' ? { last_updated: weapon.last_updated } : {}),
++    }));
++  }
++
++  const source = isRecord(value) ? value : {};
++  const rows = new Map<string, MetaForgeWeaponStats>();
++
++  function add(name: string, kills: number, damage: number): void {
++    const existing = rows.get(name) ?? { weapon_name: name, kills: 0, count: 0, damage: 0 };
++    existing.kills = numberOrZero(existing.kills) + kills;
++    existing.count = numberOrZero(existing.count) + kills;
++    existing.damage += damage;
++    rows.set(name, existing);
++  }
++
++  function crawl(obj: JsonObject): void {
++    for (const [key, raw] of Object.entries(obj)) {
++      if (finiteNumber(raw) !== null && /kills/i.test(key)) {
++        add(cleanStatName(key, key), numberOrZero(raw), 0);
++      } else if (isRecord(raw)) {
++        const kills = firstNumber(raw, ['kills', 'count', 'totalKills', 'total_kills']);
++        const damage = firstNumber(raw, ['damage', 'totalDamage', 'total_damage', 'damageDealt', 'damage_dealt']);
++        if (kills || damage) add(cleanStatName(key, key), kills, damage);
++        else crawl(raw);
++      }
++    }
++  }
++
++  crawl(source);
++  return Array.from(rows.values());
+ }
+ 
+ export function normalizeMetaForgeStats(raw: unknown): MetaForgeStatsResponse {
+-  const root = isRecord(raw) ? raw : {};
+-  const source = isRecord(root.data) ? root.data : root;
+-  const nestedStats = isRecord(source.stats) ? source.stats : isRecord(source.totals) ? source.totals : source;
++  const root = body(raw);
++  const stats = (isRecord(root.stats) ? root.stats : isRecord(root.totals) ? root.totals : root) as MetaForgeTotals;
++  const enemySource = root.enemyStats ?? root.enemies ?? stats.enemyStats ?? stats.arc_destroyed_breakdown ?? stats.machine_kills ?? stats.codex;
++  const weaponSource = root.weaponStats ?? root.weapons ?? stats.weaponStats ?? stats.weapon_performance ?? stats.weapon_stats;
++
+   return {
+-    stats: nestedStats as MetaForgeTotals,
+-    mapStats: arrayOfRecords(source.mapStats ?? source.maps) as unknown as MetaForgeMapStats[],
+-    enemyStats: arrayOfRecords(source.enemyStats ?? source.enemies) as unknown as MetaForgeEnemyStats[],
+-    weaponStats: arrayOfRecords(source.weaponStats ?? source.weapons) as unknown as MetaForgeWeaponStats[],
+-    ...(finiteNumber(source.totalDamageDealt) !== null
+-      ? { totalDamageDealt: finiteNumber(source.totalDamageDealt)! }
++    stats,
++    mapStats: arrayOfRecords(root.mapStats ?? root.maps ?? stats.mapStats ?? stats.map_stats) as unknown as MetaForgeMapStats[],
++    enemyStats: normalizeEnemyStats(enemySource),
++    weaponStats: normalizeWeaponStats(weaponSource),
++    ...(finiteNumber(root.totalDamageDealt ?? stats.total_damage_dealt) !== null
++      ? { totalDamageDealt: numberOrZero(root.totalDamageDealt ?? stats.total_damage_dealt) }
+       : {}),
+-    ...(finiteNumber(source.totalPlayerDowns) !== null
+-      ? { totalPlayerDowns: finiteNumber(source.totalPlayerDowns)! }
++    ...(finiteNumber(root.totalPlayerDowns ?? stats.total_player_downs) !== null
++      ? { totalPlayerDowns: numberOrZero(root.totalPlayerDowns ?? stats.total_player_downs) }
+       : {}),
++    raw,
++  };
++}
++
++export function toMetaForgeDashboard(raw: unknown, fetchedAt = new Date().toISOString()): MetaForgeDashboardData {
++  const normalized = normalizeMetaForgeStats(raw);
++  const totals = normalized.stats;
++  const totalRounds = numberOrZero(totals.total_rounds);
++  const totalExtracted = numberOrZero(totals.total_extractions);
++  const totalDied = numberOrZero(totals.total_deaths);
++  const totalArcKills = numberOrZero(totals.total_arc_kills);
++  const totalPlayerKills = numberOrZero(totals.total_player_kills);
++  const totalDamageDealt = numberOrZero(normalized.totalDamageDealt ?? totals.total_damage_dealt);
++  const totalPlayerDowns = numberOrZero(normalized.totalPlayerDowns ?? totals.total_player_downs);
++
++  return {
++    source: 'metaforge',
++    summary: {
++      totalRounds,
++      totalExtracted,
++      totalDied,
++      survivalRate: totalRounds > 0 ? Number(((totalExtracted / totalRounds) * 100).toFixed(2)) : 0,
++      totalDurationMs: numberOrZero(totals.total_duration_seconds) * 1000,
++      totalNetValue: numberOrZero(totals.total_net_profit),
++      totalXp: numberOrZero(totals.total_xp),
++      totalArcKills,
++      totalPlayerKills,
++      totalKills: totalArcKills + totalPlayerKills,
++      totalPlayerDowns,
++      totalDamageDealt,
++      totalDamageTaken: numberOrZero(totals.total_damage_taken),
++      totalHealing: numberOrZero(totals.total_healing),
++      totalContainersLooted: firstNumber(totals, ['totalContainersLooted', 'total_containers_looted', 'containers_looted']),
++    },
++    progression: {
++      level: firstNumber(totals, ['level', 'playerLevel']),
++      currentXp: firstNumber(totals, ['currentXp', 'current_xp', 'xp']),
++      nextLevelXp: firstNumber(totals, ['nextLevelXp', 'next_level_xp']),
++    },
++    currencies: {
++      credits: firstNumber(totals, ['credits']),
++      raiderTokens: firstNumber(totals, ['raiderTokens', 'raider_tokens', 'tokens']),
++      creds: firstNumber(totals, ['creds', 'cred', 'coins']),
++    },
++    maps: normalized.mapStats.map((map, index) => {
++      const raids = numberOrZero(map.rounds_played);
++      const extracted = numberOrZero(map.total_extractions);
++      return {
++        key: `${map.map_name || 'Unknown Map'}-${index}`,
++        mapName: map.map_name || 'Unknown Map',
++        raids,
++        extracted,
++        died: numberOrZero(map.total_deaths),
++        survivalRate: raids > 0 ? Number(((extracted / raids) * 100).toFixed(2)) : 0,
++        totalDurationMs: numberOrZero(map.total_duration_seconds) * 1000,
++        totalNetValue: numberOrZero(map.total_net_profit),
++        totalXp: numberOrZero(map.total_xp),
++        totalArcKills: numberOrZero(map.total_arc_kills),
++        totalPlayerKills: numberOrZero(map.total_player_kills),
++        totalDamageTaken: numberOrZero(map.total_damage_taken),
++        totalHealing: numberOrZero(map.total_healing),
++        maxNetProfit: numberOrZero(map.max_net_profit),
++        maxXp: numberOrZero(map.max_xp),
++      };
++    }),
++    enemies: normalized.enemyStats.map((enemy) => ({
++      name: enemy.enemy_name || 'Unknown Enemy',
++      kills: numberOrZero(enemy.kills),
++      count: numberOrZero(enemy.kills),
++      damage: numberOrZero(enemy.damage),
++      ...(enemy.last_updated ? { lastUpdated: enemy.last_updated } : {}),
++    })),
++    weapons: normalized.weaponStats.map((weapon) => ({
++      name: weapon.weapon_name || 'Unknown Weapon',
++      kills: firstNumber(weapon, ['kills', 'count', 'totalKills', 'total_kills']),
++      count: firstNumber(weapon, ['count', 'kills', 'totalKills', 'total_kills']),
++      damage: numberOrZero(weapon.damage),
++      ...(weapon.last_updated ? { lastUpdated: weapon.last_updated } : {}),
++    })),
++    fetchedAt,
++    raw: normalized,
+   };
+ }
+ 
+@@ -97,25 +386,20 @@
+   if (!isValidMetaForgeProfileId(cleanId)) throw new Error('Invalid MetaForge profile id.');
+   const token = await getIdToken();
+   if (!token) throw new Error('Sign in to load MetaForge stats.');
+-  const response = await fetch(`${API_BASE}/me/metaforge/stats?profileId=${encodeURIComponent(cleanId)}`, {
++
++  const response = await fetch(`${API_BASE}${METAFORGE_ENDPOINTS.proxyStats}?profileId=${encodeURIComponent(cleanId)}`, {
+     headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+   });
++
+   if (!response.ok) {
+-    const body = await response.json().catch(() => ({})) as { error?: string };
+-    throw new Error(body.error ?? `MetaForge stats request failed with HTTP ${response.status}`);
++    const body = await response.json().catch(() => ({})) as { error?: string; message?: string };
++    throw new Error(body.error ?? body.message ?? `MetaForge stats request failed with HTTP ${response.status}`);
+   }
+-  return normalizeMetaForgeStats(await response.json());
+-}
+-
+-function isRecord(value: unknown): value is Record<string, unknown> {
+-  return value !== null && typeof value === 'object' && !Array.isArray(value);
+-}
+ 
+-function arrayOfRecords(value: unknown): Record<string, unknown>[] {
+-  return Array.isArray(value) ? value.filter(isRecord) : [];
++  return normalizeMetaForgeStats(await response.json());
+ }
+ 
+-function finiteNumber(value: unknown): number | null {
+-  const number = typeof value === 'number' ? value : Number(value);
+-  return Number.isFinite(number) ? number : null;
++export async function fetchMetaForgeDashboard(profileId: string): Promise<MetaForgeDashboardData> {
++  const stats = await fetchMetaForgeStats(profileId);
++  return toMetaForgeDashboard(stats, new Date().toISOString());
+ }

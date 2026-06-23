@@ -13,6 +13,7 @@ const TOOLS = [
   { path: '/quartermaster', nameKey: 'shared.tools.quartermaster' },
   { path: '/stats', nameKey: 'shared.tools.stats' },
   { path: '/blueprints', nameKey: 'shared.tools.blueprints' },
+  { path: '/skill-tree', nameKey: 'shared.tools.skillTree' },
   { path: '/market', nameKey: 'shared.tools.market' },
 ];
 

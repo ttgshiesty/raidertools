@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useState } from 'react';
 import { useSkillTreeStore } from '../store/skillTreeStore';
 import { SkillTreeLogo } from './svgs/SkillTreeLogo';
-import { assetUrl } from '../../../pages/assetUrl';
+import { assetUrl } from '../../../data/assetUrl';
 
 const TIER_CONFIG = [
   { tier: 0, bonusPoints: 0, label: 'Base' },
@@ -43,7 +43,7 @@ export const Header: FC = () => {
               loading="eager"
             />
             <div>
-              <SkillTreeLogo className="text-[#D95204] h-8 w-auto" />
+              {/* <SkillTreeLogo className="text-[#D95204] h-8 w-auto" /> */}
               <p className="text-text-secondary text-sm font-body">
                 ᡕᠵデ气亠💥 ✷ εつ▄█▀█● SHiESTY💥RAiDERS 𓀐 💨 ╾━╤デ╦︻
               </p>
