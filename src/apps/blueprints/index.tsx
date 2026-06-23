@@ -15,13 +15,13 @@ import { HelpCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import { NeonBorder } from './NeonBorder';
+import { ItemFrame } from './ItemFrame';
 import { BlueprintRegistryDetail } from './BlueprintRegistryDetail';
 import { AtlasBlueprintPanel, parseAtlasCsv } from './AtlasBlueprintPanel';
 import type { AtlasRow } from './AtlasBlueprintPanel';
 import {
   buildBlueprintGridFromItems,
   filterBlueprintGrid,
-  getRarityColor,
   sortBlueprints,
 } from './utils/blueprintGrid';
 import type {
@@ -30,7 +30,6 @@ import type {
   BlueprintSort,
 } from './utils/blueprintGrid';
 import type { RawItemsOutput } from '../../shared/types/item';
-import { useLocale } from '../../shared/context/LocaleContext';
 
 import './styles/main.scss';
 
@@ -58,25 +57,17 @@ function getBlueprintImageSrc(blueprint: BlueprintGridItem): string | null {
   if (!blueprint.imageFilename) return null;
   if (/^https?:\/\//i.test(blueprint.imageFilename)) return blueprint.imageFilename;
   if (blueprint.imageFilename.startsWith('/')) return blueprint.imageFilename;
-  return `/icons/blueprints/${blueprint.imageFilename}`;
+  return `/items/${blueprint.imageFilename}`;
 }
 
-function handleBlueprintImageError(
-  event: React.SyntheticEvent<HTMLImageElement>,
-  fallbackImageUrl?: string | null,
-) {
-  if (!fallbackImageUrl) return;
-  const img = event.currentTarget;
-  if (img.dataset.fallbackApplied === 'true') return;
-  img.dataset.fallbackApplied = 'true';
-  img.src = fallbackImageUrl;
+function getBlueprintDisplayName(value: string): string {
+  return value.replace(/\s*(blueprint|progetto)\s*/gi, '').trim();
 }
 
 // ─── Main Page Component ──────────────────────────────────────────────────────
 
 export default function BlueprintsPage() {
   const { t, i18n } = useTranslation();
-  const { locale } = useLocale();
 
   // ── State ──────────────────────────────────────────────────
   const [progress, setProgress] = useState<ProgressMap>({});
@@ -96,6 +87,8 @@ export default function BlueprintsPage() {
   const [sort, setSort] = useState<BlueprintSort>('rarity');
 
   const gridContainerRef = useRef<HTMLDivElement | null>(null);
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const suppressNextClickRef = useRef(false);
 
   // Fetch atlas CSV on mount — same pattern as the real project
   useEffect(() => {
@@ -105,28 +98,23 @@ export default function BlueprintsPage() {
       .catch(() => setAtlasRows([]));
   }, []);
 
-  // Fetch blueprint item catalog from the localized items data file
+  // Fetch blueprint item catalog from arc-raiders-blueprints.json
   useEffect(() => {
     let cancelled = false;
-    const localeCandidates = [locale, 'en'];
     (async () => {
-      for (const candidate of localeCandidates) {
-        try {
-          const res = await fetch(`/data/items/items.${candidate}.json`);
-          if (!res.ok) continue;
-          const payload = (await res.json()) as RawItemsOutput;
-          if (!cancelled) setItemsDb(payload.items ?? {});
-          return;
-        } catch {
-          // try next candidate
-        }
+      try {
+        const res = await fetch('/data/blueprints/arc_raiders_blueprints_full.json');
+        if (!res.ok) throw new Error('Failed to load blueprints');
+        const payload = await res.json();
+        if (!cancelled) setItemsDb(payload.data ?? {});
+      } catch {
+        if (!cancelled) setItemsDb({});
       }
-      if (!cancelled) setItemsDb({});
     })();
     return () => {
       cancelled = true;
     };
-  }, [locale]);
+  }, []);
 
   // ── Load progress from localStorage ───────────────────────
   useEffect(() => {
@@ -149,6 +137,53 @@ export default function BlueprintsPage() {
 
   function updateProgress(id: string, next: BlueprintProgress) {
     setProgress((prev) => ({ ...prev, [id]: next }));
+  }
+
+  function openBlueprint(
+    blueprint: BlueprintGridItem,
+    event?: React.MouseEvent | React.KeyboardEvent,
+  ) {
+    event?.preventDefault();
+    event?.stopPropagation();
+
+    if (suppressNextClickRef.current) {
+      suppressNextClickRef.current = false;
+      return;
+    }
+
+    setSelectedId(blueprint.id);
+  }
+
+  function addDuplicate(id: string, event: React.MouseEvent) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const current = progress[id] || { learned: false, duplicates: 0 };
+
+    if (current.learned && current.duplicates < 99) {
+      updateProgress(id, {
+        ...current,
+        duplicates: current.duplicates + 1,
+      });
+    }
+  }
+
+  function removeDuplicate(id: string) {
+    const current = progress[id] || { learned: false, duplicates: 0 };
+
+    if (current.duplicates > 0) {
+      updateProgress(id, {
+        ...current,
+        duplicates: current.duplicates - 1,
+      });
+    }
+  }
+
+  function clearLongPress() {
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
   }
 
   // ── Build grid ─────────────────────────────────────────────
@@ -364,27 +399,25 @@ export default function BlueprintsPage() {
         {section === 'grid' && (
           <div
             ref={gridContainerRef}
-            className="blueprints-grid-container rounded-xl bg-blue-dark/90"
+            className="blueprints-grid-container"
           >
             <div className="blueprints-grid">
               {visibleBlueprints.map((bp) => {
                 const bpProgress = progress[bp.id];
                 const isLearned = bpProgress?.learned ?? false;
                 const duplicates = bpProgress?.duplicates ?? 0;
-                const rarityColor = getRarityColor(bp.rarity);
                 const imageSrc = getBlueprintImageSrc(bp);
 
                 return (
                   <div
                     key={bp.id}
-                    className="blueprint-card cursor-pointer group select-none"
+                    className="blueprint-card"
                     title={bp.name}
-                    onClick={() => setSelectedId(bp.id)}
                     role="button"
                     tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        setSelectedId(bp.id);
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        openBlueprint(bp, event);
                       }
                     }}
                   >
@@ -392,50 +425,66 @@ export default function BlueprintsPage() {
                       backgroundColor="#1a1a1a"
                       borderRadius={0.5}
                       fitContent
-                      rarityColor={rarityColor}
-                      alwaysOn={isLearned}
+                      onClick={(event) => {
+                        openBlueprint(bp, event);
+                      }}
+                      onContextMenu={(event) => {
+                        addDuplicate(bp.id, event);
+                      }}
+                      onTouchStart={() => {
+                        suppressNextClickRef.current = false;
+                        clearLongPress();
+                        longPressTimerRef.current = setTimeout(() => {
+                          suppressNextClickRef.current = true;
+                          removeDuplicate(bp.id);
+                        }, 500);
+                      }}
+                      onTouchEnd={clearLongPress}
+                      onTouchMove={clearLongPress}
+                      overlay={(
+                        <>
+                          {isLearned && (
+                            <div className="blueprint-checkmark pointer-events-none">
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="#fff"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={4}
+                                  d="M5 13l4 4L19 7"
+                                />
+                              </svg>
+                            </div>
+                          )}
+                          {duplicates > 0 && (
+                            <div className="blueprint-duplicate pointer-events-none">
+                              <span className="text-[10px] font-bold text-white">
+                                {duplicates}
+                              </span>
+                            </div>
+                          )}
+                        </>
+                      )}
                     >
-                      <div className="blueprint-card-inner">
-                        {imageSrc ? (
-                          <img
-                            src={imageSrc}
-                            alt={bp.name}
-                            onError={(event) =>
-                              handleBlueprintImageError(event, bp.fallbackImageUrl)
-                            }
-                            className="blueprint-card-icon"
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div className="blueprint-card-fallback">
-                            {bp.name.charAt(0)}
-                          </div>
-                        )}
-                        {isLearned && (
-                          <div className="blueprint-checkmark pointer-events-none">
-                            <svg
-                              className="w-4 h-4"
-                              fill="none"
-                              stroke="#fff"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={4}
-                                d="M5 13l4 4L19 7"
-                              />
-                            </svg>
-                          </div>
-                        )}
-                        {duplicates > 0 && (
-                          <div className="blueprint-duplicate pointer-events-none">
-                            <span className="text-[10px] font-bold text-white">
-                              {duplicates}
-                            </span>
-                          </div>
-                        )}
-                      </div>
+                      <ItemFrame
+                        item={{
+                          ...bp,
+                          icon: imageSrc,
+                          item_type: 'Blueprint',
+                        }}
+                        size="lg"
+                        showNameBar
+                        displayName={getBlueprintDisplayName(bp.name)}
+                        disableHover
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          openBlueprint(bp, event);
+                        }}
+                      />
                     </NeonBorder>
                   </div>
                 );

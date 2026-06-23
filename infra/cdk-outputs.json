@@ -1,0 +1,19 @@
+{
+  "RaiderToolsStack": {
+    "UserPoolDomainBaseUrl": "https://auth.shiesty.me",
+    "UserSecretsKeyArn": "arn:aws:kms:us-east-2:845242190959:key/38018ce0-ae2e-4464-ad33-b025601deac3",
+    "UserTableName": "raider-tools-users",
+    "ScheduleBucketName": "raidertoolsstack-scheduledatabucket0e14764d-ray6omha0r4n",
+    "HttpApiId": "6riltre5dl",
+    "DiscordCallbackUrl": "https://api.shiesty.me/auth/discord/callback",
+    "UserPoolClientId": "6tsli6scc0d412ger69rvrq5oh",
+    "EmbarkManifestParamName": "/raider-tools/embark/manifest-id",
+    "ScheduleMapEventsUrl": "https://api.shiesty.me/schedule/map-events.json",
+    "ApiBaseUrl": "https://api.shiesty.me",
+    "EmbarkOAuthSecretArn": "arn:aws:secretsmanager:us-east-2:845242190959:secret:raider-tools/embark/oauth-6z5LPa",
+    "UserPoolId": "us-east-2_ynuwUjqAW",
+    "EmbarkSnapshotBucketName": "raidertoolsstack-embarksnapshotbucket919cf070-k7pw9ujlzp1m",
+    "EmbarkUserAgentParamName": "/raider-tools/embark/user-agent",
+    "ScheduleHealthUrl": "https://api.shiesty.me/schedule/health.json"
+  }
+}

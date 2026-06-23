@@ -52,7 +52,7 @@ function getBlueprintImageSrc(blueprint: BlueprintGridItem): string | null {
   if (!blueprint.imageFilename) return null;
   if (/^https?:\/\//i.test(blueprint.imageFilename)) return blueprint.imageFilename;
   if (blueprint.imageFilename.startsWith('/')) return blueprint.imageFilename;
-  return `/icons/blueprints/${blueprint.imageFilename}`;
+  return `/items/${blueprint.imageFilename}`;
 }
 
 function handleBlueprintImageError(
