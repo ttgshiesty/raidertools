@@ -15,15 +15,14 @@ import {
   type StatsDashboardData,
 } from '../utils/shiesty-arctracker-stats_generated';
 import { ARCTRACKER_RESOLVER } from '../utils/arctracker-stats-resolver';
-
+import { useCognitoAuth } from '../../../shared/context/CognitoAuthContext';
 // ---------------------------------------------------------------------------
-// Auth wire-up (intentionally left as a single integration point)
+// Auth wire-up
 // ---------------------------------------------------------------------------
-// fetchArcTrackerStatsDashboard() needs a bearer idToken from your Cognito
-// session. Swap this for however src/shared handles that (e.g. a hook that
-// reads the current Cognito ID token) before this will fetch real data.
+// Returns the current ID token from Cognito auth, or undefined if not signed in.
 function useIdToken(): string | undefined {
-  return undefined;
+  const { user } = useCognitoAuth();
+  return user?.idToken;
 }
 
 const HISTORY_LIMITS = [10, 25, 50, 100, 200] as const;

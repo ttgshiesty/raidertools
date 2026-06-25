@@ -321,8 +321,8 @@ export function BlueprintRegistryDetail({
                 <span className="bp-modal-label">
                   {t('blueprints.detail.recipe', 'Recipe')}
                 </span>
-                <ul className="bp-modal-recipe-list">
-                  {blueprint.recipe.map((line, idx) => (
+                <ul className="bp-modal-recipe-items">
+                  {blueprint.recipe.map((line: string, idx: number) => (
                     <li key={idx}>{line}</li>
                   ))}
                 </ul>

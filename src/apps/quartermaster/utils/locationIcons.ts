@@ -7,7 +7,7 @@ const LOCATION_ICONS: Record<string, string> = {
   mechanical: '/images/locations/mechanical.webp',
   medical: '/images/locations/medical.webp',
   old_world: '/images/locations/old_world.webp',
-  // raider: '/images/locations/raider.webp',
+  raider: '/images/locations/raider.webp',
   residential: '/images/locations/residential.webp',
   security: '/images/locations/security.webp',
   technological: '/images/locations/technological.webp',

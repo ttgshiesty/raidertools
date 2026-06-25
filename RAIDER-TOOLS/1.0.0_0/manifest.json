@@ -1,0 +1,34 @@
+{
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "presence-raider-tools.js" ],
+   "matches": [ "https://shiesty.me/*" ],
+      "run_at": "document_start"
+   } ],
+   "declarative_net_request": {
+      "rule_resources": [ {
+         "enabled": true,
+         "id": "ruleset_1",
+         "path": "rules.json"
+      } ]
+   },
+   "description": "Enables Embark authentication for  arcraiders shiesty-edition by routing local OAuth callbacks to the site.",
+   "externally_connectable": {
+      "matches": [ "https://shiesty.me/*" ]
+   },
+   "host_permissions": [ "http://127.0.0.1:49174/*", "https://shiesty.me/*" ],
+   "icons": {
+      "128": "icons/icon-128.png",
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArolocpC0OK4A3bvbJ2GGgA6ryEcNDrpBErMAU7seqoFpJ5/nsQRgfO/NzjAhIUMfDNVB+GaEQDnJJ0zo3sfYAJ/W0htgsK+dg0SsDZw0w/xbXByuTT6jMKmXHWOsye27RP0v8TlwNdrzHh4EFosHGn1pSO3xbycJzJpBO2j8rjx/covQphj7OknK26t1tRBGszGxartlbiH+edz2x00SWSGjqN5VvjIpKw3aUAX2iWzF0v4MViJ3ciDyL7dlvf6RyQ+3Wj3W8HS9hS/E/v6vHsfPsXt/mSDj4P2KhimONGnC9gxXhHbxQDojFHuCHJR5y4sp4uVoBqPQ7lO94ahnmwIDAQAB",
+   "manifest_version": 3,
+   "name": "Shiesty Raiders Embark Auth Bridge",
+   "permissions": [ "declarativeNetRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0"
+}

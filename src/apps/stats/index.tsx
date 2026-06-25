@@ -16,7 +16,7 @@ const TABS: { id: StatsTab; label: string; icon: typeof Crosshair }[] = [
 ];
 
 export default function Stats() {
-  const [activeTab, setActiveTab] = useState<StatsTab>('arctracker');
+  const [activeTab, setActiveTab] = useState<StatsTab>('raidhistory');
 
   return (
     <div className="stats-shell">

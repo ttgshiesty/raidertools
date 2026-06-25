@@ -125,20 +125,20 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
       <div
         ref={ref}
         className={cn(
-          'relative block leading-none',
-          'transition-all duration-200',
-          onClick && 'cursor-pointer',
-          onClick && !disableHover && 'group/frame hover:brightness-110',
-          className,
+          "relative block leading-none",
+          "transition-all duration-200",
+          onClick && "cursor-pointer",
+          onClick && !disableHover && "group/frame hover:brightness-110",
+          className
         )}
         style={{ width: frameSize, height: frameSize }}
         onClick={onClick}
-        role={onClick ? 'button' : undefined}
+        role={onClick ? "button" : undefined}
         tabIndex={onClick ? 0 : undefined}
         onKeyDown={
           onClick
             ? (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
+                if (event.key === "Enter" || event.key === " ") {
                   event.preventDefault();
                   onClick(event as unknown as React.MouseEvent<HTMLDivElement>);
                 }
@@ -150,10 +150,10 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
           <div
             className="absolute inset-0 rounded-lg overflow-hidden"
             style={{
-              backgroundImage: 'url(/icons/blueprints/blueprint-bg.webp)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              borderRadius: 0.082 * frameSize,
+              backgroundImage: "url(/images/blueprints/blueprint-bg.webp)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              borderRadius: 0.082 * frameSize
             }}
           />
         )}
@@ -174,8 +174,14 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
               x2="95.375"
               y2="0.625"
             >
-              <stop offset="0" style={{ stopColor: rarityColor, stopOpacity: 0.5 }} />
-              <stop offset="1" style={{ stopColor: rarityColor, stopOpacity: 0 }} />
+              <stop
+                offset="0"
+                style={{ stopColor: rarityColor, stopOpacity: 0.5 }}
+              />
+              <stop
+                offset="1"
+                style={{ stopColor: rarityColor, stopOpacity: 0 }}
+              />
             </linearGradient>
 
             <linearGradient
@@ -186,8 +192,14 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
               x2="95.375"
               y2="0.625"
             >
-              <stop offset="0" style={{ stopColor: rarityColor, stopOpacity: 1 }} />
-              <stop offset="1" style={{ stopColor: rarityColor, stopOpacity: 0.5 }} />
+              <stop
+                offset="0"
+                style={{ stopColor: rarityColor, stopOpacity: 1 }}
+              />
+              <stop
+                offset="1"
+                style={{ stopColor: rarityColor, stopOpacity: 0.5 }}
+              />
             </linearGradient>
           </defs>
 
@@ -309,9 +321,12 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
               width: 0.726 * frameSize,
               height: 0.726 * frameSize,
               left: 0.137 * frameSize,
-              top: showBottomBar || showNameBar ? 0.01 * frameSize : 0.137 * frameSize,
-              objectFit: 'contain',
-              filter: 'none',
+              top:
+                showBottomBar || showNameBar
+                  ? 0.01 * frameSize
+                  : 0.137 * frameSize,
+              objectFit: "contain",
+              filter: "none"
             }}
             loading="lazy"
           />
@@ -322,7 +337,10 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
               width: 0.726 * frameSize,
               height: 0.726 * frameSize,
               left: 0.137 * frameSize,
-              top: showBottomBar || showNameBar ? 0.01 * frameSize : 0.137 * frameSize,
+              top:
+                showBottomBar || showNameBar
+                  ? 0.01 * frameSize
+                  : 0.137 * frameSize
             }}
           >
             <span className="text-beige">?</span>
@@ -332,16 +350,16 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
         {showBottomBar && !showNameBar && !showItemName && (
           <img
             src={categoryIcon}
-            alt={itemType || 'item'}
+            alt={itemType || "item"}
             className="absolute pointer-events-none"
             style={{
               width: 0.156 * frameSize,
               height: 0.156 * frameSize,
               left: 0.059 * frameSize,
               bottom: 0.051 * frameSize,
-              objectFit: 'contain',
-              filter: 'brightness(1.3)',
-              opacity: 0.95,
+              objectFit: "contain",
+              filter: "brightness(1.3)",
+              opacity: 0.95
             }}
             loading="lazy"
           />
@@ -350,16 +368,16 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
         {showBottomBar && showItemName && (
           <img
             src={categoryIcon}
-            alt={itemType || 'item'}
+            alt={itemType || "item"}
             className="absolute pointer-events-none"
             style={{
               width: 0.156 * frameSize,
               height: 0.156 * frameSize,
               left: 0.052 * frameSize,
               bottom: 0.042 * frameSize,
-              objectFit: 'contain',
-              filter: 'brightness(1.3)',
-              opacity: 0.95,
+              objectFit: "contain",
+              filter: "brightness(1.3)",
+              opacity: 0.95
             }}
             loading="lazy"
           />
@@ -367,7 +385,7 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
 
         {showNameBar && (
           <img
-            src="/icons/items/category/Icon_Blueprint.png"
+            src="/images/blueprints/Icon_Blueprint.png"
             alt="blueprint"
             className="absolute pointer-events-none"
             style={{
@@ -375,9 +393,9 @@ export const ItemFrame = React.forwardRef<HTMLDivElement, ItemFrameProps>(
               height: 0.156 * frameSize,
               left: 0.059 * frameSize,
               bottom: 0.051 * frameSize,
-              objectFit: 'contain',
-              filter: 'brightness(1.3)',
-              opacity: 0.95,
+              objectFit: "contain",
+              filter: "brightness(1.3)",
+              opacity: 0.95
             }}
             loading="lazy"
           />

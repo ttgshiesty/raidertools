@@ -7,8 +7,93 @@
 @use 'atlas';  // AtlasBlueprintPanel styles
 
 // ── Lightweight design-token utilities used in JSX ──────────────
-// These mirror the project's existing Tailwind-style palette so the
-// Blueprint JSX can compose with the rest of the app.
+
+.item-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 0.5rem;
+  user-select: none;
+}
+
+.item-frame-sm {
+  width: 48px;
+  height: 48px;
+}
+
+.item-frame-md {
+  width: 64px;
+  height: 64px;
+}
+
+.item-frame-lg {
+  width: 80px;
+  height: 80px;
+}
+
+.item-frame:not(.item-frame-disable-hover):hover .item-frame-image {
+  transform: scale(1.04);
+}
+
+.item-frame-image-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-frame-image {
+  max-width: 86%;
+  max-height: 86%;
+  object-fit: contain;
+  transition: transform 140ms ease;
+  pointer-events: none;
+}
+
+.item-frame-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 70%;
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.item-frame-name-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 3px 2px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+}
+
+.item-frame-name-bar span {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .bg-blue-dark {
   background-color: #0c1a36;
 }
@@ -26,6 +111,7 @@
 }
 
 // ── Page shell ───────────────────────────────────────────────
+
 .blueprints-page {
   padding: 1rem;
   flex: 1;
@@ -49,6 +135,7 @@
 }
 
 // ── Blurred background ───────────────────────────────────────
+
 .blueprints-background {
   position: fixed;
   top: 0;
@@ -66,7 +153,6 @@
     left: -20px;
     right: -20px;
     bottom: -20px;
-    background-image: url(/blueprints/blueprint-bg.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,6 +161,7 @@
 }
 
 // ── Container ────────────────────────────────────────────────
+
 .blueprints-container {
   max-width: 80rem;
   margin: 0 auto;
@@ -85,6 +172,7 @@
 }
 
 // ── Hero / title ─────────────────────────────────────────────
+
 .blueprints-hero {
   text-align: left;
   margin-bottom: 1rem;
@@ -110,6 +198,7 @@
 }
 
 // ── Guide button ─────────────────────────────────────────────
+
 .blueprints-guide-btn {
   display: inline-flex;
   align-items: center;
@@ -129,6 +218,7 @@
 }
 
 // ── Guide dialog ─────────────────────────────────────────────
+
 .blueprints-guide-dialog {
   max-width: 600px;
   max-height: 85vh;
@@ -163,6 +253,7 @@
 }
 
 // ── Filters ──────────────────────────────────────────────────
+
 .blueprints-filters {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -170,10 +261,16 @@
   flex-shrink: 0;
 }
 
-.blueprints-filter-search { grid-column: 1; }
-.blueprints-filter-row    { display: contents; }
+.blueprints-filter-search {
+  grid-column: 1;
+}
+
+.blueprints-filter-row {
+  display: contents;
+}
 
 // ── Progress bar ─────────────────────────────────────────────
+
 .blueprints-progress {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -203,27 +300,72 @@
 }
 
 // ── Grid container ───────────────────────────────────────────
+// FIXED: reference layout uses 10 columns x 80px cards with 8px gaps.
+
 .blueprints-grid-container {
   padding: 0.875rem;
   position: relative;
   z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: visible;
+  background: #0c1a36;
+  border-color: #1c2c52;
+  -webkit-overflow-scrolling: touch;
 }
 
 .blueprints-grid {
   display: grid;
-  grid-template-columns: repeat(10, minmax(80px, 1fr));
-  gap: 0.5rem;
-  row-gap: 0.5rem;
+  grid-template-columns: repeat(10, 80px);
+  grid-auto-flow: row;
+  gap: 8px;
+  row-gap: 8px;
+  column-gap: 8px;
+  justify-content: start;
+  align-content: start;
+  place-content: start;
+  width: max-content;
+  max-width: max-content;
 }
 
 // ── Blueprint card ───────────────────────────────────────────
+
 .blueprint-card {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  flex: none;
+  position: relative;
+}
+
+.blueprint-card > *,
+.blueprint-card .neon-border-wrapper {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  aspect-ratio: 1 / 1;
+  flex: none;
+}
+
+.blueprint-card img,
+.blueprint-card svg {
+  display: block;
 }
 
 // Inner shell that holds the item icon inside the NeonBorder
+
 .blueprint-card-inner {
   position: relative;
   width: 80px;
@@ -237,8 +379,8 @@
 }
 
 .blueprint-card-icon {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   pointer-events: none;
 }
@@ -251,6 +393,7 @@
 }
 
 // Learned checkmark badge
+
 .blueprint-checkmark {
   position: absolute;
   top: 5px;
@@ -263,25 +406,31 @@
   justify-content: center;
   z-index: 10;
   pointer-events: none;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
 }
 
 // Duplicate count badge
+
 .blueprint-duplicate {
   position: absolute;
   top: 1px;
   left: 1px;
   width: 20px;
   height: 20px;
-  background-color: hsl(var(--status-available));
+  background-color: var(--status-available, #3b82f6);
+  color: #fff;
   border-radius: 5.5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
   pointer-events: none;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.55);
 }
 
 // Unknown slot label
+
 .blueprint-unknown-label {
   position: absolute;
   inset: 0;
@@ -294,6 +443,7 @@
 }
 
 // Item name label at bottom of card
+
 .blueprint-name {
   position: absolute;
   bottom: 0;
@@ -337,16 +487,26 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 20px var(--rarity-color, #6b7280, 0.2);
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.8),
+    0 0 20px var(--rarity-color, #6b7280, 0.2);
   animation: panel-slide-in 0.25s ease;
 }
 
 @keyframes panel-slide-in {
-  from { opacity: 0; transform: translateX(24px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 // ── Detail header ────────────────────────────────────────────
+
 .bp-detail-header {
   display: flex;
   align-items: flex-start;
@@ -412,6 +572,7 @@
 }
 
 // ── Rarity badge ─────────────────────────────────────────────
+
 .rarity-badge {
   display: inline-block;
   font-size: 0.7rem;
@@ -424,6 +585,7 @@
 }
 
 // ── Tabs ─────────────────────────────────────────────────────
+
 .bp-detail-tabs {
   display: flex;
   gap: 0.25rem;
@@ -444,7 +606,9 @@
     transition: all 0.2s;
     margin-bottom: -1px;
 
-    &:hover { color: #fff; }
+    &:hover {
+      color: #fff;
+    }
 
     &.active {
       color: #fff;
@@ -454,6 +618,7 @@
 }
 
 // ── Body / sections ──────────────────────────────────────────
+
 .bp-detail-body {
   padding: 1rem 1.25rem;
   display: flex;
@@ -490,6 +655,7 @@
 }
 
 // ── Quick stats row ──────────────────────────────────────────
+
 .bp-stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -520,6 +686,7 @@
 }
 
 // ── Action buttons ───────────────────────────────────────────
+
 .bp-actions {
   display: flex;
   flex-wrap: wrap;
@@ -564,6 +731,7 @@
 }
 
 // ── Location cards ───────────────────────────────────────────
+
 .bp-location-grid {
   display: flex;
   flex-direction: column;
@@ -611,6 +779,7 @@
 }
 
 // ── Tags ─────────────────────────────────────────────────────
+
 .bp-tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -639,6 +808,7 @@
 }
 
 // ── Distribution bars ────────────────────────────────────────
+
 .bp-dist-chart {
   display: flex;
   flex-direction: column;
@@ -680,6 +850,7 @@
 }
 
 // ── "I Found It" form ────────────────────────────────────────
+
 .bp-find-form {
   background: #111;
   border: 1px solid #2a2a2a;
@@ -743,133 +914,12 @@
   cursor: pointer;
   transition: opacity 0.2s;
 
-  &:hover { opacity: 0.9; }
-}
-
-// ============================================================
-// RESPONSIVE
-// ============================================================
-
-@media (max-width: 768px) {
-  .blueprints-page {
-    overflow: hidden;
-
-    .page-container {
-      overflow-y: auto;
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-  }
-
-  .blueprints-filters {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .blueprints-filter-search { width: 100%; }
-
-  .blueprints-filter-row {
-    display: flex;
-    width: 100%;
-    gap: 0.5rem;
-
-    > * {
-      flex: 1;
-      min-width: 0;
-    }
-  }
-
-  .blueprints-grid-container {
-    overflow-x: auto;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .blueprints-grid {
-    grid-template-columns: repeat(10, 80px);
-    width: max-content;
-  }
-
-  .bp-detail-overlay {
-    padding: 0;
-    align-items: flex-end;
-  }
-
-  .bp-detail-panel {
-    max-width: 100%;
-    border-radius: 1rem 1rem 0 0;
-    max-height: 90vh;
-  }
-
-  .bp-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .blueprints-hero h1 {
-    font-size: 1.35rem;
-  }
-
-  .blueprints-guide-btn {
-    width: 36px;
-    height: 36px;
-  }
-
-  .blueprints-guide-dialog {
-    max-width: 95vw;
-    max-height: 80vh;
+  &:hover {
+    opacity: 0.9;
   }
 }
 
-@media (max-width: 480px) {
-  .blueprints-page {
-    padding: 0.75rem 0.5rem;
-    min-height: 0;
-    overflow: hidden;
-
-    .page-container {
-      overflow-y: auto;
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-  }
-
-  .blueprints-filters,
-  .blueprints-filter-row {
-    gap: 0.375rem;
-  }
-
-  .blueprints-grid-container { max-width: 100%; }
-
-  .blueprints-grid {
-    grid-template-columns: repeat(10, 80px);
-    gap: 0.5rem;
-  }
-
-  .blueprints-progress {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    padding: 1rem;
-  }
-
-  .bp-stats-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .dist-bar-row {
-    grid-template-columns: 90px 1fr 30px;
-  }
-
-  .blueprints-hero h1 {
-    font-size: 1.25rem;
-  }
-
-  .blueprints-guide-btn {
-    width: 32px;
-    height: 32px;
-  }
-}
-
+// ── Section tabs ─────────────────────────────────────────────
 
 .blueprints-sections {
   display: flex;
@@ -893,7 +943,8 @@
   }
 }
 
-// ── Empty / no-results state ───────────────────────────────────
+// ── Empty / no-results state ─────────────────────────────────
+
 .blueprints-no-results {
   display: flex;
   align-items: center;
@@ -906,16 +957,15 @@
   }
 }
 
-// ── Status colour tokens ───────────────────────────────────────
-// Used by rarity-tinted badges and indicators elsewhere in the app.
+// ── Status colour tokens ─────────────────────────────────────
+
 :root {
   --status-available: #3b82f6;
   --gold-accent: #ffe600;
 }
 
 // ============================================================
-// DETAIL MODAL — re-skin (example match)
-// Centered modal, rarity-tinted header, learned toggle, dup stepper
+// DETAIL MODAL — re-skin
 // ============================================================
 
 .bp-detail-modal {
@@ -943,11 +993,19 @@
 }
 
 @keyframes bp-modal-pop-in {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-// ── Header (icon · name · chips · close) ───────────────────────
+// ── Header modal ─────────────────────────────────────────────
+
 .bp-modal-header {
   display: flex;
   align-items: center;
@@ -1029,6 +1087,7 @@
 }
 
 // ── Crafted-at + recipe block ─────────────────────────────────
+
 .bp-modal-craft {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid rgba(12, 26, 54, 0.08);
@@ -1081,7 +1140,8 @@
   }
 }
 
-// ── Learned toggle (gold when on) ─────────────────────────────
+// ── Learned toggle ───────────────────────────────────────────
+
 .bp-modal-toggle-row {
   border-bottom: 1px solid rgba(12, 26, 54, 0.08);
 }
@@ -1126,7 +1186,8 @@
   transform: translateX(1.25rem);
 }
 
-// ── Duplicates stepper (+ / −) ────────────────────────────────
+// ── Duplicates stepper ───────────────────────────────────────
+
 .bp-modal-dup-row {
   border-bottom: 1px solid rgba(12, 26, 54, 0.08);
 }
@@ -1176,7 +1237,8 @@
   text-align: center;
 }
 
-// ── More-details expand ────────────────────────────────────────
+// ── More-details expand ──────────────────────────────────────
+
 .bp-modal-more-toggle {
   display: flex;
   align-items: center;
@@ -1274,17 +1336,14 @@
     background: rgba(12, 26, 54, 0.04);
     border-color: rgba(12, 26, 54, 0.08);
 
-    h4 { color: var(--blue-dark, #0c1a36); }
+    h4 {
+      color: var(--blue-dark, #0c1a36);
+    }
 
     label {
       color: rgba(12, 26, 54, 0.6);
 
-      input {
-        background: #fff;
-        border-color: rgba(12, 26, 54, 0.15);
-        color: var(--blue-dark, #0c1a36);
-      }
-
+      input,
       select {
         background: #fff;
         border-color: rgba(12, 26, 54, 0.15);
@@ -1299,7 +1358,8 @@
   }
 }
 
-// ── Footer actions (light variant) ─────────────────────────────
+// ── Footer actions ───────────────────────────────────────────
+
 .bp-actions--footer {
   padding: 0.75rem 1rem 1rem;
   border-top: 1px solid rgba(12, 26, 54, 0.08);
@@ -1316,33 +1376,142 @@
 }
 
 // ============================================================
-// CARD re-skin (example match)
-// Background tile, rarity-tinted duplicate badge, larger icon
+// RESPONSIVE
 // ============================================================
 
-.blueprints-grid-container {
-  // Container stays the same — bluish rounded box
-  background: #0c1a36;
-  border-color: #1c2c52;
+@media (max-width: 768px) {
+  .blueprints-page {
+    overflow: hidden;
+
+    .page-container {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
+
+  .blueprints-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .blueprints-filter-search {
+    width: 100%;
+  }
+
+  .blueprints-filter-row {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+
+    > * {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
+  .blueprints-grid-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    max-width: 100%;
+    width: fit-content;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .blueprints-grid {
+    grid-template-columns: repeat(10, 80px);
+    width: max-content;
+    max-width: max-content;
+    gap: 8px;
+    row-gap: 8px;
+    column-gap: 8px;
+  }
+
+  .bp-detail-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .bp-detail-panel {
+    max-width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    max-height: 90vh;
+  }
+
+  .bp-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blueprints-hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .blueprints-guide-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .blueprints-guide-dialog {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
 }
 
-.blueprint-card-inner {
-  background: #0c1a36;
-}
+@media (max-width: 480px) {
+  .blueprints-page {
+    padding: 0.75rem 0.5rem;
+    min-height: 0;
+    overflow: hidden;
 
-.blueprint-card-icon {
-  width: 64px;
-  height: 64px;
-}
+    .page-container {
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
 
-.blueprint-duplicate {
-  background-color: var(--status-available, #3b82f6);
-  color: #fff;
-  border-radius: 5.5px 0;
-  box-shadow: 0 0 6px rgba(59, 130, 246, 0.55);
-}
+  .blueprints-filters,
+  .blueprints-filter-row {
+    gap: 0.375rem;
+  }
 
-.blueprint-checkmark {
-  background: #22c55e;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+  .blueprints-grid-container {
+    max-width: 100%;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .blueprints-grid {
+    grid-template-columns: repeat(10, 80px);
+    width: max-content;
+    max-width: max-content;
+    gap: 8px;
+    row-gap: 8px;
+    column-gap: 8px;
+  }
+
+  .blueprints-progress {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .bp-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dist-bar-row {
+    grid-template-columns: 90px 1fr 30px;
+  }
+
+  .blueprints-hero h1 {
+    font-size: 1.25rem;
+  }
+
+  .blueprints-guide-btn {
+    width: 32px;
+    height: 32px;
+  }
 }

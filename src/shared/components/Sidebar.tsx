@@ -6,43 +6,48 @@ import { assetUrl } from '../../data/assetUrl';
 import { trackNavigation } from '../utils/analytics';
 
 const NAV_ITEMS = [
-  { path: '/', icon: 'trends.webp', labelKey: 'shared.tools.home' },
+  { path: "/", icon: "trends.webp", labelKey: "shared.tools.home" },
   {
-    path: '/schedule',
-    icon: 'bombardier.png',
-    labelKey: 'shared.tools.schedule',
+    path: "/schedule",
+    icon: "bombardier.png",
+    labelKey: "shared.tools.schedule"
   },
   {
-    path: '/craft-calculator',
-    icon: 'matriarch256.png',
-    labelKey: 'shared.tools.craftCalculator',
+    path: "/craft-calculator",
+    icon: "matriarch256.png",
+    labelKey: "shared.tools.craftCalculator"
   },
-  { path: '/quests', icon: 'bison_mf.png', labelKey: 'shared.tools.quests' },
+  { path: "/quests", icon: "bison_mf.png", labelKey: "shared.tools.quests" },
   {
-    path: '/loot-helper',
-    icon: 'tick_mf.png',
-    labelKey: 'shared.tools.lootHelper',
-  },
-  {
-    path: '/quartermaster',
-    icon: 'wasp_mf.png',
-    labelKey: 'shared.tools.quartermaster',
+    path: "/loot-helper",
+    icon: "tick_mf.png",
+    labelKey: "shared.tools.lootHelper"
   },
   {
-    path: '/stats',
-    icon: 'rocketeer_mf.png',
-    labelKey: 'shared.tools.stats',
+    path: "/quartermaster",
+    icon: "wasp_mf.png",
+    labelKey: "shared.tools.quartermaster"
   },
   {
-    path: '/blueprints',
-    icon: 'firefly_mf.png',
-    labelKey: 'shared.tools.blueprints',
+    path: "/stats",
+    icon: "rocketeer_mf.png",
+    labelKey: "shared.tools.stats"
   },
   {
-    path: '/skill-tree',
-    icon: 'trends.webp',
-    labelKey: 'shared.tools.skillTree',
+    path: "/blueprints",
+    icon: "firefly_mf.png",
+    labelKey: "shared.tools.blueprints"
   },
+  {
+    path: "/market",
+    icon: "pop256.png",
+    labelKey: "shared.tools.market"
+  },
+  {
+    path: "/skill-tree",
+    icon: "trends.webp",
+    labelKey: "shared.tools.skillTree"
+  }
 ];
 
 const BOTTOM_NAV_ITEM = {
