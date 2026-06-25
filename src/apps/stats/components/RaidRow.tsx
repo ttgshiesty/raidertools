@@ -6,7 +6,7 @@
 // Reading left-to-right tells you the story of the raid in a couple seconds.
 
 import { useState } from "react";
-import type { NormalizedRaid } from "./types";
+import type { NormalizedRaid } from "../types/types";
 
 const RARITY_COLOR: Record<string, string> = {
   common: "#9CA3AF",

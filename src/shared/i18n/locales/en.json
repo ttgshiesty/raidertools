@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "SHiESTY RAiDERS"
+    "name": "SHiESTY RAIDERS  :: SPERANZAS HUB🐍"
   },
   "shared": {
     "language": "Language",
@@ -53,7 +53,7 @@
       "signedInAs": "Signed in as",
       "statusConnected": "Connected",
       "statusLinked": "Linked",
-      "statusSubscribed": "Subscribed",
+       "statusSubscribed": "Subscribed",
       "statusInvalid": "Token invalid",
       "statusNotConfigured": "Not configured",
       "statusNotConnected": "Not connected",
@@ -65,11 +65,12 @@
     "footer": {
       "thanksPrefix": "Data provided by ",
       "thanksMiddle": " and ",
+      "thanksRaidertools": "repo",
       "thanksSuffix": ". Thank you for making this data available!",
       "contactDiscord": "Contact baschny on Discord (opens external app)",
-      "joinDiscord": "Join ARCTracker Discord server (opens external app)",
+      "joinDiscord": "Join ShiestyRaiders Discord server (opens external app)",
       "contact": "Contact",
-      "arcTrackerDiscord": "ARCTracker Discord"
+      "shiestyDiscord": "ShiestyRaiders"
     },
     "tools": {
       "home": "Home",
@@ -79,13 +80,14 @@
       "lootHelper": "Looting Helper",
       "quartermaster": "Quartermaster",
       "stats": "Stats",
+      "raidstats": "RaidStats",
       "blueprints": "Blueprints",
       "market": "Marketplace",
       "skillTree": "Skill Tree"
     }
   },
   "dashboard": {
-    "title": "SHiESTY RAiDERS",
+    "title": "SHiESTY RAIDER COMPANION",
     "intro": "ARC Raiders companion tools for raid planning, stats, blueprints, marketplace trades, quests, crafting, stash planning, and loadout prep.",
     "changelog": {
       "title": "Latest changes",
@@ -95,12 +97,13 @@
       "allTools": "All tools"
     },
     "tools": {
-      "schedule": "Track ARC Raiders map event rotations and plan raids around active conditions.",
+      "events": "Track ARC Raiders map event rotations and plan raids around active conditions.",
       "craftCalculator": "Calculate craft amounts, material costs, and stash-space impact before building gear.",
       "quests": "Track quest progress, prerequisites, objectives, and blueprint rewards.",
       "lootHelper": "Turn craft goals into a raid loot list so you know what to keep, recycle, or salvage.",
       "quartermaster": "Plan inventory, loadout, hideout, projects, quests, and crafting from synced account data.",
       "stats": "Review ARCTracker and MetaForge raid stats: survival, combat, loot value, maps, enemies, and weapons.",
+      "raidstats": "RaidStats",
       "blueprints": "Browse the blueprint catalog and track learned recipes from linked account sync.",
       "market": "Browse marketplace listings, submit offers, and manage item-for-item trades."
     }
@@ -161,7 +164,7 @@
       "linkedTitle": "MetaForge Profile Linked",
       "linkBody": "Enter the profile ID used by MetaForge's ARC Raiders player-stats endpoint.",
       "idLabel": "MetaForge profile ID",
-      "idPlaceholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "idPlaceholder": "your-bitch-ass-id",
       "link": "Link ID",
       "update": "Update ID",
       "unlink": "Unlink",
@@ -169,7 +172,7 @@
       "refresh": "Refresh",
       "invalidId": "Enter a valid MetaForge profile ID.",
       "loadError": "Unable to load MetaForge stats.",
-      "reducedPayload": "MetaForge returned only profile or currency fields for this ID. Career breakdowns will appear when MetaForge returns the full player-stats contract.",
+      "reducedPayload": "MetaForge returned some bullshit",
       "mapStats": "Map Performance",
       "enemyStats": "Enemy Stats",
       "weaponDamage": "Weapon Damage",
@@ -195,6 +198,35 @@
         "xp": "Total XP",
         "time": "Time Topside"
       }
+    }
+  },
+  "skilltree": {
+    "allocatedPoints": "Allocated Points",
+    "pointsSpent": "{points} Points Spent",
+    "maxPoints": "Max Points: {max}",
+    "tier": "Tier {tier}",
+    "tierLocked": "Tier {tier} Locked",
+    "requiresPoints": "Requires {points} points",
+    "prerequisite": "Prerequisite",
+    "lastUpdate": "Last Update: January 17, 2026",
+    "skillPointsUsed": "Skill Points Used",
+    "share": "Share",
+    "shareTree": "Share Tree",
+    "saveTree": "Save Tree",
+    "resetTree": "Reset Tree",
+    "linkCopied": "Share URL copied to clipboard!",
+    "treeSaved": "Tree saved to your local storage!",
+    "viewingShared": "Viewing Shared Tree",
+    "points": "Points",
+    "locked": "Locked",
+    "requiresPointsIn": "Requires {points} points in {category}",
+    "requires": "Requires",
+    "impact": "Impact",
+    "value": "Value",
+    "categories": {
+      "SURVIVAL": "Survival",
+      "CONDITIONING": "Conditioning",
+      "MOBILITY": "Mobility"
     }
   },
   "blueprints": {
@@ -345,14 +377,38 @@
       }
     }
   },
-  "schedule": {
-    "loading": "Loading event schedule...",
-    "noData": "No data available",
-    "previousDay": "Previous day",
-    "nextDay": "Next day",
-    "goToToday": "Go to today",
-    "updated": "Updated",
-    "mapHeader": "Map"
+ "MapEvents": {
+    "startsIn": "Starts in",
+    "endsIn": "Ends in",
+    "trackEvent": "Track Event",
+    "untrackEvent": "Untrack Event",
+    "eventsStartingNow": "Events Starting Now!",
+    "dismissAll": "Dismiss All",
+    "notificationSoundOn": "Notification Sound On",
+    "notificationSoundOff": "Notification Sound Off",
+    "activeEvents": "Active Events",
+    "nextEvent": "Next Event",
+    "activeEventTooltip": "Active: {eventType}",
+    "nextEventTooltip": "Next: {eventType}",
+    "events": {
+      "nightRaid": "Night Raid",
+      "electromagneticStorm": "Electromagnetic Storm",
+      "coldSnap": "Cold Snap",
+      "lockedGate": "Locked Gate",
+      "matriarch": "Matriarch",
+      "harvester": "Harvester",
+      "lushBlooms": "Lush Blooms",
+      "prospectingProbes": "Prospecting Probes",
+      "huskGraveyard": "Husk Graveyard",
+      "uncoveredCaches": "Uncovered Caches",
+      "launchTowerLoot": "Launch Tower Loot",
+      "hiddenBunker": "Hidden Bunker",
+      "birdCity": "Bird City",
+      "beachcombing": "Beachcombing",
+      "hurricane": "Hurricane",
+      "closeScrutiny": "Close Scrutiny",
+      "none": "None"
+    }
   },
   "quests": {
     "loading": "Loading quest data...",
@@ -592,7 +648,7 @@
       "craftSteps": "Craft Steps",
       "stash": "Inventory",
       "loadout": "Loadout",
-      "blueprints": "Blueprints",
+  "blueprints": "Blueprints",
       "lastSync": "Last sync",
       "source": "Source",
       "gameDataLastSync": "Game Data Last Sync",

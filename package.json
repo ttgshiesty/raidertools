@@ -49,6 +49,8 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "jsdom": "^29.0.2",
+    "prettier-plugin-sort-json": "^4.2.0",
+    "safe-stable-stringify": "^2.5.0",
     "sass": "^1.97.2",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",

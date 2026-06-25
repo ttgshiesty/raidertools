@@ -87,6 +87,7 @@ const embarkProjects = require("../lambda/embark-projects");
 const metaforgeStats = require("../lambda/metaforge-stats");
 const arctrackerUserProxy = require("../lambda/arctracker-user-proxy");
 const market = require("../lambda/market");
+const schedule = require("../lambda/schedule-reader");
 /* eslint-enable @typescript-eslint/no-require-imports */
 
 // ---------------------------------------------------------------------------
@@ -215,6 +216,7 @@ export function matchRoute(method: string, pathname: string): MatchedRoute | nul
         metaforgeStats: metaforgeStats.handler,
         arctrackerUserProxy: arctrackerUserProxy.handler,
         market: market.handler,
+        schedule: schedule.handler,
     };
 
     return {

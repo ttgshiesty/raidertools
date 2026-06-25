@@ -11,3 +11,17 @@ export type {
 } from '../utils/shiesty-arctracker-stats_generated';
 
 export type { MetaForgeDashboardData } from '../utils/shiesty-metaforge-stats_generated';
+
+export type {
+  RaidOutcome,
+  ItemRarity,
+  NormalizedLootItem,
+  NormalizedRaid,
+  RaidHistoryFilters,
+  RaidHistorySummary,
+} from './types';
+
+export { KNOWN_MAP_SLUGS } from './types';
+
+export type { StatsPlayerV2EventRow } from './aggregateKills';
+export { aggregateEnemyKills, aggregateWeaponKills } from './aggregateKills';

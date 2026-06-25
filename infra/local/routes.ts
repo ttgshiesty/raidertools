@@ -12,7 +12,8 @@ export type LocalRouteKey =
     | "embarkProjectsSync"
     | "metaforgeStats"
     | "arctrackerUserProxy"
-    | "market";
+    | "market"
+    | "schedule";
 
 export interface MatchedRoutePattern {
     key: LocalRouteKey;
@@ -63,6 +64,13 @@ export function matchLocalRoutePattern(
     }
     if (pathname.startsWith("/me/arctracker/") && (method === "GET" || method === "POST")) {
         return { key: "arctrackerUserProxy", pathParameters: {}, requiresDevAuth: true };
+    }
+    // Schedule routes (unauthenticated, public access)
+    if (pathname === "/schedule/map-events.json" && method === "GET") {
+        return { key: "schedule", pathParameters: {}, requiresDevAuth: false };
+    }
+    if (pathname === "/schedule/health.json" && method === "GET") {
+        return { key: "schedule", pathParameters: {}, requiresDevAuth: false };
     }
     const stateMatch = /^\/me\/state\/([^/]+)$/.exec(pathname);
     if (stateMatch && (method === "GET" || method === "PUT" || method === "DELETE")) {

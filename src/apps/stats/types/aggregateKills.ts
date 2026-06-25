@@ -15,7 +15,7 @@
 // produces the breakdown, not any grand total.
 
 import resolverData from "./shiesty-stats-target-resolver.json";
-import type { CountDatum } from "./TopKillsBarChart";
+import type { CountDatum } from "../components/TopKillsBarChart";
 
 export interface StatsPlayerV2EventRow {
   eventId: number;

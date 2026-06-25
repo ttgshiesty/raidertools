@@ -13,9 +13,9 @@
 // page, given normalizer files already exist for it).
 
 import { useEffect, useState } from "react";
-import { aggregateEnemyKills, aggregateWeaponKills } from "./aggregateKills";
-import type { StatsPlayerV2EventRow } from "./aggregateKills";
-import type { CountDatum } from "./TopKillsBarChart";
+import { aggregateEnemyKills, aggregateWeaponKills } from "../types/aggregateKills";
+import type { StatsPlayerV2EventRow } from "../types/aggregateKills";
+import type { CountDatum } from "../components/TopKillsBarChart";
 
 async function fetchPlayerStatsEvents(): Promise<StatsPlayerV2EventRow[]> {
   // TODO: replace with the real source of scopedPlayerStats[0].playerStats.

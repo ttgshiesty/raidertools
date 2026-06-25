@@ -103,7 +103,7 @@ export default function BlueprintsPage() {
     let cancelled = false;
     (async () => {
       try {
-        const res = await fetch('/data/blueprints/arc_raiders_blueprints_full.json');
+        const res = await fetch('/arcraiders-data/items/items.en.json');
         if (!res.ok) throw new Error('Failed to load blueprints');
         const payload = await res.json();
         if (!cancelled) setItemsDb(payload.data ?? {});

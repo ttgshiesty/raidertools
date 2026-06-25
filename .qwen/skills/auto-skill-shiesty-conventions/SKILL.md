@@ -2,7 +2,7 @@
 name: shiesty-conventions
 description: Quick reference for AGENTS.md conventions enforced in the Shiesty/ARC Raiders tools repo — covers i18n, Quartermaster spec-first, auth/user-data docs, styling, deps, and known false positives in static analysis
 source: auto-skill
-extracted_at: '2026-06-21T23:38:57.246Z'
+extracted_at: '2026-06-23T21:58:10.510Z'
 ---
 
 # Shiesty repo conventions
@@ -104,6 +104,25 @@ Both live in `src/shared/utils/`.
 - Deployed to AWS Amplify on push to `main` (`amplify.yml`)
 - No manual deploy steps
 - DO NOT test in browser / start dev server — user runs that
+
+## When "files exist but aren't wired in"
+
+A recurring pattern: code is committed (scaffolding, pages, hooks) but never imported by the app shell. **`tsc` will not flag the broken imports** because the file has no entry point that would force its module graph to resolve.
+
+Symptoms:
+- `grep -rln "<ComponentName>" src/` returns only the file itself and a few siblings, never an `import` line
+- `npx tsc -b` reports zero errors even though the file has `import { X } from "./nonexistent"`
+- The build *appears* green until the moment the file is wired in, then a wave of import errors appears
+
+Workflow when the user says "add these files to the app" or "make sure X is on the page":
+1. Verify each file actually exists (`ls`)
+2. `grep -rln "<Name>" src/` to confirm whether it's imported anywhere
+3. If only the file itself matches → it's dead code, tsc won't help, fix imports **before** wiring
+4. Fix cross-directory imports by tracing actual file locations, not assuming — relative paths like `./types`, `./useRaidHistory`, `./TopKillsBarChart` are red flags when the file lives in a different directory
+5. Re-export from a `types/index.ts` barrel so other modules can `import type { ... } from '../types'` instead of reaching across directories
+6. Then wire it in (route, tab, etc.) and **then** run `tsc -b`
+
+For JSON imports: confirm the file's actual location on disk before assuming (`find . -name "*.json" -not -path "./node_modules/*"`). `resolveJsonModule: true` is set, but a wrong path still fails.
 
 ## Git commits
 

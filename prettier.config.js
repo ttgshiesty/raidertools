@@ -150,9 +150,25 @@ const json_sort_orders = {
         '/.*/': 'caseInsensitiveLexical',
       },
     },
+    {
+      name: 'stats',
+      rules: {
+        id: null,
+        name: null,
+        description: null,
+        category: null,
+        eventId: null,
+        targetId: null,
+        targetName: null,
+        targetType: null,
+        value: null,
+        amount: null,
+        updatedAt: null,
+        '/.*/': 'caseInsensitiveLexical',
+      },
+    },
   ],
 };
-
 function directory_rules_to_override(dir) {
   return {
     files: `./${dir.name}/*.json`,

@@ -10,7 +10,7 @@
 // containersLooted, itemsExtracted) come straight from Stats-Normalization.md
 // so this stays consistent with the rest of the app.
 
-import type { ItemRarity, NormalizedLootItem, NormalizedRaid, RaidOutcome } from "./types";
+import type { ItemRarity, NormalizedLootItem, NormalizedRaid, RaidOutcome } from "../types/types";
 
 export interface RawRoundResponse {
   roundId: string;

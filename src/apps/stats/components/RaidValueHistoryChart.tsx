@@ -14,7 +14,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type { NormalizedRaid } from "./types";
+import type { NormalizedRaid } from "../types/types";
 
 const WINDOW_OPTIONS = [25, 50, 100] as const;
 type WindowSize = (typeof WINDOW_OPTIONS)[number];

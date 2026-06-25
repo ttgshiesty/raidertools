@@ -18,7 +18,6 @@ Never modify without explicit request:
 - S3 bucket policy
 - CloudFront / CDN routing
 - Production `.env`
-- MongoDB indexes or schemas
 
 Before deployment advice:
 

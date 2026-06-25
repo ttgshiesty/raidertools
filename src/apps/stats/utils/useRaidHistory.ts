@@ -8,7 +8,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { normalizeRaids } from "./normalizeRaid";
-import type { NormalizedRaid, RaidHistoryFilters, RaidHistorySummary } from "./types";
+import type { NormalizedRaid, RaidHistoryFilters, RaidHistorySummary } from "../types/types";
 import type { RawRoundResponse } from "./normalizeRaid";
 
 const DEFAULT_FILTERS: RaidHistoryFilters = {

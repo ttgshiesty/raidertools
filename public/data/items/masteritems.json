@@ -1,0 +1,4466 @@
+{
+  "byItemId": {
+    "acoustic_guitar": "acoustic-guitar",
+    "adrenaline_shot": "adrenaline-shot",
+    "advanced_arc_powercell": "advanced-arc-powercell",
+    "advanced_electrical_components": "advanced-electrical-components",
+    "advanced_mechanical_components": "advanced-mechanical-components",
+    "agave": "agave",
+    "agave_juice": "agave-juice",
+    "air_freshener": "air-freshener",
+    "alarm_clock": "alarm-clock",
+    "alien_duck": "alien-duck",
+    "ancient_fort_security_code": "ancient-fort-security-code",
+    "angled_grip_i": "angled-grip-i",
+    "angled_grip_ii": "angled-grip-ii",
+    "angled_grip_ii_blueprint": "angled-grip-ii-blueprint",
+    "angled_grip_ii_recipe": "angled-grip-ii-recipe",
+    "angled_grip_iii": "angled-grip-iii",
+    "angled_grip_iii_blueprint": "angled-grip-iii-blueprint",
+    "angled_grip_iii_recipe": "angled-grip-iii-recipe",
+    "antiseptic": "antiseptic",
+    "anvil_blueprint": "anvil-blueprint",
+    "anvil_i": "anvil-i",
+    "anvil_ii": "anvil-ii",
+    "anvil_iii": "anvil-iii",
+    "anvil_iv": "anvil-iv",
+    "anvil_recipe": "anvil-recipe",
+    "anvil_splitter": "anvil-splitter",
+    "aphelion": "aphelion",
+    "aphelion_blueprint": "aphelion-blueprint",
+    "aphelion_rifle": "aphelion-rifle",
+    "aphelion_rifle_blueprint": "aphelion-rifle-blueprint",
+    "apricot": "apricot",
+    "arc_alloy": "arc-alloy",
+    "arc_circuitry": "arc-circuitry",
+    "arc_coolant": "arc-coolant",
+    "arc_flex_rubber": "arc-flex-rubber",
+    "arc_motion_core": "arc-motion-core",
+    "arc_performance_steel": "arc-performance-steel",
+    "arc_powercell": "arc-powercell",
+    "arc_synthetic_resin": "arc-synthetic-resin",
+    "arc_thermo_lining": "arc-thermo-lining",
+    "arpeggio_i": "arpeggio-i",
+    "arpeggio_ii": "arpeggio-ii",
+    "arpeggio_iii": "arpeggio-iii",
+    "arpeggio_iv": "arpeggio-iv",
+    "assessor_matrix": "assessor-matrix",
+    "assorted_seeds": "assorted-seeds",
+    "aviator_outfit": "aviator-outfit",
+    "backpack_black_hiker_color": "backpack-black-hiker-color",
+    "bag_radio_renegade_variant": "bag-radio-renegade-variant",
+    "banana": "banana",
+    "banana_backpack_charm": "banana-backpack-charm",
+    "bandage": "bandage",
+    "barricade_kit": "barricade-kit",
+    "barricade_kit_blueprint": "barricade-kit-blueprint",
+    "barricade_kit_recipe": "barricade-kit-recipe",
+    "bastion_cell": "bastion-cell",
+    "bastion_part": "bastion-part",
+    "battery": "battery",
+    "bettina_blueprint": "bettina-blueprint",
+    "bettina_i": "bettina-i",
+    "bettina_ii": "bettina-ii",
+    "bettina_iii": "bettina-iii",
+    "bettina_iv": "bettina-iv",
+    "bicycle_pump": "bicycle-pump",
+    "binoculars": "binoculars",
+    "bison_driver": "bison-driver",
+    "black_and_white_origin_color": "black-and-white-origin-color",
+    "black_eye_face_style": "black-eye-face-style",
+    "black_hiker_colour": "black-hiker-colour",
+    "blaze_grenade": "blaze-grenade",
+    "blaze_grenade_blueprint": "blaze-grenade-blueprint",
+    "blaze_grenade_trap": "blaze-grenade-trap",
+    "bloated_tuna_can": "bloated-tuna-can",
+    "blue_gate_cellar_key": "blue-gate-cellar-key",
+    "blue_gate_communication_tower_key": "blue-gate-communication-tower-key",
+    "blue_gate_confiscation_room_key": "blue-gate-confiscation-room-key",
+    "blue_gate_village_key": "blue-gate-village-key",
+    "blue_light_stick": "blue-light-stick",
+    "blue_light_stick_blueprint": "blue-light-stick-blueprint",
+    "blue_radio_renegade_color": "blue-radio-renegade-color",
+    "blue_yellow_aviator_color": "blue-yellow-aviator-color",
+    "bobcat_blueprint": "bobcat-blueprint",
+    "bobcat_i": "bobcat-i",
+    "bobcat_i_recipe": "bobcat-i-recipe",
+    "bobcat_ii": "bobcat-ii",
+    "bobcat_iii": "bobcat-iii",
+    "bobcat_iv": "bobcat-iv",
+    "bombardier_cell": "bombardier-cell",
+    "bow_and_arrow_emote": "bow-and-arrow-emote",
+    "breathtaking_snow_globe": "breathtaking-snow-globe",
+    "briefcase_backpack_attachment": "briefcase-backpack-attachment",
+    "broken_flashlight": "broken-flashlight",
+    "broken_guidance_system": "broken-guidance-system",
+    "broken_handcuffs": "broken-handcuffs",
+    "broken_handheld_radio": "broken-handheld-radio",
+    "broken_taser": "broken-taser",
+    "burgerboy": "burgerboy",
+    "burgerboy_backpack_charm": "burgerboy-backpack-charm",
+    "buried_city_hospital_key": "buried-city-hospital-key",
+    "buried_city_jkv_employee_access_card": "buried-city-jkv-employee-access-card",
+    "buried_city_residential_master_key": "buried-city-residential-master-key",
+    "buried_city_town_hall_key": "buried-city-town-hall-key",
+    "burletta_blueprint": "burletta-blueprint",
+    "burletta_i": "burletta-i",
+    "burletta_ii": "burletta-ii",
+    "burletta_iii": "burletta-iii",
+    "burletta_iiii": "burletta-iiii",
+    "burletta_iv": "burletta-iv",
+    "burltetta_recipe": "burltetta-recipe",
+    "burned_arc_circuitry": "burned-arc-circuitry",
+    "burnt_out_candles": "burnt-out-candles",
+    "camera_lens": "camera-lens",
+    "candle_holder": "candle-holder",
+    "candleberries": "candleberries",
+    "canister": "canister",
+    "cans_backpack_attachment": "cans-backpack-attachment",
+    "canto": "canto",
+    "canto_blueprint": "canto-blueprint",
+    "canto_i": "canto-i",
+    "canto_ii": "canto-ii",
+    "canto_iii": "canto-iii",
+    "canto_iv": "canto-iv",
+    "cat_bed": "cat-bed",
+    "celeste_journal": "celeste-journal",
+    "cheer": "cheer",
+    "cheer_emote": "cheer-emote",
+    "chemicals": "chemicals",
+    "coffee_pot": "coffee-pot",
+    "coins": "coins",
+    "combat_mk1": "combat-mk1",
+    "combat_mk2": "combat-mk2",
+    "combat_mk3_aggressive": "combat-mk3-aggressive",
+    "combat_mk3_aggressive_blueprint": "combat-mk3-aggressive-blueprint",
+    "combat_mk3_flanking": "combat-mk3-flanking",
+    "combat_mk3_flanking_blueprint": "combat-mk3-flanking-blueprint",
+    "combat_mk_1": "combat-mk-1",
+    "combat_mk_2": "combat-mk-2",
+    "combat_mk_3_aggressive": "combat-mk-3-aggressive",
+    "combat_mk_3_flanking": "combat-mk-3-flanking",
+    "comet_igniter": "comet-igniter",
+    "compensator_i": "compensator-i",
+    "compensator_ii": "compensator-ii",
+    "compensator_ii_blueprint": "compensator-ii-blueprint",
+    "compensator_ii_recipe": "compensator-ii-recipe",
+    "compensator_iii": "compensator-iii",
+    "compensator_iii_blueprint": "compensator-iii-blueprint",
+    "compensator_iii_recipe": "compensator-iii-recipe",
+    "complex_gun_parts": "complex-gun-parts",
+    "complex_gun_parts_blueprint": "complex-gun-parts-blueprint",
+    "coolant": "coolant",
+    "cooling_coil": "cooling-coil",
+    "cooling_fan": "cooling-fan",
+    "cracked_bioscanner": "cracked-bioscanner",
+    "crash_mat": "crash-mat",
+    "crash_mat_blueprint": "crash-mat-blueprint",
+    "crimson_racer_aviator_colour": "crimson-racer-aviator-colour",
+    "crude_explosives": "crude-explosives",
+    "crumpled_plastic_bottle": "crumpled-plastic-bottle",
+    "dam_control_center_tower_key": "dam-control-center-tower-key",
+    "dam_control_tower_key": "dam-control-tower-key",
+    "dam_controlled_access_zone_key": "dam-controlled-access-zone-key",
+    "dam_staff_room_key": "dam-staff-room-key",
+    "dam_surveillance_key": "dam-surveillance-key",
+    "dam_testing_annex_key": "dam-testing-annex-key",
+    "dam_utility_key": "dam-utility-key",
+    "damaged_arc_motion_core": "damaged-arc-motion-core",
+    "damaged_arc_powercell": "damaged-arc-powercell",
+    "damaged_fireball_burner": "damaged-fireball-burner",
+    "damaged_heat_sink": "damaged-heat-sink",
+    "damaged_hornet_driver": "damaged-hornet-driver",
+    "damaged_leaper_pulse_unit": "damaged-leaper-pulse-unit",
+    "damaged_rocketeer_driver": "damaged-rocketeer-driver",
+    "damaged_rocketeer_part": "damaged-rocketeer-part",
+    "damaged_snitch_scanner": "damaged-snitch-scanner",
+    "damaged_tick_pod": "damaged-tick-pod",
+    "damaged_wasp_driver": "damaged-wasp-driver",
+    "danaged_hornet_driver": "danaged-hornet-driver",
+    "dart_board": "dart-board",
+    "deadline": "deadline",
+    "deadline_blueprint": "deadline-blueprint",
+    "defibrillator": "defibrillator",
+    "defibrillator_blueprint": "defibrillator-blueprint",
+    "defibrillator_recipe": "defibrillator-recipe",
+    "deflated_football": "deflated-football",
+    "degraded_arc_rubber": "degraded-arc-rubber",
+    "diving_goggles": "diving-goggles",
+    "diving_googles": "diving-googles",
+    "dockmasters_detector": "dockmasters-detector",
+    "dodgers_note": "dodgers-note",
+    "dog_collar": "dog-collar",
+    "dolabra": "dolabra",
+    "dolabra_blueprint": "dolabra-blueprint",
+    "doodly_duck": "doodly-duck",
+    "door_blocker": "door-blocker",
+    "dried_out_arc_resin": "dried-out-arc-resin",
+    "duct_tape": "duct-tape",
+    "duct_tape_recipe": "duct-tape-recipe",
+    "durable_cloth": "durable-cloth",
+    "dusty_film_reel": "dusty-film-reel",
+    "electrical_components": "electrical-components",
+    "empty_wine_bottle": "empty-wine-bottle",
+    "energy_ammo": "energy-ammo",
+    "energy_clip": "energy-clip",
+    "equalizer": "equalizer",
+    "equalizer_blueprint": "equalizer-blueprint",
+    "equalizer_i": "equalizer-i",
+    "equalizer_recipe": "equalizer-recipe",
+    "espresso_machine_parts": "espresso-machine-parts",
+    "esr_analyzer": "esr-analyzer",
+    "exodus_modules": "exodus-modules",
+    "experimental_seed_sample": "experimental-seed-sample",
+    "expired_pasta": "expired-pasta",
+    "expired_respirator": "expired-respirator",
+    "expired_security_code": "expired-security-code",
+    "explosive_compound": "explosive-compound",
+    "explosive_mine": "explosive-mine",
+    "explosive_mine_blueprint": "explosive-mine-blueprint",
+    "extended_barrel": "extended-barrel",
+    "extended_barrel_blueprint": "extended-barrel-blueprint",
+    "extended_barrel_i": "extended-barrel-i",
+    "extended_barrel_ii": "extended-barrel-ii",
+    "extended_barrel_ii_blueprint": "extended-barrel-ii-blueprint",
+    "extended_barrel_iii": "extended-barrel-iii",
+    "extended_barrel_iii_blueprint": "extended-barrel-iii-blueprint",
+    "extended_barrel_recipe": "extended-barrel-recipe",
+    "extended_light_mag_i": "extended-light-mag-i",
+    "extended_light_mag_ii": "extended-light-mag-ii",
+    "extended_light_mag_ii_blueprint": "extended-light-mag-ii-blueprint",
+    "extended_light_mag_ii_recipe": "extended-light-mag-ii-recipe",
+    "extended_light_mag_iii": "extended-light-mag-iii",
+    "extended_light_mag_iii_blueprint": "extended-light-mag-iii-blueprint",
+    "extended_light_mag_iii_recipe": "extended-light-mag-iii-recipe",
+    "extended_medium_mag_i": "extended-medium-mag-i",
+    "extended_medium_mag_ii": "extended-medium-mag-ii",
+    "extended_medium_mag_ii_blueprint": "extended-medium-mag-ii-blueprint",
+    "extended_medium_mag_ii_recipe": "extended-medium-mag-ii-recipe",
+    "extended_medium_mag_iii": "extended-medium-mag-iii",
+    "extended_medium_mag_iii_blueprint": "extended-medium-mag-iii-blueprint",
+    "extended_shotgun_mag_i": "extended-shotgun-mag-i",
+    "extended_shotgun_mag_ii": "extended-shotgun-mag-ii",
+    "extended_shotgun_mag_ii_blueprint": "extended-shotgun-mag-ii-blueprint",
+    "extended_shotgun_mag_ii_recipe": "extended-shotgun-mag-ii-recipe",
+    "extended_shotgun_mag_iii": "extended-shotgun-mag-iii",
+    "extended_shotgun_mag_iii_blueprint": "extended-shotgun-mag-iii-blueprint",
+    "extended_shotgun_mag_iii_recipe": "extended-shotgun-mag-iii-recipe",
+    "fabric": "fabric",
+    "faded_flush_aviator_color": "faded-flush-aviator-color",
+    "faded_photograph": "faded-photograph",
+    "familiar_duck": "familiar-duck",
+    "ferro_i": "ferro-i",
+    "ferro_ii": "ferro-ii",
+    "ferro_iii": "ferro-iii",
+    "ferro_iv": "ferro-iv",
+    "fertilizer": "fertilizer",
+    "film_reel": "film-reel",
+    "fine_wristwatch": "fine-wristwatch",
+    "finger_gun_single_shot_emote": "finger-gun-single-shot-emote",
+    "fireball_burner": "fireball-burner",
+    "firecracker": "firecracker",
+    "firefly_burner": "firefly-burner",
+    "fireworks_box": "fireworks-box",
+    "fireworks_box_blueprint": "fireworks-box-blueprint",
+    "first_wave_compass": "first-wave-compass",
+    "first_wave_rations": "first-wave-rations",
+    "first_wave_tape": "first-wave-tape",
+    "flame_spray": "flame-spray",
+    "flashy_duck": "flashy-duck",
+    "flow_controller": "flow-controller",
+    "flushing_terminal_key": "flushing-terminal-key",
+    "fossilized_lightning": "fossilized-lightning",
+    "free_loadout_augment": "free-loadout-augment",
+    "frequency_modulation_box": "frequency-modulation-box",
+    "fried_motherboard": "fried-motherboard",
+    "fruit_mix": "fruit-mix",
+    "frying_pan": "frying-pan",
+    "garlic_press": "garlic-press",
+    "gas_grenade": "gas-grenade",
+    "gas_grenade_trap": "gas-grenade-trap",
+    "gas_mine": "gas-mine",
+    "gas_mine_blueprint": "gas-mine-blueprint",
+    "geiger_counter": "geiger-counter",
+    "gentle_duck": "gentle-duck",
+    "goggles_radio_renegade_variant": "goggles-radio-renegade-variant",
+    "gothic_graffiti_aviator_color": "gothic-graffiti-aviator-color",
+    "great_mullein": "great-mullein",
+    "great_muullein": "great-muullein",
+    "green_light_stick": "green-light-stick",
+    "green_light_stick_blueprint": "green-light-stick-blueprint",
+    "hairpin_i": "hairpin-i",
+    "hairpin_ii": "hairpin-ii",
+    "hairpin_iii": "hairpin-iii",
+    "hairpin_iv": "hairpin-iv",
+    "happy_jig_emote": "happy-jig-emote",
+    "headphones": "headphones",
+    "heavy_ammo": "heavy-ammo",
+    "heavy_fuze_grenade": "heavy-fuze-grenade",
+    "heavy_gun_parts": "heavy-gun-parts",
+    "heavy_gun_parts_blueprint": "heavy-gun-parts-blueprint",
+    "heavy_gun_parts_recipe": "heavy-gun-parts-recipe",
+    "heavy_shield": "heavy-shield",
+    "helmet_radio_renegade_variant": "helmet-radio-renegade-variant",
+    "herbal_bandage": "herbal-bandage",
+    "hidden_bunker_key": "hidden-bunker-key",
+    "horizontal_grip": "horizontal-grip",
+    "horizontal_grip_blueprint": "horizontal-grip-blueprint",
+    "hornet_driver": "hornet-driver",
+    "household_cleaner": "household-cleaner",
+    "hullcracker_blueprint": "hullcracker-blueprint",
+    "hullcracker_i": "hullcracker-i",
+    "hullcracker_ii": "hullcracker-ii",
+    "hullcracker_iii": "hullcracker-iii",
+    "hullcracker_iv": "hullcracker-iv",
+    "humidifier": "humidifier",
+    "ice_cream_scooper": "ice-cream-scooper",
+    "il_toro_blueprint": "il-toro-blueprint",
+    "il_toro_i": "il-toro-i",
+    "il_toro_ii": "il-toro-ii",
+    "il_toro_iii": "il-toro-iii",
+    "il_toro_iiii": "il-toro-iiii",
+    "il_toro_iv": "il-toro-iv",
+    "il_toro_recipe": "il-toro-recipe",
+    "impure_arc_coolant": "impure-arc-coolant",
+    "industrial_battery": "industrial-battery",
+    "industrial_charger": "industrial-charger",
+    "industrial_magnet": "industrial-magnet",
+    "ion_sputter": "ion-sputter",
+    "jolt_mine": "jolt-mine",
+    "jolt_mine_blueprint": "jolt-mine-blueprint",
+    "jolt_mine_recipe": "jolt-mine-recipe",
+    "junior_outfit": "junior-outfit",
+    "jupiter": "jupiter",
+    "jupiter_blueprint": "jupiter-blueprint",
+    "jupiter_i": "jupiter-i",
+    "jupiter_i_recipe": "jupiter-i-recipe",
+    "kettle_i": "kettle-i",
+    "kettle_ii": "kettle-ii",
+    "kettle_iii": "kettle-iii",
+    "kettle_iv": "kettle-iv",
+    "kinetic_converter": "kinetic-converter",
+    "kinetic_converter_blueprint": "kinetic-converter-blueprint",
+    "laboratory_reagents": "laboratory-reagents",
+    "lances_mixtape_5th_edition": "lances-mixtape-5th-edition",
+    "laser_trap_lure_recipe": "laser-trap-lure-recipe",
+    "laser_trap_smoke_recipe": "laser-trap-smoke-recipe",
+    "launcher_ammo": "launcher-ammo",
+    "leaper_pulse_unit": "leaper-pulse-unit",
+    "lemon": "lemon",
+    "leviathans_crown_ship_model": "leviathans-crown-ship-model",
+    "library_book": "library-book",
+    "lidar_scanner": "lidar-scanner",
+    "light_ammo": "light-ammo",
+    "light_bulb": "light-bulb",
+    "light_gun_parts": "light-gun-parts",
+    "light_gun_parts_blueprint": "light-gun-parts-blueprint",
+    "light_gun_parts_recipe": "light-gun-parts-recipe",
+    "light_impact_grenade": "light-impact-grenade",
+    "light_shield": "light-shield",
+    "lightweight_stock": "lightweight-stock",
+    "lightweight_stock_blueprint": "lightweight-stock-blueprint",
+    "lightweight_stock_recipe": "lightweight-stock-recipe",
+    "lil_smoke_grenade": "lil-smoke-grenade",
+    "looting_mk1": "looting-mk1",
+    "looting_mk2": "looting-mk2",
+    "looting_mk3_cautious": "looting-mk3-cautious",
+    "looting_mk3_safekeeper": "looting-mk3-safekeeper",
+    "looting_mk3_safekeeper_blueprint": "looting-mk3-safekeeper-blueprint",
+    "looting_mk3_survivor": "looting-mk3-survivor",
+    "looting_mk3_survivor_blueprint": "looting-mk3-survivor-blueprint",
+    "looting_mk_1": "looting-mk-1",
+    "looting_mk_2": "looting-mk-2",
+    "looting_mk_3_cautious": "looting-mk-3-cautious",
+    "looting_mk_3_safekeeper": "looting-mk-3-safekeeper",
+    "looting_mk_3_safekeeper_blueprint": "looting-mk-3-safekeeper-blueprint",
+    "looting_mk_3_survivor": "looting-mk-3-survivor",
+    "looting_mk_3_survivor_blueprint": "looting-mk-3-survivor-blueprint",
+    "lure_grenade": "lure-grenade",
+    "lure_grenade_blueprint": "lure-grenade-blueprint",
+    "lure_grenade_recipe": "lure-grenade-recipe",
+    "lure_grenade_trap": "lure-grenade-trap",
+    "magnet": "magnet",
+    "magnetic_accelerator": "magnetic-accelerator",
+    "magnetron": "magnetron",
+    "major_aivas_mementos": "major-aivas-mementos",
+    "major_aivas_patch": "major-aivas-patch",
+    "marano_market_business_card": "marano-market-business-card",
+    "mastery_medal_backpack_charm": "mastery-medal-backpack-charm",
+    "matriarch_reactor": "matriarch-reactor",
+    "mechanical_components": "mechanical-components",
+    "medium_ammo": "medium-ammo",
+    "medium_gun_parts": "medium-gun-parts",
+    "medium_gun_parts_blueprint": "medium-gun-parts-blueprint",
+    "medium_gun_parts_recipe": "medium-gun-parts-recipe",
+    "medium_shield": "medium-shield",
+    "metal_brackets": "metal-brackets",
+    "metal_parts": "metal-parts",
+    "microscope": "microscope",
+    "mini_centrifuge": "mini-centrifuge",
+    "mod_components": "mod-components",
+    "moisture_meter": "moisture-meter",
+    "moss": "moss",
+    "motor": "motor",
+    "mushroom": "mushroom",
+    "music_album": "music-album",
+    "music_box": "music-box",
+    "muzzle_brake_i": "muzzle-brake-i",
+    "muzzle_brake_ii": "muzzle-brake-ii",
+    "muzzle_brake_ii_blueprint": "muzzle-brake-ii-blueprint",
+    "muzzle_brake_ii_recipe": "muzzle-brake-ii-recipe",
+    "muzzle_brake_iii": "muzzle-brake-iii",
+    "muzzle_brake_iii_blueprint": "muzzle-brake-iii-blueprint",
+    "muzzle_brake_iii_recipe": "muzzle-brake-iii-recipe",
+    "noisemaker": "noisemaker",
+    "number_plate": "number-plate",
+    "nutrient_meter": "nutrient-meter",
+    "official_shutdown_documentation": "official-shutdown-documentation",
+    "oil": "oil",
+    "old_world_books": "old-world-books",
+    "olives": "olives",
+    "orange_camo_origin_outfit": "orange-camo-origin-outfit",
+    "osprey_blueprint": "osprey-blueprint",
+    "osprey_i": "osprey-i",
+    "osprey_ii": "osprey-ii",
+    "osprey_iii": "osprey-iii",
+    "osprey_iv": "osprey-iv",
+    "osprey_recipe": "osprey-recipe",
+    "padded_stock": "padded-stock",
+    "padded_stock_blueprint": "padded-stock-blueprint",
+    "padded_stock_recipe": "padded-stock-recipe",
+    "painted_box": "painted-box",
+    "patchwork_warden_color": "patchwork-warden-color",
+    "patrol_car_key": "patrol-car-key",
+    "patrol_outfit": "patrol-outfit",
+    "photoelectric_cloak": "photoelectric-cloak",
+    "pilgrims_peak_security_code": "pilgrims-peak-security-code",
+    "plastic_parts": "plastic-parts",
+    "playing_cards": "playing-cards",
+    "polluted_air_filter": "polluted-air-filter",
+    "pop_trigger": "pop-trigger",
+    "portable_television": "portable-television",
+    "portable_tv": "portable-tv",
+    "possibly_toxic_plant": "possibly-toxic-plant",
+    "poster_natural_wonder": "poster-natural-wonder",
+    "poster_of_natural_wonders": "poster-of-natural-wonders",
+    "pottery": "pottery",
+    "power_bank": "power-bank",
+    "power_cable": "power-cable",
+    "power_rod": "power-rod",
+    "powered_descender": "powered-descender",
+    "powered_descender_blueprint": "powered-descender-blueprint",
+    "precision_gimbal": "precision-gimbal",
+    "prickly_pear": "prickly-pear",
+    "processor": "processor",
+    "project_heartwood_blueprints": "project-heartwood-blueprints",
+    "projector": "projector",
+    "pulse_mine": "pulse-mine",
+    "pulse_mine_blueprint": "pulse-mine-blueprint",
+    "queen_reactor": "queen-reactor",
+    "radio": "radio",
+    "radio_relay": "radio-relay",
+    "radio_renegade": "radio-renegade",
+    "radio_renegade_outfit": "radio-renegade-outfit",
+    "raider_flag": "raider-flag",
+    "raider_hatch_key": "raider-hatch-key",
+    "raider_tokens": "raider-tokens",
+    "raiders_refuge_security_code": "raiders-refuge-security-code",
+    "rascal": "rascal",
+    "rascal_blueprint": "rascal-blueprint",
+    "rascal_i": "rascal-i",
+    "rascal_ii": "rascal-ii",
+    "rascal_iii": "rascal-iii",
+    "rascal_iv": "rascal-iv",
+    "rattler_i": "rattler-i",
+    "rattler_ii": "rattler-ii",
+    "rattler_iii": "rattler-iii",
+    "rattler_iv": "rattler-iv",
+    "recorder": "recorder",
+    "red_coral_jewelry": "red-coral-jewelry",
+    "red_light_stick": "red-light-stick",
+    "red_light_stick_blueprint": "red-light-stick-blueprint",
+    "red_radio_renegade_color": "red-radio-renegade-color",
+    "reinforced_reception_security_code": "reinforced-reception-security-code",
+    "remote_control": "remote-control",
+    "remote_raider_flare": "remote-raider-flare",
+    "remote_raider_flare_blueprint": "remote-raider-flare-blueprint",
+    "renegade_i": "renegade-i",
+    "renegade_ii": "renegade-ii",
+    "renegade_iii": "renegade-iii",
+    "renegade_iv": "renegade-iv",
+    "resin": "resin",
+    "ripped_safety_vest": "ripped-safety-vest",
+    "riven_tides_classifed_records_keycard": "riven-tides-classifed-records-keycard",
+    "riven_tides_classified_records_keycard": "riven-tides-classified-records-keycard",
+    "riven_tides_crane_house_keycard": "riven-tides-crane-house-keycard",
+    "riven_tides_hotel_keycard_no_102": "riven-tides-hotel-keycard-no-102",
+    "riven_tides_hotel_keycard_no_107": "riven-tides-hotel-keycard-no-107",
+    "riven_tides_hotel_keycard_no_113": "riven-tides-hotel-keycard-no-113",
+    "riven_tides_hotel_keycard_no_205": "riven-tides-hotel-keycard-no-205",
+    "riven_tides_hotel_keycard_no_208": "riven-tides-hotel-keycard-no-208",
+    "riven_tides_hotel_keycard_no_311": "riven-tides-hotel-keycard-no-311",
+    "riven_tides_hotel_keycard_no_404": "riven-tides-hotel-keycard-no-404",
+    "riven_tides_secure_storage_keycard": "riven-tides-secure-storage-keycard",
+    "rocket_thruster": "rocket-thruster",
+    "rocketeer_driver": "rocketeer-driver",
+    "rocketeer_part": "rocketeer-part",
+    "roots": "roots",
+    "rope": "rope",
+    "rosary": "rosary",
+    "rotary_encoder": "rotary-encoder",
+    "rubber_duck": "rubber-duck",
+    "rubber_pad": "rubber-pad",
+    "rubber_parts": "rubber-parts",
+    "rubber_parts_recipe": "rubber-parts-recipe",
+    "ruined_accordion": "ruined-accordion",
+    "ruined_augment": "ruined-augment",
+    "ruined_baton": "ruined-baton",
+    "ruined_handcuffs": "ruined-handcuffs",
+    "ruined_parachute": "ruined-parachute",
+    "ruined_riot_shield": "ruined-riot-shield",
+    "ruined_tactical_vest": "ruined-tactical-vest",
+    "rusted_bolts": "rusted-bolts",
+    "rusted_gear": "rusted-gear",
+    "rusted_shut_medical_kit": "rusted-shut-medical-kit",
+    "rusted_tools": "rusted-tools",
+    "rusty_arc_steel": "rusty-arc-steel",
+    "sample_cleaner": "sample-cleaner",
+    "scout_patrol_note": "scout-patrol-note",
+    "secret_meeting_info": "secret-meeting-info",
+    "seed_vault_box_key": "seed-vault-box-key",
+    "seeker_grenade": "seeker-grenade",
+    "seeker_grenade_blueprint": "seeker-grenade-blueprint",
+    "sensors": "sensors",
+    "sensors_recipe": "sensors-recipe",
+    "sentinel_firing_core": "sentinel-firing-core",
+    "sentinel_part": "sentinel-part",
+    "shaker": "shaker",
+    "shield_recharger": "shield-recharger",
+    "shotgun_ammo": "shotgun-ammo",
+    "shotgun_choke_i": "shotgun-choke-i",
+    "shotgun_choke_ii": "shotgun-choke-ii",
+    "shotgun_choke_ii_blueprint": "shotgun-choke-ii-blueprint",
+    "shotgun_choke_ii_recipe": "shotgun-choke-ii-recipe",
+    "shotgun_choke_iii": "shotgun-choke-iii",
+    "shotgun_choke_iii_blueprint": "shotgun-choke-iii-blueprint",
+    "shotgun_choke_iii_recipe": "shotgun-choke-iii-recipe",
+    "shotgun_gun_parts": "shotgun-gun-parts",
+    "shotgun_silencer": "shotgun-silencer",
+    "shotgun_silencer_blueprint": "shotgun-silencer-blueprint",
+    "showstopper": "showstopper",
+    "showstopper_blueprint": "showstopper-blueprint",
+    "shrapnel_grenade": "shrapnel-grenade",
+    "shredder_gyro": "shredder-gyro",
+    "signal_amplifier": "signal-amplifier",
+    "silencer_i": "silencer-i",
+    "silencer_i_blueprint": "silencer-i-blueprint",
+    "silencer_i_recipe": "silencer-i-recipe",
+    "silencer_ii": "silencer-ii",
+    "silencer_ii_blueprint": "silencer-ii-blueprint",
+    "silencer_ii_recipe": "silencer-ii-recipe",
+    "silencer_iii": "silencer-iii",
+    "silencer_iii_blueprint": "silencer-iii-blueprint",
+    "silver_teaspoon_set": "silver-teaspoon-set",
+    "simple_gun_parts": "simple-gun-parts",
+    "sirena_dorata_ship_model": "sirena-dorata-ship-model",
+    "smoke_grenade": "smoke-grenade",
+    "smoke_grenade_blueprint": "smoke-grenade-blueprint",
+    "smoke_grenade_trap": "smoke-grenade-trap",
+    "snap_blast_grenade": "snap-blast-grenade",
+    "snap_hook": "snap-hook",
+    "snap_hook_blueprint": "snap-hook-blueprint",
+    "snap_hook_recipe": "snap-hook-recipe",
+    "snitch_scanner": "snitch-scanner",
+    "snowball": "snowball",
+    "spaceport_container_storage_key": "spaceport-container-storage-key",
+    "spaceport_control_tower_key": "spaceport-control-tower-key",
+    "spaceport_ground_control_key": "spaceport-ground-control-key",
+    "spaceport_trench_tower_key": "spaceport-trench-tower-key",
+    "spaceport_warehouse_key": "spaceport-warehouse-key",
+    "speaker_component": "speaker-component",
+    "spectrometer": "spectrometer",
+    "spectrum_analyzer": "spectrum-analyzer",
+    "spotter_relay": "spotter-relay",
+    "spring": "spring",
+    "spring_cushion": "spring-cushion",
+    "stable_stock_i": "stable-stock-i",
+    "stable_stock_ii": "stable-stock-ii",
+    "stable_stock_ii_blueprint": "stable-stock-ii-blueprint",
+    "stable_stock_ii_recipe": "stable-stock-ii-recipe",
+    "stable_stock_iii": "stable-stock-iii",
+    "stable_stock_iii_blueprint": "stable-stock-iii-blueprint",
+    "stable_stock_iii_recipe": "stable-stock-iii-recipe",
+    "stack_of_movie_tapes": "stack-of-movie-tapes",
+    "statuette": "statuette",
+    "steel_spring": "steel-spring",
+    "stella_montis_archives_key": "stella-montis-archives-key",
+    "stella_montis_assembly_admin_key": "stella-montis-assembly-admin-key",
+    "stella_montis_medical_storage_key": "stella-montis-medical-storage-key",
+    "stella_montis_security_checkpoint_key": "stella-montis-security-checkpoint-key",
+    "sterilized_bandage": "sterilized-bandage",
+    "stitcher_i": "stitcher-i",
+    "stitcher_ii": "stitcher-ii",
+    "stitcher_iii": "stitcher-iii",
+    "stitcher_iv": "stitcher-iv",
+    "succulent_backpack_charm": "succulent-backpack-charm",
+    "surge_coil": "surge-coil",
+    "surge_coil_blueprint": "surge-coil-blueprint",
+    "surge_shield_recharger": "surge-shield-recharger",
+    "surveyor_vault": "surveyor-vault",
+    "synthesized_fuel": "synthesized-fuel",
+    "syringe": "syringe",
+    "tacical_mk3_healing_blueprint": "tacical-mk3-healing-blueprint",
+    "tactical_mk1": "tactical-mk1",
+    "tactical_mk2": "tactical-mk2",
+    "tactical_mk3_defensive": "tactical-mk3-defensive",
+    "tactical_mk3_defensive_blueprint": "tactical-mk3-defensive-blueprint",
+    "tactical_mk3_healing": "tactical-mk3-healing",
+    "tactical_mk3_healing_blueprint": "tactical-mk3-healing-blueprint",
+    "tactical_mk3_revival": "tactical-mk3-revival",
+    "tactical_mk3_revival_blueprint": "tactical-mk3-revival-blueprint",
+    "tactical_mk3_smoke": "tactical-mk3-smoke",
+    "tactical_mk3_smoke_blueprint": "tactical-mk3-smoke-blueprint",
+    "tactical_mk_1": "tactical-mk-1",
+    "tactical_mk_2": "tactical-mk-2",
+    "tactical_mk_3_healing": "tactical-mk-3-healing",
+    "tactical_mk_3_revival": "tactical-mk-3-revival",
+    "tactical_mk_3_revival_blueprint": "tactical-mk-3-revival-blueprint",
+    "tactical_mk_3_smoke": "tactical-mk-3-smoke",
+    "tagging_grenade": "tagging-grenade",
+    "tagging_grenade_blueprint": "tagging-grenade-blueprint",
+    "tagging_grenade_recipe": "tagging-grenade-recipe",
+    "tangerine_warden_color": "tangerine-warden-color",
+    "tattered_arc_lining": "tattered-arc-lining",
+    "tattered_clothes": "tattered-clothes",
+    "telemetry_transceiver": "telemetry-transceiver",
+    "tempest_blueprint": "tempest-blueprint",
+    "tempest_i": "tempest-i",
+    "tempest_i_recipe": "tempest-i-recipe",
+    "tempest_ii": "tempest-ii",
+    "tempest_iii": "tempest-iii",
+    "tempest_iv": "tempest-iv",
+    "thermostat": "thermostat",
+    "tick_pod": "tick-pod",
+    "toaster": "toaster",
+    "torch_ginger": "torch-ginger",
+    "torn_blanket": "torn-blanket",
+    "torn_book": "torn-book",
+    "torrent_i_recipe": "torrent-i-recipe",
+    "torrente_blueprint": "torrente-blueprint",
+    "torrente_i": "torrente-i",
+    "torrente_ii": "torrente-ii",
+    "torrente_iii": "torrente-iii",
+    "torrente_iv": "torrente-iv",
+    "trailblazer": "trailblazer",
+    "trailblazer_blueprint": "trailblazer-blueprint",
+    "trailblazer_grenade": "trailblazer-grenade",
+    "trailblazer_grenade_blueprint": "trailblazer-grenade-blueprint",
+    "trigger_nade": "trigger-nade",
+    "trigger_nade_blueprint": "trigger-nade-blueprint",
+    "trigger_nade_recipe": "trigger-nade-recipe",
+    "tropical_duck": "tropical-duck",
+    "turbine_compressor": "turbine-compressor",
+    "turbo_pump": "turbo-pump",
+    "twilight_compass_ship_model": "twilight-compass-ship-model",
+    "unusable_weapon": "unusable-weapon",
+    "utility_augment_t3_smoke_blueprint": "utility-augment-t3-smoke-blueprint",
+    "vaporizer_regulator": "vaporizer-regulator",
+    "vase": "vase",
+    "velocity_ship_model": "velocity-ship-model",
+    "venator_blueprint": "venator-blueprint",
+    "venator_i": "venator-i",
+    "venator_ii": "venator-ii",
+    "venator_iii": "venator-iii",
+    "venator_iv": "venator-iv",
+    "venator_recipe": "venator-recipe",
+    "vertical_grip_i": "vertical-grip-i",
+    "vertical_grip_ii": "vertical-grip-ii",
+    "vertical_grip_ii_blueprint": "vertical-grip-ii-blueprint",
+    "vertical_grip_ii_recipe": "vertical-grip-ii-recipe",
+    "vertical_grip_iii": "vertical-grip-iii",
+    "vertical_grip_iii_blueprint": "vertical-grip-iii-blueprint",
+    "vertical_grip_iii_recipe": "vertical-grip-iii-recipe",
+    "very_comfortable_pillow": "very-comfortable-pillow",
+    "vita_shot": "vita-shot",
+    "vita_shot_blueprint": "vita-shot-blueprint",
+    "vita_shot_recipe": "vita-shot-recipe",
+    "vita_spray": "vita-spray",
+    "vita_spray_blueprint": "vita-spray-blueprint",
+    "vita_spray_recipe": "vita-spray-recipe",
+    "volcanic_rock": "volcanic-rock",
+    "voltage_converter": "voltage-converter",
+    "vulcano_blueprint": "vulcano-blueprint",
+    "vulcano_i": "vulcano-i",
+    "vulcano_ii": "vulcano-ii",
+    "vulcano_iii": "vulcano-iii",
+    "vulcano_iv": "vulcano-iv",
+    "warden_outfit": "warden-outfit",
+    "wasp_driver": "wasp-driver",
+    "water_filter": "water-filter",
+    "water_pump": "water-pump",
+    "white_flag": "white-flag",
+    "white_flag_blueprint": "white-flag-blueprint",
+    "white_indigo_warden_color": "white-indigo-warden-color",
+    "wind_sprite_ship_model": "wind-sprite-ship-model",
+    "wires": "wires",
+    "wires_recipe": "wires-recipe",
+    "wolfpack": "wolfpack",
+    "wolfpack_blueprint": "wolfpack-blueprint",
+    "wolfpack_recipe": "wolfpack-recipe",
+    "yellow_light_stick": "yellow-light-stick",
+    "yellow_light_stick_blueprint": "yellow-light-stick-blueprint",
+    "yellow_radio_renegade_color": "yellow-radio-renegade-color",
+    "zipline": "zipline"
+  },
+  "bySlug": {
+    "acoustic-guitar": "acoustic_guitar",
+    "adrenaline-shot": "adrenaline_shot",
+    "advanced-arc-powercell": "advanced_arc_powercell",
+    "advanced-electrical-components": "advanced_electrical_components",
+    "advanced-mechanical-components": "advanced_mechanical_components",
+    "agave": "agave",
+    "agave-juice": "agave_juice",
+    "air-freshener": "air_freshener",
+    "alarm-clock": "alarm_clock",
+    "alien-duck": "alien_duck",
+    "ancient-fort-security-code": "ancient_fort_security_code",
+    "angled-grip-i": "angled_grip_i",
+    "angled-grip-ii": "angled_grip_ii",
+    "angled-grip-ii-blueprint": "angled_grip_ii_blueprint",
+    "angled-grip-ii-recipe": "angled_grip_ii_recipe",
+    "angled-grip-iii": "angled_grip_iii",
+    "angled-grip-iii-blueprint": "angled_grip_iii_blueprint",
+    "angled-grip-iii-recipe": "angled_grip_iii_recipe",
+    "antiseptic": "antiseptic",
+    "anvil-blueprint": "anvil_blueprint",
+    "anvil-i": "anvil_i",
+    "anvil-ii": "anvil_ii",
+    "anvil-iii": "anvil_iii",
+    "anvil-iv": "anvil_iv",
+    "anvil-recipe": "anvil_recipe",
+    "anvil-splitter": "anvil_splitter",
+    "aphelion": "aphelion",
+    "aphelion-blueprint": "aphelion_blueprint",
+    "aphelion-rifle": "aphelion_rifle",
+    "aphelion-rifle-blueprint": "aphelion_rifle_blueprint",
+    "apricot": "apricot",
+    "arc-alloy": "arc_alloy",
+    "arc-circuitry": "arc_circuitry",
+    "arc-coolant": "arc_coolant",
+    "arc-flex-rubber": "arc_flex_rubber",
+    "arc-motion-core": "arc_motion_core",
+    "arc-performance-steel": "arc_performance_steel",
+    "arc-powercell": "arc_powercell",
+    "arc-synthetic-resin": "arc_synthetic_resin",
+    "arc-thermo-lining": "arc_thermo_lining",
+    "arpeggio-i": "arpeggio_i",
+    "arpeggio-ii": "arpeggio_ii",
+    "arpeggio-iii": "arpeggio_iii",
+    "arpeggio-iv": "arpeggio_iv",
+    "assessor-matrix": "assessor_matrix",
+    "assorted-seeds": "assorted_seeds",
+    "aviator-outfit": "aviator_outfit",
+    "backpack-black-hiker-color": "backpack_black_hiker_color",
+    "bag-radio-renegade-variant": "bag_radio_renegade_variant",
+    "banana": "banana",
+    "banana-backpack-charm": "banana_backpack_charm",
+    "bandage": "bandage",
+    "barricade-kit": "barricade_kit",
+    "barricade-kit-blueprint": "barricade_kit_blueprint",
+    "barricade-kit-recipe": "barricade_kit_recipe",
+    "bastion-cell": "bastion_cell",
+    "bastion-part": "bastion_part",
+    "battery": "battery",
+    "bettina-blueprint": "bettina_blueprint",
+    "bettina-i": "bettina_i",
+    "bettina-ii": "bettina_ii",
+    "bettina-iii": "bettina_iii",
+    "bettina-iv": "bettina_iv",
+    "bicycle-pump": "bicycle_pump",
+    "binoculars": "binoculars",
+    "bison-driver": "bison_driver",
+    "black-and-white-origin-color": "black_and_white_origin_color",
+    "black-eye-face-style": "black_eye_face_style",
+    "black-hiker-colour": "black_hiker_colour",
+    "blaze-grenade": "blaze_grenade",
+    "blaze-grenade-blueprint": "blaze_grenade_blueprint",
+    "blaze-grenade-trap": "blaze_grenade_trap",
+    "bloated-tuna-can": "bloated_tuna_can",
+    "blue-gate-cellar-key": "blue_gate_cellar_key",
+    "blue-gate-communication-tower-key": "blue_gate_communication_tower_key",
+    "blue-gate-confiscation-room-key": "blue_gate_confiscation_room_key",
+    "blue-gate-village-key": "blue_gate_village_key",
+    "blue-light-stick": "blue_light_stick",
+    "blue-light-stick-blueprint": "blue_light_stick_blueprint",
+    "blue-radio-renegade-color": "blue_radio_renegade_color",
+    "blue-yellow-aviator-color": "blue_yellow_aviator_color",
+    "bobcat-blueprint": "bobcat_blueprint",
+    "bobcat-i": "bobcat_i",
+    "bobcat-i-recipe": "bobcat_i_recipe",
+    "bobcat-ii": "bobcat_ii",
+    "bobcat-iii": "bobcat_iii",
+    "bobcat-iv": "bobcat_iv",
+    "bombardier-cell": "bombardier_cell",
+    "bow-and-arrow-emote": "bow_and_arrow_emote",
+    "breathtaking-snow-globe": "breathtaking_snow_globe",
+    "briefcase-backpack-attachment": "briefcase_backpack_attachment",
+    "broken-flashlight": "broken_flashlight",
+    "broken-guidance-system": "broken_guidance_system",
+    "broken-handcuffs": "broken_handcuffs",
+    "broken-handheld-radio": "broken_handheld_radio",
+    "broken-taser": "broken_taser",
+    "burgerboy": "burgerboy",
+    "burgerboy-backpack-charm": "burgerboy_backpack_charm",
+    "buried-city-hospital-key": "buried_city_hospital_key",
+    "buried-city-jkv-employee-access-card": "buried_city_jkv_employee_access_card",
+    "buried-city-residential-master-key": "buried_city_residential_master_key",
+    "buried-city-town-hall-key": "buried_city_town_hall_key",
+    "burletta-blueprint": "burletta_blueprint",
+    "burletta-i": "burletta_i",
+    "burletta-ii": "burletta_ii",
+    "burletta-iii": "burletta_iii",
+    "burletta-iiii": "burletta_iiii",
+    "burletta-iv": "burletta_iv",
+    "burltetta-recipe": "burltetta_recipe",
+    "burned-arc-circuitry": "burned_arc_circuitry",
+    "burnt-out-candles": "burnt_out_candles",
+    "camera-lens": "camera_lens",
+    "candle-holder": "candle_holder",
+    "candleberries": "candleberries",
+    "canister": "canister",
+    "cans-backpack-attachment": "cans_backpack_attachment",
+    "canto": "canto",
+    "canto-blueprint": "canto_blueprint",
+    "canto-i": "canto_i",
+    "canto-ii": "canto_ii",
+    "canto-iii": "canto_iii",
+    "canto-iv": "canto_iv",
+    "cat-bed": "cat_bed",
+    "celeste-journal": "celeste_journal",
+    "cheer": "cheer",
+    "cheer-emote": "cheer_emote",
+    "chemicals": "chemicals",
+    "coffee-pot": "coffee_pot",
+    "coins": "coins",
+    "combat-mk1": "combat_mk1",
+    "combat-mk2": "combat_mk2",
+    "combat-mk3-aggressive": "combat_mk3_aggressive",
+    "combat-mk3-aggressive-blueprint": "combat_mk3_aggressive_blueprint",
+    "combat-mk3-flanking": "combat_mk3_flanking",
+    "combat-mk3-flanking-blueprint": "combat_mk3_flanking_blueprint",
+    "combat-mk-1": "combat_mk_1",
+    "combat-mk-2": "combat_mk_2",
+    "combat-mk-3-aggressive": "combat_mk_3_aggressive",
+    "combat-mk-3-flanking": "combat_mk_3_flanking",
+    "comet-igniter": "comet_igniter",
+    "compensator-i": "compensator_i",
+    "compensator-ii": "compensator_ii",
+    "compensator-ii-blueprint": "compensator_ii_blueprint",
+    "compensator-ii-recipe": "compensator_ii_recipe",
+    "compensator-iii": "compensator_iii",
+    "compensator-iii-blueprint": "compensator_iii_blueprint",
+    "compensator-iii-recipe": "compensator_iii_recipe",
+    "complex-gun-parts": "complex_gun_parts",
+    "complex-gun-parts-blueprint": "complex_gun_parts_blueprint",
+    "coolant": "coolant",
+    "cooling-coil": "cooling_coil",
+    "cooling-fan": "cooling_fan",
+    "cracked-bioscanner": "cracked_bioscanner",
+    "crash-mat": "crash_mat",
+    "crash-mat-blueprint": "crash_mat_blueprint",
+    "crimson-racer-aviator-colour": "crimson_racer_aviator_colour",
+    "crude-explosives": "crude_explosives",
+    "crumpled-plastic-bottle": "crumpled_plastic_bottle",
+    "dam-control-center-tower-key": "dam_control_center_tower_key",
+    "dam-control-tower-key": "dam_control_tower_key",
+    "dam-controlled-access-zone-key": "dam_controlled_access_zone_key",
+    "dam-staff-room-key": "dam_staff_room_key",
+    "dam-surveillance-key": "dam_surveillance_key",
+    "dam-testing-annex-key": "dam_testing_annex_key",
+    "dam-utility-key": "dam_utility_key",
+    "damaged-arc-motion-core": "damaged_arc_motion_core",
+    "damaged-arc-powercell": "damaged_arc_powercell",
+    "damaged-fireball-burner": "damaged_fireball_burner",
+    "damaged-heat-sink": "damaged_heat_sink",
+    "damaged-hornet-driver": "damaged_hornet_driver",
+    "damaged-leaper-pulse-unit": "damaged_leaper_pulse_unit",
+    "damaged-rocketeer-driver": "damaged_rocketeer_driver",
+    "damaged-rocketeer-part": "damaged_rocketeer_part",
+    "damaged-snitch-scanner": "damaged_snitch_scanner",
+    "damaged-tick-pod": "damaged_tick_pod",
+    "damaged-wasp-driver": "damaged_wasp_driver",
+    "danaged-hornet-driver": "danaged_hornet_driver",
+    "dart-board": "dart_board",
+    "deadline": "deadline",
+    "deadline-blueprint": "deadline_blueprint",
+    "defibrillator": "defibrillator",
+    "defibrillator-blueprint": "defibrillator_blueprint",
+    "defibrillator-recipe": "defibrillator_recipe",
+    "deflated-football": "deflated_football",
+    "degraded-arc-rubber": "degraded_arc_rubber",
+    "diving-goggles": "diving_goggles",
+    "diving-googles": "diving_googles",
+    "dockmasters-detector": "dockmasters_detector",
+    "dodgers-note": "dodgers_note",
+    "dog-collar": "dog_collar",
+    "dolabra": "dolabra",
+    "dolabra-blueprint": "dolabra_blueprint",
+    "doodly-duck": "doodly_duck",
+    "door-blocker": "door_blocker",
+    "dried-out-arc-resin": "dried_out_arc_resin",
+    "duct-tape": "duct_tape",
+    "duct-tape-recipe": "duct_tape_recipe",
+    "durable-cloth": "durable_cloth",
+    "dusty-film-reel": "dusty_film_reel",
+    "electrical-components": "electrical_components",
+    "empty-wine-bottle": "empty_wine_bottle",
+    "energy-ammo": "energy_ammo",
+    "energy-clip": "energy_clip",
+    "equalizer": "equalizer",
+    "equalizer-blueprint": "equalizer_blueprint",
+    "equalizer-i": "equalizer_i",
+    "equalizer-recipe": "equalizer_recipe",
+    "espresso-machine-parts": "espresso_machine_parts",
+    "esr-analyzer": "esr_analyzer",
+    "exodus-modules": "exodus_modules",
+    "experimental-seed-sample": "experimental_seed_sample",
+    "expired-pasta": "expired_pasta",
+    "expired-respirator": "expired_respirator",
+    "expired-security-code": "expired_security_code",
+    "explosive-compound": "explosive_compound",
+    "explosive-mine": "explosive_mine",
+    "explosive-mine-blueprint": "explosive_mine_blueprint",
+    "extended-barrel": "extended_barrel",
+    "extended-barrel-blueprint": "extended_barrel_blueprint",
+    "extended-barrel-i": "extended_barrel_i",
+    "extended-barrel-ii": "extended_barrel_ii",
+    "extended-barrel-ii-blueprint": "extended_barrel_ii_blueprint",
+    "extended-barrel-iii": "extended_barrel_iii",
+    "extended-barrel-iii-blueprint": "extended_barrel_iii_blueprint",
+    "extended-barrel-recipe": "extended_barrel_recipe",
+    "extended-light-mag-i": "extended_light_mag_i",
+    "extended-light-mag-ii": "extended_light_mag_ii",
+    "extended-light-mag-ii-blueprint": "extended_light_mag_ii_blueprint",
+    "extended-light-mag-ii-recipe": "extended_light_mag_ii_recipe",
+    "extended-light-mag-iii": "extended_light_mag_iii",
+    "extended-light-mag-iii-blueprint": "extended_light_mag_iii_blueprint",
+    "extended-light-mag-iii-recipe": "extended_light_mag_iii_recipe",
+    "extended-medium-mag-i": "extended_medium_mag_i",
+    "extended-medium-mag-ii": "extended_medium_mag_ii",
+    "extended-medium-mag-ii-blueprint": "extended_medium_mag_ii_blueprint",
+    "extended-medium-mag-ii-recipe": "extended_medium_mag_ii_recipe",
+    "extended-medium-mag-iii": "extended_medium_mag_iii",
+    "extended-medium-mag-iii-blueprint": "extended_medium_mag_iii_blueprint",
+    "extended-shotgun-mag-i": "extended_shotgun_mag_i",
+    "extended-shotgun-mag-ii": "extended_shotgun_mag_ii",
+    "extended-shotgun-mag-ii-blueprint": "extended_shotgun_mag_ii_blueprint",
+    "extended-shotgun-mag-ii-recipe": "extended_shotgun_mag_ii_recipe",
+    "extended-shotgun-mag-iii": "extended_shotgun_mag_iii",
+    "extended-shotgun-mag-iii-blueprint": "extended_shotgun_mag_iii_blueprint",
+    "extended-shotgun-mag-iii-recipe": "extended_shotgun_mag_iii_recipe",
+    "fabric": "fabric",
+    "faded-flush-aviator-color": "faded_flush_aviator_color",
+    "faded-photograph": "faded_photograph",
+    "familiar-duck": "familiar_duck",
+    "ferro-i": "ferro_i",
+    "ferro-ii": "ferro_ii",
+    "ferro-iii": "ferro_iii",
+    "ferro-iv": "ferro_iv",
+    "fertilizer": "fertilizer",
+    "film-reel": "film_reel",
+    "fine-wristwatch": "fine_wristwatch",
+    "finger-gun-single-shot-emote": "finger_gun_single_shot_emote",
+    "fireball-burner": "fireball_burner",
+    "firecracker": "firecracker",
+    "firefly-burner": "firefly_burner",
+    "fireworks-box": "fireworks_box",
+    "fireworks-box-blueprint": "fireworks_box_blueprint",
+    "first-wave-compass": "first_wave_compass",
+    "first-wave-rations": "first_wave_rations",
+    "first-wave-tape": "first_wave_tape",
+    "flame-spray": "flame_spray",
+    "flashy-duck": "flashy_duck",
+    "flow-controller": "flow_controller",
+    "flushing-terminal-key": "flushing_terminal_key",
+    "fossilized-lightning": "fossilized_lightning",
+    "free-loadout-augment": "free_loadout_augment",
+    "frequency-modulation-box": "frequency_modulation_box",
+    "fried-motherboard": "fried_motherboard",
+    "fruit-mix": "fruit_mix",
+    "frying-pan": "frying_pan",
+    "garlic-press": "garlic_press",
+    "gas-grenade": "gas_grenade",
+    "gas-grenade-trap": "gas_grenade_trap",
+    "gas-mine": "gas_mine",
+    "gas-mine-blueprint": "gas_mine_blueprint",
+    "geiger-counter": "geiger_counter",
+    "gentle-duck": "gentle_duck",
+    "goggles-radio-renegade-variant": "goggles_radio_renegade_variant",
+    "gothic-graffiti-aviator-color": "gothic_graffiti_aviator_color",
+    "great-mullein": "great_mullein",
+    "great-muullein": "great_muullein",
+    "green-light-stick": "green_light_stick",
+    "green-light-stick-blueprint": "green_light_stick_blueprint",
+    "hairpin-i": "hairpin_i",
+    "hairpin-ii": "hairpin_ii",
+    "hairpin-iii": "hairpin_iii",
+    "hairpin-iv": "hairpin_iv",
+    "happy-jig-emote": "happy_jig_emote",
+    "headphones": "headphones",
+    "heavy-ammo": "heavy_ammo",
+    "heavy-fuze-grenade": "heavy_fuze_grenade",
+    "heavy-gun-parts": "heavy_gun_parts",
+    "heavy-gun-parts-blueprint": "heavy_gun_parts_blueprint",
+    "heavy-gun-parts-recipe": "heavy_gun_parts_recipe",
+    "heavy-shield": "heavy_shield",
+    "helmet-radio-renegade-variant": "helmet_radio_renegade_variant",
+    "herbal-bandage": "herbal_bandage",
+    "hidden-bunker-key": "hidden_bunker_key",
+    "horizontal-grip": "horizontal_grip",
+    "horizontal-grip-blueprint": "horizontal_grip_blueprint",
+    "hornet-driver": "hornet_driver",
+    "household-cleaner": "household_cleaner",
+    "hullcracker-blueprint": "hullcracker_blueprint",
+    "hullcracker-i": "hullcracker_i",
+    "hullcracker-ii": "hullcracker_ii",
+    "hullcracker-iii": "hullcracker_iii",
+    "hullcracker-iv": "hullcracker_iv",
+    "humidifier": "humidifier",
+    "ice-cream-scooper": "ice_cream_scooper",
+    "il-toro-blueprint": "il_toro_blueprint",
+    "il-toro-i": "il_toro_i",
+    "il-toro-ii": "il_toro_ii",
+    "il-toro-iii": "il_toro_iii",
+    "il-toro-iiii": "il_toro_iiii",
+    "il-toro-iv": "il_toro_iv",
+    "il-toro-recipe": "il_toro_recipe",
+    "impure-arc-coolant": "impure_arc_coolant",
+    "industrial-battery": "industrial_battery",
+    "industrial-charger": "industrial_charger",
+    "industrial-magnet": "industrial_magnet",
+    "ion-sputter": "ion_sputter",
+    "jolt-mine": "jolt_mine",
+    "jolt-mine-blueprint": "jolt_mine_blueprint",
+    "jolt-mine-recipe": "jolt_mine_recipe",
+    "junior-outfit": "junior_outfit",
+    "jupiter": "jupiter",
+    "jupiter-blueprint": "jupiter_blueprint",
+    "jupiter-i": "jupiter_i",
+    "jupiter-i-recipe": "jupiter_i_recipe",
+    "kettle-i": "kettle_i",
+    "kettle-ii": "kettle_ii",
+    "kettle-iii": "kettle_iii",
+    "kettle-iv": "kettle_iv",
+    "kinetic-converter": "kinetic_converter",
+    "kinetic-converter-blueprint": "kinetic_converter_blueprint",
+    "laboratory-reagents": "laboratory_reagents",
+    "lances-mixtape-5th-edition": "lances_mixtape_5th_edition",
+    "laser-trap-lure-recipe": "laser_trap_lure_recipe",
+    "laser-trap-smoke-recipe": "laser_trap_smoke_recipe",
+    "launcher-ammo": "launcher_ammo",
+    "leaper-pulse-unit": "leaper_pulse_unit",
+    "lemon": "lemon",
+    "leviathans-crown-ship-model": "leviathans_crown_ship_model",
+    "library-book": "library_book",
+    "lidar-scanner": "lidar_scanner",
+    "light-ammo": "light_ammo",
+    "light-bulb": "light_bulb",
+    "light-gun-parts": "light_gun_parts",
+    "light-gun-parts-blueprint": "light_gun_parts_blueprint",
+    "light-gun-parts-recipe": "light_gun_parts_recipe",
+    "light-impact-grenade": "light_impact_grenade",
+    "light-shield": "light_shield",
+    "lightweight-stock": "lightweight_stock",
+    "lightweight-stock-blueprint": "lightweight_stock_blueprint",
+    "lightweight-stock-recipe": "lightweight_stock_recipe",
+    "lil-smoke-grenade": "lil_smoke_grenade",
+    "looting-mk1": "looting_mk1",
+    "looting-mk2": "looting_mk2",
+    "looting-mk3-cautious": "looting_mk3_cautious",
+    "looting-mk3-safekeeper": "looting_mk3_safekeeper",
+    "looting-mk3-safekeeper-blueprint": "looting_mk3_safekeeper_blueprint",
+    "looting-mk3-survivor": "looting_mk3_survivor",
+    "looting-mk3-survivor-blueprint": "looting_mk3_survivor_blueprint",
+    "looting-mk-1": "looting_mk_1",
+    "looting-mk-2": "looting_mk_2",
+    "looting-mk-3-cautious": "looting_mk_3_cautious",
+    "looting-mk-3-safekeeper": "looting_mk_3_safekeeper",
+    "looting-mk-3-safekeeper-blueprint": "looting_mk_3_safekeeper_blueprint",
+    "looting-mk-3-survivor": "looting_mk_3_survivor",
+    "looting-mk-3-survivor-blueprint": "looting_mk_3_survivor_blueprint",
+    "lure-grenade": "lure_grenade",
+    "lure-grenade-blueprint": "lure_grenade_blueprint",
+    "lure-grenade-recipe": "lure_grenade_recipe",
+    "lure-grenade-trap": "lure_grenade_trap",
+    "magnet": "magnet",
+    "magnetic-accelerator": "magnetic_accelerator",
+    "magnetron": "magnetron",
+    "major-aivas-mementos": "major_aivas_mementos",
+    "major-aivas-patch": "major_aivas_patch",
+    "marano-market-business-card": "marano_market_business_card",
+    "mastery-medal-backpack-charm": "mastery_medal_backpack_charm",
+    "matriarch-reactor": "matriarch_reactor",
+    "mechanical-components": "mechanical_components",
+    "medium-ammo": "medium_ammo",
+    "medium-gun-parts": "medium_gun_parts",
+    "medium-gun-parts-blueprint": "medium_gun_parts_blueprint",
+    "medium-gun-parts-recipe": "medium_gun_parts_recipe",
+    "medium-shield": "medium_shield",
+    "metal-brackets": "metal_brackets",
+    "metal-parts": "metal_parts",
+    "microscope": "microscope",
+    "mini-centrifuge": "mini_centrifuge",
+    "mod-components": "mod_components",
+    "moisture-meter": "moisture_meter",
+    "moss": "moss",
+    "motor": "motor",
+    "mushroom": "mushroom",
+    "music-album": "music_album",
+    "music-box": "music_box",
+    "muzzle-brake-i": "muzzle_brake_i",
+    "muzzle-brake-ii": "muzzle_brake_ii",
+    "muzzle-brake-ii-blueprint": "muzzle_brake_ii_blueprint",
+    "muzzle-brake-ii-recipe": "muzzle_brake_ii_recipe",
+    "muzzle-brake-iii": "muzzle_brake_iii",
+    "muzzle-brake-iii-blueprint": "muzzle_brake_iii_blueprint",
+    "muzzle-brake-iii-recipe": "muzzle_brake_iii_recipe",
+    "noisemaker": "noisemaker",
+    "number-plate": "number_plate",
+    "nutrient-meter": "nutrient_meter",
+    "official-shutdown-documentation": "official_shutdown_documentation",
+    "oil": "oil",
+    "old-world-books": "old_world_books",
+    "olives": "olives",
+    "orange-camo-origin-outfit": "orange_camo_origin_outfit",
+    "osprey-blueprint": "osprey_blueprint",
+    "osprey-i": "osprey_i",
+    "osprey-ii": "osprey_ii",
+    "osprey-iii": "osprey_iii",
+    "osprey-iv": "osprey_iv",
+    "osprey-recipe": "osprey_recipe",
+    "padded-stock": "padded_stock",
+    "padded-stock-blueprint": "padded_stock_blueprint",
+    "padded-stock-recipe": "padded_stock_recipe",
+    "painted-box": "painted_box",
+    "patchwork-warden-color": "patchwork_warden_color",
+    "patrol-car-key": "patrol_car_key",
+    "patrol-outfit": "patrol_outfit",
+    "photoelectric-cloak": "photoelectric_cloak",
+    "pilgrims-peak-security-code": "pilgrims_peak_security_code",
+    "plastic-parts": "plastic_parts",
+    "playing-cards": "playing_cards",
+    "polluted-air-filter": "polluted_air_filter",
+    "pop-trigger": "pop_trigger",
+    "portable-television": "portable_television",
+    "portable-tv": "portable_tv",
+    "possibly-toxic-plant": "possibly_toxic_plant",
+    "poster-natural-wonder": "poster_natural_wonder",
+    "poster-of-natural-wonders": "poster_of_natural_wonders",
+    "pottery": "pottery",
+    "power-bank": "power_bank",
+    "power-cable": "power_cable",
+    "power-rod": "power_rod",
+    "powered-descender": "powered_descender",
+    "powered-descender-blueprint": "powered_descender_blueprint",
+    "precision-gimbal": "precision_gimbal",
+    "prickly-pear": "prickly_pear",
+    "processor": "processor",
+    "project-heartwood-blueprints": "project_heartwood_blueprints",
+    "projector": "projector",
+    "pulse-mine": "pulse_mine",
+    "pulse-mine-blueprint": "pulse_mine_blueprint",
+    "queen-reactor": "queen_reactor",
+    "radio": "radio",
+    "radio-relay": "radio_relay",
+    "radio-renegade": "radio_renegade",
+    "radio-renegade-outfit": "radio_renegade_outfit",
+    "raider-flag": "raider_flag",
+    "raider-hatch-key": "raider_hatch_key",
+    "raider-tokens": "raider_tokens",
+    "raiders-refuge-security-code": "raiders_refuge_security_code",
+    "rascal": "rascal",
+    "rascal-blueprint": "rascal_blueprint",
+    "rascal-i": "rascal_i",
+    "rascal-ii": "rascal_ii",
+    "rascal-iii": "rascal_iii",
+    "rascal-iv": "rascal_iv",
+    "rattler-i": "rattler_i",
+    "rattler-ii": "rattler_ii",
+    "rattler-iii": "rattler_iii",
+    "rattler-iv": "rattler_iv",
+    "recorder": "recorder",
+    "red-coral-jewelry": "red_coral_jewelry",
+    "red-light-stick": "red_light_stick",
+    "red-light-stick-blueprint": "red_light_stick_blueprint",
+    "red-radio-renegade-color": "red_radio_renegade_color",
+    "reinforced-reception-security-code": "reinforced_reception_security_code",
+    "remote-control": "remote_control",
+    "remote-raider-flare": "remote_raider_flare",
+    "remote-raider-flare-blueprint": "remote_raider_flare_blueprint",
+    "renegade-i": "renegade_i",
+    "renegade-ii": "renegade_ii",
+    "renegade-iii": "renegade_iii",
+    "renegade-iv": "renegade_iv",
+    "resin": "resin",
+    "ripped-safety-vest": "ripped_safety_vest",
+    "riven-tides-classifed-records-keycard": "riven_tides_classifed_records_keycard",
+    "riven-tides-classified-records-keycard": "riven_tides_classified_records_keycard",
+    "riven-tides-crane-house-keycard": "riven_tides_crane_house_keycard",
+    "riven-tides-hotel-keycard-no-102": "riven_tides_hotel_keycard_no_102",
+    "riven-tides-hotel-keycard-no-107": "riven_tides_hotel_keycard_no_107",
+    "riven-tides-hotel-keycard-no-113": "riven_tides_hotel_keycard_no_113",
+    "riven-tides-hotel-keycard-no-205": "riven_tides_hotel_keycard_no_205",
+    "riven-tides-hotel-keycard-no-208": "riven_tides_hotel_keycard_no_208",
+    "riven-tides-hotel-keycard-no-311": "riven_tides_hotel_keycard_no_311",
+    "riven-tides-hotel-keycard-no-404": "riven_tides_hotel_keycard_no_404",
+    "riven-tides-secure-storage-keycard": "riven_tides_secure_storage_keycard",
+    "rocket-thruster": "rocket_thruster",
+    "rocketeer-driver": "rocketeer_driver",
+    "rocketeer-part": "rocketeer_part",
+    "roots": "roots",
+    "rope": "rope",
+    "rosary": "rosary",
+    "rotary-encoder": "rotary_encoder",
+    "rubber-duck": "rubber_duck",
+    "rubber-pad": "rubber_pad",
+    "rubber-parts": "rubber_parts",
+    "rubber-parts-recipe": "rubber_parts_recipe",
+    "ruined-accordion": "ruined_accordion",
+    "ruined-augment": "ruined_augment",
+    "ruined-baton": "ruined_baton",
+    "ruined-handcuffs": "ruined_handcuffs",
+    "ruined-parachute": "ruined_parachute",
+    "ruined-riot-shield": "ruined_riot_shield",
+    "ruined-tactical-vest": "ruined_tactical_vest",
+    "rusted-bolts": "rusted_bolts",
+    "rusted-gear": "rusted_gear",
+    "rusted-shut-medical-kit": "rusted_shut_medical_kit",
+    "rusted-tools": "rusted_tools",
+    "rusty-arc-steel": "rusty_arc_steel",
+    "sample-cleaner": "sample_cleaner",
+    "scout-patrol-note": "scout_patrol_note",
+    "secret-meeting-info": "secret_meeting_info",
+    "seed-vault-box-key": "seed_vault_box_key",
+    "seeker-grenade": "seeker_grenade",
+    "seeker-grenade-blueprint": "seeker_grenade_blueprint",
+    "sensors": "sensors",
+    "sensors-recipe": "sensors_recipe",
+    "sentinel-firing-core": "sentinel_firing_core",
+    "sentinel-part": "sentinel_part",
+    "shaker": "shaker",
+    "shield-recharger": "shield_recharger",
+    "shotgun-ammo": "shotgun_ammo",
+    "shotgun-choke-i": "shotgun_choke_i",
+    "shotgun-choke-ii": "shotgun_choke_ii",
+    "shotgun-choke-ii-blueprint": "shotgun_choke_ii_blueprint",
+    "shotgun-choke-ii-recipe": "shotgun_choke_ii_recipe",
+    "shotgun-choke-iii": "shotgun_choke_iii",
+    "shotgun-choke-iii-blueprint": "shotgun_choke_iii_blueprint",
+    "shotgun-choke-iii-recipe": "shotgun_choke_iii_recipe",
+    "shotgun-gun-parts": "shotgun_gun_parts",
+    "shotgun-silencer": "shotgun_silencer",
+    "shotgun-silencer-blueprint": "shotgun_silencer_blueprint",
+    "showstopper": "showstopper",
+    "showstopper-blueprint": "showstopper_blueprint",
+    "shrapnel-grenade": "shrapnel_grenade",
+    "shredder-gyro": "shredder_gyro",
+    "signal-amplifier": "signal_amplifier",
+    "silencer-i": "silencer_i",
+    "silencer-i-blueprint": "silencer_i_blueprint",
+    "silencer-i-recipe": "silencer_i_recipe",
+    "silencer-ii": "silencer_ii",
+    "silencer-ii-blueprint": "silencer_ii_blueprint",
+    "silencer-ii-recipe": "silencer_ii_recipe",
+    "silencer-iii": "silencer_iii",
+    "silencer-iii-blueprint": "silencer_iii_blueprint",
+    "silver-teaspoon-set": "silver_teaspoon_set",
+    "simple-gun-parts": "simple_gun_parts",
+    "sirena-dorata-ship-model": "sirena_dorata_ship_model",
+    "smoke-grenade": "smoke_grenade",
+    "smoke-grenade-blueprint": "smoke_grenade_blueprint",
+    "smoke-grenade-trap": "smoke_grenade_trap",
+    "snap-blast-grenade": "snap_blast_grenade",
+    "snap-hook": "snap_hook",
+    "snap-hook-blueprint": "snap_hook_blueprint",
+    "snap-hook-recipe": "snap_hook_recipe",
+    "snitch-scanner": "snitch_scanner",
+    "snowball": "snowball",
+    "spaceport-container-storage-key": "spaceport_container_storage_key",
+    "spaceport-control-tower-key": "spaceport_control_tower_key",
+    "spaceport-ground-control-key": "spaceport_ground_control_key",
+    "spaceport-trench-tower-key": "spaceport_trench_tower_key",
+    "spaceport-warehouse-key": "spaceport_warehouse_key",
+    "speaker-component": "speaker_component",
+    "spectrometer": "spectrometer",
+    "spectrum-analyzer": "spectrum_analyzer",
+    "spotter-relay": "spotter_relay",
+    "spring": "spring",
+    "spring-cushion": "spring_cushion",
+    "stable-stock-i": "stable_stock_i",
+    "stable-stock-ii": "stable_stock_ii",
+    "stable-stock-ii-blueprint": "stable_stock_ii_blueprint",
+    "stable-stock-ii-recipe": "stable_stock_ii_recipe",
+    "stable-stock-iii": "stable_stock_iii",
+    "stable-stock-iii-blueprint": "stable_stock_iii_blueprint",
+    "stable-stock-iii-recipe": "stable_stock_iii_recipe",
+    "stack-of-movie-tapes": "stack_of_movie_tapes",
+    "statuette": "statuette",
+    "steel-spring": "steel_spring",
+    "stella-montis-archives-key": "stella_montis_archives_key",
+    "stella-montis-assembly-admin-key": "stella_montis_assembly_admin_key",
+    "stella-montis-medical-storage-key": "stella_montis_medical_storage_key",
+    "stella-montis-security-checkpoint-key": "stella_montis_security_checkpoint_key",
+    "sterilized-bandage": "sterilized_bandage",
+    "stitcher-i": "stitcher_i",
+    "stitcher-ii": "stitcher_ii",
+    "stitcher-iii": "stitcher_iii",
+    "stitcher-iv": "stitcher_iv",
+    "succulent-backpack-charm": "succulent_backpack_charm",
+    "surge-coil": "surge_coil",
+    "surge-coil-blueprint": "surge_coil_blueprint",
+    "surge-shield-recharger": "surge_shield_recharger",
+    "surveyor-vault": "surveyor_vault",
+    "synthesized-fuel": "synthesized_fuel",
+    "syringe": "syringe",
+    "tacical-mk3-healing-blueprint": "tacical_mk3_healing_blueprint",
+    "tactical-mk1": "tactical_mk1",
+    "tactical-mk2": "tactical_mk2",
+    "tactical-mk3-defensive": "tactical_mk3_defensive",
+    "tactical-mk3-defensive-blueprint": "tactical_mk3_defensive_blueprint",
+    "tactical-mk3-healing": "tactical_mk3_healing",
+    "tactical-mk3-healing-blueprint": "tactical_mk3_healing_blueprint",
+    "tactical-mk3-revival": "tactical_mk3_revival",
+    "tactical-mk3-revival-blueprint": "tactical_mk3_revival_blueprint",
+    "tactical-mk3-smoke": "tactical_mk3_smoke",
+    "tactical-mk3-smoke-blueprint": "tactical_mk3_smoke_blueprint",
+    "tactical-mk-1": "tactical_mk_1",
+    "tactical-mk-2": "tactical_mk_2",
+    "tactical-mk-3-healing": "tactical_mk_3_healing",
+    "tactical-mk-3-revival": "tactical_mk_3_revival",
+    "tactical-mk-3-revival-blueprint": "tactical_mk_3_revival_blueprint",
+    "tactical-mk-3-smoke": "tactical_mk_3_smoke",
+    "tagging-grenade": "tagging_grenade",
+    "tagging-grenade-blueprint": "tagging_grenade_blueprint",
+    "tagging-grenade-recipe": "tagging_grenade_recipe",
+    "tangerine-warden-color": "tangerine_warden_color",
+    "tattered-arc-lining": "tattered_arc_lining",
+    "tattered-clothes": "tattered_clothes",
+    "telemetry-transceiver": "telemetry_transceiver",
+    "tempest-blueprint": "tempest_blueprint",
+    "tempest-i": "tempest_i",
+    "tempest-i-recipe": "tempest_i_recipe",
+    "tempest-ii": "tempest_ii",
+    "tempest-iii": "tempest_iii",
+    "tempest-iv": "tempest_iv",
+    "thermostat": "thermostat",
+    "tick-pod": "tick_pod",
+    "toaster": "toaster",
+    "torch-ginger": "torch_ginger",
+    "torn-blanket": "torn_blanket",
+    "torn-book": "torn_book",
+    "torrent-i-recipe": "torrent_i_recipe",
+    "torrente-blueprint": "torrente_blueprint",
+    "torrente-i": "torrente_i",
+    "torrente-ii": "torrente_ii",
+    "torrente-iii": "torrente_iii",
+    "torrente-iv": "torrente_iv",
+    "trailblazer": "trailblazer",
+    "trailblazer-blueprint": "trailblazer_blueprint",
+    "trailblazer-grenade": "trailblazer_grenade",
+    "trailblazer-grenade-blueprint": "trailblazer_grenade_blueprint",
+    "trigger-nade": "trigger_nade",
+    "trigger-nade-blueprint": "trigger_nade_blueprint",
+    "trigger-nade-recipe": "trigger_nade_recipe",
+    "tropical-duck": "tropical_duck",
+    "turbine-compressor": "turbine_compressor",
+    "turbo-pump": "turbo_pump",
+    "twilight-compass-ship-model": "twilight_compass_ship_model",
+    "unusable-weapon": "unusable_weapon",
+    "utility-augment-t3-smoke-blueprint": "utility_augment_t3_smoke_blueprint",
+    "vaporizer-regulator": "vaporizer_regulator",
+    "vase": "vase",
+    "velocity-ship-model": "velocity_ship_model",
+    "venator-blueprint": "venator_blueprint",
+    "venator-i": "venator_i",
+    "venator-ii": "venator_ii",
+    "venator-iii": "venator_iii",
+    "venator-iv": "venator_iv",
+    "venator-recipe": "venator_recipe",
+    "vertical-grip-i": "vertical_grip_i",
+    "vertical-grip-ii": "vertical_grip_ii",
+    "vertical-grip-ii-blueprint": "vertical_grip_ii_blueprint",
+    "vertical-grip-ii-recipe": "vertical_grip_ii_recipe",
+    "vertical-grip-iii": "vertical_grip_iii",
+    "vertical-grip-iii-blueprint": "vertical_grip_iii_blueprint",
+    "vertical-grip-iii-recipe": "vertical_grip_iii_recipe",
+    "very-comfortable-pillow": "very_comfortable_pillow",
+    "vita-shot": "vita_shot",
+    "vita-shot-blueprint": "vita_shot_blueprint",
+    "vita-shot-recipe": "vita_shot_recipe",
+    "vita-spray": "vita_spray",
+    "vita-spray-blueprint": "vita_spray_blueprint",
+    "vita-spray-recipe": "vita_spray_recipe",
+    "volcanic-rock": "volcanic_rock",
+    "voltage-converter": "voltage_converter",
+    "vulcano-blueprint": "vulcano_blueprint",
+    "vulcano-i": "vulcano_i",
+    "vulcano-ii": "vulcano_ii",
+    "vulcano-iii": "vulcano_iii",
+    "vulcano-iv": "vulcano_iv",
+    "warden-outfit": "warden_outfit",
+    "wasp-driver": "wasp_driver",
+    "water-filter": "water_filter",
+    "water-pump": "water_pump",
+    "white-flag": "white_flag",
+    "white-flag-blueprint": "white_flag_blueprint",
+    "white-indigo-warden-color": "white_indigo_warden_color",
+    "wind-sprite-ship-model": "wind_sprite_ship_model",
+    "wires": "wires",
+    "wires-recipe": "wires_recipe",
+    "wolfpack": "wolfpack",
+    "wolfpack-blueprint": "wolfpack_blueprint",
+    "wolfpack-recipe": "wolfpack_recipe",
+    "yellow-light-stick": "yellow_light_stick",
+    "yellow-light-stick-blueprint": "yellow_light_stick_blueprint",
+    "yellow-radio-renegade-color": "yellow_radio_renegade_color",
+    "zipline": "zipline"
+  },
+  "byGameAssetId": {
+    "-2019875683": [
+      "acoustic_guitar",
+      "raider_flag"
+    ],
+    "-229932290": [
+      "acoustic_guitar"
+    ],
+    "923438116": [
+      "adrenaline_shot"
+    ],
+    "246081482": [
+      "advanced_arc_powercell"
+    ],
+    "-770265029": [
+      "advanced_electrical_components"
+    ],
+    "-926389249": [
+      "advanced_mechanical_components"
+    ],
+    "-127927282": [
+      "agave"
+    ],
+    "1648154470": [
+      "agave_juice"
+    ],
+    "-46535668": [
+      "air_freshener"
+    ],
+    "-428713325": [
+      "alarm_clock"
+    ],
+    "1150280080": [
+      "alien_duck"
+    ],
+    "-2134681974": [
+      "ancient_fort_security_code"
+    ],
+    "346923872": [
+      "angled_grip_i"
+    ],
+    "-1681246336": [
+      "angled_grip_ii"
+    ],
+    "-709850700": [
+      "angled_grip_ii_blueprint"
+    ],
+    "-1131982378": [
+      "angled_grip_iii"
+    ],
+    "-2113309921": [
+      "angled_grip_iii_blueprint"
+    ],
+    "1332241414": [
+      "antiseptic"
+    ],
+    "-348089449": [
+      "anvil_blueprint"
+    ],
+    "1951118983": [
+      "anvil_i"
+    ],
+    "-1974459892": [
+      "anvil_ii"
+    ],
+    "-39940538": [
+      "anvil_iii"
+    ],
+    "-163859490": [
+      "anvil_iv"
+    ],
+    "-2130292638": [
+      "anvil_splitter"
+    ],
+    "-1483497543": [
+      "aphelion"
+    ],
+    "-692327830": [
+      "aphelion_blueprint"
+    ],
+    "1219069540": [
+      "apricot"
+    ],
+    "1370841463": [
+      "arc_alloy"
+    ],
+    "1107192907": [
+      "arc_circuitry"
+    ],
+    "421801273": [
+      "arc_coolant"
+    ],
+    "-994234794": [
+      "arc_flex_rubber"
+    ],
+    "-900569094": [
+      "arc_motion_core"
+    ],
+    "-1068126131": [
+      "arc_performance_steel"
+    ],
+    "-1994200966": [
+      "arc_powercell"
+    ],
+    "-1447314005": [
+      "arc_powercell"
+    ],
+    "10866537": [
+      "arc_synthetic_resin"
+    ],
+    "1533374440": [
+      "arc_thermo_lining"
+    ],
+    "-1174500500": [
+      "arpeggio_i"
+    ],
+    "-1010165368": [
+      "arpeggio_ii"
+    ],
+    "-868064320": [
+      "arpeggio_iii"
+    ],
+    "483899737": [
+      "arpeggio_iv"
+    ],
+    "1657712312": [
+      "arpeggio_iv"
+    ],
+    "431449547": [
+      "assessor_matrix"
+    ],
+    "1051518749": [
+      "assorted_seeds"
+    ],
+    "583877119": [
+      "bandage"
+    ],
+    "1671732587": [
+      "barricade_kit"
+    ],
+    "-75288973": [
+      "barricade_kit_blueprint"
+    ],
+    "1266019904": [
+      "bastion_cell",
+      "bastion_part"
+    ],
+    "1039185396": [
+      "battery"
+    ],
+    "762060615": [
+      "bettina_blueprint"
+    ],
+    "-1236612582": [
+      "bettina_i"
+    ],
+    "392764783": [
+      "bettina_ii"
+    ],
+    "-1884805671": [
+      "bettina_iii"
+    ],
+    "1506939307": [
+      "bettina_iv"
+    ],
+    "313938846": [
+      "bicycle_pump"
+    ],
+    "762762439": [
+      "binoculars"
+    ],
+    "697558734": [
+      "blaze_grenade"
+    ],
+    "-1996442482": [
+      "blaze_grenade_trap"
+    ],
+    "1299206296": [
+      "blaze_grenade_trap"
+    ],
+    "149941307": [
+      "bloated_tuna_can"
+    ],
+    "-113802073": [
+      "blue_gate_cellar_key"
+    ],
+    "2133595346": [
+      "blue_gate_communication_tower_key"
+    ],
+    "2129769166": [
+      "blue_gate_confiscation_room_key"
+    ],
+    "-844032381": [
+      "blue_gate_village_key"
+    ],
+    "-1411069838": [
+      "blue_light_stick"
+    ],
+    "1449330526": [
+      "blue_light_stick_blueprint"
+    ],
+    "-1260920556": [
+      "bobcat_blueprint"
+    ],
+    "637354931": [
+      "bobcat_i"
+    ],
+    "1768889427": [
+      "bobcat_ii"
+    ],
+    "708897469": [
+      "bobcat_iii"
+    ],
+    "-1631078332": [
+      "bobcat_iv"
+    ],
+    "415465622": [
+      "bombardier_cell"
+    ],
+    "919315234": [
+      "breathtaking_snow_globe"
+    ],
+    "-1322084093": [
+      "broken_flashlight"
+    ],
+    "-1587726944": [
+      "broken_guidance_system"
+    ],
+    "-1915974299": [
+      "broken_handheld_radio"
+    ],
+    "106628713": [
+      "broken_taser"
+    ],
+    "1200348024": [
+      "buried_city_hospital_key"
+    ],
+    "-1920319269": [
+      "buried_city_jkv_employee_access_card"
+    ],
+    "-1764906318": [
+      "buried_city_residential_master_key"
+    ],
+    "-1275287419": [
+      "buried_city_town_hall_key"
+    ],
+    "2023489275": [
+      "burletta_blueprint"
+    ],
+    "-1921925959": [
+      "burletta_i"
+    ],
+    "-2054621793": [
+      "burletta_ii"
+    ],
+    "276503907": [
+      "burletta_iii"
+    ],
+    "1407799927": [
+      "burletta_iv"
+    ],
+    "341892685": [
+      "burned_arc_circuitry"
+    ],
+    "27010880": [
+      "burnt_out_candles"
+    ],
+    "285336333": [
+      "camera_lens"
+    ],
+    "-1599426473": [
+      "candle_holder"
+    ],
+    "-373455872": [
+      "candleberries"
+    ],
+    "-668588724": [
+      "canister"
+    ],
+    "885364202": [
+      "canto"
+    ],
+    "744641056": [
+      "canto_blueprint"
+    ],
+    "-764908128": [
+      "canto_i"
+    ],
+    "756732693": [
+      "canto_ii"
+    ],
+    "-133724223": [
+      "canto_iii"
+    ],
+    "2099640885": [
+      "canto_iv"
+    ],
+    "1793382961": [
+      "cat_bed"
+    ],
+    "2038694529": [
+      "celeste_journal"
+    ],
+    "-1946944212": [
+      "cheer"
+    ],
+    "-1565478080": [
+      "chemicals"
+    ],
+    "-51232541": [
+      "coffee_pot"
+    ],
+    "-898439395": [
+      "coins"
+    ],
+    "50992628": [
+      "combat_mk1"
+    ],
+    "-1489261627": [
+      "combat_mk2",
+      "combat_mk_2"
+    ],
+    "-468025815": [
+      "combat_mk3_aggressive",
+      "combat_mk_3_aggressive"
+    ],
+    "278799395": [
+      "combat_mk3_aggressive_blueprint"
+    ],
+    "-1068447725": [
+      "combat_mk3_flanking"
+    ],
+    "-553283088": [
+      "combat_mk3_flanking_blueprint"
+    ],
+    "-353362533": [
+      "comet_igniter"
+    ],
+    "-1888542545": [
+      "compensator_i"
+    ],
+    "-1072384644": [
+      "compensator_ii"
+    ],
+    "-1783980284": [
+      "compensator_ii_blueprint"
+    ],
+    "-518509289": [
+      "compensator_iii"
+    ],
+    "-208510453": [
+      "compensator_iii_blueprint"
+    ],
+    "1608603820": [
+      "complex_gun_parts"
+    ],
+    "1102110705": [
+      "complex_gun_parts_blueprint"
+    ],
+    "-2089523165": [
+      "coolant"
+    ],
+    "1928875024": [
+      "cooling_coil"
+    ],
+    "1694582967": [
+      "cooling_fan"
+    ],
+    "524538760": [
+      "cracked_bioscanner"
+    ],
+    "1625205858": [
+      "crude_explosives"
+    ],
+    "-384403080": [
+      "crumpled_plastic_bottle"
+    ],
+    "36123868": [
+      "dam_control_tower_key"
+    ],
+    "1616284588": [
+      "dam_controlled_access_zone_key"
+    ],
+    "1755646795": [
+      "dam_staff_room_key"
+    ],
+    "-392493295": [
+      "dam_surveillance_key"
+    ],
+    "-1331806078": [
+      "dam_testing_annex_key"
+    ],
+    "-1084994886": [
+      "damaged_arc_motion_core"
+    ],
+    "134844346": [
+      "damaged_fireball_burner"
+    ],
+    "2022140331": [
+      "damaged_heat_sink"
+    ],
+    "-320978515": [
+      "damaged_hornet_driver"
+    ],
+    "-1184915542": [
+      "damaged_leaper_pulse_unit"
+    ],
+    "937482096": [
+      "damaged_rocketeer_driver"
+    ],
+    "1148851826": [
+      "damaged_snitch_scanner"
+    ],
+    "-1403641624": [
+      "damaged_tick_pod"
+    ],
+    "-969924004": [
+      "damaged_wasp_driver"
+    ],
+    "447242639": [
+      "dart_board"
+    ],
+    "409593267": [
+      "deadline"
+    ],
+    "-386705321": [
+      "deadline_blueprint"
+    ],
+    "-1688501435": [
+      "defibrillator"
+    ],
+    "-1234113868": [
+      "defibrillator_blueprint"
+    ],
+    "986133328": [
+      "deflated_football"
+    ],
+    "517463307": [
+      "degraded_arc_rubber"
+    ],
+    "1125489375": [
+      "diving_goggles",
+      "diving_googles"
+    ],
+    "-1333261430": [
+      "dodgers_note"
+    ],
+    "-1726424272": [
+      "dog_collar"
+    ],
+    "1249031667": [
+      "dolabra"
+    ],
+    "-979794626": [
+      "dolabra_blueprint"
+    ],
+    "1700565870": [
+      "doodly_duck"
+    ],
+    "-699310837": [
+      "door_blocker"
+    ],
+    "-2113221072": [
+      "dried_out_arc_resin"
+    ],
+    "1224404530": [
+      "duct_tape",
+      "duct_tape_recipe"
+    ],
+    "-799395426": [
+      "durable_cloth"
+    ],
+    "893137827": [
+      "dusty_film_reel"
+    ],
+    "-923201933": [
+      "electrical_components"
+    ],
+    "-1506763647": [
+      "empty_wine_bottle"
+    ],
+    "1619184001": [
+      "energy_clip"
+    ],
+    "-1441495265": [
+      "equalizer"
+    ],
+    "2060851155": [
+      "equalizer_blueprint"
+    ],
+    "1145275220": [
+      "espresso_machine_parts"
+    ],
+    "-1833440778": [
+      "esr_analyzer"
+    ],
+    "-1177716644": [
+      "exodus_modules"
+    ],
+    "1956363264": [
+      "experimental_seed_sample"
+    ],
+    "191704511": [
+      "expired_pasta"
+    ],
+    "-632888435": [
+      "expired_respirator"
+    ],
+    "1004246812": [
+      "explosive_compound"
+    ],
+    "1228913912": [
+      "explosive_mine"
+    ],
+    "1266735983": [
+      "explosive_mine_blueprint"
+    ],
+    "1407760402": [
+      "extended_barrel"
+    ],
+    "1934437826": [
+      "extended_barrel_blueprint"
+    ],
+    "-283948665": [
+      "extended_light_mag_i"
+    ],
+    "-1666910412": [
+      "extended_light_mag_ii"
+    ],
+    "-857337823": [
+      "extended_light_mag_ii_blueprint"
+    ],
+    "-1915685401": [
+      "extended_light_mag_iii"
+    ],
+    "459407886": [
+      "extended_light_mag_iii_blueprint"
+    ],
+    "-566520716": [
+      "extended_medium_mag_i"
+    ],
+    "-728135783": [
+      "extended_medium_mag_ii"
+    ],
+    "-1202416011": [
+      "extended_medium_mag_ii_blueprint"
+    ],
+    "1670090314": [
+      "extended_medium_mag_iii"
+    ],
+    "75778531": [
+      "extended_medium_mag_iii_blueprint"
+    ],
+    "-814658911": [
+      "extended_shotgun_mag_i"
+    ],
+    "592639485": [
+      "extended_shotgun_mag_ii"
+    ],
+    "-255420364": [
+      "extended_shotgun_mag_ii_blueprint"
+    ],
+    "922097959": [
+      "extended_shotgun_mag_iii"
+    ],
+    "-2118305709": [
+      "extended_shotgun_mag_iii_blueprint"
+    ],
+    "-1580114534": [
+      "fabric"
+    ],
+    "-855264654": [
+      "faded_photograph"
+    ],
+    "-1376425844": [
+      "familiar_duck"
+    ],
+    "-1300343709": [
+      "ferro_i"
+    ],
+    "-1347969810": [
+      "ferro_ii"
+    ],
+    "1143818817": [
+      "ferro_iii"
+    ],
+    "-14963185": [
+      "ferro_iv"
+    ],
+    "-894995539": [
+      "fertilizer"
+    ],
+    "-1442608039": [
+      "film_reel"
+    ],
+    "-483653282": [
+      "fine_wristwatch"
+    ],
+    "-1426003438": [
+      "fireball_burner"
+    ],
+    "-823752633": [
+      "firecracker"
+    ],
+    "1989094565": [
+      "firefly_burner"
+    ],
+    "-1616698820": [
+      "fireworks_box"
+    ],
+    "878298795": [
+      "fireworks_box_blueprint"
+    ],
+    "1655934613": [
+      "first_wave_compass"
+    ],
+    "352582521": [
+      "first_wave_rations"
+    ],
+    "577885066": [
+      "first_wave_tape"
+    ],
+    "-88669682": [
+      "flame_spray"
+    ],
+    "-606557836": [
+      "flashy_duck"
+    ],
+    "42589958": [
+      "flow_controller"
+    ],
+    "-318995282": [
+      "flushing_terminal_key"
+    ],
+    "1545024611": [
+      "fossilized_lightning"
+    ],
+    "1369416424": [
+      "free_loadout_augment"
+    ],
+    "-729027837": [
+      "frequency_modulation_box"
+    ],
+    "748926448": [
+      "fried_motherboard"
+    ],
+    "561161842": [
+      "fruit_mix"
+    ],
+    "-1423582397": [
+      "frying_pan"
+    ],
+    "-109120658": [
+      "garlic_press"
+    ],
+    "866643291": [
+      "gas_grenade"
+    ],
+    "-871523219": [
+      "gas_grenade_trap"
+    ],
+    "458133629": [
+      "gas_mine"
+    ],
+    "886788187": [
+      "gas_mine_blueprint"
+    ],
+    "426624588": [
+      "geiger_counter"
+    ],
+    "-424524475": [
+      "gentle_duck"
+    ],
+    "-631032368": [
+      "great_mullein"
+    ],
+    "-1318412075": [
+      "green_light_stick"
+    ],
+    "-45026278": [
+      "green_light_stick_blueprint"
+    ],
+    "-1119818372": [
+      "hairpin_i"
+    ],
+    "1992585880": [
+      "hairpin_ii"
+    ],
+    "1370600620": [
+      "hairpin_iii"
+    ],
+    "1920326798": [
+      "hairpin_iv"
+    ],
+    "-1395484519": [
+      "headphones"
+    ],
+    "-1402742438": [
+      "heavy_ammo"
+    ],
+    "787027311": [
+      "heavy_fuze_grenade"
+    ],
+    "-1903407680": [
+      "heavy_gun_parts"
+    ],
+    "646572303": [
+      "heavy_gun_parts_blueprint"
+    ],
+    "103801093": [
+      "heavy_shield"
+    ],
+    "203993527": [
+      "heavy_shield"
+    ],
+    "1827408349": [
+      "herbal_bandage"
+    ],
+    "-1916425237": [
+      "hidden_bunker_key"
+    ],
+    "1013182792": [
+      "horizontal_grip"
+    ],
+    "1004483718": [
+      "hornet_driver"
+    ],
+    "1742317181": [
+      "household_cleaner"
+    ],
+    "-459566791": [
+      "hullcracker_blueprint"
+    ],
+    "-1868876009": [
+      "hullcracker_i"
+    ],
+    "-1858367047": [
+      "hullcracker_ii"
+    ],
+    "-1390078682": [
+      "hullcracker_iii"
+    ],
+    "1343472835": [
+      "hullcracker_iv"
+    ],
+    "849284640": [
+      "humidifier"
+    ],
+    "-44588806": [
+      "ice_cream_scooper"
+    ],
+    "464538122": [
+      "il_toro_blueprint"
+    ],
+    "-1123417641": [
+      "il_toro_i"
+    ],
+    "269867465": [
+      "il_toro_ii"
+    ],
+    "226834931": [
+      "il_toro_iii"
+    ],
+    "331271227": [
+      "il_toro_iv"
+    ],
+    "1729534311": [
+      "impure_arc_coolant"
+    ],
+    "2096837185": [
+      "industrial_battery"
+    ],
+    "473499460": [
+      "industrial_charger"
+    ],
+    "628543086": [
+      "industrial_magnet"
+    ],
+    "134545014": [
+      "ion_sputter"
+    ],
+    "-643273323": [
+      "jolt_mine"
+    ],
+    "-462994574": [
+      "jolt_mine_blueprint"
+    ],
+    "-537173438": [
+      "jupiter"
+    ],
+    "-1233893659": [
+      "jupiter_blueprint"
+    ],
+    "209734646": [
+      "kettle_i"
+    ],
+    "-624801890": [
+      "kettle_ii"
+    ],
+    "-1374119783": [
+      "kettle_iii"
+    ],
+    "1349673826": [
+      "kettle_iv"
+    ],
+    "668021707": [
+      "kinetic_converter"
+    ],
+    "1364313874": [
+      "laboratory_reagents"
+    ],
+    "-1393457868": [
+      "lances_mixtape_5th_edition"
+    ],
+    "1117674957": [
+      "laser_trap_smoke_recipe",
+      "smoke_grenade_trap"
+    ],
+    "562831704": [
+      "launcher_ammo"
+    ],
+    "1151565517": [
+      "leaper_pulse_unit"
+    ],
+    "599997416": [
+      "lemon"
+    ],
+    "1414923729": [
+      "leviathans_crown_ship_model"
+    ],
+    "-535817636": [
+      "lidar_scanner"
+    ],
+    "-1875547390": [
+      "light_ammo"
+    ],
+    "1607597452": [
+      "light_bulb"
+    ],
+    "-1385889770": [
+      "light_gun_parts"
+    ],
+    "412920729": [
+      "light_gun_parts_blueprint"
+    ],
+    "877778759": [
+      "light_impact_grenade"
+    ],
+    "1505999062": [
+      "light_shield"
+    ],
+    "-2095596285": [
+      "lightweight_stock"
+    ],
+    "-182223087": [
+      "lightweight_stock_blueprint"
+    ],
+    "-1268138127": [
+      "lil_smoke_grenade"
+    ],
+    "1680690244": [
+      "looting_mk1",
+      "looting_mk_1"
+    ],
+    "-1156830089": [
+      "looting_mk2"
+    ],
+    "433079423": [
+      "looting_mk3_cautious"
+    ],
+    "947411243": [
+      "looting_mk3_safekeeper"
+    ],
+    "920673300": [
+      "looting_mk3_safekeeper_blueprint"
+    ],
+    "-300660362": [
+      "looting_mk3_survivor"
+    ],
+    "303567898": [
+      "looting_mk3_survivor"
+    ],
+    "-486727826": [
+      "lure_grenade"
+    ],
+    "305351814": [
+      "lure_grenade",
+      "lure_grenade_trap"
+    ],
+    "266335884": [
+      "lure_grenade_blueprint"
+    ],
+    "-863904193": [
+      "magnet"
+    ],
+    "717605649": [
+      "magnetic_accelerator"
+    ],
+    "865158241": [
+      "magnetron"
+    ],
+    "988724345": [
+      "major_aivas_mementos"
+    ],
+    "-2082046880": [
+      "major_aivas_patch"
+    ],
+    "-752661468": [
+      "matriarch_reactor"
+    ],
+    "1959573223": [
+      "mechanical_components"
+    ],
+    "313013500": [
+      "medium_ammo"
+    ],
+    "-637598838": [
+      "medium_gun_parts"
+    ],
+    "-1511047275": [
+      "medium_gun_parts_blueprint"
+    ],
+    "1237209984": [
+      "medium_shield"
+    ],
+    "-959674358": [
+      "metal_brackets"
+    ],
+    "-1437131902": [
+      "metal_parts"
+    ],
+    "-157659864": [
+      "microscope"
+    ],
+    "-1592298341": [
+      "mini_centrifuge"
+    ],
+    "464233263": [
+      "mod_components"
+    ],
+    "-1936062178": [
+      "moisture_meter"
+    ],
+    "1146379657": [
+      "moss"
+    ],
+    "-734190498": [
+      "motor"
+    ],
+    "-2014230306": [
+      "mushroom"
+    ],
+    "7507512": [
+      "music_album"
+    ],
+    "-1034612605": [
+      "music_box"
+    ],
+    "-450689218": [
+      "muzzle_brake_i"
+    ],
+    "1363078343": [
+      "muzzle_brake_ii"
+    ],
+    "1876196827": [
+      "muzzle_brake_ii_blueprint"
+    ],
+    "-1113070540": [
+      "muzzle_brake_iii"
+    ],
+    "-1697595116": [
+      "muzzle_brake_iii_blueprint"
+    ],
+    "2028871781": [
+      "noisemaker"
+    ],
+    "-1243897466": [
+      "number_plate"
+    ],
+    "-1841323035": [
+      "nutrient_meter"
+    ],
+    "-1983989674": [
+      "official_shutdown_documentation"
+    ],
+    "1741060583": [
+      "oil"
+    ],
+    "-1475885807": [
+      "old_world_books"
+    ],
+    "-944742704": [
+      "olives"
+    ],
+    "-320739876": [
+      "osprey_blueprint"
+    ],
+    "-1435588212": [
+      "osprey_i"
+    ],
+    "1640126922": [
+      "osprey_ii"
+    ],
+    "30472313": [
+      "osprey_iii"
+    ],
+    "352204774": [
+      "osprey_iv"
+    ],
+    "1682428740": [
+      "padded_stock"
+    ],
+    "542524924": [
+      "padded_stock_blueprint"
+    ],
+    "2066859179": [
+      "painted_box"
+    ],
+    "-16809548": [
+      "patrol_car_key"
+    ],
+    "2058762606": [
+      "photoelectric_cloak"
+    ],
+    "989020743": [
+      "pilgrims_peak_security_code"
+    ],
+    "828947161": [
+      "plastic_parts"
+    ],
+    "1782410237": [
+      "playing_cards"
+    ],
+    "424739364": [
+      "polluted_air_filter"
+    ],
+    "1041760181": [
+      "pop_trigger"
+    ],
+    "1305834322": [
+      "portable_television",
+      "portable_tv"
+    ],
+    "211788372": [
+      "possibly_toxic_plant"
+    ],
+    "-561477069": [
+      "poster_of_natural_wonders"
+    ],
+    "-887700247": [
+      "pottery"
+    ],
+    "-77932300": [
+      "power_bank"
+    ],
+    "1502122136": [
+      "power_cable"
+    ],
+    "313149189": [
+      "power_rod"
+    ],
+    "-287542830": [
+      "powered_descender"
+    ],
+    "721769094": [
+      "prickly_pear"
+    ],
+    "303320919": [
+      "processor"
+    ],
+    "-674121740": [
+      "project_heartwood_blueprints"
+    ],
+    "915052893": [
+      "projector"
+    ],
+    "-100594742": [
+      "pulse_mine"
+    ],
+    "-2074531633": [
+      "pulse_mine_blueprint"
+    ],
+    "-876378926": [
+      "queen_reactor"
+    ],
+    "2011274164": [
+      "radio"
+    ],
+    "-816199752": [
+      "radio_relay"
+    ],
+    "-902952774": [
+      "raider_hatch_key"
+    ],
+    "941631263": [
+      "raider_tokens"
+    ],
+    "-1065915967": [
+      "raiders_refuge_security_code"
+    ],
+    "549375413": [
+      "rattler_i"
+    ],
+    "1766749662": [
+      "rattler_ii"
+    ],
+    "-980968159": [
+      "rattler_iii"
+    ],
+    "1984849488": [
+      "rattler_iv"
+    ],
+    "1246914991": [
+      "recorder"
+    ],
+    "2130940125": [
+      "red_coral_jewelry"
+    ],
+    "1967335777": [
+      "red_light_stick"
+    ],
+    "-1934265965": [
+      "red_light_stick_blueprint"
+    ],
+    "-700849739": [
+      "reinforced_reception_security_code"
+    ],
+    "443470960": [
+      "remote_control"
+    ],
+    "1117029558": [
+      "remote_raider_flare"
+    ],
+    "-794870135": [
+      "remote_raider_flare_blueprint"
+    ],
+    "1443595066": [
+      "renegade_i"
+    ],
+    "-595215449": [
+      "renegade_ii"
+    ],
+    "-1520827186": [
+      "renegade_iii"
+    ],
+    "1650182822": [
+      "renegade_iv"
+    ],
+    "1962618186": [
+      "resin"
+    ],
+    "-1575948275": [
+      "ripped_safety_vest"
+    ],
+    "824934098": [
+      "riven_tides_classified_records_keycard"
+    ],
+    "1381640423": [
+      "riven_tides_crane_house_keycard"
+    ],
+    "-1226112249": [
+      "riven_tides_hotel_keycard_no_102"
+    ],
+    "98698078": [
+      "riven_tides_hotel_keycard_no_107"
+    ],
+    "-766577743": [
+      "riven_tides_hotel_keycard_no_113"
+    ],
+    "1049453236": [
+      "riven_tides_hotel_keycard_no_205"
+    ],
+    "2018078062": [
+      "riven_tides_hotel_keycard_no_208"
+    ],
+    "-218262343": [
+      "riven_tides_hotel_keycard_no_311"
+    ],
+    "1351205294": [
+      "riven_tides_hotel_keycard_no_404"
+    ],
+    "-1167788899": [
+      "riven_tides_secure_storage_keycard"
+    ],
+    "-1503671306": [
+      "rocket_thruster"
+    ],
+    "1352103757": [
+      "rocketeer_driver"
+    ],
+    "-1066783360": [
+      "roots"
+    ],
+    "130254116": [
+      "rope"
+    ],
+    "1902251599": [
+      "rosary"
+    ],
+    "897279399": [
+      "rotary_encoder"
+    ],
+    "1738639721": [
+      "rubber_duck"
+    ],
+    "423997188": [
+      "rubber_pad"
+    ],
+    "-2048050889": [
+      "rubber_parts",
+      "rubber_parts_recipe"
+    ],
+    "-141877207": [
+      "ruined_accordion"
+    ],
+    "-486305029": [
+      "ruined_augment"
+    ],
+    "827960562": [
+      "ruined_baton"
+    ],
+    "2141216040": [
+      "ruined_handcuffs"
+    ],
+    "-1170955422": [
+      "ruined_parachute"
+    ],
+    "-1670118133": [
+      "ruined_riot_shield"
+    ],
+    "-1035193710": [
+      "ruined_tactical_vest"
+    ],
+    "866985065": [
+      "rusted_bolts"
+    ],
+    "287464378": [
+      "rusted_gear"
+    ],
+    "593277545": [
+      "rusted_shut_medical_kit"
+    ],
+    "-741882707": [
+      "rusted_tools"
+    ],
+    "-174734319": [
+      "rusty_arc_steel"
+    ],
+    "-1997648523": [
+      "sample_cleaner"
+    ],
+    "307322161": [
+      "scout_patrol_note"
+    ],
+    "-23348055": [
+      "secret_meeting_info"
+    ],
+    "-195670371": [
+      "seed_vault_box_key"
+    ],
+    "-922322200": [
+      "seeker_grenade"
+    ],
+    "1383004532": [
+      "seeker_grenade_blueprint"
+    ],
+    "-17247411": [
+      "sensors",
+      "sensors_recipe"
+    ],
+    "-1116709774": [
+      "sentinel_firing_core"
+    ],
+    "1261688505": [
+      "shaker"
+    ],
+    "-34507507": [
+      "shield_recharger"
+    ],
+    "-1873522360": [
+      "shotgun_ammo"
+    ],
+    "-1570319542": [
+      "shotgun_choke_i"
+    ],
+    "-1682300422": [
+      "shotgun_choke_ii"
+    ],
+    "-365598365": [
+      "shotgun_choke_ii_blueprint"
+    ],
+    "-1295139142": [
+      "shotgun_choke_iii"
+    ],
+    "1426983925": [
+      "shotgun_choke_iii_blueprint"
+    ],
+    "772095082": [
+      "shotgun_gun_parts"
+    ],
+    "-319966965": [
+      "shotgun_silencer"
+    ],
+    "-961903907": [
+      "shotgun_silencer_blueprint"
+    ],
+    "-2035840261": [
+      "showstopper"
+    ],
+    "-828855343": [
+      "showstopper_blueprint"
+    ],
+    "2121538320": [
+      "shrapnel_grenade"
+    ],
+    "-1407135982": [
+      "shredder_gyro"
+    ],
+    "731997966": [
+      "signal_amplifier"
+    ],
+    "-409081322": [
+      "silencer_i"
+    ],
+    "1402108763": [
+      "silencer_i_blueprint"
+    ],
+    "1921518029": [
+      "silencer_ii"
+    ],
+    "-2067768957": [
+      "silencer_ii_blueprint"
+    ],
+    "-621597590": [
+      "silencer_iii"
+    ],
+    "373551009": [
+      "silver_teaspoon_set"
+    ],
+    "-574262619": [
+      "simple_gun_parts"
+    ],
+    "-2064796183": [
+      "sirena_dorata_ship_model"
+    ],
+    "984123027": [
+      "smoke_grenade"
+    ],
+    "-1061946916": [
+      "smoke_grenade_blueprint"
+    ],
+    "753263571": [
+      "snap_blast_grenade"
+    ],
+    "-1963108876": [
+      "snap_hook"
+    ],
+    "2132104320": [
+      "snap_hook_blueprint"
+    ],
+    "-943023152": [
+      "snitch_scanner"
+    ],
+    "1958396827": [
+      "snowball"
+    ],
+    "-976232170": [
+      "spaceport_container_storage_key"
+    ],
+    "-427130921": [
+      "spaceport_control_tower_key"
+    ],
+    "1946218435": [
+      "spaceport_trench_tower_key"
+    ],
+    "394517119": [
+      "spaceport_warehouse_key"
+    ],
+    "-1622446317": [
+      "speaker_component"
+    ],
+    "697800354": [
+      "spectrometer"
+    ],
+    "-240163355": [
+      "spectrum_analyzer"
+    ],
+    "-600381599": [
+      "spotter_relay"
+    ],
+    "-3791881": [
+      "spring_cushion"
+    ],
+    "775298648": [
+      "stable_stock_i"
+    ],
+    "1287783108": [
+      "stable_stock_ii"
+    ],
+    "1288425767": [
+      "stable_stock_ii_blueprint"
+    ],
+    "-123856886": [
+      "stable_stock_iii"
+    ],
+    "-692617228": [
+      "stable_stock_iii_blueprint"
+    ],
+    "334814973": [
+      "stack_of_movie_tapes"
+    ],
+    "-2087334800": [
+      "statuette"
+    ],
+    "-1517601046": [
+      "steel_spring"
+    ],
+    "-1845464234": [
+      "stella_montis_archives_key"
+    ],
+    "-2047792735": [
+      "stella_montis_assembly_admin_key"
+    ],
+    "189050774": [
+      "stella_montis_medical_storage_key"
+    ],
+    "-2103368401": [
+      "stella_montis_security_checkpoint_key"
+    ],
+    "951468812": [
+      "sterilized_bandage"
+    ],
+    "-302696283": [
+      "stitcher_i"
+    ],
+    "1549911570": [
+      "stitcher_ii"
+    ],
+    "-2007835076": [
+      "stitcher_iii"
+    ],
+    "1516184045": [
+      "stitcher_iv"
+    ],
+    "-828273506": [
+      "surge_coil"
+    ],
+    "1082962588": [
+      "surge_coil_blueprint"
+    ],
+    "-380745354": [
+      "surge_shield_recharger"
+    ],
+    "-1333721780": [
+      "surveyor_vault"
+    ],
+    "-503792599": [
+      "synthesized_fuel"
+    ],
+    "-647887968": [
+      "syringe"
+    ],
+    "966773769": [
+      "tactical_mk1"
+    ],
+    "-1240487285": [
+      "tactical_mk2",
+      "tactical_mk_2"
+    ],
+    "1101815928": [
+      "tactical_mk3_defensive"
+    ],
+    "-1605165530": [
+      "tactical_mk3_defensive_blueprint"
+    ],
+    "-1561038837": [
+      "tactical_mk3_healing",
+      "tactical_mk_3_healing"
+    ],
+    "-658614890": [
+      "tactical_mk3_healing_blueprint"
+    ],
+    "-1328695953": [
+      "tactical_mk3_revival"
+    ],
+    "-1804268766": [
+      "tactical_mk3_revival_blueprint"
+    ],
+    "-735920468": [
+      "tactical_mk3_smoke",
+      "tactical_mk_3_smoke"
+    ],
+    "537092188": [
+      "tagging_grenade"
+    ],
+    "-1418602101": [
+      "tagging_grenade_blueprint"
+    ],
+    "-2124548786": [
+      "tattered_arc_lining"
+    ],
+    "-643480722": [
+      "tattered_clothes"
+    ],
+    "-25914444": [
+      "telemetry_transceiver"
+    ],
+    "-673170998": [
+      "tempest_blueprint"
+    ],
+    "1433303640": [
+      "tempest_i"
+    ],
+    "-1259129540": [
+      "tempest_ii"
+    ],
+    "-672186450": [
+      "tempest_iii"
+    ],
+    "1629645384": [
+      "tempest_iv"
+    ],
+    "728190402": [
+      "thermostat"
+    ],
+    "-505000565": [
+      "tick_pod"
+    ],
+    "-1789285630": [
+      "toaster"
+    ],
+    "-1298184560": [
+      "torn_blanket"
+    ],
+    "-946162568": [
+      "torn_book"
+    ],
+    "166538264": [
+      "torn_book"
+    ],
+    "-543601975": [
+      "torrente_blueprint"
+    ],
+    "1316261334": [
+      "torrente_i"
+    ],
+    "-595016198": [
+      "torrente_ii"
+    ],
+    "2125834231": [
+      "torrente_iii"
+    ],
+    "747891994": [
+      "torrente_iv"
+    ],
+    "-153748567": [
+      "trailblazer"
+    ],
+    "-93272200": [
+      "trailblazer_blueprint"
+    ],
+    "-853193179": [
+      "trigger_nade"
+    ],
+    "1380531218": [
+      "trigger_nade_blueprint"
+    ],
+    "-299391245": [
+      "tropical_duck"
+    ],
+    "1015139423": [
+      "turbine_compressor"
+    ],
+    "701162118": [
+      "turbo_pump"
+    ],
+    "1867928291": [
+      "twilight_compass_ship_model"
+    ],
+    "-1311488653": [
+      "unusable_weapon"
+    ],
+    "1348244387": [
+      "vaporizer_regulator"
+    ],
+    "-652794821": [
+      "vase"
+    ],
+    "1529467338": [
+      "velocity_ship_model"
+    ],
+    "1282834879": [
+      "venator_blueprint"
+    ],
+    "1858816158": [
+      "venator_i"
+    ],
+    "-853744599": [
+      "venator_ii"
+    ],
+    "-119018899": [
+      "venator_iii"
+    ],
+    "168902929": [
+      "venator_iv"
+    ],
+    "-1404148784": [
+      "vertical_grip_i"
+    ],
+    "-295158634": [
+      "vertical_grip_ii"
+    ],
+    "1558483939": [
+      "vertical_grip_ii_blueprint"
+    ],
+    "-1074924798": [
+      "vertical_grip_iii"
+    ],
+    "-656772288": [
+      "vertical_grip_iii_blueprint"
+    ],
+    "-1286103237": [
+      "very_comfortable_pillow"
+    ],
+    "2041238290": [
+      "vita_shot"
+    ],
+    "-423565474": [
+      "vita_shot_blueprint"
+    ],
+    "1795670982": [
+      "vita_spray"
+    ],
+    "-1557112845": [
+      "vita_spray_blueprint"
+    ],
+    "-1097499674": [
+      "volcanic_rock"
+    ],
+    "1552920566": [
+      "voltage_converter"
+    ],
+    "-196900720": [
+      "vulcano_blueprint"
+    ],
+    "1123609629": [
+      "vulcano_i"
+    ],
+    "-131543983": [
+      "vulcano_ii"
+    ],
+    "737182316": [
+      "vulcano_iii"
+    ],
+    "-630279513": [
+      "vulcano_iv"
+    ],
+    "-1712774896": [
+      "wasp_driver"
+    ],
+    "1393527984": [
+      "water_filter"
+    ],
+    "-1637094497": [
+      "water_pump"
+    ],
+    "313683762": [
+      "wind_sprite_ship_model"
+    ],
+    "-633851525": [
+      "wires",
+      "wires_recipe"
+    ],
+    "-1074160440": [
+      "wolfpack"
+    ],
+    "-558241643": [
+      "wolfpack_blueprint"
+    ],
+    "-237588358": [
+      "yellow_light_stick"
+    ],
+    "901535629": [
+      "yellow_light_stick_blueprint"
+    ],
+    "793992947": [
+      "zipline"
+    ]
+  },
+  "byWeaponId": {
+    "anvil": [
+      "anvil_i",
+      "anvil_ii",
+      "anvil_iii",
+      "anvil_iv"
+    ],
+    "aphelion": [
+      "aphelion"
+    ],
+    "arpeggio": [
+      "arpeggio_i",
+      "arpeggio_ii",
+      "arpeggio_iii",
+      "arpeggio_iv"
+    ],
+    "bettina": [
+      "bettina_i",
+      "bettina_ii",
+      "bettina_iii",
+      "bettina_iv"
+    ],
+    "bobcat": [
+      "bobcat_i",
+      "bobcat_ii",
+      "bobcat_iii",
+      "bobcat_iv"
+    ],
+    "burletta": [
+      "burletta_i",
+      "burletta_ii",
+      "burletta_iii",
+      "burletta_iv"
+    ],
+    "canto": [
+      "canto_i",
+      "canto_ii",
+      "canto_iii",
+      "canto_iv"
+    ],
+    "dolabra": [
+      "dolabra"
+    ],
+    "equalizer": [
+      "equalizer"
+    ],
+    "ferro": [
+      "ferro_i",
+      "ferro_ii",
+      "ferro_iii",
+      "ferro_iv"
+    ],
+    "hairpin": [
+      "hairpin_i",
+      "hairpin_ii",
+      "hairpin_iii",
+      "hairpin_iv"
+    ],
+    "hullcracker": [
+      "hullcracker_i",
+      "hullcracker_ii",
+      "hullcracker_iii",
+      "hullcracker_iv"
+    ],
+    "il-toro": [
+      "il_toro_i",
+      "il_toro_ii",
+      "il_toro_iii",
+      "il_toro_iv"
+    ],
+    "jupiter": [
+      "jupiter"
+    ],
+    "kettle": [
+      "kettle_i",
+      "kettle_ii",
+      "kettle_iii",
+      "kettle_iv"
+    ],
+    "osprey": [
+      "osprey_i",
+      "osprey_ii",
+      "osprey_iii",
+      "osprey_iv"
+    ],
+    "rattler": [
+      "rattler_i",
+      "rattler_ii",
+      "rattler_iii",
+      "rattler_iv"
+    ],
+    "renegade": [
+      "renegade_i",
+      "renegade_ii",
+      "renegade_iii",
+      "renegade_iv"
+    ],
+    "stitcher": [
+      "stitcher_i",
+      "stitcher_ii",
+      "stitcher_iii",
+      "stitcher_iv"
+    ],
+    "tempest": [
+      "tempest_i",
+      "tempest_ii",
+      "tempest_iii",
+      "tempest_iv"
+    ],
+    "torrente": [
+      "torrente_i",
+      "torrente_ii",
+      "torrente_iii",
+      "torrente_iv"
+    ],
+    "venator": [
+      "venator_i",
+      "venator_ii",
+      "venator_iii",
+      "venator_iv"
+    ],
+    "vulcano": [
+      "vulcano_i",
+      "vulcano_ii",
+      "vulcano_iii",
+      "vulcano_iv"
+    ]
+  },
+  "byCategory": {
+    "Quick Use": [
+      "acoustic_guitar",
+      "adrenaline_shot",
+      "agave_juice",
+      "bandage",
+      "barricade_kit",
+      "binoculars",
+      "blaze_grenade",
+      "blaze_grenade_trap",
+      "blue_light_stick",
+      "crash_mat",
+      "deadline",
+      "defibrillator",
+      "dockmasters_detector",
+      "door_blocker",
+      "explosive_mine",
+      "firecracker",
+      "fireworks_box",
+      "flame_spray",
+      "fruit_mix",
+      "gas_grenade",
+      "gas_grenade_trap",
+      "gas_mine",
+      "green_light_stick",
+      "heavy_fuze_grenade",
+      "herbal_bandage",
+      "jolt_mine",
+      "laser_trap_lure_recipe",
+      "laser_trap_smoke_recipe",
+      "light_impact_grenade",
+      "lil_smoke_grenade",
+      "lure_grenade",
+      "lure_grenade_trap",
+      "noisemaker",
+      "photoelectric_cloak",
+      "powered_descender",
+      "pulse_mine",
+      "recorder",
+      "red_light_stick",
+      "remote_raider_flare",
+      "seeker_grenade",
+      "shaker",
+      "shield_recharger",
+      "showstopper",
+      "shrapnel_grenade",
+      "smoke_grenade",
+      "smoke_grenade_trap",
+      "snap_blast_grenade",
+      "snap_hook",
+      "snowball",
+      "sterilized_bandage",
+      "surge_coil",
+      "surge_shield_recharger",
+      "tagging_grenade",
+      "trailblazer",
+      "trailblazer_grenade",
+      "trigger_nade",
+      "vita_shot",
+      "vita_spray",
+      "white_flag",
+      "wolfpack",
+      "yellow_light_stick",
+      "zipline"
+    ],
+    "Topside Material": [
+      "advanced_arc_powercell",
+      "arc_alloy",
+      "arc_circuitry",
+      "arc_motion_core",
+      "arc_powercell",
+      "battery",
+      "canister",
+      "complex_gun_parts",
+      "duct_tape",
+      "duct_tape_recipe",
+      "exodus_modules",
+      "fossilized_lightning",
+      "great_mullein",
+      "great_muullein",
+      "heavy_gun_parts",
+      "light_gun_parts",
+      "magnet",
+      "medium_gun_parts",
+      "moss",
+      "oil",
+      "processor",
+      "rope",
+      "sensors",
+      "sensors_recipe",
+      "simple_gun_parts",
+      "speaker_component",
+      "spring",
+      "steel_spring",
+      "synthesized_fuel",
+      "syringe",
+      "voltage_converter",
+      "wires",
+      "wires_recipe"
+    ],
+    "Refined Material": [
+      "advanced_electrical_components",
+      "advanced_mechanical_components",
+      "antiseptic",
+      "crude_explosives",
+      "durable_cloth",
+      "electrical_components",
+      "explosive_compound",
+      "magnetic_accelerator",
+      "mechanical_components",
+      "mod_components",
+      "power_rod"
+    ],
+    "Nature": [
+      "agave",
+      "apricot",
+      "assorted_seeds",
+      "candleberries",
+      "fertilizer",
+      "lemon",
+      "mushroom",
+      "olives",
+      "prickly_pear",
+      "resin",
+      "roots"
+    ],
+    "Trinket": [
+      "air_freshener",
+      "alien_duck",
+      "bloated_tuna_can",
+      "breathtaking_snow_globe",
+      "burnt_out_candles",
+      "cat_bed",
+      "celeste_journal",
+      "coffee_pot",
+      "dart_board",
+      "dodgers_note",
+      "doodly_duck",
+      "dusty_film_reel",
+      "empty_wine_bottle",
+      "espresso_machine_parts",
+      "esr_analyzer",
+      "experimental_seed_sample",
+      "expired_pasta",
+      "faded_photograph",
+      "familiar_duck",
+      "film_reel",
+      "fine_wristwatch",
+      "first_wave_compass",
+      "first_wave_rations",
+      "first_wave_tape",
+      "flashy_duck",
+      "flushing_terminal_key",
+      "gentle_duck",
+      "lances_mixtape_5th_edition",
+      "leviathans_crown_ship_model",
+      "library_book",
+      "lidar_scanner",
+      "light_bulb",
+      "major_aivas_mementos",
+      "major_aivas_patch",
+      "marano_market_business_card",
+      "moisture_meter",
+      "music_album",
+      "music_box",
+      "nutrient_meter",
+      "official_shutdown_documentation",
+      "old_world_books",
+      "painted_box",
+      "playing_cards",
+      "possibly_toxic_plant",
+      "poster_natural_wonder",
+      "poster_of_natural_wonders",
+      "pottery",
+      "precision_gimbal",
+      "project_heartwood_blueprints",
+      "raider_flag",
+      "red_coral_jewelry",
+      "rosary",
+      "rubber_duck",
+      "scout_patrol_note",
+      "secret_meeting_info",
+      "silver_teaspoon_set",
+      "sirena_dorata_ship_model",
+      "stack_of_movie_tapes",
+      "statuette",
+      "torn_book",
+      "tropical_duck",
+      "twilight_compass_ship_model",
+      "vase",
+      "velocity_ship_model",
+      "very_comfortable_pillow",
+      "wind_sprite_ship_model"
+    ],
+    "Recyclable": [
+      "alarm_clock",
+      "arc_coolant",
+      "arc_flex_rubber",
+      "arc_performance_steel",
+      "arc_synthetic_resin",
+      "arc_thermo_lining",
+      "assessor_matrix",
+      "bastion_cell",
+      "bastion_part",
+      "bicycle_pump",
+      "bison_driver",
+      "bombardier_cell",
+      "broken_flashlight",
+      "broken_guidance_system",
+      "broken_handcuffs",
+      "broken_handheld_radio",
+      "broken_taser",
+      "burned_arc_circuitry",
+      "camera_lens",
+      "candle_holder",
+      "comet_igniter",
+      "coolant",
+      "cooling_coil",
+      "cooling_fan",
+      "cracked_bioscanner",
+      "crumpled_plastic_bottle",
+      "damaged_arc_motion_core",
+      "damaged_arc_powercell",
+      "damaged_fireball_burner",
+      "damaged_heat_sink",
+      "damaged_hornet_driver",
+      "damaged_rocketeer_driver",
+      "damaged_rocketeer_part",
+      "damaged_snitch_scanner",
+      "damaged_tick_pod",
+      "damaged_wasp_driver",
+      "danaged_hornet_driver",
+      "deflated_football",
+      "degraded_arc_rubber",
+      "diving_goggles",
+      "diving_googles",
+      "dog_collar",
+      "dried_out_arc_resin",
+      "expired_respirator",
+      "fireball_burner",
+      "firefly_burner",
+      "flow_controller",
+      "frequency_modulation_box",
+      "fried_motherboard",
+      "frying_pan",
+      "garlic_press",
+      "geiger_counter",
+      "headphones",
+      "hornet_driver",
+      "household_cleaner",
+      "humidifier",
+      "ice_cream_scooper",
+      "impure_arc_coolant",
+      "industrial_battery",
+      "industrial_charger",
+      "industrial_magnet",
+      "ion_sputter",
+      "laboratory_reagents",
+      "leaper_pulse_unit",
+      "magnetron",
+      "matriarch_reactor",
+      "metal_brackets",
+      "microscope",
+      "mini_centrifuge",
+      "motor",
+      "number_plate",
+      "polluted_air_filter",
+      "pop_trigger",
+      "portable_television",
+      "portable_tv",
+      "power_bank",
+      "power_cable",
+      "projector",
+      "queen_reactor",
+      "radio",
+      "radio_relay",
+      "remote_control",
+      "ripped_safety_vest",
+      "rocket_thruster",
+      "rocketeer_driver",
+      "rocketeer_part",
+      "rotary_encoder",
+      "rubber_pad",
+      "ruined_accordion",
+      "ruined_augment",
+      "ruined_baton",
+      "ruined_handcuffs",
+      "ruined_parachute",
+      "ruined_riot_shield",
+      "ruined_tactical_vest",
+      "rusted_bolts",
+      "rusted_gear",
+      "rusted_shut_medical_kit",
+      "rusted_tools",
+      "rusty_arc_steel",
+      "sample_cleaner",
+      "sentinel_firing_core",
+      "sentinel_part",
+      "shredder_gyro",
+      "signal_amplifier",
+      "snitch_scanner",
+      "spectrometer",
+      "spectrum_analyzer",
+      "spotter_relay",
+      "spring_cushion",
+      "surveyor_vault",
+      "tattered_arc_lining",
+      "tattered_clothes",
+      "telemetry_transceiver",
+      "thermostat",
+      "tick_pod",
+      "toaster",
+      "torn_blanket",
+      "turbine_compressor",
+      "turbo_pump",
+      "unusable_weapon",
+      "vaporizer_regulator",
+      "wasp_driver",
+      "water_filter",
+      "water_pump"
+    ],
+    "Key": [
+      "ancient_fort_security_code",
+      "blue_gate_cellar_key",
+      "blue_gate_communication_tower_key",
+      "blue_gate_confiscation_room_key",
+      "blue_gate_village_key",
+      "buried_city_hospital_key",
+      "buried_city_jkv_employee_access_card",
+      "buried_city_residential_master_key",
+      "buried_city_town_hall_key",
+      "dam_control_center_tower_key",
+      "dam_control_tower_key",
+      "dam_controlled_access_zone_key",
+      "dam_staff_room_key",
+      "dam_surveillance_key",
+      "dam_testing_annex_key",
+      "expired_security_code",
+      "hidden_bunker_key",
+      "patrol_car_key",
+      "pilgrims_peak_security_code",
+      "raider_hatch_key",
+      "raiders_refuge_security_code",
+      "reinforced_reception_security_code",
+      "riven_tides_classifed_records_keycard",
+      "riven_tides_classified_records_keycard",
+      "riven_tides_crane_house_keycard",
+      "riven_tides_hotel_keycard_no_102",
+      "riven_tides_hotel_keycard_no_107",
+      "riven_tides_hotel_keycard_no_113",
+      "riven_tides_hotel_keycard_no_205",
+      "riven_tides_hotel_keycard_no_208",
+      "riven_tides_hotel_keycard_no_311",
+      "riven_tides_hotel_keycard_no_404",
+      "riven_tides_secure_storage_keycard",
+      "seed_vault_box_key",
+      "spaceport_container_storage_key",
+      "spaceport_control_tower_key",
+      "spaceport_ground_control_key",
+      "spaceport_trench_tower_key",
+      "spaceport_warehouse_key",
+      "stella_montis_archives_key",
+      "stella_montis_assembly_admin_key",
+      "stella_montis_medical_storage_key",
+      "stella_montis_security_checkpoint_key"
+    ],
+    "Modification": [
+      "angled_grip_i",
+      "angled_grip_ii",
+      "angled_grip_iii",
+      "anvil_splitter",
+      "compensator_i",
+      "compensator_ii",
+      "compensator_iii",
+      "extended_barrel",
+      "extended_barrel_i",
+      "extended_barrel_ii",
+      "extended_barrel_iii",
+      "extended_light_mag_i",
+      "extended_light_mag_ii",
+      "extended_light_mag_iii",
+      "extended_medium_mag_i",
+      "extended_medium_mag_ii",
+      "extended_medium_mag_iii",
+      "extended_shotgun_mag_i",
+      "extended_shotgun_mag_ii",
+      "extended_shotgun_mag_iii",
+      "horizontal_grip",
+      "kinetic_converter",
+      "lightweight_stock",
+      "muzzle_brake_i",
+      "muzzle_brake_ii",
+      "muzzle_brake_iii",
+      "padded_stock",
+      "shotgun_choke_i",
+      "shotgun_choke_ii",
+      "shotgun_choke_iii",
+      "shotgun_silencer",
+      "silencer_i",
+      "silencer_ii",
+      "silencer_iii",
+      "stable_stock_i",
+      "stable_stock_ii",
+      "stable_stock_iii",
+      "vertical_grip_i",
+      "vertical_grip_ii",
+      "vertical_grip_iii"
+    ],
+    "Blueprints": [
+      "angled_grip_ii_blueprint",
+      "angled_grip_ii_recipe",
+      "angled_grip_iii_blueprint",
+      "angled_grip_iii_recipe",
+      "anvil_blueprint",
+      "anvil_recipe",
+      "aphelion_blueprint",
+      "aphelion_rifle_blueprint",
+      "barricade_kit_blueprint",
+      "barricade_kit_recipe",
+      "bettina_blueprint",
+      "blaze_grenade_blueprint",
+      "blue_light_stick_blueprint",
+      "bobcat_blueprint",
+      "bobcat_i_recipe",
+      "burletta_blueprint",
+      "burltetta_recipe",
+      "canto_blueprint",
+      "combat_mk3_aggressive_blueprint",
+      "combat_mk3_flanking_blueprint",
+      "combat_mk_3_flanking",
+      "compensator_ii_blueprint",
+      "compensator_ii_recipe",
+      "compensator_iii_blueprint",
+      "compensator_iii_recipe",
+      "complex_gun_parts_blueprint",
+      "crash_mat_blueprint",
+      "deadline_blueprint",
+      "defibrillator_blueprint",
+      "defibrillator_recipe",
+      "dolabra_blueprint",
+      "equalizer_blueprint",
+      "equalizer_recipe",
+      "explosive_mine_blueprint",
+      "extended_barrel_ii_blueprint",
+      "extended_barrel_iii_blueprint",
+      "extended_barrel_recipe",
+      "extended_light_mag_ii_blueprint",
+      "extended_light_mag_ii_recipe",
+      "extended_light_mag_iii_blueprint",
+      "extended_light_mag_iii_recipe",
+      "extended_medium_mag_ii_blueprint",
+      "extended_medium_mag_ii_recipe",
+      "extended_medium_mag_iii_blueprint",
+      "extended_shotgun_mag_ii_blueprint",
+      "extended_shotgun_mag_ii_recipe",
+      "extended_shotgun_mag_iii_blueprint",
+      "extended_shotgun_mag_iii_recipe",
+      "fireworks_box_blueprint",
+      "gas_mine_blueprint",
+      "green_light_stick_blueprint",
+      "heavy_gun_parts_blueprint",
+      "heavy_gun_parts_recipe",
+      "hullcracker_blueprint",
+      "il_toro_blueprint",
+      "il_toro_recipe",
+      "jolt_mine_blueprint",
+      "jolt_mine_recipe",
+      "jupiter_blueprint",
+      "jupiter_i_recipe",
+      "light_gun_parts_blueprint",
+      "light_gun_parts_recipe",
+      "lightweight_stock_blueprint",
+      "lightweight_stock_recipe",
+      "looting_mk3_safekeeper_blueprint",
+      "looting_mk3_survivor_blueprint",
+      "looting_mk_3_safekeeper_blueprint",
+      "looting_mk_3_survivor_blueprint",
+      "lure_grenade_blueprint",
+      "lure_grenade_recipe",
+      "medium_gun_parts_blueprint",
+      "medium_gun_parts_recipe",
+      "muzzle_brake_ii_blueprint",
+      "muzzle_brake_ii_recipe",
+      "muzzle_brake_iii_blueprint",
+      "muzzle_brake_iii_recipe",
+      "osprey_blueprint",
+      "osprey_recipe",
+      "padded_stock_blueprint",
+      "padded_stock_recipe",
+      "powered_descender_blueprint",
+      "pulse_mine_blueprint",
+      "rascal_blueprint",
+      "red_light_stick_blueprint",
+      "remote_raider_flare_blueprint",
+      "seeker_grenade_blueprint",
+      "shotgun_choke_ii_blueprint",
+      "shotgun_choke_ii_recipe",
+      "shotgun_choke_iii_blueprint",
+      "shotgun_choke_iii_recipe",
+      "shotgun_silencer_blueprint",
+      "showstopper_blueprint",
+      "silencer_i_blueprint",
+      "silencer_i_recipe",
+      "silencer_ii_blueprint",
+      "silencer_ii_recipe",
+      "smoke_grenade_blueprint",
+      "snap_hook_blueprint",
+      "snap_hook_recipe",
+      "stable_stock_ii_blueprint",
+      "stable_stock_ii_recipe",
+      "stable_stock_iii_blueprint",
+      "stable_stock_iii_recipe",
+      "surge_coil_blueprint",
+      "tacical_mk3_healing_blueprint",
+      "tactical_mk3_defensive_blueprint",
+      "tactical_mk3_healing_blueprint",
+      "tactical_mk3_revival_blueprint",
+      "tactical_mk3_smoke_blueprint",
+      "tactical_mk_3_revival_blueprint",
+      "tagging_grenade_blueprint",
+      "tagging_grenade_recipe",
+      "tempest_blueprint",
+      "tempest_i_recipe",
+      "torrent_i_recipe",
+      "torrente_blueprint",
+      "trailblazer_blueprint",
+      "trailblazer_grenade_blueprint",
+      "trigger_nade_blueprint",
+      "trigger_nade_recipe",
+      "utility_augment_t3_smoke_blueprint",
+      "venator_blueprint",
+      "venator_recipe",
+      "vertical_grip_ii_blueprint",
+      "vertical_grip_ii_recipe",
+      "vertical_grip_iii_blueprint",
+      "vertical_grip_iii_recipe",
+      "vita_shot_blueprint",
+      "vita_shot_recipe",
+      "vita_spray_blueprint",
+      "vita_spray_recipe",
+      "vulcano_blueprint",
+      "white_flag_blueprint",
+      "wolfpack_blueprint",
+      "wolfpack_recipe",
+      "yellow_light_stick_blueprint"
+    ],
+    "Weapons": [
+      "anvil_i",
+      "anvil_ii",
+      "anvil_iii",
+      "anvil_iv",
+      "aphelion",
+      "arpeggio_i",
+      "arpeggio_ii",
+      "arpeggio_iii",
+      "arpeggio_iv",
+      "bettina_i",
+      "bettina_ii",
+      "bettina_iii",
+      "bettina_iv",
+      "bobcat_i",
+      "bobcat_ii",
+      "bobcat_iii",
+      "bobcat_iv",
+      "burletta_i",
+      "burletta_ii",
+      "burletta_iii",
+      "burletta_iv",
+      "canto_i",
+      "canto_ii",
+      "canto_iii",
+      "canto_iv",
+      "dolabra",
+      "equalizer",
+      "ferro_i",
+      "ferro_ii",
+      "ferro_iii",
+      "ferro_iv",
+      "hairpin_i",
+      "hairpin_ii",
+      "hairpin_iii",
+      "hairpin_iv",
+      "hullcracker_i",
+      "hullcracker_ii",
+      "hullcracker_iii",
+      "hullcracker_iv",
+      "il_toro_i",
+      "il_toro_ii",
+      "il_toro_iii",
+      "il_toro_iv",
+      "jupiter",
+      "kettle_i",
+      "kettle_ii",
+      "kettle_iii",
+      "kettle_iv",
+      "osprey_i",
+      "osprey_ii",
+      "osprey_iii",
+      "osprey_iv",
+      "rascal_i",
+      "rascal_ii",
+      "rascal_iii",
+      "rascal_iv",
+      "rattler_i",
+      "rattler_ii",
+      "rattler_iii",
+      "rattler_iv",
+      "renegade_i",
+      "renegade_ii",
+      "renegade_iii",
+      "renegade_iv",
+      "stitcher_i",
+      "stitcher_ii",
+      "stitcher_iii",
+      "stitcher_iv",
+      "tempest_i",
+      "tempest_ii",
+      "tempest_iii",
+      "tempest_iv",
+      "torrente_i",
+      "torrente_ii",
+      "torrente_iii",
+      "torrente_iv",
+      "venator_i",
+      "venator_ii",
+      "venator_iii",
+      "venator_iv",
+      "vulcano_i",
+      "vulcano_ii",
+      "vulcano_iii",
+      "vulcano_iv"
+    ],
+    "Weapon": [
+      "aphelion_rifle",
+      "burletta_iiii",
+      "canto",
+      "equalizer_i",
+      "il_toro_iiii",
+      "jupiter_i",
+      "rascal"
+    ],
+    "Misc": [
+      "aviator_outfit",
+      "bag_radio_renegade_variant",
+      "banana_backpack_charm",
+      "black_and_white_origin_color",
+      "black_eye_face_style",
+      "black_hiker_colour",
+      "blue_radio_renegade_color",
+      "blue_yellow_aviator_color",
+      "bow_and_arrow_emote",
+      "briefcase_backpack_attachment",
+      "burgerboy_backpack_charm",
+      "cheer_emote",
+      "coins",
+      "crimson_racer_aviator_colour",
+      "faded_flush_aviator_color",
+      "finger_gun_single_shot_emote",
+      "goggles_radio_renegade_variant",
+      "gothic_graffiti_aviator_color",
+      "happy_jig_emote",
+      "helmet_radio_renegade_variant",
+      "mastery_medal_backpack_charm",
+      "orange_camo_origin_outfit",
+      "patchwork_warden_color",
+      "patrol_outfit",
+      "radio_renegade_outfit",
+      "raider_tokens",
+      "red_radio_renegade_color",
+      "succulent_backpack_charm",
+      "tangerine_warden_color",
+      "volcanic_rock",
+      "warden_outfit",
+      "white_indigo_warden_color",
+      "yellow_radio_renegade_color"
+    ],
+    "Cosmetic": [
+      "cans_backpack_attachment",
+      "junior_outfit"
+    ],
+    "Basic Material": [
+      "chemicals",
+      "fabric",
+      "metal_parts",
+      "plastic_parts",
+      "rubber_parts",
+      "rubber_parts_recipe"
+    ],
+    "Augment": [
+      "combat_mk1",
+      "combat_mk2",
+      "combat_mk3_aggressive",
+      "combat_mk3_flanking",
+      "combat_mk_1",
+      "combat_mk_2",
+      "combat_mk_3_aggressive",
+      "free_loadout_augment",
+      "looting_mk1",
+      "looting_mk2",
+      "looting_mk3_cautious",
+      "looting_mk3_safekeeper",
+      "looting_mk3_survivor",
+      "looting_mk_1",
+      "looting_mk_2",
+      "looting_mk_3_cautious",
+      "looting_mk_3_safekeeper",
+      "looting_mk_3_survivor",
+      "tactical_mk1",
+      "tactical_mk2",
+      "tactical_mk3_defensive",
+      "tactical_mk3_healing",
+      "tactical_mk3_revival",
+      "tactical_mk3_smoke",
+      "tactical_mk_1",
+      "tactical_mk_2",
+      "tactical_mk_3_healing",
+      "tactical_mk_3_revival",
+      "tactical_mk_3_smoke"
+    ],
+    "Quest Item": [
+      "dam_utility_key"
+    ],
+    "Ammunition": [
+      "energy_ammo",
+      "energy_clip",
+      "heavy_ammo",
+      "launcher_ammo",
+      "light_ammo",
+      "medium_ammo",
+      "shotgun_ammo"
+    ],
+    "Shield": [
+      "heavy_shield",
+      "light_shield",
+      "medium_shield"
+    ],
+    "Material": [
+      "shotgun_gun_parts",
+      "torch_ginger"
+    ],
+        "mapID": [
+      "shotgun_gun_parts",
+      "torch_ginger"
+    ],
+        "targetID": [
+      "shotgun_gun_parts",
+      "torch_ginger"
+    ],
+    "benches": {
+       "med_station": {
+            name: "Medical Lab",
+            gameName: "Med Bench",
+            maxLevel: 3,
+                tiers: {
+                    1: -0x6dad8cca,
+                    2: -0x54021306,
+                    3: 0x44f695aa
+                },
+            "explosives_bench": {
+                "name": "Explosives Station",
+                "gameName": "Explosive Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: -0x1eea7c92,
+                    2: -0x2ab4558,
+                    3: -0x309ff49b
+                },
+            "weapon_bench": {
+                "name": "Gunsmith",
+                "gameName": "Weapon Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x115b4fae,
+                    2: 0x14c46b67,
+                    3: -0x410c8086
+                },
+            "equipment_bench": {
+                "name": "Gear Bench",
+                "gameName": "Armor Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x54578865,
+                    2: -0x5847928,
+                    3: -0x41312683
+                },
+            "utility_bench": {
+                "name": "Utility Station",
+                "gameName": "Item Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x43ff256b,
+                    2: 0x5c92256a,
+                    3: 0x45307016
+                },
+            refiner: {
+                name: "Refiner",
+                gameName: "Assembly Station",
+                maxLevel: 3,
+                tiers: {
+                    1: -0x37bec534,
+                    2: 0x5a6d2541,
+                    3: 0x4e02364
+                },
+            scrappy: {
+                name: "Scrappy",
+                gameName: "Unknown",
+                maxLevel: 5,
+                tiers: {
+                    1: 0x62c74ead,
+                    2: 0x79ac077b,
+                    3: 0x557a29f8,
+                    4: 0x7bfe7df1,
+                    5: 0x6a352332
+                },
+            workbench: {
+                name: "Workbench",
+                gameName: "Basic Bench",
+                maxLevel: 0,
+                tiers: {
+                    1: -0x31bbef92
+                }
+            }
+        },
+        stash: {
+            name: "Stash",
+            maxLevel: 10,
+            tiers: {
+                1: -0x329a4eed,
+                2: 0x27efc379,
+                3: -0x37c4e84d,
+                4: 0x1b656428,
+                5: 0x576d68a8,
+                6: 0x1d5a620b,
+                7: -0xd51b7da,
+                8: 0x28e4b067,
+                9: -0x2d3638a,
+                10: 0x312128f1
+            }
+        },
+        assetIdToHideout: {
+            "-1840090314": {
+                module: "med_station",
+                level: 1
+            },
+            "-1409422086": {
+                module: "med_station",
+                level: 2
+            },
+            0x44f695aa: {
+                module: "med_station",
+                level: 3
+            },
+            "-518683794": {
+                module: "explosives_bench",
+                level: 1
+            },
+            "-44778840": {
+                module: "explosives_bench",
+                level: 2
+            },
+            "-815789211": {
+                module: "explosives_bench",
+                level: 3
+            },
+            0x115b4fae: {
+                module: "weapon_bench",
+                level: 1
+            },
+            0x14c46b67: {
+                module: "weapon_bench",
+                level: 2
+            },
+            "-1091338374": {
+                module: "weapon_bench",
+                level: 3
+            },
+            0x54578865: {
+                module: "equipment_bench",
+                level: 1
+            },
+            "-92567848": {
+                module: "equipment_bench",
+                level: 2
+            },
+            "-1093740163": {
+                module: "equipment_bench",
+                level: 3
+            },
+            0x43ff256b: {
+                module: "utility_bench",
+                level: 1
+            },
+            0x5c92256a: {
+                module: "utility_bench",
+                level: 2
+            },
+            0x45307016: {
+                module: "utility_bench",
+                level: 3
+            },
+            "-935249204": {
+                module: "refiner",
+                level: 1
+            },
+            0x5a6d2541: {
+                module: "refiner",
+                level: 2
+            },
+            0x4e02364: {
+                module: "refiner",
+                level: 3
+            },
+            0x62c74ead: {
+                module: "scrappy",
+                level: 1
+            },
+            0x79ac077b: {
+                module: "scrappy",
+                level: 2
+            },
+            0x557a29f8: {
+                module: "scrappy",
+                level: 3
+            },
+            0x7bfe7df1: {
+                module: "scrappy",
+                level: 4
+            },
+            0x6a352332: {
+                module: "scrappy",
+                level: 5
+            },
+            "-834400146": {
+                module: "workbench",
+                level: 1
+            },
+            "-848973549": {
+                module: "stash",
+                level: 1
+            },
+            0x27efc379: {
+                module: "stash",
+                level: 2
+            },
+            "-935651405": {
+                module: "stash",
+                level: 3
+            },
+            0x1b656428: {
+                module: "stash",
+                level: 4
+            },
+            0x576d68a8: {
+                module: "stash",
+                level: 5
+            },
+            0x1d5a620b: {
+                module: "stash",
+                level: 6
+            },
+            "-223459290": {
+                module: "stash",
+                level: 7
+            },
+            0x28e4b067: {
+                module: "stash",
+                level: 8
+            },
+            "-47408010": {
+                module: "stash",
+                level: 9
+            },
+            0x312128f1: {
+                module: "stash",
+                level: 10
+            }
+        }
+    })
+}
+  }
+}
+     "mapID": [
+      "shotgun_gun_parts",
+      "torch_ginger"
+    ],
+        "targetID": [
+      "shotgun_gun_parts",
+      "torch_ginger"
+    ],
+    "benches": {
+       "med_station": {
+            name: "Medical Lab",
+            gameName: "Med Bench",
+            maxLevel: 3,
+                tiers: {
+                    1: -0x6dad8cca,
+                    2: -0x54021306,
+                    3: 0x44f695aa
+                },
+            "explosives_bench": {
+                "name": "Explosives Station",
+                "gameName": "Explosive Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: -0x1eea7c92,
+                    2: -0x2ab4558,
+                    3: -0x309ff49b
+                },
+            "weapon_bench": {
+                "name": "Gunsmith",
+                "gameName": "Weapon Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x115b4fae,
+                    2: 0x14c46b67,
+                    3: -0x410c8086
+                },
+            "equipment_bench": {
+                "name": "Gear Bench",
+                "gameName": "Armor Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x54578865,
+                    2: -0x5847928,
+                    3: -0x41312683
+                },
+            "utility_bench": {
+                "name": "Utility Station",
+                "gameName": "Item Bench",
+                "maxLevel": 3,
+                "tiers": {
+                    1: 0x43ff256b,
+                    2: 0x5c92256a,
+                    3: 0x45307016
+                },
+            refiner: {
+                name: "Refiner",
+                gameName: "Assembly Station",
+                maxLevel: 3,
+                tiers: {
+                    1: -0x37bec534,
+                    2: 0x5a6d2541,
+                    3: 0x4e02364
+                },
+            scrappy: {
+                name: "Scrappy",
+                gameName: "Unknown",
+                maxLevel: 5,
+                tiers: {
+                    1: 0x62c74ead,
+                    2: 0x79ac077b,
+                    3: 0x557a29f8,
+                    4: 0x7bfe7df1,
+                    5: 0x6a352332
+                },
+            workbench: {
+                name: "Workbench",
+                gameName: "Basic Bench",
+                maxLevel: 0,
+                tiers: {
+                    1: -0x31bbef92
+                }
+            }
+        },
+        stash: {
+            name: "Stash",
+            maxLevel: 10,
+            tiers: {
+                1: -0x329a4eed,
+                2: 0x27efc379,
+                3: -0x37c4e84d,
+                4: 0x1b656428,
+                5: 0x576d68a8,
+                6: 0x1d5a620b,
+                7: -0xd51b7da,
+                8: 0x28e4b067,
+                9: -0x2d3638a,
+                10: 0x312128f1
+            }
+        },
+        assetIdToHideout: {
+            "-1840090314": {
+                module: "med_station",
+                level: 1
+            },
+            "-1409422086": {
+                module: "med_station",
+                level: 2
+            },
+            0x44f695aa: {
+                module: "med_station",
+                level: 3
+            },
+            "-518683794": {
+                module: "explosives_bench",
+                level: 1
+            },
+            "-44778840": {
+                module: "explosives_bench",
+                level: 2
+            },
+            "-815789211": {
+                module: "explosives_bench",
+                level: 3
+            },
+            0x115b4fae: {
+                module: "weapon_bench",
+                level: 1
+            },
+            0x14c46b67: {
+                module: "weapon_bench",
+                level: 2
+            },
+            "-1091338374": {
+                module: "weapon_bench",
+                level: 3
+            },
+            0x54578865: {
+                module: "equipment_bench",
+                level: 1
+            },
+            "-92567848": {
+                module: "equipment_bench",
+                level: 2
+            },
+            "-1093740163": {
+                module: "equipment_bench",
+                level: 3
+            },
+            0x43ff256b: {
+                module: "utility_bench",
+                level: 1
+            },
+            0x5c92256a: {
+                module: "utility_bench",
+                level: 2
+            },
+            0x45307016: {
+                module: "utility_bench",
+                level: 3
+            },
+            "-935249204": {
+                module: "refiner",
+                level: 1
+            },
+            0x5a6d2541: {
+                module: "refiner",
+                level: 2
+            },
+            0x4e02364: {
+                module: "refiner",
+                level: 3
+            },
+            0x62c74ead: {
+                module: "scrappy",
+                level: 1
+            },
+            0x79ac077b: {
+                module: "scrappy",
+                level: 2
+            },
+            0x557a29f8: {
+                module: "scrappy",
+                level: 3
+            },
+            0x7bfe7df1: {
+                module: "scrappy",
+                level: 4
+            },
+            0x6a352332: {
+                module: "scrappy",
+                level: 5
+            },
+            "-834400146": {
+                module: "workbench",
+                level: 1
+            },
+            "-848973549": {
+                module: "stash",
+                level: 1
+            },
+            0x27efc379: {
+                module: "stash",
+                level: 2
+            },
+            "-935651405": {
+                module: "stash",
+                level: 3
+            },
+            0x1b656428: {
+                module: "stash",
+                level: 4
+            },
+            0x576d68a8: {
+                module: "stash",
+                level: 5
+            },
+            0x1d5a620b: {
+                module: "stash",
+                level: 6
+            },
+            "-223459290": {
+                module: "stash",
+                level: 7
+            },
+            0x28e4b067: {
+                module: "stash",
+                level: 8
+            },
+            "-47408010": {
+                module: "stash",
+                level: 9
+            },
+            0x312128f1: {
+                module: "stash",
+                level: 10
+            }
+        }
+    })
+}
+  }
+}

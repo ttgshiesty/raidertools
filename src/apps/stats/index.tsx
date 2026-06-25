@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Crosshair, Layers } from 'lucide-react';
+import { Crosshair, Layers, ListTree } from 'lucide-react';
 import ArcTrackerStats from './components/ArcTrackerStats';
 import MetaForgeStats from './components/MetaForgeStats';
+import { RaidHistoryPage } from './components/RaidHistoryPage';
 import './styles/layout.scss';
 import './styles/main.scss';
 import './styles/metaforge.scss';
 
-type StatsTab = 'arctracker' | 'metaforge';
+type StatsTab = 'arctracker' | 'metaforge' | 'raidhistory';
 
 const TABS: { id: StatsTab; label: string; icon: typeof Crosshair }[] = [
   { id: 'arctracker', label: 'ArcTracker', icon: Crosshair },
+  { id: 'raidhistory', label: 'Raid History', icon: ListTree },
   { id: 'metaforge', label: 'MetaForge', icon: Layers },
 ];
 
@@ -36,7 +38,13 @@ export default function Stats() {
       </aside>
 
       <div className="stats-shell__content">
-        {activeTab === 'arctracker' ? <ArcTrackerStats /> : <MetaForgeStats />}
+        {activeTab === 'arctracker' ? (
+          <ArcTrackerStats />
+        ) : activeTab === 'raidhistory' ? (
+          <RaidHistoryPage />
+        ) : (
+          <MetaForgeStats />
+        )}
       </div>
     </div>
   );

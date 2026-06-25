@@ -3,14 +3,11 @@
   "workspaces": {
     ".": {
       "entry": [
-        "server/server.js",
         ".github/workflows/*.yml",
       ],
       "project": [
-        "server/**/*.js",
         "scripts/**/*.{js,cjs,mjs,ts}",
       ],
-      "ignore": ["server/services/*.before-fix-backup.js"],
       "ignoreDependencies": ["pino-pretty"],
     },
     "client": {

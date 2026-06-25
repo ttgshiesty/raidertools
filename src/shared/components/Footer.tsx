@@ -34,11 +34,19 @@ export function Footer() {
           >
             arctracker.io
           </a>
+           {t('shared.footer.Raidertools')}
+          <a
+            href="https://github.com/baschny/arcraiders-raider-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            raider-tools.app
+          </a>
           {t('shared.footer.thanksSuffix')}
         </p>
         <div className="footer-discord">
           <a
-            href="https://discord.com/users/793567008331399178"
+            href="https://discord.com/users/1164724030339809360"
             target="_blank"
             rel="noopener noreferrer"
             className="discord-link"
@@ -48,14 +56,14 @@ export function Footer() {
             <span>{t('shared.footer.contact')}</span>
           </a>
           <a
-            href="https://discord.gg/JU5BJwE42Z"
+            href="https://discord.gg/zeqtCAUHZ"
             target="_blank"
             rel="noopener noreferrer"
             className="discord-link"
             title={t('shared.footer.joinDiscord')}
           >
             <DiscordIcon />
-            <span>{t('shared.footer.arcTrackerDiscord')}</span>
+            <span>{t('shared.footer.shiestyDiscord')}</span>
           </a>
         </div>
       </div>

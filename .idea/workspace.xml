@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a834aabe-1bb3-4dc0-955f-f7d1eb171db5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.qwen/skills/auto-skill-shiesty-conventions/SKILL.md" beforeDir="false" afterPath="$PROJECT_DIR$/.qwen/skills/auto-skill-shiesty-conventions/SKILL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API_ARCTRACKER_REFRANCE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/lambda/market.ts" beforeDir="false" afterPath="$PROJECT_DIR$/infra/lambda/market.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/blueprints/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/blueprints/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/market/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/market/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/market/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/market/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/skill-tree/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/skill-tree/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/skill-tree/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/skill-tree/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidHistoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidHistoryPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidRow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidValueHistoryChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidValueHistoryChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/types/aggregateKills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/types/aggregateKills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/normalizeRaid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/normalizeRaid.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/useRaidHistory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/useRaidHistory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/useWeaponEnemyKills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/useWeaponEnemyKills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/en copy.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/en copy.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/es.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/fr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/it.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/it.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ja.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ko-KR.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ko-KR.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pl.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pt-BR.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pt-BR.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pt.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ru.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/tr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/zh-CN.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/zh-TW.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/zh-TW.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/marketApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/marketApi.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="2917" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3FZlb3xwBoEb94aBrXq8XgSQsRB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/finessekid/Desktop/SHIESTY-4-REAL",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "junie.project.settings",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/random" />
+      <recent name="$PROJECT_DIR$/docs" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a834aabe-1bb3-4dc0-955f-f7d1eb171db5" name="Changes" comment="" />
+      <created>1782290547702</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782290547702</updated>
+      <workItem from="1782290586463" duration="1836000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/infra/lambda/arctracker-user-proxy.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/metaforge-stats.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/links.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/embarkThrottle.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/arctrackerRelay.js" />
+        <option value="$PROJECT_DIR$/infra/local/__tests__/server-routes.test.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/embark-inventory.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/cognito-create-auth.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/schedule-updater.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/__tests__/embark-quests.test.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/embarkQuestDecode.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/embark-quests.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/profile.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/cognito-define-auth.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/__tests__/embarkQuestDecode.test.js" />
+        <option value="$PROJECT_DIR$/infra/local/server.js" />
+        <option value="$PROJECT_DIR$/infra/local/routes.js" />
+        <option value="$PROJECT_DIR$/infra/lib/raider-tools-stack.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/state.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/envelope.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/discordSecret.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/embarkSnapshotStorage.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/discord-auth.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/schedule-reader.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/cognito-verify-auth.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/__tests__/embarkInventoryDecode.test.js" />
+        <option value="$PROJECT_DIR$/infra/bin/app.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/data/embarkQuestMapping.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/http.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/embark-projects.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/embark-link.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/embarkInventoryDecode.js" />
+        <option value="$PROJECT_DIR$/infra/lambda/_lib/embark.js" />
+        <option value="$PROJECT_DIR$/infra/lib/raider-tools-auth-cert-stack.js" />
+      </list>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

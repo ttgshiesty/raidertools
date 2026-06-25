@@ -95,6 +95,5 @@ export interface SkillNodeProps {
   onRightClick: () => void;
 }
 export { LockIcon } from '../components/svgs/LockIcon';
-export { SkillTreeLogo } from '../components/svgs/SkillTreeLogo';
 export { ConnectionPaths } from '../components/svgs/ConnectionPaths';
 export { AnimatedRails } from '../components/svgs/AnimatedRails';

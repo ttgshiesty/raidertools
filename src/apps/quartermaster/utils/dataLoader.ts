@@ -17,6 +17,7 @@ const ITEMS_URL = '/data/items/items.json';
 const HIDEOUT_URL = '/data/quartermaster/hideout.json';
 const PROJECTS_URL = '/data/quartermaster/projects.json';
 const QUESTS_URL = '/data/quests/quest-data.json';
+// const BOTS_URL = '/data/bots/bots.json';
 
 /**
  * Load all items from the shared item database.
