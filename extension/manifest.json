@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "SHiESTY Token Relay",
+  "version": "1.1.0",
+  "description": "Captures and relays authorization tokens for ARC Raiders.",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "alarms",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://api.embark.games/*",
+    "*://*.embark.games/*",
+    "*://*.arcraiders.com/*",
+    "*://*.xboxlive.com/*",
+    "*://login.live.com/*",
+    "*://api.raidtheory.com/*",
+    "*://arctracker.io/*",
+    "*://shiesty.me/*",
+    "*://localhost/*",
+    "*://127.0.0.1/*"
+  ],
+  "icons": {
+    "16": "ico.png",
+    "48": "ico.png",
+    "128": "ico.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.embark.games/*",
+        "*://*.arcraiders.com/*",
+        "*://*.xboxlive.com/*",
+        "*://login.live.com/*",
+        "*://*.geforcenow.com/*",
+        "*://play.geforcenow.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "ico.png",
+      "48": "ico.png",
+      "128": "ico.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

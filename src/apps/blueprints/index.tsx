@@ -134,11 +134,16 @@ function getBlueprintDisplayName(value: string): string {
   return value.replace(/\s*(blueprint|progetto)\s*/gi, "").trim();
 }
 
-function resolveBlueprintIcon(icon: string | undefined): string | null {
+function resolveBlueprintIcon(icon?: string | null): string | null {
   if (!icon) return null;
-  if (/^https?:\/\//i.test(icon)) return icon;
-  if (icon.startsWith("/")) return icon;
-  return `/${icon}`;
+
+  if (/^https?:\/\//i.test(icon)) {
+    return icon;
+  }
+
+  const clean = icon.replace(/^\/+/, "");
+
+  return `/${clean}`;
 }
 
 function mapBlueprintSource(
@@ -148,26 +153,27 @@ function mapBlueprintSource(
 ): BlueprintGridItem {
   const saved = progress[blueprint.id] || { learned: false, duplicates: 0 };
   const imageUrl = resolveBlueprintIcon(blueprint.icon);
+  const cleanName = blueprint.name.replace(/\s*Blueprint\s*/gi, "").trim();
 
   return {
     slot: index + 1,
     slug: blueprint.id,
     id: blueprint.id,
-    targetItemId: blueprint.id,
+    targetItemId: blueprint.id.replace(/_blueprint$/, ""),
     name: blueprint.name,
-    targetName: blueprint.name,
-    targetItemName: blueprint.name,
+    targetName: cleanName,
+    targetItemName: cleanName,
     category: blueprint.category,
     rarity: blueprint.rarity,
     targetRarity: blueprint.rarity,
     blueprintRarity: blueprint.rarity,
     isWeapon: blueprint.category === "Weapon",
-    imageFilename: blueprint.icon ?? null,
+    imageFilename: imageUrl,
     imageUrl,
-    fallbackImageUrl: null,
+    fallbackImageUrl: imageUrl,
     description: blueprint.description ?? "",
     craftedAt: blueprint.craftedAt ?? null,
-    recipe: blueprint.recipe,
+    recipe: blueprint.recipe ?? [],
     learned: saved.learned,
     duplicates: saved.duplicates,
     unknown: false

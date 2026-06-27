@@ -5,40 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a834aabe-1bb3-4dc0-955f-f7d1eb171db5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.qwen/skills/auto-skill-shiesty-conventions/SKILL.md" beforeDir="false" afterPath="$PROJECT_DIR$/.qwen/skills/auto-skill-shiesty-conventions/SKILL.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_ARCTRACKER_REFRANCE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/lambda/market.ts" beforeDir="false" afterPath="$PROJECT_DIR$/infra/lambda/market.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GITHUB-RAW-LINKS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/_metadata/generated_indexed_rulesets/_ruleset1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/icons/icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/icons/icon-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/icons/icon-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/icons/icon-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/presence-raider-tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAIDER-TOOLS/1.0.0_0/rules.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kill-event-map-ids.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace.js" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/header.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/header.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/shiestyraiders_header_512x128.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/BlueprintGrid.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/Pasted_text_154_readable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/Pasted_text_154_readable.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/Pasted_text_156_readable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/Pasted_text_156_readable.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/chatgpt-stats-pack.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/chatgpt-stats-pack/STATS_API_CODE_DUMP.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/chatgpt-stats-pack/STATS_API_FILE_LIST.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/extract-blueprint-reference-grid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/github-files.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/metaforgeApi.update.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/metaforgestats.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/random/xboxService.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rules/deployment-rules.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-embark-inventory-mapping.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/generate-items.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-map-event-localizations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-map-localizations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-quest-data.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-schedule-data-from-map-conditions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/generate-schedule-data.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/blueprints/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/blueprints/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/market/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/market/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/market/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/market/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/skill-tree/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/skill-tree/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/skill-tree/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/skill-tree/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/blueprints/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/blueprints/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/ArcTrackerStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/ArcTrackerStats.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidHistoryPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidHistoryPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/components/RaidValueHistoryChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/components/RaidValueHistoryChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apps/stats/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/types/aggregateKills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/types/aggregateKills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/types/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/normalizeRaid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/normalizeRaid.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/useRaidHistory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/useRaidHistory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/useWeaponEnemyKills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/useWeaponEnemyKills.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/en copy.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/en copy.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/es.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/it.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/it.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ja.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ko-KR.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ko-KR.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pt-BR.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pt-BR.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/pt.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/pt.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/zh-CN.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/zh-CN.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/i18n/locales/zh-TW.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/i18n/locales/zh-TW.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/services/marketApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/marketApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/shiesty-arctracker-stats_generated.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/shiesty-arctracker-stats_generated.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apps/stats/utils/useStatsPageData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/apps/stats/utils/useStatsPageData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_asset_dump.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/__tests__/statsApi.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/__tests__/statsApi.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/services/statsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/services/statsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/stats.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/stats/normalization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/stats/normalization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/stats/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/stats/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utoc_dump_all.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +65,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="2917" />
+    <option name="cachedIndexableFilesCount" value="2992" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,10 +75,69 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0,
-  "fromUser": false
-}]]></component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.3950206559316887" />
+      <entry key="MS500" value="1.8304700240908942" />
+      <entry key="S2" value="1.954621014139717" />
+      <entry key="S5" value="1.9815951324014034" />
+      <entry key="S10" value="1.9907548296129751" />
+      <entry key="S30" value="1.9976930919369227" />
+      <entry key="S60" value="2.4299169797080453" />
+      <entry key="M2" value="12.499583385015162" />
+      <entry key="M5" value="74.25621311347807" />
+      <entry key="M10" value="139.7675611866293" />
+      <entry key="M15" value="172.8794286701721" />
+      <entry key="M30" value="213.9788851149095" />
+      <entry key="H1" value="238.1112151029093" />
+      <entry key="H2" value="251.19211148309705" />
+      <entry key="H4" value="258.0027000816639" />
+      <entry key="D1" value="263.8206011098656" />
+      <entry key="W1" value="264.8311887570121" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.2841442104713066" />
+      <entry key="MS500" value="1.797359860070402" />
+      <entry key="S2" value="1.9455534238788246" />
+      <entry key="S5" value="1.9778991966152586" />
+      <entry key="S10" value="1.9888951540109263" />
+      <entry key="S30" value="1.9970700924139821" />
+      <entry key="S60" value="2.4294746073208278" />
+      <entry key="M2" value="12.497830543430226" />
+      <entry key="M5" value="74.25172079631835" />
+      <entry key="M10" value="139.76329153420176" />
+      <entry key="M15" value="172.87589847050432" />
+      <entry key="M30" value="213.97669497302948" />
+      <entry key="H1" value="238.10999509292773" />
+      <entry key="H2" value="251.19146759518352" />
+      <entry key="H4" value="258.00236931428094" />
+      <entry key="D1" value="263.82054472549436" />
+      <entry key="W1" value="264.83118067091965" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3FZlb3xwBoEb94aBrXq8XgSQsRB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -84,7 +163,9 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "junie.project.settings",
-    "to.speed.mode.migration.done": "true"
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "/Users/finessekid/Desktop/SHIESTY-4-REAL/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -109,6 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1782290547702</updated>
       <workItem from="1782290586463" duration="1836000" />
+      <workItem from="1782538312599" duration="3784000" />
     </task>
     <servers />
   </component>

@@ -138,9 +138,9 @@ function us(Ie, r) {
       try {
         const X =
           Qa.PUBLIC_STAGING === "true"
-            ? "https://development.metaforge.pages.dev/auth/callback?next=/arc-raiders/market"
-            : "https://metaforge.app/auth/callback?next=/arc-raiders/market";
-        if (!r.supabase) throw new Error("Supabase client not available");
+            ? "https:///market"
+            : "https://market";
+        // if (!r.supabase) throw new Error("Supabase client not available");
         const { data: ie, error: ve } = await r.supabase.auth.linkIdentity({
           provider: "discord",
           options: { redirectTo: X },
@@ -150,12 +150,12 @@ function us(Ie, r) {
           (localStorage.setItem(Fe, "true"), (window.location.href = ie.url));
           return;
         }
-        await Ut("supabase:auth");
+        // await Ut("supabase:auth");
       } catch (X) {
         const ie = X?.message || "Failed to link Discord account";
         (d(j, ie, !0),
           X?.message?.includes("already linked") &&
-            (await Ut("supabase:auth")));
+            // (await Ut("supabase:auth")));
       } finally {
         d(W, !1);
       }
@@ -532,7 +532,7 @@ var fs = c(
   ),
   Ts =
     c(`<div class="space-y-3 pr-3 sm:pr-4"><!> <div class="border-border/60 bg-background/60 rounded-lg border p-3 sm:p-4"><div class="flex justify-between text-sm"><span class="text-muted-foreground">Total stock</span> <span class="font-semibold"> </span></div> <!> <!> <!></div> <div class="space-y-1.5"><div class="flex items-center justify-between"><!> <!></div> <!> <!></div> <div class="flex gap-3 rounded-lg border border-blue-500/40 bg-blue-500/10 p-3 sm:p-4"><!> <div class="flex-1"><h4 class="mb-1 font-semibold">Open Trade</h4> <p class="text-muted-foreground text-sm">This will open a trade chat where you can discuss details (location, time, etc.) with the other user. Both
-            parties need to confirm the trade before it can be completed.</p></div></div> <!> <div class="border-border/60 bg-background/60 space-y-3 rounded-lg border p-3 sm:p-4"><div class="text-sm font-semibold">Trading Terms & Conditions</div> <div class="text-muted-foreground space-y-2 text-sm"><p>By starting this trade, you acknowledge and agree to the following:</p> <ul class="ml-4 list-disc space-y-1"><li>MetaForge is not responsible for the outcome of trades between users</li> <li>You are solely responsible for your safety and security during trading</li> <li>Real money trading (RMT) is strictly prohibited and will result in account suspension. No real money,
+            parties need to confirm the trade before it can be completed.</p></div></div> <!> <div class="border-border/60 bg-background/60 space-y-3 rounded-lg border p-3 sm:p-4"><div class="text-sm font-semibold">Trading Terms & Conditions</div> <div class="text-muted-foreground space-y-2 text-sm"><p>By starting this trade, you acknowledge and agree to the following:</p> <ul class="ml-4 list-disc space-y-1"><li>SHIESTY-RAIDERS is not responsible for the outcome of trades between users</li> <li>You are solely responsible for your safety and security during trading</li> <li>Real money trading (RMT) is strictly prohibited and will result in account suspension. No real money,
               crypto, gift cards, etc.</li></ul></div> <div class="flex items-start gap-2"><!> <!></div></div> <!></div>`),
   Ds = c("<!> <!>", 1),
   Es = c("<!> <!>", 1),
@@ -1218,7 +1218,7 @@ function Si(Ie, r) {
             : e(Z)
               ? "All units are currently spoken for."
               : "Trading is temporarily unavailable; try again soon."
-      : "Log in to your MetaForge account to start trades.";
+      : "Log in to your SHIESTY  account to start trades.";
   }
   const be = Lt(r, "viewingOnly", 3, !1),
     C = Lt(r, "allowDelete", 19, () => !be()),
@@ -1596,7 +1596,7 @@ function Si(Ie, r) {
                                                 y();
                                                 var N =
                                                   k(`This account is verified because the owner has an active Embark authorization linked to this
-                            MetaForge profile.`);
+                            SHIESTY  profile.`);
                                                 t(te, N);
                                               },
                                               $$slots: { default: !0 },

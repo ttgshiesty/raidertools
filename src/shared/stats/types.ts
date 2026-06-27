@@ -71,6 +71,7 @@ export interface NormalizedRoundStats {
   netValue: number | null;
   xpGained: number;
   damage: number;
+  damageTaken: number;
   playerDamage: number;
   arcDamage: number;
   playerKills: number;

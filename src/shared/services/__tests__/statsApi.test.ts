@@ -81,10 +81,10 @@ describe('stats dashboard API normalization', () => {
     });
   });
 
-  it('falls back by field to raid history when the summary endpoint is empty', () => {
+  it('falls back by field to the documented raid-history fields when the summary endpoint is empty', () => {
     const result = normalizeStatsDashboardPayloads({
       summary: {}, enemies: {}, weapons: {}, maps: {},
-      rounds: { rounds: [{ id: 'raid-1', status: 'returned safely', map: 'Spaceport', durationSeconds: 120, lootValue: 900, loadoutValue: 200, arcKills: 4, containers: 6 }] },
+      rounds: { rounds: [{ id: 'raid-1', outcome: 'extracted', mapName: 'Spaceport', durationMs: 120_000, valueExtracted: 900, valueBroughtIn: 200, netValue: 700, arcKills: 4, containersLooted: 6 }] },
     });
     expect(result.summary).toMatchObject({ totalRounds: 1, totalExtracted: 1, totalTimeMs: 120_000, totalArcKills: 4, totalContainersLooted: 6, totalValueExtracted: 900, totalNetValue: 700 });
     expect(result.rounds[0]).toMatchObject({ roundId: 'raid-1', mapName: 'Spaceport', outcome: 'extracted', netValue: 700 });

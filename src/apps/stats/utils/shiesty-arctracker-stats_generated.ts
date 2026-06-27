@@ -192,6 +192,7 @@ export interface NormalizedRoundSummary extends NormalizedStatsTotals {
   valueBroughtIn: number;
   valueExtracted: number;
   netValue: number;
+  damageTaken?: number;
 }
 
 export interface NormalizedMapPerformance {
@@ -1135,6 +1136,7 @@ export function normalizeArcTrackerStatsDashboard(payloads: {
   });
   const roundsSummary = roundRows.length > 0 ? summarizeStatsRounds(roundRows) : providerSummary;
   const summary = mergeSummary(providerSummary, roundsSummary);
+  summary.damageTaken = firstNumber(sourceSummary, ['totalDamageTaken', 'damageTaken']);
   const dedicatedEnemies = parseDedicatedBreakdown(payloads.enemies ?? { enemies: [] }, 'enemies', resolver);
   const dedicatedWeapons = parseDedicatedBreakdown(payloads.weapons ?? { weapons: [] }, 'weapons', resolver);
   const maps = parseMaps(payloads.maps ?? { maps: [] }, resolver);
@@ -1206,30 +1208,24 @@ async function requestJson(url: string, token: string, fetchImpl: typeof fetch):
 }
 
 export async function fetchArcTrackerStatsDashboard(options: ArcTrackerFetchOptions): Promise<StatsDashboardData> {
-  const apiBase = (options.apiBase ?? 'https://api.shiesty.me').replace(/\/$/, '');
+  const apiBase = (
+    options.apiBase ??
+    (import.meta.env.VITE_STATS_API_BASE_URL as string | undefined) ??
+    (import.meta.env.DEV ? 'http://localhost:4000' : 'https://api.shiesty.me')
+  ).replace(/\/$/, '');
   const fetchImpl = options.fetchImpl ?? fetch;
   const limit = options.limit ?? 200;
-  const endpoints = ARCTRACKER_ENDPOINTS.stats;
-  const results = await Promise.allSettled([
-    requestJson(`${apiBase}${endpoints.summary}`, options.idToken, fetchImpl),
-    requestJson(`${apiBase}${endpoints.enemyKills}`, options.idToken, fetchImpl),
-    requestJson(`${apiBase}${endpoints.weaponKills}`, options.idToken, fetchImpl),
-    requestJson(`${apiBase}${endpoints.rounds}?limit=${encodeURIComponent(String(limit))}`, options.idToken, fetchImpl),
-    requestJson(`${apiBase}${endpoints.mapPerformance}`, options.idToken, fetchImpl),
-  ]);
-
-  const successful = results.filter((result): result is PromiseFulfilledResult<unknown> => result.status === 'fulfilled');
-  if (successful.length === 0) {
-    const firstFailure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
-    throw firstFailure?.reason instanceof Error ? firstFailure.reason : new Error('Unable to load ArcTracker stats.');
-  }
-
-  const value = (index: number, fallback: unknown): unknown => results[index].status === 'fulfilled' ? results[index].value : fallback;
+  const overview = await requestJson(
+    `${apiBase}/api/stats/overview?page=1&limit=${encodeURIComponent(String(limit))}`,
+    options.idToken,
+    fetchImpl,
+  ) as JsonObject;
   return normalizeArcTrackerStatsDashboard({
-    summary: value(0, {}),
-    enemies: value(1, { enemies: [] }),
-    weapons: value(2, { weapons: [] }),
-    rounds: value(3, { rounds: [] }),
-    maps: value(4, { maps: [] }),
+    summary: overview.summary ?? {},
+    enemies: overview.enemies ?? { enemies: [] },
+    weapons: overview.weapons ?? { weapons: [] },
+    rounds: overview.rounds ?? { rounds: [] },
+    maps: overview.maps ?? { maps: [] },
+    fetchedAt: typeof overview.fetchedAt === 'string' ? overview.fetchedAt : undefined,
   }, options.resolver);
 }

@@ -1,0 +1,23 @@
+<g class="recharts-cartesian-grid"><g class="recharts-cartesian-grid-vertical"><line stroke-dasharray="3 3" stroke="#27272a" fill="none" x="104" y="0" width="945" height="230" x1="104" y1="0" x2="104" y2="230"></line><line stroke-dasharray="3 3" stroke="#27272a" fill="none" x="104" y="0" width="945" height="230" x1="340.25" y1="0" x2="340.25" y2="230"></line><line stroke-dasharray="3 3" stroke="#27272a" fill="none" x="104" y="0" width="945" height="230" x1="576.5" y1="0" x2="576.5" y2="230"></line><line stroke-dasharray="3 3" stroke="#27272a" fill="none" x="104" y="0" width="945" height="230" x1="812.75" y1="0" x2="812.75" y2="230"></line><line stroke-dasharray="3 3" stroke="#27272a" fill="none" x="104" y="0" width="945" height="230" x1="1049" y1="0" x2="1049" y2="230"></line></g></g>
+
+<g tabindex="-1"><g class="recharts-layer recharts-bar" id="recharts-bar-_r_5t_"><g class="recharts-layer recharts-bar-rectangles"><g class="recharts-layer"><g class="recharts-layer recharts-bar-rectangle"><path name="Wasp" x="104" y="2.3" width="925.3125" height="18" fill="#ffc601" class="recharts-rectangle" d="M104,2.3L 1025.3125,2.3A 4,4,0,0,1,
+        1029.3125,6.3L 1029.3125,16.3A 4,4,0,0,1,
+        1025.3125,20.3L 104,20.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Fireball" x="104" y="25.3" width="804.0375" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,25.3L 904.0375,25.3A 4,4,0,0,1,
+        908.0375,29.3L 908.0375,39.3A 4,4,0,0,1,
+        904.0375,43.3L 104,43.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Tick" x="104" y="48.3" width="701.6625" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,48.3L 801.6625,48.3A 4,4,0,0,1,
+        805.6625,52.3L 805.6625,62.3A 4,4,0,0,1,
+        801.6625,66.3L 104,66.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Pop" x="104" y="71.3" width="645.75" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,71.3L 745.75,71.3A 4,4,0,0,1,
+        749.75,75.3L 749.75,85.3A 4,4,0,0,1,
+        745.75,89.3L 104,89.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Hornet" x="104" y="94.3" width="458.325" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,94.3L 558.325,94.3A 4,4,0,0,1,
+        562.325,98.3L 562.325,108.3A 4,4,0,0,1,
+        558.325,112.3L 104,112.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Turret" x="104" y="117.3" width="281.925" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,117.3L 381.925,117.3A 4,4,0,0,1,
+        385.925,121.3L 385.925,131.3A 4,4,0,0,1,
+        381.925,135.3L 104,135.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Snitch" x="104" y="140.3" width="185.0625" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,140.3L 285.0625,140.3A 4,4,0,0,1,
+        289.0625,144.3L 289.0625,154.3A 4,4,0,0,1,
+        285.0625,158.3L 104,158.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Firefly" x="104" y="163.3" width="136.2375" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,163.3L 236.2375,163.3A 4,4,0,0,1,
+        240.2375,167.3L 240.2375,177.3A 4,4,0,0,1,
+        236.2375,181.3L 104,181.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Spotter" x="104" y="186.3" width="127.575" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,186.3L 227.575,186.3A 4,4,0,0,1,
+        231.575,190.3L 231.575,200.3A 4,4,0,0,1,
+        227.575,204.3L 104,204.3Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path name="Shredder" x="104" y="209.3" width="52.7625" height="18" fill="#6b7280" class="recharts-rectangle" d="M104,209.3L 152.7625,209.3A 4,4,0,0,1,
+        156.7625,213.3L 156.7625,223.3A 4,4,0,0,1,
+        152.7625,227.3L 104,227.3Z"></path></g></g></g></g></g>

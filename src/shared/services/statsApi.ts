@@ -1,4 +1,3 @@
-import { getIdToken } from '../auth/cognitoClient';
 import {
   createPlayerStatsSnapshot,
   createRoundStatsSnapshot,
@@ -19,7 +18,10 @@ import type {
 const API_BASE =
   (import.meta.env.VITE_API_BASE_URL as string | undefined) ??
   'https://api.shiesty.me';
-const STATS_BASE = `${API_BASE}/me/arctracker/embark/stats`;
+const STATS_SERVER_BASE = (
+  (import.meta.env.VITE_STATS_API_BASE_URL as string | undefined) ??
+  (import.meta.env.DEV ? 'http://localhost:4000' : API_BASE)
+).replace(/\/$/, '');
 
 export interface StatsSummary {
   totalTimeMs: number;
@@ -39,6 +41,7 @@ export interface StatsSummary {
   totalSquadmateRevives: number;
   totalItemsCrafted: number;
   totalDamage: number;
+  totalDamageTaken: number;
   totalPlayerDamage: number;
   totalArcDamage: number;
   totalUnknownTargetKills: number;
@@ -60,9 +63,30 @@ export interface StatsRoundRow {
   netValue: number;
   playerKills: number;
   arcKills: number;
+  playerDowns: number;
+  revives: number;
+  itemsCrafted: number;
   damage: number;
+  damageTaken: number;
   containersLooted: number;
   xpGained: number;
+  killsByEnemy: StatsBreakdownRow[];
+  killsByWeapon: StatsBreakdownRow[];
+  damageByEnemy: StatsBreakdownRow[];
+  damageByWeapon: StatsBreakdownRow[];
+  craftedItems: StatsBreakdownRow[];
+  isLegacy?: boolean;
+  seasonNumber?: number;
+  roundEndedAt?: string;
+}
+
+export interface StatsPagination {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPrevPage: boolean;
 }
 
 export interface StatsMapRow {
@@ -93,6 +117,7 @@ export interface StatsDashboardData {
   maps: StatsMapRow[];
   unknownEvents: number;
   fetchedAt: string;
+  pagination: StatsPagination;
 }
 
 type JsonObject = Record<string, unknown>;
@@ -151,10 +176,15 @@ function emptySummary(): StatsSummary {
     totalSquadmateRevives: 0,
     totalItemsCrafted: 0,
     totalDamage: 0,
+    totalDamageTaken: 0,
     totalPlayerDamage: 0,
     totalArcDamage: 0,
     totalUnknownTargetKills: 0,
   };
+}
+
+function emptyPagination(): StatsPagination {
+  return { page: 1, limit: 50, total: 0, totalPages: 1, hasNextPage: false, hasPrevPage: false };
 }
 
 function completeSummary(value?: Partial<StatsSummary> | null): StatsSummary {
@@ -196,6 +226,7 @@ function parseSummary(value: unknown): StatsSummary {
     totalSquadmateRevives: firstNumber(source, ['totalSquadmateRevives', 'total_squadmate_revives', 'squadmateRevives']),
     totalItemsCrafted: firstNumber(source, ['totalItemsCrafted', 'total_items_crafted', 'itemsCrafted']),
     totalDamage: firstNumber(source, ['totalDamage', 'total_damage', 'damage', 'damageDealt']),
+    totalDamageTaken: firstNumber(source, ['totalDamageTaken', 'damageTaken']),
     totalPlayerDamage: firstNumber(source, ['totalPlayerDamage', 'playerDamage']),
     totalArcDamage: firstNumber(source, ['totalArcDamage', 'arcDamage']),
     totalUnknownTargetKills: firstNumber(source, ['totalUnknownTargetKills', 'unknownTargetKills']),
@@ -248,36 +279,68 @@ function roundRow(round: NormalizedRoundStats): StatsRoundRow {
     netValue: round.netValue ?? 0,
     playerKills: round.playerKills,
     arcKills: round.arcKills,
+    playerDowns: round.playerDowns,
+    revives: round.revives,
+    itemsCrafted: round.itemsCrafted,
     damage: round.damage,
+    damageTaken: round.damageTaken,
     containersLooted: round.containersLooted,
     xpGained: round.xpGained,
+    killsByEnemy: breakdownRowsFromEntries(round.killsByTarget.filter((entry) => entry.target.kind === 'enemy')),
+    killsByWeapon: breakdownRowsFromEntries(round.killsByWeapon),
+    damageByEnemy: breakdownRowsFromEntries(round.damageByTarget.filter((entry) => entry.target.kind === 'enemy' || entry.target.kind === 'player')),
+    damageByWeapon: breakdownRowsFromEntries(round.damageByWeapon),
+    craftedItems: breakdownRowsFromEntries(round.craftedItems),
   };
 }
 
 function parseRounds(value: unknown, normalized: readonly NormalizedRoundStats[]): StatsRoundRow[] {
-  if (normalized.length > 0) return normalized.map(roundRow);
+  if (normalized.length > 0) {
+    const sourceRows = list(value, 'rounds').map(object);
+    return normalized.map((round, index) => {
+      const source = sourceRows[index] ?? {};
+      return {
+        ...roundRow(round),
+        ...(typeof source.isLegacy === 'boolean' ? { isLegacy: source.isLegacy } : {}),
+        ...(Number.isFinite(Number(source.seasonNumber)) ? { seasonNumber: Number(source.seasonNumber) } : {}),
+        ...(typeof source.roundEndedAt === 'string' ? { roundEndedAt: source.roundEndedAt } : {}),
+      };
+    });
+  }
   return list(value, 'rounds').map((entry, index) => {
     const row = object(entry);
-    const rawOutcome = text(row.outcome ?? row.status, '').toLowerCase();
-    const extracted = row.extracted === true || ['extracted', 'survived', 'returned safely'].includes(rawOutcome);
-    const died = row.extracted === false || ['died', 'kia', 'knockedout', 'knocked out'].includes(rawOutcome);
-    const valueBroughtIn = firstNumber(row, ['valueBroughtIn', 'loadoutValue', 'broughtInValue']);
-    const valueExtracted = firstNumber(row, ['valueExtracted', 'lootValue', 'extractedValue']);
+    const rawOutcome = text(row.outcome, '').toLowerCase();
+    const extracted = rawOutcome === 'extracted';
+    const died = rawOutcome === 'died' || rawOutcome === 'failed';
+    const valueBroughtIn = number(row.valueBroughtIn);
+    const valueExtracted = number(row.valueExtracted);
     return {
       roundId: row.roundId === null || row.roundId === undefined
         ? row.id === null || row.id === undefined ? String(index + 1) : String(row.id)
         : String(row.roundId),
-      mapName: text(row.mapName ?? row.map, 'Unknown Map'),
+      mapName: text(row.mapName, 'Unknown Map'),
       outcome: extracted ? 'extracted' : died ? 'died' : 'unknown',
-      durationMs: firstNumber(row, ['durationMs', 'totalDurationMs']) || firstNumber(row, ['duration', 'durationSeconds']) * 1000,
+      durationMs: number(row.durationMs),
       valueBroughtIn,
       valueExtracted,
-      netValue: firstNumber(row, ['netValue', 'netProfit', 'profit']) || valueExtracted - valueBroughtIn,
-      playerKills: firstNumber(row, ['playerKills', 'pvpKills']),
-      arcKills: firstNumber(row, ['arcKills', 'arcDestroyed']),
-      damage: firstNumber(row, ['damage', 'damageDealt', 'totalDamage']),
-      containersLooted: firstNumber(row, ['containersLooted', 'lootedContainers', 'containers']),
-      xpGained: firstNumber(row, ['xpGained', 'xp']),
+      netValue: Number.isFinite(Number(row.netValue)) ? number(row.netValue) : valueExtracted - valueBroughtIn,
+      playerKills: number(row.playerKills),
+      arcKills: number(row.arcKills),
+      playerDowns: number(row.playerDowns),
+      revives: number(row.revives),
+      itemsCrafted: number(row.itemsCrafted),
+      damage: number(row.damage),
+      damageTaken: number(row.damageTaken),
+      containersLooted: number(row.containersLooted),
+      xpGained: number(row.xpGained),
+      killsByEnemy: [],
+      killsByWeapon: [],
+      damageByEnemy: [],
+      damageByWeapon: [],
+      craftedItems: [],
+      ...(typeof row.isLegacy === 'boolean' ? { isLegacy: row.isLegacy } : {}),
+      ...(Number.isFinite(Number(row.seasonNumber)) ? { seasonNumber: Number(row.seasonNumber) } : {}),
+      ...(typeof row.roundEndedAt === 'string' ? { roundEndedAt: row.roundEndedAt } : {}),
     };
   });
 }
@@ -300,6 +363,7 @@ function summaryFromNormalizedRounds(rounds: readonly NormalizedRoundStats[]): S
     totalRevives: base.revives,
     totalItemsCrafted: base.itemsCrafted,
     totalDamage: base.damage,
+    totalDamageTaken: rounds.reduce((sum, round) => sum + round.damageTaken, 0),
   });
   for (const round of rounds) {
     summary.totalPlayerDamage += round.playerDamage;
@@ -321,6 +385,7 @@ function summaryFromLegacyRounds(value: unknown): StatsSummary {
     summary.totalArcKills += round.arcKills;
     summary.totalPlayerKills += round.playerKills;
     summary.totalDamage += round.damage;
+    summary.totalDamageTaken += round.damageTaken;
     summary.totalContainersLooted += round.containersLooted;
     summary.totalValueExtracted += round.valueExtracted;
     summary.totalValueBroughtIn += round.valueBroughtIn;
@@ -432,6 +497,20 @@ function completeDashboard(value: Partial<StatsDashboardData>): StatsDashboardDa
     maps: value.maps ?? [],
     unknownEvents: value.unknownEvents ?? 0,
     fetchedAt: value.fetchedAt ?? new Date().toISOString(),
+    pagination: value.pagination ?? emptyPagination(),
+  };
+}
+
+function parsePagination(value: unknown): StatsPagination {
+  const source = object(value);
+  const fallback = emptyPagination();
+  return {
+    page: Math.max(1, number(source.page) || fallback.page),
+    limit: Math.max(1, number(source.limit) || fallback.limit),
+    total: Math.max(0, number(source.total)),
+    totalPages: Math.max(1, number(source.totalPages) || fallback.totalPages),
+    hasNextPage: source.hasNextPage === true,
+    hasPrevPage: source.hasPrevPage === true,
   };
 }
 
@@ -442,6 +521,7 @@ export function normalizeStatsDashboardPayloads(payloads: {
   rounds: unknown;
   maps: unknown;
   fetchedAt?: string;
+  pagination?: unknown;
 }): StatsDashboardData {
   const aggregate = normalizeStatsPlayerV2(body(payloads.summary));
   const normalized = normalizedRounds(payloads.rounds);
@@ -461,6 +541,7 @@ export function normalizeStatsDashboardPayloads(payloads: {
     totalRevives: aggregate.squadmateRevives + aggregate.strangerRevives,
     totalItemsCrafted: aggregate.itemsCrafted,
     totalDamage: aggregate.damage,
+    totalDamageTaken: 0,
   }) : parseSummary(payloads.summary);
   const roundSummary = normalized.length > 0 ? summaryFromNormalizedRounds(normalized) : summaryFromLegacyRounds(payloads.rounds);
   const summary = mergeSummary(providerSummary, roundSummary);
@@ -504,45 +585,95 @@ export function normalizeStatsDashboardPayloads(payloads: {
     })) ?? [],
     unknownEvents,
     fetchedAt: payloads.fetchedAt ?? new Date().toISOString(),
+    pagination: parsePagination(payloads.pagination),
   });
 }
 
-async function request(path: string, token: string): Promise<unknown> {
-  const response = await fetch(`${STATS_BASE}${path}`, {
-    headers: { Authorization: `Bearer ${token}`, Accept: 'application/json' },
+export interface StatsQuery {
+  page?: number;
+  limit?: number;
+  outcome?: 'all' | 'extracted' | 'died' | 'unknown';
+  map?: string;
+  season?: number;
+  dateFrom?: string;
+  dateTo?: string;
+  sort?: 'newest' | 'oldest' | 'value_desc' | 'value_asc';
+}
+
+export async function fetchStatsOverviewRaw(options: StatsQuery = {}): Promise<JsonObject> {
+  const query = new URLSearchParams({
+    page: String(Math.max(1, options.page ?? 1)),
+    limit: String(Math.min(200, Math.max(1, options.limit ?? 50))),
+  });
+  if (options.outcome && options.outcome !== 'all') query.set('outcome', options.outcome);
+  if (options.map && options.map !== 'all') query.set('map', options.map);
+  if (options.season !== undefined) query.set('season', String(options.season));
+  if (options.dateFrom) query.set('dateFrom', options.dateFrom);
+  if (options.dateTo) query.set('dateTo', options.dateTo);
+  if (options.sort) query.set('sort', options.sort);
+  const response = await fetch(`${STATS_SERVER_BASE}/api/stats/overview?${query.toString()}`, {
+    headers: { Accept: 'application/json' },
   });
   if (!response.ok) {
-    const message = await response.text().catch(() => '');
-    throw new Error(message || `Stats request failed with HTTP ${response.status}`);
+    const errorBody = object(await response.json().catch(() => ({})));
+    throw new Error(
+      typeof errorBody.error === 'string'
+        ? errorBody.error
+        : `Failed to load stats: ${response.status}`,
+    );
   }
-  return response.json() as Promise<unknown>;
+
+  return object(await response.json());
 }
 
-export async function fetchStatsDashboard(): Promise<StatsDashboardData> {
-  const token = await getIdToken();
-  if (!token) throw new Error('Sign in to view stats.');
+export async function fetchStatsDashboard(options: StatsQuery = {}): Promise<StatsDashboardData> {
+  const overview = await fetchStatsOverviewRaw(options);
+  const dashboard = normalizeStatsDashboardPayloads({
+    summary: overview.summary ?? overview,
+    enemies: overview.enemies,
+    weapons: overview.weapons ?? overview.topWeapons,
+    rounds: overview.rounds ?? overview.recentRounds,
+    maps: overview.maps ?? overview.mapPerformance,
+    pagination: object(overview.pagination).rounds,
+    fetchedAt: typeof overview.fetchedAt === 'string'
+      ? overview.fetchedAt
+      : typeof overview.lastSyncAt === 'string'
+        ? overview.lastSyncAt
+        : new Date().toISOString(),
+  });
 
-  const results = await Promise.allSettled([
-    request('/summary', token), request('/enemy-kills', token), request('/weapon-kills', token),
-    request('/rounds?limit=200', token), request('/map-performance', token),
-  ]);
-  const successful = results.filter((result): result is PromiseFulfilledResult<unknown> => result.status === 'fulfilled');
-  if (successful.length === 0) {
-    const firstFailure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
-    throw firstFailure?.reason instanceof Error ? firstFailure.reason : new Error('Unable to load stats.');
-  }
-  const value = (index: number, fallback: unknown) => results[index].status === 'fulfilled' ? results[index].value : fallback;
-  const summary = value(0, {}); const enemies = value(1, { enemies: [] }); const weapons = value(2, { weapons: [] });
-  const rounds = value(3, { rounds: [] }); const maps = value(4, { maps: [] });
-  const dashboard = normalizeStatsDashboardPayloads({ summary, enemies, weapons, rounds, maps });
-  const snapshot = createPlayerStatsSnapshot(body(summary), 'arctracker', dashboard.fetchedAt);
+  const snapshot = createPlayerStatsSnapshot(
+    body(overview.summary ?? overview),
+    'arctracker',
+    dashboard.fetchedAt,
+  );
   snapshot.raw.dashboard = dashboard;
   savePlayerStatsSnapshot(snapshot);
-  const rawRounds = list(rounds, 'rounds').filter((round): round is RawStatsRound => {
-    const row = object(round);
-    return Array.isArray(row.stats) || Array.isArray(row.rawStats);
-  }).map((round, index) => { const row = object(round); return { ...round, roundId: round.roundId ?? String(index + 1), stats: Array.isArray(row.stats) ? row.stats : Array.isArray(row.rawStats) ? row.rawStats : [] }; });
-  if (rawRounds.length > 0) saveRoundStatsSnapshot(createRoundStatsSnapshot(rawRounds, 'arctracker', dashboard.fetchedAt));
+
+  const rawRounds = list(overview.rounds ?? overview.recentRounds, 'rounds')
+    .map((value, index) => {
+      const round = object(value);
+      const stats = Array.isArray(round.stats)
+        ? round.stats
+        : Array.isArray(round.rawStats)
+          ? round.rawStats
+          : null;
+      if (!stats) return null;
+      const roundId = round.roundId ?? round.id ?? String(index + 1);
+      return {
+        ...round,
+        roundId: typeof roundId === 'string' || typeof roundId === 'number'
+          ? roundId
+          : String(index + 1),
+        stats,
+      } as RawStatsRound;
+    })
+    .filter((round): round is RawStatsRound => round !== null);
+
+  if (rawRounds.length > 0) {
+    saveRoundStatsSnapshot(createRoundStatsSnapshot(rawRounds, 'arctracker', dashboard.fetchedAt));
+  }
+
   return dashboard;
 }
 
@@ -578,6 +709,7 @@ export function loadCachedStatsDashboard(): StatsDashboardData | null {
       totalSquadmateRevives: aggregate?.squadmateRevives || rounds.reduce((sum, round) => sum + round.squadmateRevives, 0),
       totalItemsCrafted: aggregate?.itemsCrafted || roundSummary?.itemsCrafted || 0,
       totalDamage: aggregate?.damage || roundSummary?.damage || totals.damage,
+      totalDamageTaken: rounds.reduce((sum, round) => sum + round.damageTaken, 0),
       totalPlayerDamage: rounds.reduce((sum, round) => sum + round.playerDamage, 0),
       totalArcDamage: rounds.reduce((sum, round) => sum + round.arcDamage, 0),
       totalUnknownTargetKills: rounds.reduce((sum, round) => sum + round.unknownTargetKills, 0),

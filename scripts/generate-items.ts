@@ -227,7 +227,7 @@ function addWeaponChainMetadata(items: Record<string, GeneratedItem>): void {
 function main(): void {
   const scriptPath = path.resolve(process.argv[1] ?? './scripts/generate-items.ts');
   const scriptDir = path.dirname(scriptPath);
-  const sourceDir = path.resolve(scriptDir, '../../arcraiders-data/items');
+  const sourceDir = path.resolve(scriptDir, '../public/data/items');
   const destDir = path.resolve(scriptDir, '../public/data/items');
 
   if (!fs.existsSync(sourceDir)) {

@@ -16,6 +16,7 @@ import {
 } from '../utils/shiesty-arctracker-stats_generated';
 import { ARCTRACKER_RESOLVER } from '../utils/arctracker-stats-resolver';
 import { useCognitoAuth } from '../../../shared/context/CognitoAuthContext';
+import { useStatsPageData } from '../utils/useStatsPageData';
 // ---------------------------------------------------------------------------
 // Auth wire-up
 // ---------------------------------------------------------------------------
@@ -56,6 +57,7 @@ function formatDuration(ms: number): string {
 
 export default function ArcTrackerStats() {
   const idToken = useIdToken();
+  const identity = useStatsPageData();
 
   const [data, setData] = useState<StatsDashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -164,6 +166,22 @@ export default function ArcTrackerStats() {
 
       {error && <div className="stats-error">{error}</div>}
 
+      <div className="stats-panel">
+        <div className="stats-panel-heading">
+          <h3>Raider Profile</h3>
+        </div>
+        <div className="stats-metrics">
+          <div className="stats-metric"><span>Username</span><strong>{identity.profile?.username ?? 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Player Level</span><strong>{identity.profile ? formatNumber(identity.profile.playerLevel) : 'N/A'}</strong></div>
+          <div className="stats-metric"><span>XP</span><strong>{identity.stash ? formatNumber(identity.stash.currencies.xp) : 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Embark ID</span><strong>{identity.embarkId ?? 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Discord</span><strong>{identity.discordName ?? 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Credits</span><strong>{identity.stash ? formatNumber(identity.stash.currencies.credits) : 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Cred</span><strong>{identity.stash ? formatNumber(identity.stash.currencies.cred) : 'N/A'}</strong></div>
+          <div className="stats-metric"><span>Raider Tokens</span><strong>{identity.stash ? formatNumber(identity.stash.currencies.raiderTokens) : 'N/A'}</strong></div>
+        </div>
+      </div>
+
       <div className="stats-metrics">
         <div className="stats-metric">
           <Shield className="w-5 h-5" />
@@ -202,9 +220,24 @@ export default function ArcTrackerStats() {
         </div>
         <div className="stats-metric">
           <Activity className="w-5 h-5" />
-          <span>Avg Raid Time</span>
-          <strong>{formatDuration(derived.avgRaidTimeMs)}</strong>
+          <span>Time Topside</span>
+          <strong>{formatDuration(summary.durationMs)}</strong>
         </div>
+        <div className="stats-metric">
+          <Shield className="w-5 h-5" />
+          <span>Damage Taken</span>
+          <strong>{formatNumber(summary.damageTaken ?? 0)}</strong>
+        </div>
+        <div className="stats-metric"><span>Total Extractions</span><strong>{formatNumber(summary.roundsExtracted)}</strong></div>
+        <div className="stats-metric"><span>Total Deaths</span><strong>{formatNumber(summary.roundsKnockedOut)}</strong></div>
+        <div className="stats-metric"><span>Player Kills</span><strong>{formatNumber(summary.playerKills)}</strong></div>
+        <div className="stats-metric"><span>Player Downs</span><strong>{formatNumber(summary.playerDowns)}</strong></div>
+        <div className="stats-metric"><span>Damage Dealt</span><strong>{formatNumber(summary.damage)}</strong></div>
+        <div className="stats-metric"><span>Revives</span><strong>{formatNumber(summary.revives)}</strong></div>
+        <div className="stats-metric"><span>XP Gained</span><strong>{formatNumber(summary.xpGained)}</strong></div>
+        <div className="stats-metric"><span>Items Crafted</span><strong>{formatNumber(summary.itemsCrafted)}</strong></div>
+        <div className="stats-metric"><span>Value Extracted</span><strong>{formatCredits(summary.valueExtracted)}</strong></div>
+        <div className="stats-metric"><span>Value Brought In</span><strong>{formatCredits(summary.valueBroughtIn)}</strong></div>
       </div>
 
       <div className="stats-panel">

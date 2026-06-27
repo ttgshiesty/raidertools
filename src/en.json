@@ -594,15 +594,6 @@
     "items": "items",
     "noItemsMatch": "No items match your search."
   },
-  "FeaturedVideosPage": {
-    "title": "Featured Videos",
-    "description": "Watch community-created content, gameplay tips, and guides for ARC Raiders.",
-    "loading": "Loading videos...",
-    "noVideos": "No videos available at this time.",
-    "totalVideos": "Showing {count} videos",
-    "contentCreatorCTA": "Content Creator and want to be featured here? Reach out on",
-    "discordLink": "Discord"
-  },
   "TradersPage": {
     "title": "Traders",
     "itemsForSale": "items for sale",
@@ -853,8 +844,6 @@
     "notConnected": "Not connected",
     "link": "Link",
     "unlink": "Unlink",
-    "goAdFree": "Go Premium",
-    "goAdFreeDescription": "Support ShiestyRaiders and enjoy an ad-free browsing experience.",
     "backupRestoreTitle": "Backup & Restore",
     "backupRestoreDescription": "Download a backup of your data or restore from a previous backup file.",
     "downloadBackup": "Download Backup",
@@ -866,14 +855,6 @@
     "restoreSuccess": "Data restored successfully.",
     "restoreFailed": "Failed to restore backup.",
     "invalidBackupFile": "Invalid backup file.",
-    "subscriptionTitle": "Supporter Subscription",
-    "subscriptionBenefits": "Ad Free ShiestyRaiders, Support the project",
-    "subscriptionPlan": "Plan",
-    "subscriptionExpires": "Expires",
-    "subscriptionRenews": "Renews",
-    "manageSubscription": "Manage Subscription",
-    "monthly": "Monthly",
-    "yearly": "Yearly",
     "embarkGameAccount": "ARC Raiders Account",
     "embarkGameAccountDescription": "Link your ARC Raiders account to sync stash and inventory.",
     "loadingEmbarkStatus": "Loading game account status...",
@@ -887,10 +868,6 @@
     "embarkInstallExtension": "Install Extension",
     "embarkNotLinked": "Your ARC Raiders account is not linked yet.",
     "embarkGoToStash": "Go to Stash to link your account",
-    "sectionDeveloperAccess": "Developer Access",
-    "apiKeysTitle": "API Keys",
-    "apiKeysDescription": "Create API keys to allow third-party apps to access your data.",
-    "apiKeysDocsLink": "View API documentation"
   },
   "Auth": {
     "signIn": "Sign In",

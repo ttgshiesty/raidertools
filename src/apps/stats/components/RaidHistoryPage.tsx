@@ -1,58 +1,4 @@
-// RaidHistoryPage.tsx
-//
-// Single-file stats page: profile header, headline stat tiles, a
-// History/Stats tab split, filters + raid list, and the ARC-kills /
-// weapon-kills breakdowns. Built directly against StatsDashboardData from
-// the real src/shared/services/statsApi.ts — nothing here renormalizes
-// or invents totals.
-//
-// ============================================================================
-// THINGS THAT NEED A SMALL PATCH ON YOUR END TO FULLY LIGHT UP
-// ============================================================================
-// 1. Per-round "Damage by Target" / per-round weapon kills:
-//    normalizeStatsRound() in src/shared/stats/normalization.ts ALREADY
-//    computes round.damageByTarget and round.killsByWeapon — but
-//    roundRow() in statsApi.ts drops them when flattening to StatsRoundRow.
-//    Patch roundRow() + the StatsRoundRow interface like this:
-//
-//      export interface StatsRoundRow {
-//        ...existing fields...
-//        damageByTarget?: StatsBreakdownRow[];
-//        killsByWeapon?: StatsBreakdownRow[];
-//        isLegacy?: boolean;
-//      }
-//
-//      function roundRow(round: NormalizedRoundStats): StatsRoundRow {
-//        return {
-//          ...existing fields...
-//          damageByTarget: breakdownRowsFromEntries(round.damageByTarget),
-//          killsByWeapon: breakdownRowsFromEntries(round.killsByWeapon),
-//        };
-//      }
-//
-//    (breakdownRowsFromEntries already exists in statsApi.ts — it's what
-//    builds the dashboard-wide breakdowns, just isn't called per-round.)
-//    Once that field exists, the round detail panel below picks it up
-//    automatically — no change needed here.
-//
-// 2. MetaForge username: I still don't know where this is stored (didn't
-//    see a metaforgeProfileId anywhere in userApi.ts's MeResponse, and
-//    fetchMetaForgeStats() in metaforgeApi.ts takes it as a param rather
-//    than looking it up) — it's an optional prop, wire it from wherever
-//    src/apps/stats/index.tsx already gets it.
-//
-//    Discord name and Embark ID ARE wired for real now (see
-//    useStatsPageData.ts) — Discord name comes from MeResponse.displayName
-//    when signupProvider === 'discord', Embark ID from the linked Embark
-//    profile's accountId. Pass metaforgeUsername as a prop; the other two
-//    are optional overrides only if you need to pass something different.
-//
-// 3. "Synced / Legacy" toggle and "All Expeditions" filter only render if
-//    isLegacy / seasonNumber actually show up on a round — same reasoning,
-//    not in StatsRoundRow yet.
-// ============================================================================
-
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Area,
   AreaChart,
@@ -303,11 +249,7 @@ function ValueBar({ broughtIn, extracted }: { broughtIn: number; extracted: numb
 // Raid row — round detail expands to show breakdowns when present
 // ---------------------------------------------------------------------------
 
-type RoundRow = StatsRoundRow & {
-  damageByTarget?: StatsBreakdownRow[];
-  killsByWeapon?: StatsBreakdownRow[];
-  isLegacy?: boolean;
-};
+type RoundRow = StatsRoundRow;
 
 function outcomeDotClass(outcome: StatsRoundRow["outcome"]): string {
   if (outcome === "extracted") return "bg-emerald-400";
@@ -369,12 +311,28 @@ function RaidRow({ round }: { round: RoundRow }) {
               <div className="mt-1 font-mono">{round.damage.toLocaleString()}</div>
             </div>
             <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Damage Taken</div>
+              <div className="mt-1 font-mono">{round.damageTaken.toLocaleString()}</div>
+            </div>
+            <div>
               <div className="text-xs uppercase tracking-wide text-muted-foreground">Containers looted</div>
               <div className="mt-1 font-mono">{round.containersLooted}</div>
             </div>
             <div>
               <div className="text-xs uppercase tracking-wide text-muted-foreground">XP gained</div>
               <div className="mt-1 font-mono">{round.xpGained.toLocaleString()}</div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Player Downs</div>
+              <div className="mt-1 font-mono">{round.playerDowns.toLocaleString()}</div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Revives</div>
+              <div className="mt-1 font-mono">{round.revives.toLocaleString()}</div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Items Crafted</div>
+              <div className="mt-1 font-mono">{round.itemsCrafted.toLocaleString()}</div>
             </div>
           </div>
 
@@ -395,11 +353,18 @@ function RaidRow({ round }: { round: RoundRow }) {
             </div>
           </div>
 
-          {/* These two sections only render once StatsRoundRow carries them
-              — see the patch note at the top of this file. */}
+          {round.killsByEnemy.length > 0 && (
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">ARC Kills</div>
+              <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
+                {round.killsByEnemy.map((enemy) => <span key={enemy.name}>{enemy.name} ×{enemy.count}</span>)}
+              </div>
+            </div>
+          )}
+
           {round.killsByWeapon && round.killsByWeapon.length > 0 && (
             <div>
-              <div className="text-xs uppercase tracking-wide text-muted-foreground">Kills by weapon</div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Weapons Used — Kills</div>
               <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
                 {round.killsByWeapon.map((w) => (
                   <span key={w.name}>
@@ -410,15 +375,33 @@ function RaidRow({ round }: { round: RoundRow }) {
             </div>
           )}
 
-          {round.damageByTarget && round.damageByTarget.length > 0 && (
+          {round.damageByEnemy.length > 0 && (
             <div>
-              <div className="text-xs uppercase tracking-wide text-muted-foreground">Damage by target</div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">ARC Damage</div>
               <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
-                {round.damageByTarget.map((t) => (
+                {round.damageByEnemy.map((t) => (
                   <span key={t.name}>
                     {t.name} {t.count.toLocaleString()}
                   </span>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {round.damageByWeapon.length > 0 && (
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Weapons Used — Damage</div>
+              <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
+                {round.damageByWeapon.map((weapon) => <span key={weapon.name}>{weapon.name} {weapon.count.toLocaleString()} dmg</span>)}
+              </div>
+            </div>
+          )}
+
+          {round.craftedItems.length > 0 && (
+            <div>
+              <div className="text-xs uppercase tracking-wide text-muted-foreground">Crafted Items</div>
+              <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs">
+                {round.craftedItems.map((item) => <span key={item.name}>{item.name} ×{item.count}</span>)}
               </div>
             </div>
           )}
@@ -639,7 +622,7 @@ function MapPerformanceList({ maps }: { maps: StatsMapRow[] }) {
 // ---------------------------------------------------------------------------
 
 type OutcomeFilter = StatsRoundRow["outcome"] | "all";
-type SortMode = "newest" | "xp" | "kills" | "value";
+type SortMode = "newest" | "oldest" | "value_desc" | "value_asc";
 
 function FilterBar({
   outcome,
@@ -648,6 +631,12 @@ function FilterBar({
   setMapId,
   sortMode,
   setSortMode,
+  season,
+  setSeason,
+  dateFrom,
+  setDateFrom,
+  dateTo,
+  setDateTo,
   availableMaps,
 }: {
   outcome: OutcomeFilter;
@@ -656,6 +645,12 @@ function FilterBar({
   setMapId: (v: string) => void;
   sortMode: SortMode;
   setSortMode: (v: SortMode) => void;
+  season: string;
+  setSeason: (v: string) => void;
+  dateFrom: string;
+  setDateFrom: (v: string) => void;
+  dateTo: string;
+  setDateTo: (v: string) => void;
   availableMaps: string[];
 }) {
   const selectClass =
@@ -681,10 +676,19 @@ function FilterBar({
 
       <select className={selectClass} value={sortMode} onChange={(e) => setSortMode(e.target.value as SortMode)}>
         <option value="newest">Newest First</option>
-        <option value="xp">Highest XP</option>
-        <option value="kills">Highest Kills</option>
-        <option value="value">Highest Value</option>
+        <option value="oldest">Oldest First</option>
+        <option value="value_desc">Highest Value</option>
+        <option value="value_asc">Lowest Value</option>
       </select>
+
+      <select className={selectClass} value={season} onChange={(e) => setSeason(e.target.value)}>
+        <option value="all">All Expeditions</option>
+        <option value="1">Season 1</option>
+        <option value="2">Season 2</option>
+      </select>
+
+      <input className={selectClass} type="date" aria-label="Date from" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
+      <input className={selectClass} type="date" aria-label="Date to" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
     </div>
   );
 }
@@ -771,6 +775,11 @@ export function RaidHistoryPage({
   const [outcome, setOutcome] = useState<OutcomeFilter>("all");
   const [mapId, setMapId] = useState("all");
   const [sortMode, setSortMode] = useState<SortMode>("newest");
+  const [season, setSeason] = useState("all");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(25);
 
   const allRounds = (dashboard?.rounds ?? []) as RoundRow[];
 
@@ -778,14 +787,24 @@ export function RaidHistoryPage({
 
   const filteredRounds = useMemo(() => {
     let rows = allRounds.filter(
-      (r) => (outcome === "all" || r.outcome === outcome) && (mapId === "all" || r.mapName === mapId)
+      (r) =>
+        (outcome === "all" || r.outcome === outcome) &&
+        (mapId === "all" || r.mapName === mapId) &&
+        (season === "all" || String(r.seasonNumber ?? "") === season) &&
+        (!dateFrom || Date.parse(r.roundEndedAt ?? "") >= Date.parse(dateFrom)) &&
+        (!dateTo || Date.parse(r.roundEndedAt ?? "") <= Date.parse(`${dateTo}T23:59:59.999Z`))
     );
-    if (sortMode === "xp") rows = [...rows].sort((a, b) => b.xpGained - a.xpGained);
-    else if (sortMode === "kills") rows = [...rows].sort((a, b) => b.playerKills + b.arcKills - (a.playerKills + a.arcKills));
-    else if (sortMode === "value") rows = [...rows].sort((a, b) => b.netValue - a.netValue);
-    // "newest" — leave as the API's own order (it already returns newest-first)
+    if (sortMode === "oldest") rows = [...rows].reverse();
+    else if (sortMode === "value_desc") rows = [...rows].sort((a, b) => b.netValue - a.netValue);
+    else if (sortMode === "value_asc") rows = [...rows].sort((a, b) => a.netValue - b.netValue);
     return rows;
-  }, [allRounds, outcome, mapId, sortMode]);
+  }, [allRounds, outcome, mapId, season, dateFrom, dateTo, sortMode]);
+
+  useEffect(() => setPage(1), [outcome, mapId, season, dateFrom, dateTo, sortMode, perPage]);
+  const totalPages = Math.max(1, Math.ceil(filteredRounds.length / perPage));
+  const currentPage = Math.min(page, totalPages);
+  const pageStart = (currentPage - 1) * perPage;
+  const visibleRounds = filteredRounds.slice(pageStart, pageStart + perPage);
 
   const summary = dashboard?.summary ?? null;
   const survivalRate = summary ? pctOrNull(summary.totalExtracted, summary.totalRounds) : null;
@@ -869,9 +888,19 @@ export function RaidHistoryPage({
             <SurvivalGauge value={survivalRate} />
             <StatTile label="KD Ratio" value={fmtRatio(summary.totalPlayerKills, summary.totalDied)} />
             <StatTile label="ARC Kills" value={fmtNumber(summary.totalArcKills)} />
+            <StatTile label="Player Kills" value={fmtNumber(summary.totalPlayerKills)} />
+            <StatTile label="Player Downs" value={fmtNumber(summary.totalPlayerDowns)} />
+            <StatTile label="Damage Dealt" value={fmtNumber(summary.totalDamage)} />
+            <StatTile label="Damage Taken" value={fmtNumber(summary.totalDamageTaken)} />
             <StatTile label="Total XP" value={fmtNumber(summary.totalXpGained)} />
             <StatTile label="Time Topside" value={formatTimeTopside(summary.totalTimeMs)} />
             <StatTile label="Successful Raids" value={fmtNumber(summary.totalExtracted)} />
+            <StatTile label="Deaths" value={fmtNumber(summary.totalDied)} />
+            <StatTile label="Containers Looted" value={fmtNumber(summary.totalContainersLooted)} />
+            <StatTile label="Revives" value={fmtNumber(summary.totalRevives)} />
+            <StatTile label="Items Crafted" value={fmtNumber(summary.totalItemsCrafted)} />
+            <StatTile label="Value Brought In" value={fmtNumber(summary.totalValueBroughtIn)} />
+            <StatTile label="Value Extracted" value={fmtNumber(summary.totalValueExtracted)} />
             <StatTile label="Top Weapon" value={topWeaponName ?? "N/A"} />
             <StatTile label="Best Map" value={bestMap?.mapName ?? "N/A"} sub={bestMap ? `${bestMap.raids} raids` : undefined} />
           </div>
@@ -910,6 +939,12 @@ export function RaidHistoryPage({
               setMapId={setMapId}
               sortMode={sortMode}
               setSortMode={setSortMode}
+              season={season}
+              setSeason={setSeason}
+              dateFrom={dateFrom}
+              setDateFrom={setDateFrom}
+              dateTo={dateTo}
+              setDateTo={setDateTo}
               availableMaps={availableMaps}
             />
             {hasLegacyField && (
@@ -929,9 +964,21 @@ export function RaidHistoryPage({
                 No raids match these filters.
               </div>
             ) : (
-              filteredRounds.map((round) => <RaidRow key={round.roundId} round={round} />)
+              visibleRounds.map((round) => <RaidRow key={round.roundId} round={round} />)
             )}
           </div>
+
+          {filteredRounds.length > 0 && (
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 py-3 text-sm">
+              <span>Showing {pageStart + 1}-{Math.min(pageStart + perPage, filteredRounds.length)} of {filteredRounds.length}</span>
+              <div className="flex items-center gap-2">
+                <label>Per Page <select value={perPage} onChange={(event) => setPerPage(Number(event.target.value))}><option value={10}>10</option><option value={25}>25</option><option value={50}>50</option><option value={100}>100</option></select></label>
+                <button type="button" disabled={currentPage === 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>Previous</button>
+                <span>Page {currentPage} of {totalPages}</span>
+                <button type="button" disabled={currentPage === totalPages} onClick={() => setPage((value) => Math.min(totalPages, value + 1))}>Next</button>
+              </div>
+            </div>
+          )}
         </>
       ) : (
         <>

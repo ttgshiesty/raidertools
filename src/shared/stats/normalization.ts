@@ -364,6 +364,7 @@ export function normalizeStatsRound(round: RawStatsRound): NormalizedRoundStats 
     netValue: null,
     xpGained: 0,
     damage: 0,
+    damageTaken: firstNumber(round, ['damageTaken']),
     playerDamage: 0,
     arcDamage: 0,
     playerKills: 0,

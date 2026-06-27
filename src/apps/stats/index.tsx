@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Crosshair, Layers, ListTree } from 'lucide-react';
 import ArcTrackerStats from './components/ArcTrackerStats';
-import MetaForgeStats from './components/MetaForgeStats';
+import { MetaForgeStats } from './MetaForgeStats';
 import { RaidHistoryPage } from './components/RaidHistoryPage';
 import './styles/layout.scss';
 import './styles/main.scss';
